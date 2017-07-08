@@ -1,0 +1,22 @@
+/* -------------------
+   MIXINS
+   ------------------- */
+
+   @mixin spacing($property-name, $position, $value){
+       $spacing-value: map-get($sizes, $value);
+
+       @if($spacing-value == null){
+           $spacing-value: $value;
+       }
+
+       @if($position == all){
+           #{$property-name}: $spacing-value;
+       }
+       @else{
+           $positions: $position;
+           @each $multiplePosition in $positions {
+               $property: #{$property-name}-#{$multiplePosition};
+               #{$property}: $spacing-value;
+           }
+       }
+   }

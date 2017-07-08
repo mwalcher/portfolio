@@ -1,0 +1,18 @@
+/* -------------------
+   SIZES
+   ------------------- */
+
+   $extra-small-space : 0.5rem;
+   $small-space       : 1rem;
+   $medium-space      : 2rem;
+   $large-space       : 4rem;
+   $extra-large-space : 8rem;
+
+   $sizes: (
+        none : 0,
+        xs   : $extra-small-space,
+        sm   : $small-space,
+        md   : $medium-space,
+        lg   : $large-space,
+        xl   : $extra-large-space
+   );
