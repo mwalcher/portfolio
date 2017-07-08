@@ -42,3 +42,13 @@
     background-color: $bg-colour;
     color: set-colour($bg-colour);
 }
+
+@mixin invisible {
+    position: absolute;
+    top: -625rem;
+    left: -625rem;
+    font-size: 0;
+    visibility: hidden;
+    width: 0 !important;
+    height: 0 !important;
+}

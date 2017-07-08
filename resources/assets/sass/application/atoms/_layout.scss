@@ -1,0 +1,11 @@
+/*  ---------------------
+    LAYOUT CLASSES
+    --------------------- */
+
+    .invisible{
+        @include invisible;
+    }
+
+    .no-scroll{
+        overflow: hidden;
+    }
