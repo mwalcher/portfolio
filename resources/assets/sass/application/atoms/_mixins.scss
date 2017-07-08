@@ -1,22 +1,44 @@
-/* -------------------
-   MIXINS
-   ------------------- */
+/*  ---------------------
+    MIXINS
+    --------------------- */
 
-   @mixin spacing($property-name, $position, $value){
-       $spacing-value: map-get($sizes, $value);
+/*  TYPOGRAPHY
+    ------------------- */
 
-       @if($spacing-value == null){
-           $spacing-value: $value;
-       }
+@mixin set-font($font-family, $font-weight:regular){
+    $font : map-get(map-get($fonts, $font-family), $font-weight);
+    font-family: map-get($font, font-family);
+    font-weight: map-get($font, font-weight);
+}
 
-       @if($position == all){
-           #{$property-name}: $spacing-value;
-       }
-       @else{
-           $positions: $position;
-           @each $multiplePosition in $positions {
-               $property: #{$property-name}-#{$multiplePosition};
-               #{$property}: $spacing-value;
-           }
-       }
-   }
+@mixin title-font(){
+    @include set-font(title);
+    text-transform: uppercase;
+}
+
+/*  LAYOUT
+    ------------------- */
+
+@mixin spacing($property-name, $position, $value){
+    $spacing-value: map-get($sizes, $value);
+
+    @if($spacing-value == null){
+        $spacing-value: $value;
+    }
+
+    @if($position == all){
+        #{$property-name}: $spacing-value;
+    }
+    @else{
+        $positions: $position;
+        @each $multiplePosition in $positions {
+            $property: #{$property-name}-#{$multiplePosition};
+            #{$property}: $spacing-value;
+        }
+    }
+}
+
+@mixin set-background-colour($bg-colour:$black){
+    background-color: $bg-colour;
+    color: set-colour($bg-colour);
+}

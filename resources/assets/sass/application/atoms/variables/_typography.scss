@@ -1,0 +1,29 @@
+/* -------------------
+   TYPOGRAPHY VARIABLES
+   ------------------- */
+
+   $body-font  : 'Poppins', sans-serif;
+   $title-font : 'Montserrat', sans-serif;
+
+   $font-weight-light : 300;
+   $font-weight-bold  : 700;
+   $font-weight-black : 900;
+
+   $fonts : (
+       body : (
+           regular : (
+               font-family : $body-font,
+               font-weight : $font-weight-light
+           ),
+           bold : (
+               font-family : $body-font,
+               font-weight : $font-weight-bold
+           )
+       ),
+       title : (
+           regular : (
+               font-family : $title-font,
+               font-weight : $font-weight-black
+           )
+       )
+   );

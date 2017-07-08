@@ -1,15 +1,15 @@
-/* -------------------
-   NORMALIZE
-   ------------------- */
+/*  ---------------------
+    NORMALIZE
+    --------------------- */
 
-   *, *::before, *::after{
-       margin: 0;
-       padding: 0;
-       border: 0;
-       box-sizing: border-box;
-   }
+*, *::before, *::after{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
 
-   img{
-       height: auto;
-       max-width: 100%;
-   }
+img{
+    height: auto;
+    max-width: 100%;
+}

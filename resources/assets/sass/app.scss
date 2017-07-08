@@ -1,13 +1,16 @@
-/* -------------------
-   ATOMS
-   ------------------- */
-   @import "../../../node_modules/normalize.css/normalize.css";
-   @import "application/atoms/variables";
-   @import "application/atoms/mixins";
-   @import "application/atoms/normalize";
+/*  ---------------------
+    ATOMS
+    --------------------- */
 
-/* -------------------
-   COMPONENTS
-   ------------------- */
-   //@import "application/molecules/*.scss";
-   //@import "application/organisms/*.scss";
+@import "../../../node_modules/normalize.css/normalize.css";
+@import "application/atoms/variables";
+@import "application/atoms/functions";
+@import "application/atoms/mixins";
+@import "application/atoms/normalize";
+@import "application/atoms/typography";
+
+/*  ---------------------
+    COMPONENTS
+    --------------------- */
+//@import "application/molecules/*.scss";
+//@import "application/organisms/*.scss";
