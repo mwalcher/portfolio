@@ -5,9 +5,9 @@
 $body-font  : 'Poppins', sans-serif;
 $title-font : 'Montserrat', sans-serif;
 
-$font-weight-light : 300;
-$font-weight-bold  : 700;
-$font-weight-black : 900;
+$font-weight-light   : 300;
+$font-weight-regular : 400;
+$font-weight-black   : 900;
 
 $fonts : (
     body : (
@@ -17,7 +17,7 @@ $fonts : (
         ),
         bold : (
             font-family : $body-font,
-            font-weight : $font-weight-bold
+            font-weight : $font-weight-regular
         )
     ),
     title : (

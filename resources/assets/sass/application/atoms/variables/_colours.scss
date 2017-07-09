@@ -2,15 +2,39 @@
 /*  COLOURS
     --------------------- */
 
-$white      : #FFFFFF;
-$white-off  : #F8F8F8;
-$white-rgba : rgba($white-off, 0.5);
+$white            : #FFFFFF;
+$white-off        : #F8F8F8;
+$white-rgba       : rgba($white-off, 0.5);
 
-$black      : #212121;
-$black-rgba : rgba($black, 0.5);
+$black            : #212121;
+$black-rgba       : rgba($black, 0.5);
 
-$green      : #339933;
-$green-rgba : rgba($green, 0.5);
+$green            : #339933;
+$green-rgba       : rgba($green, 0.5);
+$green-rgba-dark  : rgba($green, 0.75);
 
-$red        : #993434;
-$red-rgba   : rgba($red, 0.5);
+$red              : #993434;
+$red-rgba         : rgba($red, 0.5);
+
+/*  BUTTON COLOURS
+    --------------------- */
+
+$button-light: (
+    default-font-colour       : $white-off,
+    default-background-colour : $white-rgba,
+    default-border-colour     : $white-off,
+
+    hover-font-colour         : $white-off,
+    hover-background-colour   : $green-rgba,
+    hover-border-colour       : $white-off
+);
+
+$button-dark: (
+    default-font-colour       : $black,
+    default-background-colour : $black-rgba,
+    default-border-colour     : $black,
+
+    hover-font-colour         : $white-off,
+    hover-background-colour   : $green-rgba-dark,
+    hover-border-colour       : $green
+);

@@ -16,6 +16,26 @@
     text-transform: uppercase;
 }
 
+/*  BUTTONS
+    ------------------- */
+
+@mixin button-colour($theme:$button-light){
+    color: map-get($theme, default-font-colour);
+    background-color: map-get($theme, default-background-colour);
+    border-color: map-get($theme, default-border-colour);
+
+    &::after{
+        background-color: map-get($theme, hover-background-colour);
+    }
+
+    &:hover{
+        color: map-get($theme, hover-font-colour);
+        background-color: transparent;
+        border-color: map-get($theme, hover-border-colour);
+    }
+}
+
+
 /*  LAYOUT
     ------------------- */
 

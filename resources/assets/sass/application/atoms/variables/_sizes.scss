@@ -2,17 +2,17 @@
 /*  SIZES
     --------------------- */
 
-$extra-small-space : 0.5rem;
-$small-space       : 1rem;
-$medium-space      : 2rem;
-$large-space       : 4rem;
-$extra-large-space : 8rem;
+$extra-small-size : 0.5rem;
+$small-size       : 1rem;
+$medium-size      : 2rem;
+$large-size       : 4rem;
+$extra-large-size : 8rem;
 
 $sizes: (
-none : 0,
-xs   : $extra-small-space,
-sm   : $small-space,
-md   : $medium-space,
-lg   : $large-space,
-xl   : $extra-large-space
+    none : 0,
+    xs   : $extra-small-size,
+    sm   : $small-size,
+    md   : $medium-size,
+    lg   : $large-size,
+    xl   : $extra-large-size
 );

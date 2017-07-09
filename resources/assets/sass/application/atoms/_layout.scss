@@ -2,10 +2,18 @@
     LAYOUT CLASSES
     --------------------- */
 
-    .invisible{
-        @include invisible;
-    }
+.invisible{
+    @include invisible;
+}
 
-    .no-scroll{
-        overflow: hidden;
+.no-scroll{
+    overflow: hidden;
+}
+
+.light-section{
+    @include set-background-colour($white);
+
+    .button{
+        @include button-colour($button-dark);
     }
+}
