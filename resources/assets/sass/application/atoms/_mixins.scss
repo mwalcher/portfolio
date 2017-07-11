@@ -14,6 +14,7 @@
 @mixin title-font(){
     @include set-font(title);
     text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 /*  BUTTONS
