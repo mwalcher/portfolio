@@ -40,6 +40,7 @@
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 </head>
 <body>
+    @component('components/header')@endcomponent
 
     @yield('hero')
 
