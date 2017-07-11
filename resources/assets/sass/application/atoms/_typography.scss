@@ -28,6 +28,13 @@ h3, .h3{
     line-height: 1.25;
 }
 
+label{
+    @include title-font;
+    font-size: 1.5rem;
+    line-height: 1.25;
+    @include transition(font-size top);
+}
+
 p{
     @include set-font(body);
     font-size: $global-font-size;

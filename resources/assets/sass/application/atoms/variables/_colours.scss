@@ -38,3 +38,18 @@ $button-dark: (
     hover-background-colour   : $green-rgba-dark,
     hover-border-colour       : $green
 );
+
+/*  INPUT COLOURS
+    --------------------- */
+
+$input-light: (
+    default-font-colour       : $white-off,
+    default-background-colour : $white-rgba,
+    default-border-colour     : $white-off,
+
+    hover-font-colour         : $white-off,
+    hover-background-colour   : $green-rgba,
+    hover-border-colour       : $white-off,
+
+    autofill-background-colour: $green
+);

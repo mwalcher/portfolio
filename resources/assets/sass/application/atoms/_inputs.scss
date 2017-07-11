@@ -1,0 +1,31 @@
+/*  ---------------------
+    INPUTS
+    --------------------- */
+
+    input[type="text"],
+    input[type="email"],
+    textarea{
+        width: 100%;
+        height: $input-height;
+        padding: 1.5rem 0.75rem 0.5rem;
+
+        @include set-font(body);
+        font-size: $global-font-size;
+        line-height: 1;
+
+        @include input-colour($input-light);
+        border-width: ($global-border-width * 2);
+        border-style: solid;
+        border-radius: $global-border-radius;
+        @include transition(background-color border-color);
+        overflow: hidden;
+        z-index: 1;
+        outline: none;
+        cursor: pointer;
+    }
+
+    textarea{
+        resize: vertical;
+        min-height: 16rem;
+        max-height: 22rem;
+    }

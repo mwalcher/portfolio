@@ -15,5 +15,5 @@
 /*  ---------------------
     COMPONENTS
     --------------------- */
-//@import "application/molecules/*.scss";
-//@import "application/organisms/*.scss";
+@import "application/molecules/_molecules";
+@import "application/organisms/_organisms";

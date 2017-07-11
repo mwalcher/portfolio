@@ -17,7 +17,7 @@
             width: 100%;
             border-bottom: 1px solid transparent;
             transform: translateY(-$extra-small-size);
-            transition: border-color 0.3s ease, transform 0.3s ease;
+            @include transition(border-color transform);
         }
 
         &:hover{
@@ -49,10 +49,10 @@
         letter-spacing: 1px;
 
         @include button-colour($button-light);
-        border-width: 1px;
+        border-width: $global-border-width;
         border-style: solid;
         border-radius: $global-border-radius;
-        transition: background-color 0.3s ease;
+        @include transition(color background-color border-color);
         overflow: hidden;
         z-index: 1;
         cursor: pointer;
@@ -69,7 +69,7 @@
             width: 100%;
             height: 0;
             transform: translateY(-50%) rotate(45deg);
-            transition: height 0.3s ease;
+            @include transition(height);
             z-index: -1;
         }
 

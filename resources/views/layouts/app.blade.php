@@ -40,8 +40,6 @@
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 </head>
 <body>
-    <h1>{!! __('meta.title') !!}</h1>
-    
     <script src="{{ asset('js/app.js') }}"></script>
 </body>
 </html>
