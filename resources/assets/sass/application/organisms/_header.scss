@@ -1,8 +1,22 @@
 header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: $header-height;
     @include spacing(padding, all, 0.75rem);
+    background-color: $black;
+    border-bottom: $global-border-width solid $white-off;
+    box-shadow: $global-shadow;
+    z-index: 10;
 
     .logo{
         display: block;
+        height: 100%;
+
+        @media screen and (min-width: $tablet-breakpoint){
+            height: auto;
+        }
 
         img{
             display: block;

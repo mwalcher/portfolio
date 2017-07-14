@@ -24,7 +24,7 @@
     <meta property="og:title" content="{!! __('meta.title') !!}" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="http://www.mwalcher.com" />
-    <meta property="og:image" content="{{ asset('images/') }}{{ __('meta.image.src') }}" />
+    <meta property="og:image" content="{{ asset('images') }}{{ __('meta.image.src') }}" />
     <meta property="og:image:width" content="{!! __('meta.image.width') !!}" />
     <meta property="og:image:height" content="{!! __('meta.image.height') !!}" />
     <meta property="og:description" content="{!! __('meta.description') !!}" />
@@ -34,15 +34,19 @@
     <meta name="twitter:creator" content="@mrwalcher">
     <meta name="twitter:title" content="{!! __('meta.title') !!}">
     <meta name="twitter:description" content="{!! __('meta.description') !!}">
-    <meta name="twitter:image" content="{{ asset('images/') }}{{ __('meta.image.src') }}">
+    <meta name="twitter:image" content="{{ asset('images') }}{{ __('meta.image.src') }}">
 
     <link href="https://fonts.googleapis.com/css?family=Montserrat:900|Poppins:300,400" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 </head>
 <body>
+    <div class="fixed-background" style="background-image: url({{ asset('images') }}{{ __('home.background') }})"></div>
+
     @component('components/header')@endcomponent
 
-    @yield('hero')
+    <main>
+        @yield('hero')
+    </main>
 
     <script src="{{ asset('js/app.js') }}"></script>
 </body>
