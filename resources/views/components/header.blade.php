@@ -4,5 +4,11 @@
     </a>
 
     <button id="mobile-menu">
+        <span class="invisible">Menu</span>
+        <span class="icon">
+            <span></span>
+            <span></span>
+            <span></span>
+        </span>
     </button>
 </header>
