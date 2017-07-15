@@ -1,8 +1,30 @@
 <?php
 
 return [
-    'title' => 'mwalcher / home',
-    'description' => 'Matthew Walcher is a web developer from Toronto, Canada. He specializes in front-end web development and php development.',
+    'title' => __('meta.title'),
+    'description' => __('meta.description'),
+    'meta-image' => [
+        'src' => __('meta.image.src'),
+        'width' => __('meta.image.width'),
+        'height' => __('meta.image.height')
+    ],
+    'navigation' => [
+        [
+            'text' => 'About',
+            'title' => 'About Matthew Walcher',
+            'link' => '#about'
+        ],
+        [
+            'text' => 'Work',
+            'title' => 'Matthew Walcher\'s Work',
+            'link' => '#work'
+        ],
+        [
+            'text' => 'Contact',
+            'title' => 'Contact Matthew Walcher',
+            'link' => '#contact'
+        ]
+    ],
     'background' => '/hero-home.jpg',
     'main-title' => 'Matthew Walcher'
 ];

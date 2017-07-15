@@ -18,23 +18,23 @@
     <meta name="msapplication-config" content="/favicons/browserconfig.xml">
     <meta name="theme-color" content="#ffffff">
 
-    <title>{!! __('meta.title') !!}</title>
-    <meta name="description" content="{!! __('meta.description') !!}">
+    <title>{!! $title !!}</title>
+    <meta name="description" content="{!! __($view.'.description') !!}">
 
-    <meta property="og:title" content="{!! __('meta.title') !!}" />
+    <meta property="og:title" content="{!! __($view.'.title') !!}" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="http://www.mwalcher.com" />
-    <meta property="og:image" content="{{ asset('images') }}{{ __('meta.image.src') }}" />
-    <meta property="og:image:width" content="{!! __('meta.image.width') !!}" />
-    <meta property="og:image:height" content="{!! __('meta.image.height') !!}" />
-    <meta property="og:description" content="{!! __('meta.description') !!}" />
-    <meta property="og:site_name" content="{!! __('meta.title') !!}" />
+    <meta property="og:image" content="{{ asset('images') }}{{ __($view.'.meta-image.src') }}" />
+    <meta property="og:image:width" content="{!! __($view.'.meta-image.width') !!}" />
+    <meta property="og:image:height" content="{!! __($view.'.meta-image.height') !!}" />
+    <meta property="og:description" content="{!! __($view.'.description') !!}" />
+    <meta property="og:site_name" content="{!! __($view.'.title') !!}" />
 
     <meta name="twitter:card" content="summary">
     <meta name="twitter:creator" content="@mrwalcher">
-    <meta name="twitter:title" content="{!! __('meta.title') !!}">
-    <meta name="twitter:description" content="{!! __('meta.description') !!}">
-    <meta name="twitter:image" content="{{ asset('images') }}{{ __('meta.image.src') }}">
+    <meta name="twitter:title" content="{!! __($view.'.title') !!}">
+    <meta name="twitter:description" content="{!! __($view.'.description') !!}">
+    <meta name="twitter:image" content="{{ asset('images') }}{{ __($view.'.meta-image.src') }}">
 
     <link href="https://fonts.googleapis.com/css?family=Montserrat:900|Poppins:300,400" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
@@ -42,7 +42,12 @@
 <body>
     <div class="fixed-background" style="background-image: url({{ asset('images') }}{{ __('home.background') }})"></div>
 
-    @component('components/header')@endcomponent
+    @component(
+        'components/header',
+        [
+            'page' => isset($view) ? $view : '404'
+        ]
+    )@endcomponent
 
     <main>
         @yield('hero')
