@@ -13,6 +13,7 @@
     </button>
 
     <nav class="main-navigation">
+        <h2>Navigation</h2>
         <ul class="page-navigation">
             @foreach (__($page.'.navigation') as $navItem)
             <li>

@@ -7,17 +7,138 @@
     transition: transform $global-transition;
 
     @media screen and (min-width: $tablet-breakpoint){
-        transform: none;
-        transition: none;
         display: block;
         position: static;
+        transform: none;
+        transition: none;
+        padding-top: 1.5rem;
+    }
+
+    h2{
+        display: none;
+        font-size: 0.975rem;
+
+        @media screen and (min-width: $tablet-breakpoint){
+            display: block;
+        }
     }
 
     ul{
         background-color: $black;
 
+        @media screen and (min-width: $tablet-breakpoint){
+            background-color: transparent;
+        }
+
         & ~ ul{
             border-left: $global-border-width solid $white-off;
+
+            @media screen and (min-width: $tablet-breakpoint){
+                border-left: 0;
+            }
+        }
+
+        &.page-navigation{
+            @media screen and (min-width: $tablet-breakpoint){
+                position: relative;
+                margin-top: 1.25rem;
+                margin-left: $extra-small-size;
+                @include spacing(padding, top bottom, 1.5rem);
+            }
+
+            &::before, &::after{
+                @media screen and (min-width: $tablet-breakpoint){
+                    @include font-awesome;
+                    font-size: 1.5rem;
+                    line-height: 0.5;
+                    position: absolute;
+                    left: -$extra-small-size;
+                    width: $small-size;
+                }
+            }
+
+            &::before{
+                @media screen and (min-width: $tablet-breakpoint){
+                    content: "\f0d8";
+                    top: -0.65rem;
+                }
+            }
+
+            &::after{
+                @media screen and (min-width: $tablet-breakpoint){
+                    content: "\f0d7";
+                    bottom: -0.4rem;
+                }
+            }
+
+            li{
+                @media screen and (min-width: $tablet-breakpoint){
+                    position: relative;
+                    @include spacing(padding, top bottom, 1.5rem);
+                }
+
+                &::before{
+                    @media screen and (min-width: $tablet-breakpoint){
+                        content: "";
+                        position: absolute;
+                        top: -1.5rem;
+                        left: 0;
+                        transform: translateX(-100%);
+                        height: 3rem;
+                        border-left: 0.125rem solid $white-off;
+                    }
+                }
+
+                &::after{
+                    @media screen and (min-width: $tablet-breakpoint){
+                        content: "";
+                        position: absolute;
+                        top: 2.5rem;
+                        left: 0;
+                        transform: translateX(-100%);
+                        height: 3rem;
+                        border-left: 0.125rem solid $white-off;
+                    }
+                }
+
+                &:first-child{
+                    &::after{
+                        @media screen and (min-width: $tablet-breakpoint){
+                            display: none;
+                        }
+                    }
+                }
+
+                &:last-child{
+                    &::before{
+                        @media screen and (min-width: $tablet-breakpoint){
+                            display: none;
+                        }
+                    }
+                }
+
+                a{
+                    @media screen and (min-width: $tablet-breakpoint){
+                        position: relative;
+                        @include spacing(padding, left, 1.5rem);
+                    }
+
+                    &::before{
+                        @media screen and (min-width: $tablet-breakpoint){
+                            content: "";
+                            position: absolute;
+                            top: 50%;
+                            left: -1px;
+                            transform: translate(-50%, -50%);
+                            width: $small-size;
+                            height: $small-size;
+                            background-color: transparent;
+                            border: 0.125rem solid $white-off;
+                            border-radius: 100%;
+                        }
+                    }
+                }
+            }
         }
 
         &.links-navigation{
@@ -32,8 +153,18 @@
             height: 6.25rem;
             @include spacing(padding, top bottom, xs);
 
+            @media screen and (min-width: $tablet-breakpoint){
+                text-align: left;
+                width: auto;
+                height: auto;
+            }
+
             & ~ li{
                 border-top: $global-border-width solid $white-off;
+
+                @media screen and (min-width: $tablet-breakpoint){
+                    border-top: 0;
+                }
             }
 
             a{
