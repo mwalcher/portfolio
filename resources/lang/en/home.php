@@ -29,5 +29,12 @@ return [
         ]
     ],
     'background' => '/hero-home.jpg',
-    'main-title' => 'Matthew Walcher'
+    'hero' => [
+        'id' => 'about',
+        'main-title' => 'Matthew Walcher'
+    ],
+    'main-content' => [
+        'id' => 'work',
+        'main-title' => 'Projects'
+    ]
 ];

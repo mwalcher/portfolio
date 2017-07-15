@@ -13,6 +13,10 @@ main{
     padding-top: $header-height;
 }
 
+section, footer{
+    min-height: 100vh;
+}
+
 img{
     height: auto;
     max-width: 100%;

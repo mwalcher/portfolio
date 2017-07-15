@@ -52,8 +52,27 @@
     )@endcomponent
 
     <main>
-        @yield('hero')
+        @component(
+            'components/hero',
+            [
+                'page' => isset($view) ? $view : '404'
+            ]
+        )@endcomponent
+
+        @component(
+            'components/main-content',
+            [
+                'page' => isset($view) ? $view : '404'
+            ]
+        )@endcomponent
     </main>
+
+    @component(
+        'components/footer',
+        [
+            'page' => isset($view) ? $view : '404'
+        ]
+    )@endcomponent
 
     <script src="{{ asset('js/app.js') }}"></script>
 </body>
