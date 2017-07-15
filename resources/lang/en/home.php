@@ -12,17 +12,20 @@ return [
         [
             'text' => 'About',
             'title' => 'About Matthew Walcher',
-            'link' => '#about'
+            'link' => '#about',
+            'icon' => 'fa-user'
         ],
         [
             'text' => 'Work',
             'title' => 'Matthew Walcher\'s Work',
-            'link' => '#work'
+            'link' => '#work',
+            'icon' => 'fa-desktop'
         ],
         [
             'text' => 'Contact',
             'title' => 'Contact Matthew Walcher',
-            'link' => '#contact'
+            'link' => '#contact',
+            'icon' => 'fa-envelope'
         ]
     ],
     'background' => '/hero-home.jpg',

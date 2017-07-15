@@ -38,6 +38,8 @@
 
     <link href="https://fonts.googleapis.com/css?family=Montserrat:900|Poppins:300,400" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+
+    <script src="https://use.fontawesome.com/9cc2906ee2.js"></script>
 </head>
 <body>
     <div class="fixed-background" style="background-image: url({{ asset('images') }}{{ __('home.background') }})"></div>

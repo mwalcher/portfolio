@@ -12,23 +12,35 @@
         </span>
     </button>
 
-    <nav>
+    <nav class="main-navigation">
         <ul class="page-navigation">
             @foreach (__($page.'.navigation') as $navItem)
             <li>
-                <a href="{!! $navItem['link'] !!}" title="{!! $navItem['title'] !!}">{!! $navItem['text'] !!}</a>
+                <a href="{!! $navItem['link'] !!}" class="no-hover" title="{!! $navItem['title'] !!}">
+                    <span class="icon fa {!! $navItem['icon'] !!}" aria-hidden="true"></span>
+                    {!! $navItem['text'] !!}
+                </a>
             </li>
             @endforeach
         </ul>
         <ul class="links-navigation">
             <li>
-                <a href="https://www.linkedin.com/in/mwalcher/" target="_blank" title="Matthew Walcher on LinkedIn">LinkedIn</a>
+                <a href="https://www.linkedin.com/in/mwalcher/" target="_blank" class="no-hover" title="Matthew Walcher on LinkedIn">
+                    <span class="icon fa fa-linkedin" aria-hidden="true"></span>
+                    LinkedIn
+                </a>
             </li>
             <li>
-                <a href="https://github.com/mwalcher" target="_blank" title="Matthew Walcher on Github">Github</a>
+                <a href="https://github.com/mwalcher" target="_blank" class="no-hover" title="Matthew Walcher on Github">
+                    <span class="icon fa fa-github" aria-hidden="true"></span>
+                    Github
+                </a>
             </li>
             <li>
-                <a href="{{ asset('images') }}/mwalcher-resume.pdf" target="_blank" title="Matthew Walcher's Resume">Resume</a>
+                <a href="{{ asset('images') }}/mwalcher-resume.pdf" target="_blank" class="no-hover" title="Matthew Walcher's Resume">
+                    <span class="icon fa fa-file-text" aria-hidden="true"></span>
+                    Resume
+                </a>
             </li>
         </ul>
     </nav>
