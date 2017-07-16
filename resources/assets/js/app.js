@@ -4,7 +4,7 @@ NodeList.prototype.forEach = NodeList.prototype.forEach || Array.prototype.forEa
 
 const page = document.querySelector('html');
 const headerOffset = 80;
-const headerBreakpoint = '740';
+const headerBreakpoint = 740;
 
 document.addEventListener('readystatechange', function(){
     if(document.readyState === 'complete'){
