@@ -6,6 +6,14 @@
     @include invisible;
 }
 
+.light-section{
+    @include set-background-colour($white);
+
+    .button{
+        @include button-colour($button-dark);
+    }
+}
+
 .fixed-background{
     position: fixed;
     top: 0;
@@ -18,7 +26,7 @@
     opacity: 0.5;
 }
 
-.wrapper{
+.section{
     display: block;
     position: relative;
     width: 100%;
@@ -28,18 +36,10 @@
     @include spacing(padding, left right, 0.75rem);
 
     @media screen and (min-width: $tablet-breakpoint){
-        @include spacing(padding, left right, 8.5rem);
+        @include spacing(padding, left right, 9rem);
     }
 
     @media screen and (min-width: $laptop-breakpoint){
         @include spacing(padding, left right, 12rem);
-    }
-}
-
-.light-section{
-    @include set-background-colour($white);
-
-    .button{
-        @include button-colour($button-dark);
     }
 }

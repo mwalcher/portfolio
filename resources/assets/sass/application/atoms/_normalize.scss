@@ -11,6 +11,10 @@
 
 main{
     padding-top: $header-height;
+
+    @media screen and (min-width: $tablet-breakpoint){
+        padding-top: 0;
+    }
 }
 
 section, footer{

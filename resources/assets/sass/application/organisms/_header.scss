@@ -17,8 +17,7 @@ header{
     @media screen and (min-width: $tablet-breakpoint){
         display: block;
         width: 8.5rem;
-        height: auto;
-        background-color: transparent;
+        height: 100%;
         border-bottom: 0;
         box-shadow: none;
     }

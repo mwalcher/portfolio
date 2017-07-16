@@ -137,6 +137,7 @@
                             background-color: transparent;
                             border: 0.125rem solid $white-off;
                             border-radius: 100%;
+                            transition: background-color $global-transition;
                         }
                     }
                 }
@@ -171,8 +172,24 @@
 
             a{
                 display: block;
-                color: $white;
+                color: $white-off;
                 text-transform: uppercase;
+
+                &.active{
+                    &::before{
+                        @media screen and (min-width: $tablet-breakpoint){
+                            background-color: $green;
+                        }
+                    }
+
+                    .icon{
+                        background-color: $green;
+
+                        &::before{
+                            color: $white-off;
+                        }
+                    }
+                }
 
                 .icon{
                     position: relative;
