@@ -24,7 +24,7 @@
     <meta property="og:title" content="{!! __($view.'.title') !!}" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="http://www.mwalcher.com" />
-    <meta property="og:image" content="{{ asset('images') }}{{ __($view.'.meta-image.src') }}" />
+    <meta property="og:image" content="{{ __($view.'.meta-image.src') }}" />
     <meta property="og:image:width" content="{!! __($view.'.meta-image.width') !!}" />
     <meta property="og:image:height" content="{!! __($view.'.meta-image.height') !!}" />
     <meta property="og:description" content="{!! __($view.'.description') !!}" />
@@ -34,7 +34,7 @@
     <meta name="twitter:creator" content="@mrwalcher">
     <meta name="twitter:title" content="{!! __($view.'.title') !!}">
     <meta name="twitter:description" content="{!! __($view.'.description') !!}">
-    <meta name="twitter:image" content="{{ asset('images') }}{{ __($view.'.meta-image.src') }}">
+    <meta name="twitter:image" content="{{ __($view.'.meta-image.src') }}">
 
     <link href="https://fonts.googleapis.com/css?family=Montserrat:900|Poppins:300,400" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
@@ -42,7 +42,7 @@
     <script src="https://use.fontawesome.com/9cc2906ee2.js"></script>
 </head>
 <body>
-    <div class="fixed-background" style="background-image: url({{ asset('images') }}{{ __('home.background') }})"></div>
+    <div class="fixed-background" style="background-image: url({{ __('home.background') }})"></div>
 
     @component(
         'components/header',
