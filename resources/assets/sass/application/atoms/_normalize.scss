@@ -18,7 +18,12 @@ main{
 }
 
 section, footer{
-    min-height: 100vh;
+    min-height: 90vh;
+    min-height: calc(100vh - #{$header-height});
+
+    @media screen and (min-width: $tablet-breakpoint){
+        min-height: 100vh;
+    }
 }
 
 img{
