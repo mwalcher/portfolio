@@ -7,19 +7,19 @@ const headerBreakpoint = 740;
 export default function({
     trigger = requiredField('Trigger'),
     speed = 10,
-    windowPosition = window.pageYOffset,
 } = {}) {
-    
-    smoothScroll(trigger, speed, windowPosition);
+
+    smoothScroll(trigger, speed);
 }
 
-function smoothScroll(trigger, speed, windowPosition){
+function smoothScroll(trigger, speed){
+    let windowPosition = window.pageYOffset;
     let targetID = trigger.href.split('#')[1];
     let target = document.getElementById(targetID);
     let targetOffset = target.offsetTop;
 
     if(page.classList.contains('show-navigation')
-       && !window.matchMedia(`(min-width: ${headerBreakpoint}px)`).matches){
+    && !window.matchMedia(`(min-width: ${headerBreakpoint}px)`).matches){
         targetOffset = targetOffset - headerOffset;
     }
 
