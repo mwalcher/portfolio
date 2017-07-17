@@ -31,7 +31,9 @@ return [
     'background' => asset('images').'/hero-home.jpg',
     'hero' => [
         'id' => 'about',
-        'main-title' => 'Matthew Walcher'
+        'main-title' => 'Matthew Walcher',
+        'sub-title' => 'Front-end Web Developer',
+        'content' => 'I am a detail oriented problem solver who is determined to find a solution even if it does not come easily.'
     ],
     'main-content' => [
         'id' => 'work',

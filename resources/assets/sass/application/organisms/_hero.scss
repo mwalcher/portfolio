@@ -1,0 +1,10 @@
+.hero{
+    .hero-content{
+        text-align: center;
+
+        p{
+            max-width: 28rem;
+            @include spacing(margin, left right, auto);
+        }
+    }
+}
