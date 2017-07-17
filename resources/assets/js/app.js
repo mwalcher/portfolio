@@ -9,9 +9,15 @@ document.addEventListener('readystatechange', function(){
     if(document.readyState === 'complete'){
 
         // Header Component
-        headerInteractions();
+        headerInteractions({
+            mobileMenu: document.querySelector('#mobile-menu'),
+            navigation: document.querySelectorAll('header .page-navigation a'),
+            sections: document.querySelectorAll('.section')
+        });
 
         // Forms
-        formInteractions();
+        formInteractions({
+            inputs: document.querySelectorAll('input, textarea')
+        });
     }
 });
