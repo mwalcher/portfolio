@@ -26,21 +26,21 @@
         </ul>
         <ul class="links-navigation">
             <li>
-                <a href="https://www.linkedin.com/in/mwalcher/" target="_blank" class="no-hover" title="Matthew Walcher on LinkedIn">
-                    <span class="icon fa fa-linkedin" aria-hidden="true"></span>
-                    LinkedIn
+                <a href="{!! __('global.linkedin.link') !!}" target="_blank" class="no-hover" title="{!! __('global.linkedin.title') !!}">
+                    <span class="icon fa {!! __('global.linkedin.icon') !!}" aria-hidden="true"></span>
+                    {!! __('global.linkedin.text') !!}
                 </a>
             </li>
             <li>
-                <a href="https://github.com/mwalcher" target="_blank" class="no-hover" title="Matthew Walcher on Github">
-                    <span class="icon fa fa-github" aria-hidden="true"></span>
-                    Github
+                <a href="{!! __('global.github.link') !!}" target="_blank" class="no-hover" title="{!! __('global.github.title') !!}">
+                    <span class="icon fa {!! __('global.github.icon') !!}" aria-hidden="true"></span>
+                    {!! __('global.github.text') !!}
                 </a>
             </li>
             <li>
-                <a href="{{ asset('images') }}/mwalcher-resume.pdf" target="_blank" class="no-hover" title="Matthew Walcher's Resume">
-                    <span class="icon fa fa-file-text" aria-hidden="true"></span>
-                    Resume
+                <a href="{!! __('global.resume.link') !!}" target="_blank" class="no-hover" title="{!! __('global.resume.title') !!}">
+                    <span class="icon fa {!! __('global.resume.icon') !!}" aria-hidden="true"></span>
+                    {!! __('global.resume.text') !!}
                 </a>
             </li>
         </ul>
