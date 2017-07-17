@@ -6,9 +6,9 @@ import smoothScroll from './smooth-scroll';
 const page = document.querySelector('html');
 
 export default function({
-    mobileMenu = document.querySelector('#mobile-menu'),
-    navigation = document.querySelectorAll('header .page-navigation a'),
-    sections = document.querySelectorAll('.section')
+    mobileMenu = requiredField('Mobile Menu'),
+    navigation = [],
+    sections = []
 } = {}) {
 
     mobileMenu.addEventListener('click', toggleNavigation);
@@ -51,4 +51,8 @@ function activeSection(sections, navItems){
             });
         }
     });
+}
+
+function requiredField(field){
+    throw new Error(`[${field}] is required`);
 }

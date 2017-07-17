@@ -1,18 +1,12 @@
 'use strict';
 
 export default function({
-    inputs = document.querySelectorAll('input'),
-    textareas = document.querySelectorAll('textarea')
+    inputs = []
 } = {}) {
 
     inputs.forEach(function(input){
         input.addEventListener('focus', activeInput);
         input.addEventListener('focusout', checkInput);
-    });
-
-    textareas.forEach(function(textarea){
-        textarea.addEventListener('focus', activeInput);
-        textarea.addEventListener('focusout', checkInput);
     });
 }
 
