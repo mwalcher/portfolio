@@ -14,6 +14,7 @@ h1, .h1{
     @include title-font;
     font-size: 3rem;
     line-height: 1.25;
+    margin: 0;
 }
 
 h2, .h2{
@@ -39,7 +40,7 @@ p{
     @include set-font(body);
     font-size: $global-font-size;
     line-height: 1.5;
-    margin-bottom: 1rem;
+    padding-bottom: 1rem;
 }
 
 ul{

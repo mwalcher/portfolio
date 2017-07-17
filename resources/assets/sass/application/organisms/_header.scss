@@ -1,0 +1,44 @@
+@import "../molecules/header/show-navigation";
+
+header{
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: $header-height;
+    @include spacing(padding, all, 0.75rem);
+    background-color: $black;
+    border-bottom: $global-border-width solid $white-off;
+    box-shadow: $global-shadow;
+    z-index: 10;
+
+    @media screen and (min-width: $tablet-breakpoint){
+        display: block;
+        width: 8.5rem;
+        height: 100%;
+        border-bottom: 0;
+        box-shadow: none;
+    }
+
+    .logo{
+        display: block;
+
+        img{
+            display: block;
+            width: 100%;
+            height: 100%;
+            max-width: 6.125rem;
+            max-height: 3.5rem;
+
+            @media screen and (min-width: $tablet-breakpoint){
+                max-width: 7rem;
+                max-height: 100%;
+            }
+        }
+    }
+
+    @import "../molecules/header/mobile-menu";
+    @import "../molecules/header/navigation";
+}

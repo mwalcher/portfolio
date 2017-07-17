@@ -9,6 +9,23 @@
     box-sizing: border-box;
 }
 
+main{
+    padding-top: $header-height;
+
+    @media screen and (min-width: $tablet-breakpoint){
+        padding-top: 0;
+    }
+}
+
+section, footer{
+    min-height: 90vh;
+    min-height: calc(100vh - #{$header-height});
+
+    @media screen and (min-width: $tablet-breakpoint){
+        min-height: 100vh;
+    }
+}
+
 img{
     height: auto;
     max-width: 100%;

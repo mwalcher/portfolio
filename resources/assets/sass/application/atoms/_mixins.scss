@@ -11,10 +11,23 @@
     font-weight: map-get($font, font-weight);
 }
 
-@mixin title-font(){
+@mixin title-font{
     @include set-font(title);
     text-transform: uppercase;
     letter-spacing: 1px;
+}
+
+@mixin font-awesome{
+    font-family: 'FontAwesome';
+    font-size: inherit;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 /*  BUTTONS
@@ -62,7 +75,7 @@
 /*  LAYOUT
     ------------------- */
 
-@mixin invisible {
+@mixin invisible{
     position: absolute;
     top: -625rem;
     left: -625rem;
