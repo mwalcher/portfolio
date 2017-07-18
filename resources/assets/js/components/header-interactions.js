@@ -50,7 +50,34 @@ function activeSection(sections, navItems){
                 }
             });
         }
+        if(section.classList.contains('light-section')){
+            navigationColour(sectionPosition);
+        }
     });
+}
+
+function navigationColour(position){
+    let top = position.top;
+    let bottom = position.bottom;
+    let logo = document.querySelector('header .logo');
+    let navTitle = document.querySelector('.main-navigation h2');
+
+    console.log('top', top);
+    console.log('bottom', bottom);
+
+    // Logo
+    if(top < 76 && bottom > 76){
+        logo.classList.add('dark');
+    }else{
+        logo.classList.remove('dark');
+    }
+
+    // Title
+    if(top < 114 && bottom > 114){
+        navTitle.classList.add('dark');
+    }else{
+        navTitle.classList.remove('dark');
+    }
 }
 
 function requiredField(field){
