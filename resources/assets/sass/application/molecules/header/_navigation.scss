@@ -4,7 +4,7 @@
     right: 0;
     display: flex;
     transform: translateX(100%);
-    transition: transform $global-transition;
+    @include transition(transform);
 
     @media screen and (min-width: $tablet-breakpoint){
         position: static;
@@ -137,7 +137,7 @@
                             background-color: transparent;
                             border: 0.125rem solid $white-off;
                             border-radius: 100%;
-                            transition: background-color $global-transition;
+                            @include transition(background-color);
                         }
                     }
                 }

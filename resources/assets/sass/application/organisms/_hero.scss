@@ -1,9 +1,15 @@
 .hero{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 14rem;
+
     .hero-content{
         text-align: center;
 
         p{
             max-width: 28rem;
+            @include spacing(padding, top, md);
             @include spacing(margin, left right, auto);
         }
     }

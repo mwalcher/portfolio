@@ -22,7 +22,7 @@
         transform: translate(-50%, -50%);
         width: 1.5rem;
         height: 1.5rem;
-        transition: width $global-transition;
+        @include transition(width);
 
         span{
             display: block;
@@ -34,18 +34,18 @@
             &:nth-child(1){
                 transform: rotate(0);
                 transform-origin: top left;
-                transition: width $global-transition, transform $global-transition;
+                @include transition(width transform);
             }
 
             &:nth-child(2){
                 opacity: 1;
-                transition: opacity $global-transition;
+                @include transition(opacity);
             }
 
             &:nth-child(3){
                 transform: rotate(0);
                 transform-origin: bottom left;
-                transition: width $global-transition, transform $global-transition;
+                @include transition(width transform);
             }
         }
     }
