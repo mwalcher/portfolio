@@ -53,6 +53,22 @@
                 @include spacing(padding, top bottom, 1.5rem);
             }
 
+            &.dark-top{
+                &::before{
+                    @media screen and (min-width: $tablet-breakpoint){
+                        color: $black;
+                    }
+                }
+            }
+
+            &.dark-bottom{
+                &::after{
+                    @media screen and (min-width: $tablet-breakpoint){
+                        color: $black;
+                    }
+                }
+            }
+
             &::before, &::after{
                 @media screen and (min-width: $tablet-breakpoint){
                     @include font-awesome;
@@ -61,6 +77,7 @@
                     position: absolute;
                     left: -$extra-small-size;
                     width: $small-size;
+                    @include transition(color);
                 }
             }
 
@@ -84,27 +101,47 @@
                     @include spacing(padding, top bottom, 1.5rem);
                 }
 
-                &::before{
+                &.dark{
+                    &::before, &::after{
+                        @media screen and (min-width: $tablet-breakpoint){
+                            border-color: $black;
+                        }
+                    }
+
+                    a{
+                        @media screen and (min-width: $tablet-breakpoint){
+                            color: $black;
+                        }
+
+                        &::before{
+                            @media screen and (min-width: $tablet-breakpoint){
+                                border-color: $black;
+                            }
+                        }
+                    }
+                }
+
+                &::before, &::after{
                     @media screen and (min-width: $tablet-breakpoint){
                         content: "";
                         position: absolute;
-                        top: -1.5rem;
                         left: 0;
                         transform: translateX(-100%);
                         height: 3rem;
                         border-left: 0.125rem solid $white-off;
+                        @include transition(border-color);
+                    }
+                }
+
+                &::before{
+                    @media screen and (min-width: $tablet-breakpoint){
+                        top: -1.5rem;
                     }
                 }
 
                 &::after{
                     @media screen and (min-width: $tablet-breakpoint){
-                        content: "";
-                        position: absolute;
                         top: 2.5rem;
-                        left: 0;
-                        transform: translateX(-100%);
-                        height: 3rem;
-                        border-left: 0.125rem solid $white-off;
                     }
                 }
 
@@ -128,6 +165,7 @@
                     @media screen and (min-width: $tablet-breakpoint){
                         position: relative;
                         @include spacing(padding, left, 1.5rem);
+                        @include transition(color);
                     }
 
                     &::before{
@@ -142,7 +180,7 @@
                             background-color: transparent;
                             border: 0.125rem solid $white-off;
                             border-radius: 100%;
-                            transition: background-color $global-transition;
+                            @include transition(background-color border-color);
                         }
                     }
                 }

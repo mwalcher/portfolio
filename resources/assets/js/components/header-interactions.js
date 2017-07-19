@@ -7,13 +7,15 @@ const page = document.querySelector('html');
 
 export default function({
     mobileMenu = requiredField('Mobile Menu'),
-    navigation = [],
+    navigation = requiredField('Main Navigation'),
     sections = []
 } = {}) {
 
+    const navigationItems = navigation.querySelectorAll('a');
+
     mobileMenu.addEventListener('click', toggleNavigation);
 
-    navigation.forEach(function(navItem){
+    navigationItems.forEach(function(navItem){
         navItem.addEventListener('click', function(e){
             e.preventDefault();
             smoothScroll({
@@ -38,11 +40,13 @@ function toggleNavigation(){
     page.classList.toggle('show-navigation');
 }
 
-function activeSection(sections, navItems){
+function activeSection(sections, navigation){
+    const navigationItems = navigation.querySelectorAll('a');
+
     sections.forEach(function(section){
         let sectionPosition = section.getBoundingClientRect();
         if(-200 <= sectionPosition.top && sectionPosition.top <= 200){
-            navItems.forEach(function(navItem){
+            navigationItems.forEach(function(navItem){
                 if(section.id == navItem.href.split('#')[1]){
                     navItem.classList.add('active');
                 }else{
@@ -51,19 +55,18 @@ function activeSection(sections, navItems){
             });
         }
         if(section.classList.contains('light-section')){
-            navigationColour(sectionPosition);
+            navigationColour(navigation, sectionPosition);
         }
     });
 }
 
-function navigationColour(position){
+function navigationColour(navigation, position){
+    const logo = document.querySelector('header .logo');
+    const navigationTitle = document.querySelector('.main-navigation h2');
+    const navigationItems = navigation.querySelectorAll('a');
+
     let top = position.top;
     let bottom = position.bottom;
-    let logo = document.querySelector('header .logo');
-    let navTitle = document.querySelector('.main-navigation h2');
-
-    console.log('top', top);
-    console.log('bottom', bottom);
 
     // Logo
     if(top < 76 && bottom > 76){
@@ -74,10 +77,31 @@ function navigationColour(position){
 
     // Title
     if(top < 114 && bottom > 114){
-        navTitle.classList.add('dark');
+        navigationTitle.classList.add('dark');
     }else{
-        navTitle.classList.remove('dark');
+        navigationTitle.classList.remove('dark');
     }
+
+    // Navigation
+    navigationItems.forEach(function(navItem, index) {
+        let offset = 198 + (64 * (index));
+
+        if(top < offset && bottom > offset){
+            navItem.parentNode.classList.add('dark');
+            if(index == 0){
+                navigation.classList.add('dark-top');
+            }else if(index == (navigationItems.length - 1)){
+                navigation.classList.add('dark-bottom');
+            }
+        }else{
+            navItem.parentNode.classList.remove('dark');
+            if(index == 0){
+                navigation.classList.remove('dark-top');
+            }else if(index == (navigationItems.length - 1)){
+                navigation.classList.remove('dark-bottom');
+            }
+        }
+    });
 }
 
 function requiredField(field){
