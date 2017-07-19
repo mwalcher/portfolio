@@ -68,8 +68,11 @@ function navigationColour(navigation, position){
     let top = position.top;
     let bottom = position.bottom;
 
+    console.log(top);
+    console.log(bottom);
+
     // Logo
-    if(top < 76 && bottom > 76){
+    if(top < 56 && bottom > 56){
         logo.classList.add('dark');
     }else{
         logo.classList.remove('dark');
