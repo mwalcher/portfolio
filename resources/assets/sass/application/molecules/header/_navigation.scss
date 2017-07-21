@@ -18,6 +18,7 @@
 
     h2{
         display: none;
+        color: $white-off;
         font-size: 0.975rem;
         @include transition(color);
 
@@ -72,6 +73,7 @@
             &::before, &::after{
                 @media screen and (min-width: $tablet-breakpoint){
                     @include font-awesome;
+                    color: $white-off;
                     font-size: 1.5rem;
                     line-height: 0.5;
                     position: absolute;
@@ -226,7 +228,7 @@
                     }
 
                     .icon{
-                        background-color: $green;
+                        background-color: $white-off;
 
                         &::before{
                             color: $white-off;
