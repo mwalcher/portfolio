@@ -11,7 +11,7 @@ document.addEventListener('readystatechange', function(){
         // Header Component
         headerInteractions({
             mobileMenu: document.querySelector('#mobile-menu'),
-            navigation: document.querySelectorAll('header .page-navigation a'),
+            navigation: document.querySelector('header .page-navigation'),
             sections: document.querySelectorAll('.section')
         });
 
