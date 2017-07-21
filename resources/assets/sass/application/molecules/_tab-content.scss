@@ -56,13 +56,18 @@
                 border-left: 0;
             }
 
-            &:hover, &.active{
+            &:hover, &:focus, &.active{
                 height: 4.5rem;
+            }
+
+            &:hover, &:focus{
+                background-color: $green-rgba-dark;
             }
 
             &.active{
                 color: $black;
                 background-color: $white;
+                pointer-events: none;
             }
         }
     }
