@@ -1,6 +1,8 @@
 <header>
     <a href="/" class="logo no-hover" title="Home">
-        <img src="images/mwalcher-logo-light.svg" alt="mwalcher logo" />
+        <span class="logoContainer">
+            @include('logos/mwalcher-logo')
+        </span>
     </a>
 
     <button id="mobile-menu">
