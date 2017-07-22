@@ -7,31 +7,33 @@
 
     <div class="tab-content">
         <div class="tab-container">
-            <h2 class="tab active" data-toggle="skills" title="Skills">Skills</h2>
-            <h2 class="tab" data-toggle="tools" title="Tools">Tools</h2>
+            @foreach (__($page.'.tab-content') as $tabContent)
+            <button class="tab @if($loop->index == 0)active @endif" data-toggle="{!! $tabContent['title'] !!}" title="{!! $tabContent['title'] !!}">{!! $tabContent['title'] !!}</button>
+            @endforeach
         </div>
 
         <div class="tab-content-container">
-            <div class="content-container active" data-toggle-content="skills">
+            @foreach (__($page.'.tab-content') as $tabContent)
+            <div class="content-container @if($loop->index == 0)active @endif" data-toggle-content="{!! $tabContent['title'] !!}">
+                <h2 class="invisible">{!! $tabContent['title'] !!}</h2>
+                @if ($tabContent['list'])
                 <div class="interactive-icon-block">
+                    @foreach ($tabContent['list'] as $listItem)
                     <div class="icon-container">
                         <div class="shape">
                             <div class="icon">
-                                <div class="image" style="background-image:url('{!! asset('images') !!}/icon-laravel.svg');"></div>
+                                <div class="image" style="background-image:url('{!! asset('images') !!}/icon-{!! $listItem['icon'] !!}.svg');"></div>
                             </div>
                             <div class="label">
-                                <h3>Laravel</h3>
+                                <h3>{!! $listItem['label'] !!}</h3>
                             </div>
                         </div>
                     </div>
+                    @endforeach
                 </div>
+                @endif
             </div>
-
-            <div class="content-container" data-toggle-content="tools">
-                <div class="interactive-icon-block">
-
-                </div>
-            </div>
+            @endforeach
         </div>
     </div>
 </section>

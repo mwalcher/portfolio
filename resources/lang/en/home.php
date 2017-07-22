@@ -35,6 +35,50 @@ return [
         'sub-title' => 'Front-end Web Developer',
         'content' => 'I am a detail oriented problem solver who is determined to find a solution even if it does not come easily.'
     ],
+    'tab-content' => [
+        'skills' => [
+            'title' => 'Skills',
+            'list' => [
+                'html-css-js' => [
+                    'label' => 'HTML CSS JavaScript',
+                    'icon' => 'html-css-js'
+                ],
+                'sass' => [
+                    'label' => 'Sass',
+                    'icon' => 'sass'
+                ],
+                'php-mysql' => [
+                    'label' => 'PHP MySQL',
+                    'icon' => 'php-mysql'
+                ],
+                'ajax-json' => [
+                    'label' => 'AJAX JSON',
+                    'icon' => 'ajax-json'
+                ]
+            ]
+        ],
+        'tools' => [
+            'title' => 'Tools',
+            'list' => [
+                'git' => [
+                    'label' => 'Git',
+                    'icon' => 'git'
+                ],
+                'codeigniter' => [
+                    'label' => 'Codeigniter',
+                    'icon' => 'codeigniter'
+                ],
+                'laravel' => [
+                    'label' => 'Laravel',
+                    'icon' => 'laravel'
+                ],
+                'concrete' => [
+                    'label' => 'concrete5',
+                    'icon' => 'concrete'
+                ]
+            ]
+        ]
+    ],
     'main-content' => [
         'id' => 'work',
         'main-title' => 'Projects'
