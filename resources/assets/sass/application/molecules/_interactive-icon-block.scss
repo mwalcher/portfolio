@@ -13,6 +13,12 @@
         perspective: 37.5rem;
         cursor: pointer;
 
+        &:hover{
+            .shape{
+                transform: rotateY(180deg);
+            }
+        }
+
         .shape{
             position: absolute;
             top: 0;
@@ -26,10 +32,6 @@
             transition: transform 1s;
             transform: rotateY(0deg);
             @include transition(transform);
-
-            &:hover{
-                transform: rotateY(180deg);
-            }
 
             .icon, .label{
                 position: absolute;
