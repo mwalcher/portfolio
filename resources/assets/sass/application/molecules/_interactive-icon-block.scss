@@ -1,0 +1,77 @@
+.interactive-icon-block{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    height: 100%;
+
+    .icon-container{
+        position: relative;
+        width: 8.25rem;
+        height: 7.125rem;
+        background-color: transparent;
+        perspective: 37.5rem;
+        cursor: pointer;
+
+        .shape{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 0;
+            border-width: 0 4.125rem 7.125rem 4.125rem;
+            border-style: solid;
+            border-color: transparent;
+            transform-style: preserve-3d;
+            transition: transform 1s;
+            transform: rotateY(0deg);
+            @include transition(transform);
+
+            &:hover{
+                transform: rotateY(180deg);
+            }
+
+            .icon, .label{
+                position: absolute;
+                top: 0;
+                left: -4.125rem;
+                display: block;
+                border-width: 0 4.125rem 7.125rem 4.125rem;
+                border-style: solid;
+                backface-visibility: hidden;
+            }
+
+            .icon{
+                border-color: transparent transparent $black transparent;
+
+                .image{
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    background-size: contain;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 4.125rem;
+                    height: 3.5rem;
+                    transform: translate(-50%, 90%);
+                }
+            }
+
+            .label{
+                border-color: transparent transparent $green transparent;
+                transform: rotateY(180deg);
+
+                h3{
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    transform: translate(-50%, 5rem);
+                    color: $white-off;
+                    @include set-font(body);
+                    font-size: $global-font-size;
+                    letter-spacing: 0;
+                }
+            }
+        }
+    }
+}

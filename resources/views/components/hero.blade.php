@@ -7,21 +7,30 @@
 
     <div class="tab-content">
         <div class="tab-container">
-            <button class="tab active" data-toggle="skills" title="Skills">Skills</button>
-            <button class="tab" data-toggle="tools" title="Tools">Tools</button>
+            <h2 class="tab active" data-toggle="skills" title="Skills">Skills</h2>
+            <h2 class="tab" data-toggle="tools" title="Tools">Tools</h2>
         </div>
 
         <div class="tab-content-container">
             <div class="content-container active" data-toggle-content="skills">
-                <p>
-                    Skills
-                </p>
+                <div class="interactive-icon-block">
+                    <div class="icon-container">
+                        <div class="shape">
+                            <div class="icon">
+                                <div class="image" style="background-image:url('{!! asset('images') !!}/icon-laravel.svg');"></div>
+                            </div>
+                            <div class="label">
+                                <h3>Laravel</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <div class="content-container" data-toggle-content="tools">
-                <p>
-                    Tools
-                </p>
+                <div class="interactive-icon-block">
+
+                </div>
             </div>
         </div>
     </div>
