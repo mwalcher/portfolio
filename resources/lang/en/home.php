@@ -47,13 +47,13 @@ return [
                     'label' => 'Sass',
                     'icon' => 'sass'
                 ],
-                'php-mysql' => [
-                    'label' => 'PHP MySQL',
-                    'icon' => 'php-mysql'
-                ],
                 'ajax-json' => [
                     'label' => 'AJAX JSON',
                     'icon' => 'ajax-json'
+                ],
+                'php-mysql' => [
+                    'label' => 'PHP MySQL',
+                    'icon' => 'php-mysql'
                 ]
             ]
         ],
@@ -64,13 +64,13 @@ return [
                     'label' => 'Git',
                     'icon' => 'git'
                 ],
-                'codeigniter' => [
-                    'label' => 'Codeigniter',
-                    'icon' => 'codeigniter'
-                ],
                 'laravel' => [
                     'label' => 'Laravel',
                     'icon' => 'laravel'
+                ],
+                'codeigniter' => [
+                    'label' => 'Codeigniter',
+                    'icon' => 'codeigniter'
                 ],
                 'concrete' => [
                     'label' => 'concrete5',
