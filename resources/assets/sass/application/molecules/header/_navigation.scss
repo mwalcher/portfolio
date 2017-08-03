@@ -4,7 +4,7 @@
     right: 0;
     display: flex;
     transform: translateX(100%);
-    transition: transform $global-transition;
+    @include transition(transform);
 
     @media screen and (min-width: $tablet-breakpoint){
         position: static;
@@ -231,7 +231,7 @@
                         background-color: $white-off;
 
                         &::before{
-                            color: $white-off;
+                            color: $green;
                         }
                     }
                 }

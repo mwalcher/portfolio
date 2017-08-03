@@ -4,6 +4,7 @@ NodeList.prototype.forEach = NodeList.prototype.forEach || Array.prototype.forEa
 
 import headerInteractions from './components/header-interactions';
 import formInteractions from './components/form-interactions';
+import toggleActive from './components/toggle-active';
 
 document.addEventListener('readystatechange', function(){
     if(document.readyState === 'complete'){
@@ -18,6 +19,11 @@ document.addEventListener('readystatechange', function(){
         // Forms
         formInteractions({
             inputs: document.querySelectorAll('input, textarea')
+        });
+
+        // Tab Container
+        toggleActive({
+            triggers: document.querySelectorAll('[data-toggle]')
         });
     }
 });

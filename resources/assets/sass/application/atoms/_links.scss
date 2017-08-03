@@ -20,7 +20,7 @@
             @include transition(border-color transform);
         }
 
-        &:hover{
+        &:hover, &:focus{
             &::after{
                 border-color: $green;
                 transform: translateY(0);
@@ -73,7 +73,7 @@
             z-index: -1;
         }
 
-        &:hover{
+        &:hover, &:focus{
             &::after{
                 height: 250%;
             }

@@ -31,7 +31,53 @@ return [
     'background' => asset('images').'/hero-home.jpg',
     'hero' => [
         'id' => 'about',
-        'main-title' => 'Matthew Walcher'
+        'main-title' => 'Matthew Walcher',
+        'sub-title' => 'Front-end Web Developer',
+        'content' => 'I am a detail oriented problem solver who is determined to find a solution even if it does not come easily.'
+    ],
+    'tab-content' => [
+        'skills' => [
+            'title' => 'Skills',
+            'list' => [
+                'html-css-js' => [
+                    'label' => 'HTML CSS JavaScript',
+                    'icon' => 'html-css-js'
+                ],
+                'sass' => [
+                    'label' => 'Sass',
+                    'icon' => 'sass'
+                ],
+                'ajax-json' => [
+                    'label' => 'AJAX JSON',
+                    'icon' => 'ajax-json'
+                ],
+                'php-mysql' => [
+                    'label' => 'PHP MySQL',
+                    'icon' => 'php-mysql'
+                ]
+            ]
+        ],
+        'tools' => [
+            'title' => 'Tools',
+            'list' => [
+                'git' => [
+                    'label' => 'Git',
+                    'icon' => 'git'
+                ],
+                'laravel' => [
+                    'label' => 'Laravel',
+                    'icon' => 'laravel'
+                ],
+                'codeigniter' => [
+                    'label' => 'Codeigniter',
+                    'icon' => 'codeigniter'
+                ],
+                'concrete' => [
+                    'label' => 'concrete5',
+                    'icon' => 'concrete'
+                ]
+            ]
+        ]
     ],
     'main-content' => [
         'id' => 'work',
