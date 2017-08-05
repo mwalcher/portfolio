@@ -13,7 +13,7 @@
         height: 16.25rem;
     }
 
-    @media screen and (min-width: $tablet-breakpoint){
+    @media screen and (min-width: $header-breakpoint){
         @include spacing(padding, left, 9.25rem);
     }
 
@@ -31,7 +31,7 @@
         transform: translateY(-99%);
         @include spacing(padding, left right, 0.75rem);
 
-        @media screen and (min-width: $tablet-breakpoint){
+        @media screen and (min-width: $header-breakpoint){
             @include spacing(padding, left, 9.25rem);
         }
 

@@ -6,7 +6,7 @@
     transform: translateX(100%);
     @include transition(transform);
 
-    @media screen and (min-width: $tablet-breakpoint){
+    @media screen and (min-width: $header-breakpoint){
         position: static;
         top: auto;
         right: auto;
@@ -22,7 +22,7 @@
         font-size: 0.975rem;
         @include transition(color);
 
-        @media screen and (min-width: $tablet-breakpoint){
+        @media screen and (min-width: $header-breakpoint){
             display: block;
         }
 
@@ -34,20 +34,20 @@
     ul{
         background-color: $black;
 
-        @media screen and (min-width: $tablet-breakpoint){
+        @media screen and (min-width: $header-breakpoint){
             background-color: transparent;
         }
 
         & ~ ul{
             border-left: $global-border-width solid $white-off;
 
-            @media screen and (min-width: $tablet-breakpoint){
+            @media screen and (min-width: $header-breakpoint){
                 border-left: 0;
             }
         }
 
         &.page-navigation{
-            @media screen and (min-width: $tablet-breakpoint){
+            @media screen and (min-width: $header-breakpoint){
                 position: relative;
                 margin-top: 1.25rem;
                 margin-left: $extra-small-size;
@@ -56,7 +56,7 @@
 
             &.dark-top{
                 &::before{
-                    @media screen and (min-width: $tablet-breakpoint){
+                    @media screen and (min-width: $header-breakpoint){
                         color: $black;
                     }
                 }
@@ -64,14 +64,14 @@
 
             &.dark-bottom{
                 &::after{
-                    @media screen and (min-width: $tablet-breakpoint){
+                    @media screen and (min-width: $header-breakpoint){
                         color: $black;
                     }
                 }
             }
 
             &::before, &::after{
-                @media screen and (min-width: $tablet-breakpoint){
+                @media screen and (min-width: $header-breakpoint){
                     @include font-awesome;
                     color: $white-off;
                     font-size: 1.5rem;
@@ -84,46 +84,46 @@
             }
 
             &::before{
-                @media screen and (min-width: $tablet-breakpoint){
+                @media screen and (min-width: $header-breakpoint){
                     content: "\f0d8";
                     top: -0.65rem;
                 }
             }
 
             &::after{
-                @media screen and (min-width: $tablet-breakpoint){
+                @media screen and (min-width: $header-breakpoint){
                     content: "\f0d7";
                     bottom: -0.4rem;
                 }
             }
 
             li{
-                @media screen and (min-width: $tablet-breakpoint){
+                @media screen and (min-width: $header-breakpoint){
                     position: relative;
                     @include spacing(padding, top bottom, 1.5rem);
                 }
 
                 &.dark{
                     &::before, &::after{
-                        @media screen and (min-width: $tablet-breakpoint){
+                        @media screen and (min-width: $header-breakpoint){
                             border-color: $black;
                         }
                     }
 
                     a{
-                        @media screen and (min-width: $tablet-breakpoint){
+                        @media screen and (min-width: $header-breakpoint){
                             color: $black;
                         }
 
                         &::before{
-                            @media screen and (min-width: $tablet-breakpoint){
+                            @media screen and (min-width: $header-breakpoint){
                                 border-color: $black;
                             }
                         }
 
                         &:hover, &:focus{
                             &::before{
-                                @media screen and (min-width: $tablet-breakpoint){
+                                @media screen and (min-width: $header-breakpoint){
                                     background-color: $black;
                                 }
                             }
@@ -132,7 +132,7 @@
                 }
 
                 &::before, &::after{
-                    @media screen and (min-width: $tablet-breakpoint){
+                    @media screen and (min-width: $header-breakpoint){
                         content: "";
                         position: absolute;
                         left: 0;
@@ -144,20 +144,20 @@
                 }
 
                 &::before{
-                    @media screen and (min-width: $tablet-breakpoint){
+                    @media screen and (min-width: $header-breakpoint){
                         top: -1.5rem;
                     }
                 }
 
                 &::after{
-                    @media screen and (min-width: $tablet-breakpoint){
+                    @media screen and (min-width: $header-breakpoint){
                         top: 2.5rem;
                     }
                 }
 
                 &:first-child{
                     &::after{
-                        @media screen and (min-width: $tablet-breakpoint){
+                        @media screen and (min-width: $header-breakpoint){
                             display: none;
                         }
                     }
@@ -165,21 +165,21 @@
 
                 &:last-child{
                     &::before{
-                        @media screen and (min-width: $tablet-breakpoint){
+                        @media screen and (min-width: $header-breakpoint){
                             display: none;
                         }
                     }
                 }
 
                 a{
-                    @media screen and (min-width: $tablet-breakpoint){
+                    @media screen and (min-width: $header-breakpoint){
                         position: relative;
                         @include spacing(padding, left, 1.5rem);
                         @include transition(color);
                     }
 
                     &::before{
-                        @media screen and (min-width: $tablet-breakpoint){
+                        @media screen and (min-width: $header-breakpoint){
                             content: "";
                             position: absolute;
                             top: 50%;
@@ -197,7 +197,7 @@
                     &:hover, &:focus{
                         outline: none;
                         &::before{
-                            @media screen and (min-width: $tablet-breakpoint){
+                            @media screen and (min-width: $header-breakpoint){
                                 background-color: $white-off;
                             }
                         }
@@ -205,7 +205,7 @@
 
                     &.active, &:hover.active, &:focus.active{
                         &::before{
-                            @media screen and (min-width: $tablet-breakpoint){
+                            @media screen and (min-width: $header-breakpoint){
                                 background-color: $green;
                             }
                         }
@@ -215,7 +215,7 @@
         }
 
         &.links-navigation{
-            @media screen and (min-width: $tablet-breakpoint){
+            @media screen and (min-width: $header-breakpoint){
                 display: none;
             }
         }
@@ -226,7 +226,7 @@
             height: 6.25rem;
             @include spacing(padding, top bottom, xs);
 
-            @media screen and (min-width: $tablet-breakpoint){
+            @media screen and (min-width: $header-breakpoint){
                 text-align: left;
                 width: auto;
                 height: auto;
@@ -235,7 +235,7 @@
             & ~ li{
                 border-top: $global-border-width solid $white-off;
 
-                @media screen and (min-width: $tablet-breakpoint){
+                @media screen and (min-width: $header-breakpoint){
                     border-top: 0;
                 }
             }
@@ -263,7 +263,7 @@
                     background-color: $white-off;
                     border-radius: 100%;
 
-                    @media screen and (min-width: $tablet-breakpoint){
+                    @media screen and (min-width: $header-breakpoint){
                         display: none;
                     }
 

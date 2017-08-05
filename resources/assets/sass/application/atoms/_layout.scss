@@ -35,7 +35,7 @@
     margin-right: auto;
     @include spacing(padding, left right, 0.75rem);
 
-    @media screen and (min-width: $tablet-breakpoint){
+    @media screen and (min-width: $header-breakpoint){
         @include spacing(padding, left, 9.25rem);
     }
 
