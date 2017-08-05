@@ -120,6 +120,14 @@
                                 border-color: $black;
                             }
                         }
+
+                        &:hover, &:focus{
+                            &::before{
+                                @media screen and (min-width: $tablet-breakpoint){
+                                    background-color: $black;
+                                }
+                            }
+                        }
                     }
                 }
 
@@ -185,6 +193,23 @@
                             @include transition(background-color border-color);
                         }
                     }
+
+                    &:hover, &:focus{
+                        outline: none;
+                        &::before{
+                            @media screen and (min-width: $tablet-breakpoint){
+                                background-color: $white-off;
+                            }
+                        }
+                    }
+
+                    &.active, &:hover.active, &:focus.active{
+                        &::before{
+                            @media screen and (min-width: $tablet-breakpoint){
+                                background-color: $green;
+                            }
+                        }
+                    }
                 }
             }
         }
@@ -221,15 +246,7 @@
                 text-transform: uppercase;
 
                 &.active{
-                    &::before{
-                        @media screen and (min-width: $tablet-breakpoint){
-                            background-color: $green;
-                        }
-                    }
-
                     .icon{
-                        background-color: $white-off;
-
                         &::before{
                             color: $green;
                         }
