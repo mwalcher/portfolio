@@ -10,20 +10,20 @@ body{
     -webkit-font-smoothing: antialiased;
 }
 
-h1, .h1{
+h1{
     @include title-font;
     font-size: 3rem;
     line-height: 1.25;
     margin: 0;
 }
 
-h2, .h2{
+h2{
     @include title-font;
     font-size: 2rem;
     line-height: 1.25;
 }
 
-h3, .h3{
+h3{
     @include title-font;
     font-size: 1.5rem;
     line-height: 1.25;
