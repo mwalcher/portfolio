@@ -1,0 +1,18 @@
+.featured-content{
+    @include set-background-colour($black);
+    position: relative;
+
+    .content{
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        min-height: 50vh;
+        padding: $medium-size;
+
+        .button{
+            @include button-colour($button-light);
+        }
+    }
+}

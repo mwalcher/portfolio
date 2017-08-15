@@ -40,7 +40,7 @@ p{
     @include set-font(body);
     font-size: $global-font-size;
     line-height: 1.5;
-    padding-bottom: 1rem;
+    padding-bottom: $small-size;
 }
 
 ul{

@@ -104,7 +104,7 @@
             @include transition(transform);
 
             @media screen and (min-width: $laptop-breakpoint){
-                @include spacing(padding, left right, 2rem);
+                @include spacing(padding, left right, md);
             }
 
             &:first-child{
