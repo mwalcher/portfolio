@@ -11,28 +11,19 @@ body{
 }
 
 h1{
-    @include title-font;
-    font-size: 3rem;
-    line-height: 1.25;
-    margin: 0;
+    @include h1;
 }
 
 h2{
-    @include title-font;
-    font-size: 2rem;
-    line-height: 1.25;
+    @include h2;
 }
 
 h3{
-    @include title-font;
-    font-size: 1.5rem;
-    line-height: 1.25;
+    @include h3;
 }
 
 label{
-    @include title-font;
-    font-size: 1.5rem;
-    line-height: 1.25;
+    @include h3;
     @include transition(font-size top);
 }
 

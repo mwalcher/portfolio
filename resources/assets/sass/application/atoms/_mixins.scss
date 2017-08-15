@@ -30,6 +30,25 @@
     letter-spacing: 1px;
 }
 
+@mixin h1{
+    @include title-font;
+    font-size: 3rem;
+    line-height: 1.25;
+    margin: 0;
+}
+
+@mixin h2{
+    @include title-font;
+    font-size: 2rem;
+    line-height: 1.25;
+}
+
+@mixin h3{
+    @include title-font;
+    font-size: 1.5rem;
+    line-height: 1.25;
+}
+
 /*  BUTTONS
     ------------------- */
 
