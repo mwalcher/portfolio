@@ -2,6 +2,46 @@
     @include set-background-colour($black);
     position: relative;
 
+    &.musicbook{
+        .content{
+            .button{
+                &::after{
+                    background-color: $musicbook-rgba;
+                }
+            }
+        }
+    }
+
+    &.sex-ed{
+        .content{
+            .button{
+                &::after{
+                    background-color: $sex-ed-rgba;
+                }
+            }
+        }
+    }
+
+    &.smart-fridge{
+        .content{
+            .button{
+                &::after{
+                    background-color: $smart-fridge-rgba;
+                }
+            }
+        }
+    }
+
+    &.truckladders{
+        .content{
+            .button{
+                &::after{
+                    background-color: $truckladders-rgba;
+                }
+            }
+        }
+    }
+
     .content{
         position: relative;
         display: flex;
@@ -10,6 +50,15 @@
         align-items: center;
         min-height: 50vh;
         padding: $medium-size;
+
+        .title{
+            @include h2;
+            padding-bottom: 0;
+        }
+
+        .description{
+            max-width: 14rem;
+        }
 
         .button{
             @include button-colour($button-light);

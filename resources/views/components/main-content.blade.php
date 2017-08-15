@@ -6,7 +6,7 @@
     $projects = __($page.'.main-content.featured-content');
     $default = reset($projects);
     ?>
-    <div class="featured-content">
+    <div class="featured-content {{ key($projects) }}">
         <div class="absolute-background" style="background-image: url({{ $default['image'] }})"></div>
         <div class="content">
             <p class="title">{!! $default['name'] !!}</p>
