@@ -1,5 +1,7 @@
 'use strict';
 
+import smoothScroll from './smooth-scroll';
+
 const activeClass = 'active';
 
 export default function({
@@ -19,13 +21,13 @@ function toggleActive(target, triggerList, toggleContentList){
     let toggleContent = [];
 
     triggerList.forEach(function(trigger){
-        if(target.dataset.toggleParent == trigger.dataset.toggleParent){
+        if(target.dataset.parent == trigger.dataset.parent){
             triggers.push(trigger);
         }
     });
 
     toggleContentList.forEach(function(content){
-        if(target.dataset.toggleParent == content.dataset.toggleParent){
+        if(target.dataset.parent == content.dataset.parent){
             toggleContent.push(content);
         }
     });
@@ -42,4 +44,10 @@ function toggleActive(target, triggerList, toggleContentList){
             content.classList.remove(activeClass);
         }
     });
+
+    if(target.dataset.scroll == 'true'){
+        smoothScroll({
+            trigger: target
+        });
+    }
 }

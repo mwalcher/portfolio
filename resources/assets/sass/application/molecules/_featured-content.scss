@@ -1,4 +1,4 @@
-.featured-content{
+#featured-content{
     position: relative;
 
     .featured-container{
@@ -68,7 +68,12 @@
 
             .title{
                 @include h2;
+                font-size: 1.75rem;
                 padding-bottom: 0;
+
+                @media screen and (min-width: $phone-breakpoint){
+                    font-size: 2rem;
+                }
             }
 
             .description{

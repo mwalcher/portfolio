@@ -1,6 +1,5 @@
 'use strict';
 
-const page = document.querySelector('html');
 const headerOffset = 80;
 const headerBreakpoint = 740;
 
@@ -14,13 +13,29 @@ export default function({
 
 function smoothScroll(trigger, speed){
     let windowPosition = window.pageYOffset;
-    let targetID = trigger.href.split('#')[1];
+
+    let targetID;
+    if(trigger.href){
+        targetID = trigger.href.split('#')[1];
+    }else if(trigger.dataset.parent){
+        targetID = trigger.dataset.parent;
+    }
+
     let target = document.getElementById(targetID);
+
+    if(!target){
+        return;
+    }
+
     let targetOffset = target.offsetTop;
 
-    if(page.classList.contains('show-navigation')
-    && !window.matchMedia(`(min-width: ${headerBreakpoint}px)`).matches){
+    if(!window.matchMedia(`(min-width: ${headerBreakpoint}px)`).matches){
         targetOffset = targetOffset - headerOffset;
+    }
+
+    if(target.parentNode.classList.contains('section')){
+        let parent = target.parentNode;
+        targetOffset = parent.offsetTop + targetOffset;
     }
 
     if(target.classList.contains('main-content')){
