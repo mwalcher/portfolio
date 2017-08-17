@@ -2,23 +2,27 @@
     <h2>{!! __($page.'.main-content.main-title') !!}</h2>
 
     @if(__($page.'.main-content.featured-content'))
-    <?php
-    $projects = __($page.'.main-content.featured-content');
-    $default = reset($projects);
-    ?>
-    <div class="featured-content {{ key($projects) }}">
-        <div class="absolute-background" style="background-image: url({{ $default['image'] }})"></div>
-        <div class="content">
-            <p class="title">{!! $default['name'] !!}</p>
-            <p class="description">{!! $default['description'] !!}</p>
-            <a href="{!! $default['link'] !!}" class="button" title="View {!! $default['name'] !!}">View Project</a>
+    <?php $projects = __($page.'.main-content.featured-content'); ?>
+    <div class="featured-content">
+        @foreach ($projects as $key => $project)
+        <div class="featured-container {{ $key }} @if($loop->index == 0)active @endif" data-toggle-content="{{ $key }}" data-toggle-parent="featured-content">
+            <div class="absolute-background" style="background-image: url({{ $project['image'] }})"></div>
+            <div class="content">
+                <p class="title">{!! $project['name'] !!}</p>
+                <p class="description">{!! $project['description'] !!}</p>
+                <a href="{!! $project['link'] !!}" class="button" title="View {!! $project['name'] !!}">View Project</a>
+            </div>
         </div>
+        @endforeach
     </div>
 
     <ul class="project-list">
-        @foreach (__($page.'.main-content.featured-content') as $project)
-        <li>
-            {!! $project['name'] !!}
+        @foreach ($projects as $key => $project)
+        <li class="project {{ $key }} @if($loop->index == 0)active @endif" data-toggle="{{ $key }}" data-toggle-parent="featured-content">
+            <div class="absolute-background" style="background-image: url({{ $project['image'] }})"></div>
+            <div class="content">
+                <h3>{!! $project['name'] !!}</h3>
+            </div>
         </li>
         @endforeach
     </ul>

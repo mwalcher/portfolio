@@ -1,0 +1,60 @@
+.project-list{
+    padding-top: 1.5rem;
+
+    .project{
+        position: relative;
+        @include set-background-colour($black);
+        @include transition(background-color);
+        cursor: pointer;
+
+        & ~ .project{
+            margin-top: 0.75rem;
+        }
+
+        &:hover, &:focus{
+            &.musicbook{
+                @include set-background-colour(darken($musicbook, 10%));
+            }
+
+            &.sex-ed{
+                @include set-background-colour(darken($sex-ed, 10%));
+            }
+
+            &.smart-fridge{
+                @include set-background-colour(darken($smart-fridge, 10%));
+            }
+
+            &.truckladders{
+                @include set-background-colour(darken($truckladders, 10%));
+            }
+        }
+
+        &.active{
+            &.musicbook{
+                @include set-background-colour($musicbook);
+            }
+
+            &.sex-ed{
+                @include set-background-colour($sex-ed);
+            }
+
+            &.smart-fridge{
+                @include set-background-colour($smart-fridge);
+            }
+
+            &.truckladders{
+                @include set-background-colour($truckladders);
+            }
+        }
+
+        .content{
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 6.25rem;
+            padding: $medium-size;
+        }
+    }
+}

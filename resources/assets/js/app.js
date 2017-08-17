@@ -23,7 +23,8 @@ document.addEventListener('readystatechange', function(){
 
         // Tab Container
         toggleActive({
-            triggers: document.querySelectorAll('[data-toggle]')
+            triggers: document.querySelectorAll('[data-toggle]'),
+            toggleContent: document.querySelectorAll('[data-toggle-content]')
         });
     }
 });
