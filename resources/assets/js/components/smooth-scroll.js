@@ -23,6 +23,12 @@ function smoothScroll(trigger, speed){
         targetOffset = targetOffset - headerOffset;
     }
 
+    if(target.classList.contains('main-content')){
+        let tabContent = document.querySelector('.tab-content');
+        let tabContentOffset = tabContent.offsetHeight / 2;
+        targetOffset = targetOffset + tabContentOffset;
+    }
+
     let counter = setInterval(function() {
         windowPosition;
 
