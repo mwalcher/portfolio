@@ -1,0 +1,13 @@
+.main-content{
+    text-align: center;
+    padding-top: 13rem;
+    padding-bottom: 4.5rem;
+
+    @media screen and (min-width: $phone-breakpoint){
+        padding-top: 12rem;
+    }
+
+    h2{
+        padding-bottom: $medium-size;
+    }
+}

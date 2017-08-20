@@ -11,12 +11,6 @@
     font-weight: map-get($font, font-weight);
 }
 
-@mixin title-font{
-    @include set-font(title);
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
 @mixin font-awesome{
     font-family: 'FontAwesome';
     font-size: inherit;
@@ -28,6 +22,31 @@
     text-rendering: auto;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+}
+
+@mixin title-font{
+    @include set-font(title);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+@mixin h1{
+    @include title-font;
+    font-size: 3rem;
+    line-height: 1.25;
+    margin: 0;
+}
+
+@mixin h2{
+    @include title-font;
+    font-size: 2rem;
+    line-height: 1.25;
+}
+
+@mixin h3{
+    @include title-font;
+    font-size: 1.5rem;
+    line-height: 1.25;
 }
 
 /*  BUTTONS
@@ -88,6 +107,10 @@
 @mixin set-background-colour($bg-colour:$black){
     background-color: $bg-colour;
     color: set-colour($bg-colour);
+
+    .button{
+        @include button-colour(set-colour($bg-colour, $button-light, $button-dark));
+    }
 }
 
 @mixin spacing($property-name, $position, $value){

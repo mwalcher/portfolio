@@ -56,3 +56,51 @@ header{
     @import "../molecules/header/mobile-menu";
     @import "../molecules/header/navigation";
 }
+
+body{
+    @each $project, $colour in $project-colours{
+        &.#{$project}{
+            header{
+                .main-navigation{
+                    ul{
+                        &.page-navigation{
+                            li{
+                                &.dark{
+                                    a{
+                                        @media screen and (min-width: $header-breakpoint){
+                                            color: $black;
+                                        }
+                                    }
+                                }
+
+                                a{
+                                    &.active, &:hover.active, &:focus.active{
+                                        &::before{
+                                            @media screen and (min-width: $header-breakpoint){
+                                                background-color: $colour;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                        li{
+                            a{
+                                color: $white-off;
+
+                                &.active{
+                                    .icon{
+                                        &::before{
+                                            color: $colour;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

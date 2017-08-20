@@ -21,9 +21,10 @@ document.addEventListener('readystatechange', function(){
             inputs: document.querySelectorAll('input, textarea')
         });
 
-        // Tab Container
+        // Toggle Active
         toggleActive({
-            triggers: document.querySelectorAll('[data-toggle]')
+            triggers: document.querySelectorAll('[data-toggle]'),
+            toggleContent: document.querySelectorAll('[data-toggle-content]')
         });
     }
 });

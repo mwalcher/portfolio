@@ -28,7 +28,7 @@ return [
             'icon' => 'fa-envelope'
         ]
     ],
-    'background' => asset('images').'/hero-home.jpg',
+    'background' => asset('images').'/home-hero.jpg',
     'hero' => [
         'id' => 'about',
         'main-title' => 'Matthew Walcher',
@@ -81,6 +81,7 @@ return [
     ],
     'main-content' => [
         'id' => 'work',
-        'main-title' => 'Projects'
+        'main-title' => 'Projects',
+        'featured-content' => __('global.projects')
     ]
 ];

@@ -8,13 +8,13 @@
     <div class="tab-content">
         <div class="tab-container">
             @foreach (__($page.'.tab-content') as $tabContent)
-            <button class="tab @if($loop->index == 0)active @endif" data-toggle="{!! $tabContent['title'] !!}" title="{!! $tabContent['title'] !!}">{!! $tabContent['title'] !!}</button>
+            <button class="tab @if($loop->index == 0)active @endif" data-toggle="{!! $tabContent['title'] !!}" data-parent="tab-content" title="{!! $tabContent['title'] !!}">{!! $tabContent['title'] !!}</button>
             @endforeach
         </div>
 
         <div class="tab-content-container">
             @foreach (__($page.'.tab-content') as $tabContent)
-            <div class="content-container @if($loop->index == 0)active @endif" data-toggle-content="{!! $tabContent['title'] !!}">
+            <div class="content-container @if($loop->index == 0)active @endif" data-toggle-content="{!! $tabContent['title'] !!}"  data-parent="tab-content">
                 <h2 class="invisible">{!! $tabContent['title'] !!}</h2>
                 @if ($tabContent['list'])
                 <div class="interactive-icon-block">

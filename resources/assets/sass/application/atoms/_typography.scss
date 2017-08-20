@@ -4,35 +4,25 @@
 
 body{
     @include set-font(body);
-    @include set-background-colour($black);
     font-size: $global-font-size;
     line-height: 1;
     -webkit-font-smoothing: antialiased;
 }
 
-h1, .h1{
-    @include title-font;
-    font-size: 3rem;
-    line-height: 1.25;
-    margin: 0;
+h1{
+    @include h1;
 }
 
-h2, .h2{
-    @include title-font;
-    font-size: 2rem;
-    line-height: 1.25;
+h2{
+    @include h2;
 }
 
-h3, .h3{
-    @include title-font;
-    font-size: 1.5rem;
-    line-height: 1.25;
+h3{
+    @include h3;
 }
 
 label{
-    @include title-font;
-    font-size: 1.5rem;
-    line-height: 1.25;
+    @include h3;
     @include transition(font-size top);
 }
 
@@ -40,7 +30,7 @@ p{
     @include set-font(body);
     font-size: $global-font-size;
     line-height: 1.5;
-    padding-bottom: 1rem;
+    padding-bottom: $small-size;
 }
 
 ul{

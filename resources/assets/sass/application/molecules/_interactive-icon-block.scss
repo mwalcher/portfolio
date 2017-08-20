@@ -108,7 +108,7 @@
 
                 .image{
                     width: 100%;
-                    height: 4rem;
+                    height: $large-size;
                     background-repeat: no-repeat;
                     background-position: center;
                     background-size: contain;
@@ -143,6 +143,24 @@
                         bottom: 0;
                         left: 0;
                         transform: translate(-50%, 6.5rem);
+                    }
+                }
+            }
+        }
+    }
+}
+
+body{
+    @each $project, $colour in $project-colours{
+        &.#{$project}{
+            .interactive-icon-block{
+                .icon-container{
+                    .shape{
+                        .label{
+                            @media screen and (min-width: $phone-breakpoint){
+                                border-color: transparent transparent $colour transparent;
+                            }
+                        }
                     }
                 }
             }

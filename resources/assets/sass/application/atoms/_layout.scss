@@ -6,16 +6,7 @@
     @include invisible;
 }
 
-.light-section{
-    @include set-background-colour($white-off);
-
-    .button{
-        @include button-colour($button-dark);
-    }
-}
-
-.fixed-background{
-    position: fixed;
+.fixed-background, .absolute-background{
     top: 0;
     left: 0;
     width: 100%;
@@ -24,6 +15,14 @@
     background-size: cover;
     background-position: center;
     opacity: 0.4;
+}
+
+.fixed-background{
+    position: fixed;
+}
+
+.absolute-background{
+    position: absolute;
 }
 
 .section{

@@ -87,10 +87,6 @@
         box-shadow: $global-shadow;
         overflow: hidden;
 
-        .button{
-            @include button-colour($button-dark);
-        }
-
         .content-container{
             position: absolute;
             top: 0;
@@ -104,7 +100,7 @@
             @include transition(transform);
 
             @media screen and (min-width: $laptop-breakpoint){
-                @include spacing(padding, left right, 2rem);
+                @include spacing(padding, left right, md);
             }
 
             &:first-child{
@@ -117,6 +113,26 @@
 
             &.active{
                 transform: translateX(0);
+            }
+        }
+    }
+}
+
+body{
+    @each $project, $colour in $project-colours{
+        &.#{$project}{
+            .tab-content{
+                .tab-container{
+                    .tab{
+                        &:hover, &:focus{
+                            background-color: rgba($colour,0.75);
+                        }
+
+                        &.active{
+                            background-color: $white;
+                        }
+                    }
+                }
             }
         }
     }
