@@ -42,10 +42,23 @@ function toggleNavigation(){
 
 function activeSection(sections, navigation){
     const navigationItems = navigation.querySelectorAll('a');
+    const scrollPosition = window.pageYOffset;
+    const windowHeight = window.innerHeight;
 
     sections.forEach(function(section){
         let sectionPosition = section.getBoundingClientRect();
-        if(-200 <= sectionPosition.top && sectionPosition.top <= 200){
+        let sectionOffset = section.offsetTop;
+        let sectionHeight = section.offsetHeight;
+
+        let sectionStart = sectionOffset - (windowHeight/2);
+        if(sectionOffset <= 0){
+            sectionStart = 0;
+        }
+
+        let sectionEnd = sectionOffset + (sectionHeight - (windowHeight/2));
+
+        if(scrollPosition >= sectionStart
+        && scrollPosition < sectionEnd){
             navigationItems.forEach(function(navItem){
                 if(section.id == navItem.href.split('#')[1]){
                     navItem.classList.add('active');
@@ -54,6 +67,7 @@ function activeSection(sections, navigation){
                 }
             });
         }
+
         if(section.classList.contains('light-section')){
             navigationColour(navigation, sectionPosition);
         }
