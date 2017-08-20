@@ -4,7 +4,6 @@
 
 body{
     @include set-font(body);
-    @include set-background-colour($black);
     font-size: $global-font-size;
     line-height: 1;
     -webkit-font-smoothing: antialiased;

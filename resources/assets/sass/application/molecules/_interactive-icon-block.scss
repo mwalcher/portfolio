@@ -149,3 +149,21 @@
         }
     }
 }
+
+body{
+    @each $project, $colour in $project-colours{
+        &.#{$project}{
+            .interactive-icon-block{
+                .icon-container{
+                    .shape{
+                        .label{
+                            @media screen and (min-width: $phone-breakpoint){
+                                border-color: transparent transparent $colour transparent;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

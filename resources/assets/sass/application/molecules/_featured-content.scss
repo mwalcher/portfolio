@@ -17,41 +17,11 @@
             z-index: 1;
         }
 
-        &.musicbook{
-            .content{
+        @each $project, $colour in $project-colours{
+            &.#{$project}{
                 .button{
                     &::after{
-                        background-color: $musicbook-rgba;
-                    }
-                }
-            }
-        }
-
-        &.sex-ed{
-            .content{
-                .button{
-                    &::after{
-                        background-color: $sex-ed-rgba;
-                    }
-                }
-            }
-        }
-
-        &.smart-fridge{
-            .content{
-                .button{
-                    &::after{
-                        background-color: $smart-fridge-rgba;
-                    }
-                }
-            }
-        }
-
-        &.truckladders{
-            .content{
-                .button{
-                    &::after{
-                        background-color: $truckladders-rgba;
+                        background-color: rgba($colour, 0.5);
                     }
                 }
             }
@@ -78,10 +48,6 @@
 
             .description{
                 max-width: 14rem;
-            }
-
-            .button{
-                @include button-colour($button-light);
             }
         }
     }

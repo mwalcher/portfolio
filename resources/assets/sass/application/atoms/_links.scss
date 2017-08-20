@@ -48,7 +48,6 @@
         text-decoration: none;
         letter-spacing: 1px;
 
-        @include button-colour($button-light);
         border-width: $global-border-width;
         border-style: solid;
         border-radius: $global-border-radius;

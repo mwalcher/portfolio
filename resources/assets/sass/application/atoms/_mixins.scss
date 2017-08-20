@@ -107,6 +107,10 @@
 @mixin set-background-colour($bg-colour:$black){
     background-color: $bg-colour;
     color: set-colour($bg-colour);
+
+    .button{
+        @include button-colour(set-colour($bg-colour, $button-light, $button-dark));
+    }
 }
 
 @mixin spacing($property-name, $position, $value){
