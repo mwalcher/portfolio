@@ -9,7 +9,7 @@
 }
 
 header{
-    @media screen and (min-width: $tablet-breakpoint){
+    @media screen and (min-width: $header-breakpoint){
         background-color: $black;
     }
 
