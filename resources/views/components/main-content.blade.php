@@ -10,7 +10,7 @@
             <div class="content">
                 <p class="title">{!! $project['name'] !!}</p>
                 <p class="description">{!! $project['description'] !!}</p>
-                <a href="{!! $project['link'] !!}" class="button" title="View {!! $project['name'] !!}">View Project</a>
+                <a href="{!! $project['link'] !!}" class="button" title="View {!! $project['name'] !!}">{!! __($page.'.main-content.featured-cta') !!}</a>
             </div>
         </div>
         @endforeach

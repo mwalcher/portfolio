@@ -1,5 +1,5 @@
 .project-list{
-    padding-top: 1.5rem;
+    @include spacing(padding, top, 1.5rem);
 
     @media screen and (min-width: $laptop-breakpoint){
         display: flex;
@@ -16,14 +16,14 @@
         @media screen and (min-width: $laptop-breakpoint){
             width: 25%;
             min-height: 0;
-            padding-bottom: 25%;
+            @include spacing(padding, bottom, 25%);
         }
 
         & ~ .project{
-            margin-top: 0.75rem;
+            @include spacing(margin, top, 0.75rem);
 
             @media screen and (min-width: $laptop-breakpoint){
-                margin-top: 0;
+                @include spacing(margin, top, 0);
             }
         }
 
@@ -55,7 +55,7 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            padding: $medium-size;
+            @include spacing(padding, all, md);
 
             @media screen and (min-width: $laptop-breakpoint){
                 display: block;
@@ -63,7 +63,8 @@
                 bottom: 0;
                 left: 0;
                 width: 100%;
-                padding: $small-size 0;
+                @include spacing(padding, top bottom, sm);
+                @include spacing(padding, left right, 0);
                 @include transition(bottom);
             }
 

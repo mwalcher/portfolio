@@ -85,11 +85,14 @@
         }
 
         & + .button{
-            margin-top: $small-size;
+            @include spacing(margin, top, sm);
         }
 
         &.center{
-            margin-left: auto;
-            margin-right: auto;
+            @include spacing(margin, left right, auto);
+        }
+
+        &.full-width{
+            max-width: 100%;
         }
     }

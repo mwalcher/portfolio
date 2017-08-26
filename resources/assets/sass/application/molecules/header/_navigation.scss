@@ -13,7 +13,7 @@
         display: block;
         transform: none;
         transition: none;
-        padding-top: 1.5rem;
+        @include spacing(padding, top, 1.5rem);
     }
 
     h2{
@@ -49,8 +49,8 @@
         &.page-navigation{
             @media screen and (min-width: $header-breakpoint){
                 position: relative;
-                margin-top: 1.25rem;
-                margin-left: $extra-small-size;
+                @include spacing(margin, top, 1.25rem);
+                @include spacing(margin, left, xs);
                 @include spacing(padding, top bottom, 1.5rem);
             }
 
