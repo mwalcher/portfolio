@@ -58,7 +58,6 @@
     width: 100%;
     padding: $button-padding;
     border-radius: $global-border-radius;
-    z-index: 1;
     cursor: pointer;
 
     @include set-font(body, bold);

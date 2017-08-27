@@ -39,6 +39,7 @@ a:not(.button){
     border-width: $global-border-width;
     border-style: solid;
     overflow: hidden;
+    z-index: 1;
     @include transition(color background-color border-color);
 
     @media screen and (min-width: $phone-breakpoint){
