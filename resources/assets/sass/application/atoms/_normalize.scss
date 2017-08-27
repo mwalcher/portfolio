@@ -33,13 +33,13 @@ body{
             input[type="text"],
             input[type="email"],
             textarea{
-                &:hover, &:focus{
+                &:hover, &:focus, &:active{
                     background-color: rgba($colour, 0.5);
                 }
             }
 
             button[type="submit"]{
-                &:hover, &:focus{
+                &:hover, &:focus, &:active{
                     background-color: $colour;
 
                     &::after{

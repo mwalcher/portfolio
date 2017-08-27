@@ -68,7 +68,7 @@
     text-decoration: none;
     letter-spacing: 1px;
 
-    &:hover, &:focus{
+    &:hover, &:focus, &:active{
         outline: none;
     }
 }
@@ -82,7 +82,7 @@
         background-color: map-get($theme, hover-background-colour);
     }
 
-    &:hover, &:focus{
+    &:hover, &:focus, &:active{
         color: map-get($theme, hover-font-colour);
         background-color: transparent;
         border-color: map-get($theme, hover-border-colour);
@@ -97,7 +97,7 @@
     background-color: map-get($theme, default-background-colour);
     border-color: map-get($theme, default-border-colour);
 
-    &:hover, &:focus{
+    &:hover, &:focus, &:active{
         color: map-get($theme, hover-font-colour);
         background-color: map-get($theme, hover-background-colour);
         border-color: map-get($theme, hover-border-colour);
@@ -120,7 +120,7 @@
         background-color: map-get($theme, default-background-shadow);
     }
 
-    &:hover, &:focus{
+    &:hover, &:focus, &:active{
         color: map-get($theme, hover-font-colour);
         background-color: map-get($theme, hover-background-colour);
 
