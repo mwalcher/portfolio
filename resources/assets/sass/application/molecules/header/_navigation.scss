@@ -4,6 +4,7 @@
     right: 0;
     display: flex;
     transform: translateX(100%);
+    box-shadow: $global-shadow;
     @include transition(transform);
 
     @media screen and (min-width: $header-breakpoint){
@@ -12,6 +13,7 @@
         right: auto;
         display: block;
         transform: none;
+        box-shadow: none;
         transition: none;
         @include spacing(padding, top, 1.5rem);
     }
@@ -33,17 +35,11 @@
 
     ul{
         background-color: $black;
+        border-left: $global-border-width solid $white-off;
 
         @media screen and (min-width: $header-breakpoint){
             background-color: transparent;
-        }
-
-        & ~ ul{
-            border-left: $global-border-width solid $white-off;
-
-            @media screen and (min-width: $header-breakpoint){
-                border-left: 0;
-            }
+            border-left: 0;
         }
 
         &.page-navigation{
@@ -225,19 +221,13 @@
             width: 6.25rem;
             height: 6.25rem;
             @include spacing(padding, top bottom, xs);
+            border-bottom: $global-border-width solid $white-off;
 
             @media screen and (min-width: $header-breakpoint){
                 text-align: left;
                 width: auto;
                 height: auto;
-            }
-
-            & ~ li{
-                border-top: $global-border-width solid $white-off;
-
-                @media screen and (min-width: $header-breakpoint){
-                    border-top: 0;
-                }
+                border-bottom: 0;
             }
 
             a{
