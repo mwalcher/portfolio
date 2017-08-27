@@ -2,29 +2,29 @@
 
 NodeList.prototype.forEach = NodeList.prototype.forEach || Array.prototype.forEach;
 
+import headerInteractions from './components/header-interactions';
+import formInteractions from './components/form-interactions';
+import toggleActive from './components/toggle-active';
+
 document.addEventListener('readystatechange', function(){
     if(document.readyState === 'complete'){
-        const inputs = document.querySelectorAll('input');
-        const textareas = document.querySelectorAll('textarea');
-        inputs.forEach(function(input){
-            input.addEventListener('focus', activeInput);
-            input.addEventListener('focusout', checkInput);
+
+        // Header Component
+        headerInteractions({
+            mobileMenu: document.querySelector('#mobile-menu'),
+            navigation: document.querySelector('header .page-navigation'),
+            sections: document.querySelectorAll('.section')
         });
-        textareas.forEach(function(textarea){
-            textarea.addEventListener('focus', activeInput);
-            textarea.addEventListener('focusout', checkInput);
+
+        // Forms
+        formInteractions({
+            inputs: document.querySelectorAll('input, textarea')
+        });
+
+        // Toggle Active
+        toggleActive({
+            triggers: document.querySelectorAll('[data-toggle]'),
+            toggleContent: document.querySelectorAll('[data-toggle-content]')
         });
     }
 });
-
-function activeInput(){
-    let container = this.parentElement;
-    container.classList.add('active');
-}
-
-function checkInput(){
-    let container = this.parentElement;
-    if(this.value == ''){
-        container.classList.remove('active');
-    }
-}

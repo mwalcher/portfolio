@@ -1,0 +1,54 @@
+#featured-content{
+    position: relative;
+
+    .featured-container{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        @include set-background-colour($black);
+        @include transition(opacity);
+        opacity: 0;
+        z-index: 0;
+
+        &.active{
+            position: relative;
+            opacity: 1;
+            z-index: 1;
+        }
+
+        @each $project, $colour in $project-colours{
+            &.#{$project}{
+                .button{
+                    &::after{
+                        background-color: rgba($colour, 0.5);
+                    }
+                }
+            }
+        }
+
+        .content{
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 50vh;
+            @include spacing(padding, all, md);
+
+            .title{
+                @include h2;
+                font-size: 1.75rem;
+                @include spacing(padding, bottom, 0);
+
+                @media screen and (min-width: $phone-breakpoint){
+                    font-size: 2rem;
+                }
+            }
+
+            .description{
+                max-width: 14rem;
+            }
+        }
+    }
+}

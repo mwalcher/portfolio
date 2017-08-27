@@ -1,0 +1,13 @@
+.main-content{
+    text-align: center;
+    @include spacing(padding, top, 13rem);
+    @include spacing(padding, bottom, 4.5rem);
+
+    @media screen and (min-width: $phone-breakpoint){
+        @include spacing(padding, top, 12rem);
+    }
+
+    h2{
+        @include spacing(padding, bottom, md);
+    }
+}

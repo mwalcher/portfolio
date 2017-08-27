@@ -1,0 +1,23 @@
+/*  ---------------------
+    NOSCRIPT
+    --------------------- */
+@import "application/atoms/variables/breakpoints";
+@import "application/atoms/variables/colours";
+
+.fa{
+    display: none !important;
+}
+
+header{
+    @media screen and (min-width: $header-breakpoint){
+        background-color: $black;
+    }
+
+    .main-navigation{
+        ul.page-navigation{
+            &::before, &::after{
+                display: none;
+            }
+        }
+    }
+}

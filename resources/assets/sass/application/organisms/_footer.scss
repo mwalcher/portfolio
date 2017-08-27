@@ -1,0 +1,51 @@
+footer#contact{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .footer-content{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        @include spacing(padding, top, md);
+        @include spacing(padding, bottom, 0.75rem);
+        width: 100%;
+        max-width: 42rem;
+
+        @media screen and (min-width: $footer-breakpoint){
+            flex-direction: row;
+            align-items: flex-start;
+            justify-content: center;
+            @include spacing(padding, bottom, md);
+        }
+
+        .contact-content{
+            flex-grow: 1;
+            text-align: center;
+            @include spacing(padding, bottom, sm);
+
+            @media screen and (min-width: $footer-breakpoint){
+                text-align: left;
+                @include spacing(padding, bottom, 0);
+                @include spacing(padding, right, md);
+            }
+
+            p{
+                max-width: 18.75rem;
+                @include spacing(margin, left right, auto);
+
+                @media screen and (min-width: $footer-breakpoint){
+                    @include spacing(margin, left right, 0);
+                }
+            }
+
+            .contact-links{
+                display: none;
+
+                @media screen and (min-width: $footer-breakpoint){
+                    display: block;
+                }
+            }
+        }
+    }
+}

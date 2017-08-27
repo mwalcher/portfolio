@@ -1,0 +1,21 @@
+.hero{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include spacing(padding, bottom, 16rem);
+
+    @media screen and (min-width: $phone-breakpoint){
+        @include spacing(padding, bottom, 14rem);
+    }
+
+    .hero-content{
+        text-align: center;
+        @include spacing(padding, top bottom, md);
+
+        p{
+            max-width: 28rem;
+            @include spacing(padding, top, md);
+            @include spacing(margin, left right, auto);
+        }
+    }
+}

@@ -1,0 +1,169 @@
+.interactive-icon-block{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    justify-content: center;
+    width: 100%;
+    min-height: 100%;
+
+    @media screen and (min-width: $phone-breakpoint){
+        flex-wrap: nowrap;
+        align-items: center;
+    }
+
+    .icon-container{
+        display: flex;
+        align-items: center;
+        flex-basis: 50%;
+        background-color: $black;
+        border: 1px solid $white-off;
+        @include spacing(padding, left right, xs);
+
+        @media screen and (min-width: $phone-breakpoint){
+            display: block;
+            position: relative;
+            flex-basis: 25%;
+            width: 8.25rem;
+            height: 7.125rem;
+            perspective: 37.5rem;
+            background-color: transparent;
+            border: 0;
+            padding: 0;
+            cursor: pointer;
+        }
+
+        &:hover, &:focus, &:active{
+            .shape{
+                @media screen and (min-width: $phone-breakpoint){
+                    transform: translate(-50%, -50%) rotateY(180deg);
+                }
+            }
+        }
+
+        &:nth-child(even){
+            .shape{
+                @media screen and (min-width: $phone-breakpoint){
+                    transform: translate(-50%, -50%) rotateY(0deg) rotateZ(180deg);
+                }
+
+                .icon .image{
+                    @media screen and (min-width: $phone-breakpoint){
+                        transform: translate(-50%, 90%) rotateZ(180deg);
+                    }
+                }
+
+                .label h3{
+                    @media screen and (min-width: $phone-breakpoint){
+                        transform: translate(-50%, 6.5rem) rotateZ(180deg);
+                    }
+                }
+            }
+
+            &:hover, &:focus, &:active{
+                .shape{
+                    @media screen and (min-width: $phone-breakpoint){
+                        transform: translate(-50%, -50%) rotateY(180deg) rotateZ(180deg);
+                    }
+                }
+            }
+        }
+
+        .shape{
+            width: 100%;
+
+            @media screen and (min-width: $phone-breakpoint){
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                width: 0;
+                height: 0;
+                border-width: 0 4.125rem 7.125rem 4.125rem;
+                border-style: solid;
+                border-color: transparent;
+                transform-style: preserve-3d;
+                transition: transform 1s;
+                transform: translate(-50%, -50%) rotateY(0deg);
+                @include transition(transform);
+            }
+
+            .icon, .label{
+                @include spacing(padding, top bottom, xs);
+
+                @media screen and (min-width: $phone-breakpoint){
+                    position: absolute;
+                    top: 0;
+                    left: -4.125rem;
+                    display: block;
+                    padding: 0;
+                    border-width: 0 4.125rem 7.125rem 4.125rem;
+                    border-style: solid;
+                    backface-visibility: hidden;
+                }
+            }
+
+            .icon{
+                @media screen and (min-width: $phone-breakpoint){
+                    border-color: transparent transparent $black transparent;
+                }
+
+                .image{
+                    width: 100%;
+                    height: $large-size;
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    background-size: contain;
+
+                    @media screen and (min-width: $phone-breakpoint){
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 4.125rem;
+                        height: 3.5rem;
+                        transform: translate(-50%, 90%);
+                    }
+                }
+            }
+
+            .label{
+                @media screen and (min-width: $phone-breakpoint){
+                    border-color: transparent transparent $green transparent;
+                    transform: rotateY(180deg);
+                }
+
+                h3{
+                    @include set-font(body);
+                    color: $white-off;
+                    font-size: 0.85rem;
+                    letter-spacing: 0;
+                    text-align: center;
+                    word-spacing: 8.25rem;
+
+                    @media screen and (min-width: $phone-breakpoint){
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        transform: translate(-50%, 6.5rem);
+                    }
+                }
+            }
+        }
+    }
+}
+
+body{
+    @each $project, $colour in $project-colours{
+        &.#{$project}{
+            .interactive-icon-block{
+                .icon-container{
+                    .shape{
+                        .label{
+                            @media screen and (min-width: $phone-breakpoint){
+                                border-color: transparent transparent $colour transparent;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

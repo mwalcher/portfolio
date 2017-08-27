@@ -1,0 +1,278 @@
+.main-navigation{
+    position: absolute;
+    top: $header-height;
+    right: 0;
+    display: flex;
+    transform: translateX(100%);
+    box-shadow: $global-shadow;
+    @include transition(transform);
+
+    @media screen and (min-width: $header-breakpoint){
+        position: static;
+        top: auto;
+        right: auto;
+        display: block;
+        transform: none;
+        box-shadow: none;
+        transition: none;
+        @include spacing(padding, top, 1.5rem);
+    }
+
+    h2{
+        display: none;
+        color: $white-off;
+        font-size: 0.975rem;
+        @include transition(color);
+
+        @media screen and (min-width: $header-breakpoint){
+            display: block;
+        }
+
+        &.dark{
+            color: $black;
+        }
+    }
+
+    ul{
+        background-color: $black;
+        border-left: $global-border-width solid $white-off;
+
+        @media screen and (min-width: $header-breakpoint){
+            background-color: transparent;
+            border-left: 0;
+        }
+
+        &.page-navigation{
+            @media screen and (min-width: $header-breakpoint){
+                position: relative;
+                @include spacing(margin, top, 1.25rem);
+                @include spacing(margin, left, xs);
+                @include spacing(padding, top bottom, 1.5rem);
+            }
+
+            &.dark-top{
+                &::before{
+                    @media screen and (min-width: $header-breakpoint){
+                        color: $black;
+                    }
+                }
+            }
+
+            &.dark-bottom{
+                &::after{
+                    @media screen and (min-width: $header-breakpoint){
+                        color: $black;
+                    }
+                }
+            }
+
+            &::before, &::after{
+                @media screen and (min-width: $header-breakpoint){
+                    @include font-awesome;
+                    color: $white-off;
+                    font-size: 1.5rem;
+                    line-height: 0.5;
+                    position: absolute;
+                    left: -$extra-small-size;
+                    width: $small-size;
+                    @include transition(color);
+                }
+            }
+
+            &::before{
+                @media screen and (min-width: $header-breakpoint){
+                    content: "\f0d8";
+                    top: -0.65rem;
+                }
+            }
+
+            &::after{
+                @media screen and (min-width: $header-breakpoint){
+                    content: "\f0d7";
+                    bottom: -0.4rem;
+                }
+            }
+
+            li{
+                @media screen and (min-width: $header-breakpoint){
+                    position: relative;
+                    @include spacing(padding, top bottom, 1.5rem);
+                }
+
+                &.dark{
+                    &::before, &::after{
+                        @media screen and (min-width: $header-breakpoint){
+                            border-color: $black;
+                        }
+                    }
+
+                    a{
+                        @media screen and (min-width: $header-breakpoint){
+                            color: $black;
+                        }
+
+                        &::before{
+                            @media screen and (min-width: $header-breakpoint){
+                                border-color: $black;
+                            }
+                        }
+
+                        &:hover, &:focus{
+                            &::before{
+                                @media screen and (min-width: $header-breakpoint){
+                                    background-color: $black;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                &::before, &::after{
+                    @media screen and (min-width: $header-breakpoint){
+                        content: "";
+                        position: absolute;
+                        left: 0;
+                        transform: translateX(-100%);
+                        height: 3rem;
+                        border-left: 0.125rem solid $white-off;
+                        @include transition(border-color);
+                    }
+                }
+
+                &::before{
+                    @media screen and (min-width: $header-breakpoint){
+                        top: -1.5rem;
+                    }
+                }
+
+                &::after{
+                    @media screen and (min-width: $header-breakpoint){
+                        top: 2.5rem;
+                    }
+                }
+
+                &:first-child{
+                    &::after{
+                        @media screen and (min-width: $header-breakpoint){
+                            display: none;
+                        }
+                    }
+                }
+
+                &:last-child{
+                    &::before{
+                        @media screen and (min-width: $header-breakpoint){
+                            display: none;
+                        }
+                    }
+                }
+
+                a{
+                    @media screen and (min-width: $header-breakpoint){
+                        position: relative;
+                        @include spacing(padding, left, 1.5rem);
+                        @include transition(color);
+                    }
+
+                    &::before{
+                        @media screen and (min-width: $header-breakpoint){
+                            content: "";
+                            position: absolute;
+                            top: 50%;
+                            left: -1px;
+                            transform: translate(-50%, -50%);
+                            width: $small-size;
+                            height: $small-size;
+                            background-color: transparent;
+                            border: 0.125rem solid $white-off;
+                            border-radius: 100%;
+                            @include transition(background-color border-color);
+                        }
+                    }
+
+                    &:hover, &:focus{
+                        outline: none;
+                        &::before{
+                            @media screen and (min-width: $header-breakpoint){
+                                background-color: $white-off;
+                            }
+                        }
+                    }
+
+                    &.active, &:hover.active, &:focus.active{
+                        &::before{
+                            @media screen and (min-width: $header-breakpoint){
+                                background-color: $green;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        &.links-navigation{
+            @media screen and (min-width: $header-breakpoint){
+                display: none;
+            }
+        }
+
+        li{
+            text-align: center;
+            width: 6.25rem;
+            height: 6.25rem;
+            @include spacing(padding, top bottom, xs);
+            border-bottom: $global-border-width solid $white-off;
+
+            @media screen and (min-width: $header-breakpoint){
+                text-align: left;
+                width: auto;
+                height: auto;
+                border-bottom: 0;
+            }
+
+            a{
+                display: block;
+                color: $white-off;
+                text-transform: uppercase;
+
+                &.active{
+                    .icon{
+                        &::before{
+                            color: $green;
+                        }
+                    }
+                }
+
+                .icon{
+                    position: relative;
+                    display: block;
+                    width: 3.75rem;
+                    height: 3.75rem;
+                    @include spacing(margin, left right, auto);
+                    @include spacing(margin, bottom, xs);
+                    background-color: $white-off;
+                    border-radius: 100%;
+
+                    @media screen and (min-width: $header-breakpoint){
+                        display: none;
+                    }
+
+                    &::before{
+                        color: $black;
+                        font-size: 2rem;
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                    }
+
+                    &.fa-github{
+                        &::before{
+                            font-size: 3rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

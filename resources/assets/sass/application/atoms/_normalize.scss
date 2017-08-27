@@ -9,6 +9,87 @@
     box-sizing: border-box;
 }
 
+body{
+    @include set-background-colour($black);
+
+    @each $project, $colour in $project-colours{
+        &.#{$project}, .#{$project}{
+            a:not(.button){
+                color: $colour;
+
+                &:hover, &:focus{
+                    &::after{
+                        border-color: $colour;
+                    }
+                }
+            }
+
+            .button{
+                &::after{
+                    background-color: rgba($colour, 0.5);
+                }
+            }
+
+            input[type="text"],
+            input[type="email"],
+            textarea{
+                &:hover, &:focus, &:active{
+                    background-color: rgba($colour, 0.5);
+                }
+            }
+
+            button[type="submit"]{
+                &:hover, &:focus, &:active{
+                    background-color: $colour;
+
+                    &::after{
+                        background-color: darken($colour, 10%);
+                    }
+                }
+
+                &:active{
+                    background-color: rgba($colour, 0.5);
+                }
+            }
+        }
+    }
+
+    .light-section{
+        @include set-background-colour($white-off);
+
+        @each $project, $colour in $project-colours{
+            &.#{$project}, .#{$project}{
+                .button{
+                    &::after{
+                        background-color: rgba($colour, 0.75);
+                    }
+
+                    &:hover, &:focus{
+                        border-color: $colour;
+                    }
+                }
+            }
+        }
+    }
+}
+
+main{
+    @include spacing(padding, top, $header-height);
+
+    @media screen and (min-width: $header-breakpoint){
+        @include spacing(padding, top, 0);
+    }
+}
+
+section, footer{
+    min-height: 90vh;
+    min-height: calc(100vh - #{$header-height});
+
+    @media screen and (min-width: $header-breakpoint){
+        min-height: 100vh;
+    }
+}
+
 img{
     height: auto;
     max-width: 100%;

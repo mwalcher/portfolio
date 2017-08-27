@@ -11,24 +11,78 @@
     font-weight: map-get($font, font-weight);
 }
 
-@mixin title-font(){
+@mixin font-awesome{
+    font-family: 'FontAwesome';
+    font-size: inherit;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+@mixin title-font{
     @include set-font(title);
     text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+@mixin h1{
+    @include title-font;
+    font-size: 3rem;
+    line-height: 1.25;
+    margin: 0;
+}
+
+@mixin h2{
+    @include title-font;
+    font-size: 2rem;
+    line-height: 1.25;
+}
+
+@mixin h3{
+    @include title-font;
+    font-size: 1.5rem;
+    line-height: 1.25;
 }
 
 /*  BUTTONS
     ------------------- */
+
+@mixin button-base{
+    position: relative;
+    display: block;
+    width: 100%;
+    padding: $button-padding;
+    border-radius: $global-border-radius;
+    cursor: pointer;
+
+    @include set-font(body, bold);
+    font-size: $global-font-size;
+    line-height: 1.25rem;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 1px;
+
+    &:hover, &:focus, &:active{
+        outline: none;
+    }
+}
 
 @mixin button-colour($theme:$button-light){
     color: map-get($theme, default-font-colour);
     background-color: map-get($theme, default-background-colour);
     border-color: map-get($theme, default-border-colour);
 
-    &::after{
+    &::before, &::after{
         background-color: map-get($theme, hover-background-colour);
     }
 
-    &:hover{
+    &:hover, &:focus, &:active{
         color: map-get($theme, hover-font-colour);
         background-color: transparent;
         border-color: map-get($theme, hover-border-colour);
@@ -43,7 +97,7 @@
     background-color: map-get($theme, default-background-colour);
     border-color: map-get($theme, default-border-colour);
 
-    &:hover{
+    &:hover, &:focus, &:active{
         color: map-get($theme, hover-font-colour);
         background-color: map-get($theme, hover-background-colour);
         border-color: map-get($theme, hover-border-colour);
@@ -58,10 +112,32 @@
     }
 }
 
+@mixin submit-colour($theme:$submit-light){
+    color: map-get($theme, default-font-colour);
+    background-color: map-get($theme, default-background-colour);
+
+    &::after{
+        background-color: map-get($theme, default-background-shadow);
+    }
+
+    &:hover, &:focus, &:active{
+        color: map-get($theme, hover-font-colour);
+        background-color: map-get($theme, hover-background-colour);
+
+        &::after{
+            background-color: map-get($theme, hover-background-shadow);
+        }
+    }
+
+    &:active{
+        background-color: map-get($theme, active-background-colour);
+    }
+}
+
 /*  LAYOUT
     ------------------- */
 
-@mixin invisible {
+@mixin invisible{
     position: absolute;
     top: -625rem;
     left: -625rem;
@@ -74,6 +150,10 @@
 @mixin set-background-colour($bg-colour:$black){
     background-color: $bg-colour;
     color: set-colour($bg-colour);
+
+    .button{
+        @include button-colour(set-colour($bg-colour, $button-light, $button-dark));
+    }
 }
 
 @mixin spacing($property-name, $position, $value){
