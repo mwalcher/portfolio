@@ -74,5 +74,7 @@ $submit-light: (
 
     hover-font-colour          : $white-off,
     hover-background-colour    : $green,
-    hover-background-shadow    : darken($green, 10%)
+    hover-background-shadow    : darken($green, 10%),
+
+    active-background-colour   : $green-rgba
 );

@@ -48,7 +48,7 @@ body{
                 }
 
                 &:active{
-                    background-color: darken($colour, 10%);
+                    background-color: rgba($colour, 0.5);
                 }
             }
         }
