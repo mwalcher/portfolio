@@ -60,27 +60,37 @@
             max-width: 12.5rem;
         }
 
-        &::after{
+        &:before, &::after{
             content: "";
             position: absolute;
-            top: 50%;
+            top: 0;
             left: 0;
-            width: 100%;
-            height: 0;
-            transform: translateY(-50%) rotate(45deg);
-            @include transition(height);
+            width: 0;
+            @include transition(width);
             z-index: -1;
         }
 
+        &:before{
+            height: 1px;
+        }
+
+        &::after{
+            left: 50%;
+            height: 100%;
+            transform: translateX(-50%) skewX(45deg);
+        }
+
         &:hover, &:focus{
-            &::after{
-                height: 250%;
+            outline: none;
+
+            &:before, &::after{
+                width: calc(100% - 2.625rem);
             }
         }
 
         &:active{
-            &::after{
-                height: 400%;
+            &:before, &::after{
+                width: calc(100% + 2.625rem);
             }
         }
 

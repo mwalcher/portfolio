@@ -34,7 +34,7 @@
                 </label>
                 <textarea id="{!! __('footer.form') !!}-{!! __('form.fields.message.name') !!}" title="{!! __('form.fields.message.label') !!}" name="{!! __('form.fields.message.name') !!}" required></textarea>
             </div>
-            <input class="button full-width" type="submit" value="{!! __('form.actions.submit') !!}" />
+            <button class="button full-width" type="submit">{!! __('form.actions.submit') !!}</button>
         </form>
     </div>
 </footer>
