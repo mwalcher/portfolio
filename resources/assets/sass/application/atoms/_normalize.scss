@@ -14,6 +14,16 @@ body{
 
     @each $project, $colour in $project-colours{
         &.#{$project}, .#{$project}{
+            a:not(.button){
+                color: $colour;
+
+                &:hover, &:focus{
+                    &::after{
+                        border-color: $colour;
+                    }
+                }
+            }
+
             .button{
                 &::after{
                     background-color: rgba($colour, 0.5);
@@ -28,13 +38,17 @@ body{
                 }
             }
 
-            a:not(.button){
-                color: $colour;
-
+            button[type="submit"]{
                 &:hover, &:focus{
+                    background-color: $colour;
+
                     &::after{
-                        border-color: $colour;
+                        background-color: darken($colour, 10%);
                     }
+                }
+
+                &:active{
+                    background-color: darken($colour, 10%);
                 }
             }
         }
