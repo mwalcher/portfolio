@@ -74,10 +74,10 @@ body{
 }
 
 main{
-    padding-top: $header-height;
+    @include spacing(padding, top, $header-height);
 
     @media screen and (min-width: $header-breakpoint){
-        padding-top: 0;
+        @include spacing(padding, top, 0);
     }
 }
 
