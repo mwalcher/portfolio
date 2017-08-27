@@ -82,6 +82,7 @@ return [
     'main-content' => [
         'id' => 'work',
         'main-title' => 'Projects',
-        'featured-content' => __('global.projects')
+        'featured-content' => __('global.projects'),
+        'featured-cta' => 'View Project'
     ]
 ];

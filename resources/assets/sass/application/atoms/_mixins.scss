@@ -52,16 +52,37 @@
 /*  BUTTONS
     ------------------- */
 
+@mixin button-base{
+    position: relative;
+    display: block;
+    width: 100%;
+    padding: $button-padding;
+    border-radius: $global-border-radius;
+    cursor: pointer;
+
+    @include set-font(body, bold);
+    font-size: $global-font-size;
+    line-height: 1.25rem;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 1px;
+
+    &:hover, &:focus, &:active{
+        outline: none;
+    }
+}
+
 @mixin button-colour($theme:$button-light){
     color: map-get($theme, default-font-colour);
     background-color: map-get($theme, default-background-colour);
     border-color: map-get($theme, default-border-colour);
 
-    &::after{
+    &::before, &::after{
         background-color: map-get($theme, hover-background-colour);
     }
 
-    &:hover, &:focus{
+    &:hover, &:focus, &:active{
         color: map-get($theme, hover-font-colour);
         background-color: transparent;
         border-color: map-get($theme, hover-border-colour);
@@ -76,7 +97,7 @@
     background-color: map-get($theme, default-background-colour);
     border-color: map-get($theme, default-border-colour);
 
-    &:hover, &:focus{
+    &:hover, &:focus, &:active{
         color: map-get($theme, hover-font-colour);
         background-color: map-get($theme, hover-background-colour);
         border-color: map-get($theme, hover-border-colour);
@@ -88,6 +109,28 @@
     &:-webkit-autofill:active{
         -webkit-text-fill-color: map-get($theme, default-font-colour) !important;
         transition: background-color 5000s ease-in-out 0s;
+    }
+}
+
+@mixin submit-colour($theme:$submit-light){
+    color: map-get($theme, default-font-colour);
+    background-color: map-get($theme, default-background-colour);
+
+    &::after{
+        background-color: map-get($theme, default-background-shadow);
+    }
+
+    &:hover, &:focus, &:active{
+        color: map-get($theme, hover-font-colour);
+        background-color: map-get($theme, hover-background-colour);
+
+        &::after{
+            background-color: map-get($theme, hover-background-shadow);
+        }
+    }
+
+    &:active{
+        background-color: map-get($theme, active-background-colour);
     }
 }
 

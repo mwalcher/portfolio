@@ -34,12 +34,12 @@
             justify-content: center;
             align-items: center;
             min-height: 50vh;
-            padding: $medium-size;
+            @include spacing(padding, all, md);
 
             .title{
                 @include h2;
                 font-size: 1.75rem;
-                padding-bottom: 0;
+                @include spacing(padding, bottom, 0);
 
                 @media screen and (min-width: $phone-breakpoint){
                     font-size: 2rem;

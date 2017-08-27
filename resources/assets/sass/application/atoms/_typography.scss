@@ -30,7 +30,7 @@ p{
     @include set-font(body);
     font-size: $global-font-size;
     line-height: 1.5;
-    padding-bottom: $small-size;
+    @include spacing(padding, bottom, sm);
 }
 
 ul{

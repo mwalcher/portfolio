@@ -2,10 +2,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-bottom: 16rem;
+    @include spacing(padding, bottom, 16rem);
 
     @media screen and (min-width: $phone-breakpoint){
-        padding-bottom: 14rem;
+        @include spacing(padding, bottom, 14rem);
     }
 
     .hero-content{
