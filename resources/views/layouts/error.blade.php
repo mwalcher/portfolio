@@ -18,23 +18,23 @@
     <meta name="msapplication-config" content="/favicons/browserconfig.xml">
     <meta name="theme-color" content="#ffffff">
 
-    <title>{!! $title !!}</title>
-    <meta name="description" content="{!! __($view.'.description') !!}">
+    <title>{!! __('404.title') !!}</title>
+    <meta name="description" content="{!! __('404.description') !!}">
 
-    <meta property="og:title" content="{!! __($view.'.title') !!}" />
+    <meta property="og:title" content="{!! __('404.title') !!}" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="http://www.mwalcher.com" />
-    <meta property="og:image" content="{{ __($view.'.meta-image.src') }}" />
-    <meta property="og:image:width" content="{!! __($view.'.meta-image.width') !!}" />
-    <meta property="og:image:height" content="{!! __($view.'.meta-image.height') !!}" />
-    <meta property="og:description" content="{!! __($view.'.description') !!}" />
-    <meta property="og:site_name" content="{!! __($view.'.title') !!}" />
+    <meta property="og:image" content="{{ __('404.meta-image.src') }}" />
+    <meta property="og:image:width" content="{!! __('404.meta-image.width') !!}" />
+    <meta property="og:image:height" content="{!! __('404.meta-image.height') !!}" />
+    <meta property="og:description" content="{!! __('404.description') !!}" />
+    <meta property="og:site_name" content="{!! __('404.title') !!}" />
 
     <meta name="twitter:card" content="summary">
     <meta name="twitter:creator" content="@mrwalcher">
-    <meta name="twitter:title" content="{!! __($view.'.title') !!}">
-    <meta name="twitter:description" content="{!! __($view.'.description') !!}">
-    <meta name="twitter:image" content="{{ __($view.'.meta-image.src') }}">
+    <meta name="twitter:title" content="{!! __('404.title') !!}">
+    <meta name="twitter:description" content="{!! __('404.description') !!}">
+    <meta name="twitter:image" content="{{ __('404.meta-image.src') }}">
 
     <link href="https://fonts.googleapis.com/css?family=Montserrat:900|Poppins:300,400" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
@@ -45,13 +45,13 @@
 
     <script src="https://use.fontawesome.com/9cc2906ee2.js"></script>
 </head>
-<body>
+<body class="error">
     <div class="fixed-background" style="background-image: url({{ __('home.background') }})"></div>
 
     @component(
         'components/header',
         [
-            'page' => $view
+            'page' => '404'
         ]
     )@endcomponent
 
@@ -59,24 +59,10 @@
         @component(
             'components/hero',
             [
-                'page' => $view
-            ]
-        )@endcomponent
-
-        @component(
-            'components/main-content',
-            [
-                'page' => $view
+                'page' => '404'
             ]
         )@endcomponent
     </main>
-
-    @component(
-        'components/footer',
-        [
-            'page' => $view
-        ]
-    )@endcomponent
 
     <script src="{{ asset('js/app.js') }}"></script>
 </body>

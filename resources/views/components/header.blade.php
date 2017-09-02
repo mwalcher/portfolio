@@ -5,6 +5,7 @@
         </span>
     </a>
 
+    @if (__($page.'.navigation') !== $page.'.navigation')
     <button id="mobile-menu">
         <span class="invisible">Menu</span>
         <span class="icon">
@@ -47,4 +48,6 @@
             </li>
         </ul>
     </nav>
+    @endif
+    
 </header>

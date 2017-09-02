@@ -1,7 +1,7 @@
 <section id="{!! __($page.'.main-content.id') !!}" class="main-content light-section section">
     <h2>{!! __($page.'.main-content.main-title') !!}</h2>
 
-    @if(__($page.'.main-content.featured-content'))
+    @if(__($page.'.main-content.featured-content') !== $page.'.main-content.featured-content')
     <?php $projects = __($page.'.main-content.featured-content'); ?>
     <div id="featured-content">
         @foreach ($projects as $key => $project)
