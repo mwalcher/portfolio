@@ -1,14 +1,14 @@
 <?php
 
 return [
-    'title' => 'mwalcher / musicbook',
-    'description' => 'A fictional social media website for music. Built by Matthew Walcher.',
+    'title' => 'mwalcher / truckladders',
+    'description' => 'A marketing website for a new safety product. Built by Matthew Walcher.',
     'meta-image' => [
-        'src' => asset('images').'/musicbook-meta-image.png',
+        'src' => asset('images').'/truckladders-meta-image.png',
         'width' => __('meta.image.width'),
         'height' => __('meta.image.height')
     ],
-    'background' => asset('images').'/musicbook-hero.jpg',
+    'background' => asset('images').'/truckladders-hero.jpg',
     'navigation' => [
         [
             'text' => 'Home',
@@ -18,13 +18,13 @@ return [
         ],
         [
             'text' => 'Overview',
-            'title' => 'Overview of Musicbook',
+            'title' => 'Overview of Truckladders',
             'link' => '#overview',
             'icon' => 'fa-folder-open'
         ],
         [
             'text' => 'Preview',
-            'title' => 'Preview of Musicbook',
+            'title' => 'Preview of Truckladders',
             'link' => '#preview',
             'icon' => 'fa-mobile'
         ],
@@ -37,12 +37,12 @@ return [
     ],
     'hero' => [
         'id' => 'overview',
-        'main-title' => 'Musicbook',
-        'content' => 'A fictional social media website for music'
+        'main-title' => 'Truckladders',
+        'content' => 'A marketing website for a new safety product'
     ],
     'tab-content' => [
         'about' => [
-            'title' => 'About Musicbook'
+            'title' => 'About Truckladders'
         ],
         'work' => [
             'title' => 'What I Did'

@@ -1,14 +1,14 @@
 <?php
 
 return [
-    'title' => 'mwalcher / musicbook',
-    'description' => 'A fictional social media website for music. Built by Matthew Walcher.',
+    'title' => 'mwalcher / smart-fridge',
+    'description' => 'A fictional touchscreen interface for a fridge. Built by Matthew Walcher.',
     'meta-image' => [
-        'src' => asset('images').'/musicbook-meta-image.png',
+        'src' => asset('images').'/smart-fridge-meta-image.png',
         'width' => __('meta.image.width'),
         'height' => __('meta.image.height')
     ],
-    'background' => asset('images').'/musicbook-hero.jpg',
+    'background' => asset('images').'/smart-fridge-hero.jpg',
     'navigation' => [
         [
             'text' => 'Home',
@@ -18,13 +18,13 @@ return [
         ],
         [
             'text' => 'Overview',
-            'title' => 'Overview of Musicbook',
+            'title' => 'Overview of Smart Fridge',
             'link' => '#overview',
             'icon' => 'fa-folder-open'
         ],
         [
             'text' => 'Preview',
-            'title' => 'Preview of Musicbook',
+            'title' => 'Preview of Smart Fridge',
             'link' => '#preview',
             'icon' => 'fa-mobile'
         ],
@@ -37,12 +37,12 @@ return [
     ],
     'hero' => [
         'id' => 'overview',
-        'main-title' => 'Musicbook',
-        'content' => 'A fictional social media website for music'
+        'main-title' => 'Smart Fridge',
+        'content' => 'A fictional touchscreen interface for a fridge'
     ],
     'tab-content' => [
         'about' => [
-            'title' => 'About Musicbook'
+            'title' => 'About Smart Fridge'
         ],
         'work' => [
             'title' => 'What I Did'

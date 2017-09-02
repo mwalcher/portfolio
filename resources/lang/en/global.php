@@ -9,22 +9,22 @@ return [
             'description' => __('musicbook.hero.content')
         ],
         'sex-ed' => [
-            'name' => 'SEX-ED',
+            'name' => __('sex-ed.hero.main-title'),
             'link' => route('sex-ed'),
-            'image' => asset('images').'/sex-ed-hero.jpg',
-            'description' => 'A fictional web service to educate teens about sex'
+            'image' => __('sex-ed.background'),
+            'description' => __('sex-ed.hero.content')
         ],
         'smart-fridge' => [
-            'name' => 'Smart Fridge',
+            'name' => __('smart-fridge.hero.main-title'),
             'link' => route('smart-fridge'),
-            'image' => asset('images').'/smart-fridge-hero.jpg',
-            'description' => 'A fictional touchscreen interface for a fridge'
+            'image' => __('smart-fridge.background'),
+            'description' => __('smart-fridge.hero.content')
         ],
         'truckladders' => [
-            'name' => 'Truckladders',
+            'name' => __('truckladders.hero.main-title'),
             'link' => route('truckladders'),
-            'image' => asset('images').'/truckladders-hero.jpg',
-            'description' => 'A marketing website for a new safety product'
+            'image' => __('truckladders.background'),
+            'description' => __('truckladders.hero.content')
         ]
     ],
     'linkedin' => [

@@ -8,7 +8,7 @@ return [
         'width' => __('meta.image.width'),
         'height' => __('meta.image.height')
     ],
-    'background' => asset('images').'/home-hero.jpg',
+    'background' => __('meta.background'),
     'navigation' => [
         [
             'text' => 'About',
