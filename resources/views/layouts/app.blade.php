@@ -59,14 +59,16 @@
         @component(
             'components/hero',
             [
-                'page' => $view
+                'page' => $view,
+                'tabContentList' => __($view.'.tab-content') !== $view.'.tab-content' ? __($view.'.tab-content') : FALSE
             ]
         )@endcomponent
 
         @component(
             'components/main-content',
             [
-                'page' => $view
+                'page' => $view,
+                'featuredContent' => __($view.'.main-content.featured-content') !== $view.'.main-content.featured-content' ? __($view.'.main-content.featured-content') : FALSE
             ]
         )@endcomponent
     </main>

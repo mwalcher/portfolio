@@ -1,6 +1,6 @@
 <section
     @if(__($page.'.hero.id') !== $page.'.hero.id') id="{!! __($page.'.hero.id') !!}" @endif
-    class="hero section @if (__($page.'.tab-content') !== $page.'.tab-content')hero-tab-content @endif">
+    class="hero section @if ($tabContentList)hero-tab-content @endif">
 
     <div class="hero-content">
         <h1>{!! __($page.'.hero.main-title') !!}</h1>
@@ -18,16 +18,16 @@
         @endif
     </div>
 
-    @if (__($page.'.tab-content') !== $page.'.tab-content')
+    @if ($tabContentList)
     <div class="tab-content">
         <div class="tab-container">
-            @foreach (__($page.'.tab-content') as $tabContent)
+            @foreach ($tabContentList as $tabContent)
             <button class="tab @if($loop->index == 0)active @endif" data-toggle="{!! $tabContent['title'] !!}" data-parent="tab-content" title="{!! $tabContent['title'] !!}">{!! $tabContent['title'] !!}</button>
             @endforeach
         </div>
 
         <div class="tab-content-container">
-            @foreach (__($page.'.tab-content') as $tabContent)
+            @foreach ($tabContentList as $tabContent)
             <div class="content-container @if($loop->index == 0)active @endif" data-toggle-content="{!! $tabContent['title'] !!}"  data-parent="tab-content">
                 <h2 class="invisible">{!! $tabContent['title'] !!}</h2>
                 @if (isset($tabContent['list']))

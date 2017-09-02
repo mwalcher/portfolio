@@ -59,7 +59,8 @@
         @component(
             'components/hero',
             [
-                'page' => '404'
+                'page' => '404',
+                'tabContentList' => FALSE
             ]
         )@endcomponent
     </main>
