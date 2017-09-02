@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'title' => __('meta.title'),
+    'title' => 'mwalcher / page not found',
     'description' => __('meta.description'),
     'meta-image' => [
         'src' => __('meta.image.src'),

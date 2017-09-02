@@ -3,26 +3,26 @@
 return [
     'projects' => [
         'musicbook' => [
-            'name' => 'Musicbook',
-            'link' => '/musicbook',
-            'image' => asset('images').'/musicbook-hero.jpg',
-            'description' => 'A fictional social media website for music'
+            'name' => __('musicbook.hero.main-title'),
+            'link' => route('musicbook'),
+            'image' => __('musicbook.background'),
+            'description' => __('musicbook.hero.content')
         ],
         'sex-ed' => [
             'name' => 'SEX-ED',
-            'link' => '/sex-ed',
+            'link' => route('sex-ed'),
             'image' => asset('images').'/sex-ed-hero.jpg',
             'description' => 'A fictional web service to educate teens about sex'
         ],
         'smart-fridge' => [
             'name' => 'Smart Fridge',
-            'link' => '/smart-fridge',
+            'link' => route('smart-fridge'),
             'image' => asset('images').'/smart-fridge-hero.jpg',
             'description' => 'A fictional touchscreen interface for a fridge'
         ],
         'truckladders' => [
             'name' => 'Truckladders',
-            'link' => '/truckladders',
+            'link' => route('truckladders'),
             'image' => asset('images').'/truckladders-hero.jpg',
             'description' => 'A marketing website for a new safety product'
         ]

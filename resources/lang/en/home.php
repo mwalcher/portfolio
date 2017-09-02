@@ -8,6 +8,7 @@ return [
         'width' => __('meta.image.width'),
         'height' => __('meta.image.height')
     ],
+    'background' => asset('images').'/home-hero.jpg',
     'navigation' => [
         [
             'text' => 'About',
@@ -28,7 +29,6 @@ return [
             'icon' => 'fa-envelope'
         ]
     ],
-    'background' => asset('images').'/home-hero.jpg',
     'hero' => [
         'id' => 'about',
         'main-title' => 'Matthew Walcher',

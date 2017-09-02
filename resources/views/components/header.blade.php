@@ -1,5 +1,5 @@
 <header>
-    <a href="/" class="logo no-hover" title="Home">
+    <a href="{{ route('home') }}" class="logo no-hover" title="Home">
         <span class="logoContainer">
             @include('logos/mwalcher-logo')
         </span>
@@ -49,5 +49,5 @@
         </ul>
     </nav>
     @endif
-    
+
 </header>

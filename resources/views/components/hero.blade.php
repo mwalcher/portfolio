@@ -14,7 +14,7 @@
         @endif
 
         @if(__($page.'.hero.button') !== $page.'.hero.button')
-            <a href="/" class="button center" title="{!! __($page.'.hero.button') !!}">{!! __($page.'.hero.button') !!}</a>
+            <a href="{{ route('home') }}" class="button center" title="{!! __($page.'.hero.button') !!}">{!! __($page.'.hero.button') !!}</a>
         @endif
     </div>
 
