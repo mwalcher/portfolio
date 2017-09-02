@@ -45,7 +45,7 @@
 
     <script src="https://use.fontawesome.com/9cc2906ee2.js"></script>
 </head>
-<body>
+<body class="{!! $view !!}">
     <div class="fixed-background" style="background-image: url({{ __('home.background') }})"></div>
 
     @component(
