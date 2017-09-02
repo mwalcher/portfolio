@@ -12,3 +12,8 @@
 */
 
 Route::get('/', 'PagesController@index')->name('home');
+
+// 404 Error if route doesn't match
+Route::get('{any?}', function(){
+    abort(404);
+});

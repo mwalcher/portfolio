@@ -9,12 +9,16 @@ import toggleActive from './components/toggle-active';
 document.addEventListener('readystatechange', function(){
     if(document.readyState === 'complete'){
 
-        // Header Component
-        headerInteractions({
-            mobileMenu: document.querySelector('#mobile-menu'),
-            navigation: document.querySelector('header .page-navigation'),
-            sections: document.querySelectorAll('.section')
-        });
+        const navigation = document.querySelector('header .main-navigation');
+
+        if(navigation){
+            // Header Component
+            headerInteractions({
+                mobileMenu: document.querySelector('#mobile-menu'),
+                navigation: document.querySelector('header .page-navigation'),
+                sections: document.querySelectorAll('.section')
+            });
+        }
 
         // Forms
         formInteractions({

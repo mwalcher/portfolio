@@ -1,10 +1,24 @@
-<section id="{!! __($page.'.hero.id') !!}" class="hero section">
+<section
+    @if(__($page.'.hero.id') !== $page.'.hero.id') id="{!! __($page.'.hero.id') !!}" @endif
+    class="hero section @if (__($page.'.tab-content') !== $page.'.tab-content')hero-tab-content @endif">
+
     <div class="hero-content">
         <h1>{!! __($page.'.hero.main-title') !!}</h1>
-        <h2>{!! __($page.'.hero.sub-title') !!}</h2>
-        <p>{!! __($page.'.hero.content') !!}</p>
+
+        @if(__($page.'.hero.sub-title') !== $page.'.hero.sub-title')
+            <h2>{!! __($page.'.hero.sub-title') !!}</h2>
+        @endif
+
+        @if(__($page.'.hero.content') !== $page.'.hero.content')
+            <p>{!! __($page.'.hero.content') !!}</p>
+        @endif
+
+        @if(__($page.'.hero.button') !== $page.'.hero.button')
+            <a href="/" class="button center" title="{!! __($page.'.hero.button') !!}">{!! __($page.'.hero.button') !!}</a>
+        @endif
     </div>
 
+    @if (__($page.'.tab-content') !== $page.'.tab-content')
     <div class="tab-content">
         <div class="tab-container">
             @foreach (__($page.'.tab-content') as $tabContent)
@@ -16,7 +30,7 @@
             @foreach (__($page.'.tab-content') as $tabContent)
             <div class="content-container @if($loop->index == 0)active @endif" data-toggle-content="{!! $tabContent['title'] !!}"  data-parent="tab-content">
                 <h2 class="invisible">{!! $tabContent['title'] !!}</h2>
-                @if ($tabContent['list'])
+                @if (isset($tabContent['list']))
                 <div class="interactive-icon-block">
                     @foreach ($tabContent['list'] as $listItem)
                     <div class="icon-container">
@@ -36,4 +50,6 @@
             @endforeach
         </div>
     </div>
+    @endif
+
 </section>
