@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'title' => 'mwalcher / sex-ed',
+    'title' => __('meta.title').'sex-ed',
     'description' => 'A fictional web service to educate teens about sex. Built by Matthew Walcher.',
     'meta-image' => [
         'src' => asset('images').'/sex-ed-meta-image.png',
@@ -10,25 +10,25 @@ return [
     ],
     'background' => asset('images').'/sex-ed-hero.jpg',
     'navigation' => [
-        [
+        'home' => [
             'text' => 'Home',
             'title' => 'Homepage',
             'link' => route('home'),
             'icon' => 'hidden'
         ],
-        [
+        'overview' => [
             'text' => 'Overview',
             'title' => 'Overview of SEX-ED',
             'link' => '#overview',
             'icon' => 'fa-folder-open'
         ],
-        [
+        'preview' => [
             'text' => 'Preview',
             'title' => 'Preview of SEX-ED',
             'link' => '#preview',
             'icon' => 'fa-mobile'
         ],
-        [
+        'contact' => [
             'text' => 'Contact',
             'title' => 'Contact Matthew Walcher',
             'link' => '#contact',

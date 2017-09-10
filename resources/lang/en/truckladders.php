@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'title' => 'mwalcher / truckladders',
+    'title' => __('meta.title').'truckladders',
     'description' => 'A marketing website for a new safety product. Built by Matthew Walcher.',
     'meta-image' => [
         'src' => asset('images').'/truckladders-meta-image.png',
@@ -10,25 +10,25 @@ return [
     ],
     'background' => asset('images').'/truckladders-hero.jpg',
     'navigation' => [
-        [
+        'home' => [
             'text' => 'Home',
             'title' => 'Homepage',
             'link' => route('home'),
             'icon' => 'hidden'
         ],
-        [
+        'overview' => [
             'text' => 'Overview',
             'title' => 'Overview of Truckladders',
             'link' => '#overview',
             'icon' => 'fa-folder-open'
         ],
-        [
+        'preview' => [
             'text' => 'Preview',
             'title' => 'Preview of Truckladders',
             'link' => '#preview',
             'icon' => 'fa-mobile'
         ],
-        [
+        'contact' => [
             'text' => 'Contact',
             'title' => 'Contact Matthew Walcher',
             'link' => '#contact',

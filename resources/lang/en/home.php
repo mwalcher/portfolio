@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'title' => __('meta.title'),
+    'title' => __('meta.title').'home',
     'description' => __('meta.description'),
     'meta-image' => [
         'src' => __('meta.image.src'),
@@ -10,19 +10,19 @@ return [
     ],
     'background' => __('meta.background'),
     'navigation' => [
-        [
+        'about' => [
             'text' => 'About',
             'title' => 'About Matthew Walcher',
             'link' => '#about',
             'icon' => 'fa-user'
         ],
-        [
+        'work' => [
             'text' => 'Work',
             'title' => 'Matthew Walcher\'s Work',
             'link' => '#work',
             'icon' => 'fa-desktop'
         ],
-        [
+        'contact' => [
             'text' => 'Contact',
             'title' => 'Contact Matthew Walcher',
             'link' => '#contact',

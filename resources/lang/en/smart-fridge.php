@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'title' => 'mwalcher / smart-fridge',
+    'title' => __('meta.title').'smart-fridge',
     'description' => 'A fictional touchscreen interface for a fridge. Built by Matthew Walcher.',
     'meta-image' => [
         'src' => asset('images').'/smart-fridge-meta-image.png',
@@ -10,25 +10,25 @@ return [
     ],
     'background' => asset('images').'/smart-fridge-hero.jpg',
     'navigation' => [
-        [
+        'home' => [
             'text' => 'Home',
             'title' => 'Homepage',
             'link' => route('home'),
             'icon' => 'hidden'
         ],
-        [
+        'overview' => [
             'text' => 'Overview',
             'title' => 'Overview of Smart Fridge',
             'link' => '#overview',
             'icon' => 'fa-folder-open'
         ],
-        [
+        'preview' => [
             'text' => 'Preview',
             'title' => 'Preview of Smart Fridge',
             'link' => '#preview',
             'icon' => 'fa-mobile'
         ],
-        [
+        'contact' => [
             'text' => 'Contact',
             'title' => 'Contact Matthew Walcher',
             'link' => '#contact',

@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'title' => 'mwalcher / home',
+    'title' => 'mwalcher / ',
     'description' => 'Matthew Walcher is a web developer from Toronto, Canada. He specializes in front-end web development and php development.',
     'image' => [
         'src' => asset('images').'/home-meta-image.png',
