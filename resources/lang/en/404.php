@@ -11,6 +11,10 @@ return [
     'background' => __('meta.background'),
     'hero' => [
         'main-title' => 'Page Not Found',
-        'button' => 'Back to Home'
+        'button' => [
+            'text' => __('global.home.text'),
+            'title' => __('global.home.title'),
+            'link' => __('global.home.link')
+        ]
     ]
 ];

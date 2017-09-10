@@ -1,5 +1,5 @@
 <header>
-    <a href="{{ route('home') }}" class="logo no-hover" title="Home">
+    <a href="{!! __('global.home.link') !!}" class="logo no-hover" title="{!! __('global.home.title') !!}">
         <span class="logoContainer">
             @include('logos/mwalcher-logo')
         </span>
@@ -19,7 +19,7 @@
         <h2>Navigation</h2>
         <ul class="page-navigation">
             @foreach (__($page.'.navigation') as $navItem)
-            <li>
+            <li @if ($navItem['icon'] === 'hidden')class="{!! $navItem['icon'] !!}" @endif>
                 <a href="{!! $navItem['link'] !!}" class="no-hover" title="{!! $navItem['title'] !!}">
                     <span class="icon fa {!! $navItem['icon'] !!}" aria-hidden="true"></span>
                     {!! $navItem['text'] !!}
@@ -28,25 +28,20 @@
             @endforeach
         </ul>
         <ul class="links-navigation">
+            @foreach (__('global.contact-links') as $contactLink)
             <li>
-                <a href="{!! __('global.linkedin.link') !!}" target="_blank" class="no-hover" title="{!! __('global.linkedin.title') !!}">
-                    <span class="icon fa {!! __('global.linkedin.icon') !!}" aria-hidden="true"></span>
-                    {!! __('global.linkedin.text') !!}
+                <a href="{!! $contactLink['link'] !!}" target="_blank" class="no-hover" title="{!! $contactLink['title'] !!}">
+                    <span class="icon fa {!! $contactLink['icon'] !!}" aria-hidden="true"></span>
+                    {!! $contactLink['text'] !!}
                 </a>
             </li>
-            <li>
-                <a href="{!! __('global.github.link') !!}" target="_blank" class="no-hover" title="{!! __('global.github.title') !!}">
-                    <span class="icon fa {!! __('global.github.icon') !!}" aria-hidden="true"></span>
-                    {!! __('global.github.text') !!}
-                </a>
-            </li>
-            <li>
-                <a href="{!! __('global.resume.link') !!}" target="_blank" class="no-hover" title="{!! __('global.resume.title') !!}">
-                    <span class="icon fa {!! __('global.resume.icon') !!}" aria-hidden="true"></span>
-                    {!! __('global.resume.text') !!}
-                </a>
-            </li>
+            @endforeach
         </ul>
+        @if ($page !== 'home')
+        <a href="{!! __('global.home.link') !!}" class="button" title="{!! __('global.home.title') !!}">
+            {!! __('global.home.text') !!}
+        </a>
+        @endif
     </nav>
     @endif
 

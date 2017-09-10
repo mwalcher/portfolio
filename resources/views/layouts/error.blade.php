@@ -46,7 +46,7 @@
     <script src="https://use.fontawesome.com/9cc2906ee2.js"></script>
 </head>
 <body class="error">
-    <div class="fixed-background" style="background-image: url({{ __($view.'.background') }})"></div>
+    <div class="fixed-background" style="background-image: url({{ __('404.background') }})"></div>
 
     @component(
         'components/header',

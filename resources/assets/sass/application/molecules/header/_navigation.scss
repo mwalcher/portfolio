@@ -33,6 +33,19 @@
         }
     }
 
+    .button{
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: $black;
+        border-top: 0;
+        border-right: 0;
+
+        @media screen and (min-width: $header-breakpoint){
+            display: none;
+        }
+    }
+
     ul{
         background-color: $black;
         border-left: $global-border-width solid $white-off;
@@ -230,6 +243,13 @@
                 border-bottom: 0;
             }
 
+            &.hidden{
+                display: none;
+                @media screen and (min-width: $header-breakpoint){
+                    display: list-item;
+                }
+            }
+
             a{
                 display: block;
                 color: $white-off;
@@ -266,7 +286,7 @@
                         transform: translate(-50%, -50%);
                     }
 
-                    &.fa-github{
+                    &.fa-github, &.fa-mobile{
                         &::before{
                             font-size: 3rem;
                         }

@@ -1,6 +1,31 @@
 <?php
 
 return [
+    'home' => [
+        'text' => 'Back to Home',
+        'title' => 'Homepage',
+        'link' => route('home')
+    ],
+    'contact-links' => [
+        'linkedin' => [
+            'text' => 'LinkedIn',
+            'title' => 'Matthew Walcher on LinkedIn',
+            'link' => 'https://www.linkedin.com/in/mwalcher/',
+            'icon' => 'fa-linkedin'
+        ],
+        'github' => [
+            'text' => 'Github',
+            'title' => 'Matthew Walcher on Github',
+            'link' => 'https://github.com/mwalcher',
+            'icon' => 'fa-github'
+        ],
+        'resume' => [
+            'text' => 'Resume',
+            'title' => 'Matthew Walcher\'s Resume',
+            'link' => asset('images').'/mwalcher-resume.pdf',
+            'icon' => 'fa-file-text'
+        ]
+    ],
     'projects' => [
         'musicbook' => [
             'name' => __('musicbook.hero.main-title'),
@@ -26,23 +51,5 @@ return [
             'image' => __('truckladders.background'),
             'description' => __('truckladders.hero.content')
         ]
-    ],
-    'linkedin' => [
-        'text' => 'LinkedIn',
-        'title' => 'Matthew Walcher on LinkedIn',
-        'link' => 'https://www.linkedin.com/in/mwalcher/',
-        'icon' => 'fa-linkedin'
-    ],
-    'github' => [
-        'text' => 'Github',
-        'title' => 'Matthew Walcher on Github',
-        'link' => 'https://github.com/mwalcher',
-        'icon' => 'fa-github'
-    ],
-    'resume' => [
-        'text' => 'Resume',
-        'title' => 'Matthew Walcher\'s Resume',
-        'link' => asset('images').'/mwalcher-resume.pdf',
-        'icon' => 'fa-file-text'
     ]
 ];

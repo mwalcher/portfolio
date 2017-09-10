@@ -14,7 +14,7 @@ return [
             'text' => 'Home',
             'title' => 'Homepage',
             'link' => route('home'),
-            'icon' => 'fa-user'
+            'icon' => 'hidden'
         ],
         [
             'text' => 'Overview',

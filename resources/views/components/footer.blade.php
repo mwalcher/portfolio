@@ -4,15 +4,11 @@
             <h2>{!! __('footer.title') !!}</h2>
             <p>{!! __('footer.description') !!}</p>
             <div class="contact-links">
-                <a class="button" href="{!! __('global.linkedin.link') !!}" target="_blank" title="{!! __('global.linkedin.title') !!}">
-                    {!! __('global.linkedin.text') !!}
+                @foreach (__('global.contact-links') as $contactLink)
+                <a class="button" href="{!! $contactLink['link'] !!}" target="_blank" title="{!! $contactLink['title'] !!}">
+                    {!! $contactLink['text'] !!}
                 </a>
-                <a class="button" href="{!! __('global.github.link') !!}" target="_blank" title="{!! __('global.github.title') !!}">
-                    {!! __('global.github.text') !!}
-                </a>
-                <a class="button" href="{!! __('global.resume.link') !!}" target="_blank" title="{!! __('global.resume.title') !!}">
-                    {!! __('global.resume.text') !!}
-                </a>
+                @endforeach
             </div>
         </div>
         <form name="{!! __('footer.form') !!}" method="post" action="" novalidate>
