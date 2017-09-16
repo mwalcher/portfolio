@@ -23,7 +23,7 @@
 
     <meta property="og:title" content="{!! __($view.'.title') !!}" />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="http://www.mwalcher.com" />
+    <meta property="og:url" content="{!! __('meta.url') !!}" />
     <meta property="og:image" content="{{ __($view.'.meta-image.src') }}" />
     <meta property="og:image:width" content="{!! __($view.'.meta-image.width') !!}" />
     <meta property="og:image:height" content="{!! __($view.'.meta-image.height') !!}" />

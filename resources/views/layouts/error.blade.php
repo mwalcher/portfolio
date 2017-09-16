@@ -23,7 +23,7 @@
 
     <meta property="og:title" content="{!! __('404.title') !!}" />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="http://www.mwalcher.com" />
+    <meta property="og:url" content="{!! __('meta.url') !!}" />
     <meta property="og:image" content="{{ __('404.meta-image.src') }}" />
     <meta property="og:image:width" content="{!! __('404.meta-image.width') !!}" />
     <meta property="og:image:height" content="{!! __('404.meta-image.height') !!}" />
