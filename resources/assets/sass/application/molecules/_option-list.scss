@@ -1,8 +1,9 @@
 .option-list{
-    @include spacing(padding, top, 1.5rem);
+    @include spacing(margin, top, 1.5rem);
 
     @media screen and (min-width: $laptop-breakpoint){
         display: flex;
+        justify-content: center;
     }
 
     .option{

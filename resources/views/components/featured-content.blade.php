@@ -15,6 +15,7 @@
     'components/option-list',
     [
         'list' => $list,
-        'toggle' => false,
+        'title' => false,
+        'toggle' => 'featured-content',
     ]
 )@endcomponent

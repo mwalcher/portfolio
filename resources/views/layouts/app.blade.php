@@ -69,7 +69,9 @@
             [
                 'page' => $view,
                 'featuredContent' => __($view.'.main-content.featured-content') !== $view.'.main-content.featured-content' ? __($view.'.main-content.featured-content') : FALSE,
-                'featuredCTA' => __($view.'.main-content.featured-cta') !== $view.'.main-content.featured-cta' ? __($view.'.main-content.featured-cta') : FALSE
+                'featuredCTA' => __($view.'.main-content.featured-cta') !== $view.'.main-content.featured-cta' ? __($view.'.main-content.featured-cta') : FALSE,
+                'optionList' => __($view.'.main-content.option-list') !== $view.'.main-content.option-list' ? __($view.'.main-content.option-list') : FALSE,
+                'optionListTitle' => __($view.'.main-content.option-list-title') !== $view.'.main-content.option-list-title' ? __($view.'.main-content.option-list-title') : FALSE
             ]
         )@endcomponent
     </main>

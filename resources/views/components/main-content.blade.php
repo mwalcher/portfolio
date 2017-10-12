@@ -11,4 +11,15 @@
         )@endcomponent
     @endif
 
+    @if ($optionList)
+        @component(
+            'components/option-list',
+            [
+                'list' => $optionList,
+                'title' => $optionListTitle,
+                'toggle' => false,
+            ]
+        )@endcomponent
+    @endif
+
 </section>

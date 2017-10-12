@@ -1,3 +1,7 @@
+@if($title)
+<h2>{{$title}}</h2>
+@endif
+
 <ul class="option-list">
     @foreach ($list as $key => $listItem)
     <li class="option {{ $key }} @if($toggle && $loop->index == 0)active @endif"

@@ -50,6 +50,27 @@ return [
     ],
     'main-content' => [
         'id' => 'preview',
-        'main-title' => 'Preview'
+        'main-title' => 'Preview',
+        'option-list' => [
+            'sex-ed' => [
+                'name' => __('sex-ed.hero.main-title'),
+                'link' => route('sex-ed'),
+                'image' => __('sex-ed.background'),
+                'description' => __('sex-ed.hero.content')
+            ],
+            'smart-fridge' => [
+                'name' => __('smart-fridge.hero.main-title'),
+                'link' => route('smart-fridge'),
+                'image' => __('smart-fridge.background'),
+                'description' => __('smart-fridge.hero.content')
+            ],
+            'truckladders' => [
+                'name' => __('truckladders.hero.main-title'),
+                'link' => route('truckladders'),
+                'image' => __('truckladders.background'),
+                'description' => __('truckladders.hero.content')
+            ]
+        ],
+        'option-list-title' => 'Other Projects'
     ]
 ];
