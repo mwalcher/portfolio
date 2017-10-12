@@ -68,7 +68,8 @@
             'components/main-content',
             [
                 'page' => $view,
-                'featuredContent' => __($view.'.main-content.featured-content') !== $view.'.main-content.featured-content' ? __($view.'.main-content.featured-content') : FALSE
+                'featuredContent' => __($view.'.main-content.featured-content') !== $view.'.main-content.featured-content' ? __($view.'.main-content.featured-content') : FALSE,
+                'featuredCTA' => __($view.'.main-content.featured-cta') !== $view.'.main-content.featured-cta' ? __($view.'.main-content.featured-cta') : FALSE
             ]
         )@endcomponent
     </main>

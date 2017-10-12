@@ -1,11 +1,11 @@
-.project-list{
+.option-list{
     @include spacing(padding, top, 1.5rem);
 
     @media screen and (min-width: $laptop-breakpoint){
         display: flex;
     }
 
-    .project{
+    .option{
         position: relative;
         @include set-background-colour($black);
         @include transition(background-color);
@@ -20,7 +20,7 @@
             @include spacing(padding, bottom, 25%);
         }
 
-        & ~ .project{
+        & ~ .option{
             @include spacing(margin, top, 0.75rem);
 
             @media screen and (min-width: $laptop-breakpoint){
