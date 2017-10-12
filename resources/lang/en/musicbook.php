@@ -8,7 +8,7 @@ return [
         'width' => __('meta.image.width'),
         'height' => __('meta.image.height')
     ],
-    'background' => asset('images').'/musicbook-hero.jpg',
+    'background' => __('global.projects.musicbook.image'),
     'navigation' => [
         'home' => [
             'text' => 'Home',
@@ -37,8 +37,8 @@ return [
     ],
     'hero' => [
         'id' => 'overview',
-        'main-title' => 'Musicbook',
-        'content' => 'A fictional social media website for music'
+        'main-title' => __('global.projects.musicbook.name'),
+        'content' => __('global.projects.musicbook.description')
     ],
     'tab-content' => [
         'about' => [
@@ -52,24 +52,9 @@ return [
         'id' => 'preview',
         'main-title' => 'Preview',
         'option-list' => [
-            'sex-ed' => [
-                'name' => __('sex-ed.hero.main-title'),
-                'link' => route('sex-ed'),
-                'image' => __('sex-ed.background'),
-                'description' => __('sex-ed.hero.content')
-            ],
-            'smart-fridge' => [
-                'name' => __('smart-fridge.hero.main-title'),
-                'link' => route('smart-fridge'),
-                'image' => __('smart-fridge.background'),
-                'description' => __('smart-fridge.hero.content')
-            ],
-            'truckladders' => [
-                'name' => __('truckladders.hero.main-title'),
-                'link' => route('truckladders'),
-                'image' => __('truckladders.background'),
-                'description' => __('truckladders.hero.content')
-            ]
+            'sex-ed' => __('global.projects.sex-ed'),
+            'smart-fridge' => __('global.projects.smart-fridge'),
+            'truckladders' => __('global.projects.truckladders')
         ],
         'option-list-title' => 'Other Projects'
     ]

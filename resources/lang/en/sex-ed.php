@@ -8,7 +8,7 @@ return [
         'width' => __('meta.image.width'),
         'height' => __('meta.image.height')
     ],
-    'background' => asset('images').'/sex-ed-hero.jpg',
+    'background' => __('global.projects.sex-ed.image'),
     'navigation' => [
         'home' => [
             'text' => 'Home',
@@ -37,8 +37,8 @@ return [
     ],
     'hero' => [
         'id' => 'overview',
-        'main-title' => 'SEX-ED',
-        'content' => 'A fictional web service to educate teens about sex'
+        'main-title' => __('global.projects.sex-ed.name'),
+        'content' => __('global.projects.sex-ed.description')
     ],
     'tab-content' => [
         'about' => [
@@ -50,6 +50,12 @@ return [
     ],
     'main-content' => [
         'id' => 'preview',
-        'main-title' => 'Preview'
+        'main-title' => 'Preview',
+        'option-list' => [
+            'musicbook' => __('global.projects.musicbook'),
+            'smart-fridge' => __('global.projects.smart-fridge'),
+            'truckladders' => __('global.projects.truckladders')
+        ],
+        'option-list-title' => 'Other Projects'
     ]
 ];

@@ -8,7 +8,7 @@ return [
         'width' => __('meta.image.width'),
         'height' => __('meta.image.height')
     ],
-    'background' => asset('images').'/smart-fridge-hero.jpg',
+    'background' => __('global.projects.smart-fridge.image'),
     'navigation' => [
         'home' => [
             'text' => 'Home',
@@ -37,8 +37,8 @@ return [
     ],
     'hero' => [
         'id' => 'overview',
-        'main-title' => 'Smart Fridge',
-        'content' => 'A fictional touchscreen interface for a fridge'
+        'main-title' => __('global.projects.smart-fridge.name'),
+        'content' => __('global.projects.smart-fridge.description')
     ],
     'tab-content' => [
         'about' => [
@@ -50,6 +50,12 @@ return [
     ],
     'main-content' => [
         'id' => 'preview',
-        'main-title' => 'Preview'
+        'main-title' => 'Preview',
+        'option-list' => [
+            'musicbook' => __('global.projects.musicbook'),
+            'sex-ed' => __('global.projects.sex-ed'),
+            'truckladders' => __('global.projects.truckladders')
+        ],
+        'option-list-title' => 'Other Projects'
     ]
 ];

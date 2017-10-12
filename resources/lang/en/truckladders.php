@@ -8,7 +8,7 @@ return [
         'width' => __('meta.image.width'),
         'height' => __('meta.image.height')
     ],
-    'background' => asset('images').'/truckladders-hero.jpg',
+    'background' => __('global.projects.truckladders.image'),
     'navigation' => [
         'home' => [
             'text' => 'Home',
@@ -37,8 +37,8 @@ return [
     ],
     'hero' => [
         'id' => 'overview',
-        'main-title' => 'Truckladders',
-        'content' => 'A marketing website for a new safety product'
+        'main-title' => __('global.projects.truckladders.name'),
+        'content' => __('global.projects.truckladders.description')
     ],
     'tab-content' => [
         'about' => [
@@ -50,6 +50,12 @@ return [
     ],
     'main-content' => [
         'id' => 'preview',
-        'main-title' => 'Preview'
+        'main-title' => 'Preview',
+        'option-list' => [
+            'musicbook' => __('global.projects.musicbook'),
+            'sex-ed' => __('global.projects.sex-ed'),
+            'smart-fridge' => __('global.projects.smart-fridge')
+        ],
+        'option-list-title' => 'Other Projects'
     ]
 ];

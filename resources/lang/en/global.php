@@ -28,28 +28,28 @@ return [
     ],
     'projects' => [
         'musicbook' => [
-            'name' => __('musicbook.hero.main-title'),
+            'name' => 'Musicbook',
             'link' => route('musicbook'),
-            'image' => __('musicbook.background'),
-            'description' => __('musicbook.hero.content')
+            'image' => asset('images').'/musicbook-hero.jpg',
+            'description' => 'A fictional social media website for music'
         ],
         'sex-ed' => [
-            'name' => __('sex-ed.hero.main-title'),
+            'name' => 'SEX-ED',
             'link' => route('sex-ed'),
-            'image' => __('sex-ed.background'),
-            'description' => __('sex-ed.hero.content')
+            'image' => asset('images').'/sex-ed-hero.jpg',
+            'description' => 'A fictional web service to educate teens about sex'
         ],
         'smart-fridge' => [
-            'name' => __('smart-fridge.hero.main-title'),
+            'name' => 'Smart Fridge',
             'link' => route('smart-fridge'),
-            'image' => __('smart-fridge.background'),
-            'description' => __('smart-fridge.hero.content')
+            'image' => asset('images').'/smart-fridge-hero.jpg',
+            'description' => 'A fictional touchscreen interface for a fridge'
         ],
         'truckladders' => [
-            'name' => __('truckladders.hero.main-title'),
+            'name' => 'Truckladders',
             'link' => route('truckladders'),
-            'image' => __('truckladders.background'),
-            'description' => __('truckladders.hero.content')
+            'image' => asset('images').'/truckladders-hero.jpg',
+            'description' => 'A marketing website for a new safety product'
         ]
     ]
 ];
