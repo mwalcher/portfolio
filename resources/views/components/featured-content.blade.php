@@ -11,13 +11,10 @@
     @endforeach
 </div>
 
-<ul class="option-list">
-    @foreach ($list as $key => $listItem)
-    <li class="option {{ $key }} @if($loop->index == 0)active @endif" data-toggle="{{ $key }}" data-parent="featured-content" data-scroll="true">
-        <div class="absolute-background" style="background-image: url({{ $listItem['image'] }})"></div>
-        <div class="content">
-            <h3>{!! $listItem['name'] !!}</h3>
-        </div>
-    </li>
-    @endforeach
-</ul>
+@component(
+    'components/option-list',
+    [
+        'list' => $list,
+        'toggle' => false,
+    ]
+)@endcomponent
