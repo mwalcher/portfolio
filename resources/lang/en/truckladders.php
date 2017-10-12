@@ -11,51 +11,51 @@ return [
     'background' => __('global.projects.truckladders.image'),
     'navigation' => [
         'home' => [
-            'text' => 'Home',
-            'title' => 'Homepage',
-            'link' => route('home'),
-            'icon' => 'hidden'
+            'text' => __('projects.navigation.home.text'),
+            'title' => __('projects.navigation.home.title'),
+            'link' => __('projects.navigation.home.link'),
+            'icon' => __('projects.navigation.home.icon')
         ],
         'overview' => [
-            'text' => 'Overview',
-            'title' => 'Overview of Truckladders',
-            'link' => '#overview',
-            'icon' => 'fa-folder-open'
+            'text' => __('projects.navigation.overview.text'),
+            'title' => __('projects.navigation.overview.title').__('global.projects.truckladders.name'),
+            'link' => __('projects.navigation.overview.link'),
+            'icon' => __('projects.navigation.overview.icon')
         ],
         'preview' => [
-            'text' => 'Preview',
-            'title' => 'Preview of Truckladders',
-            'link' => '#preview',
-            'icon' => 'fa-mobile'
+            'text' => __('projects.navigation.preview.text'),
+            'title' => __('projects.navigation.preview.title').__('global.projects.truckladders.name'),
+            'link' => __('projects.navigation.preview.link'),
+            'icon' => __('projects.navigation.preview.icon')
         ],
         'contact' => [
-            'text' => 'Contact',
-            'title' => 'Contact Matthew Walcher',
-            'link' => '#contact',
-            'icon' => 'fa-envelope'
+            'text' => __('projects.navigation.contact.text'),
+            'title' => __('projects.navigation.contact.title'),
+            'link' => __('projects.navigation.contact.link'),
+            'icon' => __('projects.navigation.contact.icon')
         ]
     ],
     'hero' => [
-        'id' => 'overview',
+        'id' => __('projects.hero.id'),
         'main-title' => __('global.projects.truckladders.name'),
         'content' => __('global.projects.truckladders.description')
     ],
     'tab-content' => [
         'about' => [
-            'title' => 'About Truckladders'
+            'title' => __('projects.tab-content.about.title').__('global.projects.truckladders.name')
         ],
         'work' => [
-            'title' => 'What I Did'
+            'title' => __('projects.tab-content.work.title')
         ]
     ],
     'main-content' => [
-        'id' => 'preview',
-        'main-title' => 'Preview',
+        'id' => __('projects.main-content.id'),
+        'main-title' => __('projects.main-content.main-title'),
         'option-list' => [
             'musicbook' => __('global.projects.musicbook'),
             'sex-ed' => __('global.projects.sex-ed'),
             'smart-fridge' => __('global.projects.smart-fridge')
         ],
-        'option-list-title' => 'Other Projects'
+        'option-list-title' => __('projects.main-content.option-list-title')
     ]
 ];

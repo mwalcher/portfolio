@@ -2,6 +2,7 @@
 
 return [
     'home' => [
+        'name' => 'Home',
         'text' => 'Back to Home',
         'title' => 'Homepage',
         'link' => route('home')

@@ -11,51 +11,51 @@ return [
     'background' => __('global.projects.sex-ed.image'),
     'navigation' => [
         'home' => [
-            'text' => 'Home',
-            'title' => 'Homepage',
-            'link' => route('home'),
-            'icon' => 'hidden'
+            'text' => __('projects.navigation.home.text'),
+            'title' => __('projects.navigation.home.title'),
+            'link' => __('projects.navigation.home.link'),
+            'icon' => __('projects.navigation.home.icon')
         ],
         'overview' => [
-            'text' => 'Overview',
-            'title' => 'Overview of SEX-ED',
-            'link' => '#overview',
-            'icon' => 'fa-folder-open'
+            'text' => __('projects.navigation.overview.text'),
+            'title' => __('projects.navigation.overview.title').__('global.projects.sex-ed.name'),
+            'link' => __('projects.navigation.overview.link'),
+            'icon' => __('projects.navigation.overview.icon')
         ],
         'preview' => [
-            'text' => 'Preview',
-            'title' => 'Preview of SEX-ED',
-            'link' => '#preview',
-            'icon' => 'fa-mobile'
+            'text' => __('projects.navigation.preview.text'),
+            'title' => __('projects.navigation.preview.title').__('global.projects.sex-ed.name'),
+            'link' => __('projects.navigation.preview.link'),
+            'icon' => __('projects.navigation.preview.icon')
         ],
         'contact' => [
-            'text' => 'Contact',
-            'title' => 'Contact Matthew Walcher',
-            'link' => '#contact',
-            'icon' => 'fa-envelope'
+            'text' => __('projects.navigation.contact.text'),
+            'title' => __('projects.navigation.contact.title'),
+            'link' => __('projects.navigation.contact.link'),
+            'icon' => __('projects.navigation.contact.icon')
         ]
     ],
     'hero' => [
-        'id' => 'overview',
+        'id' => __('projects.hero.id'),
         'main-title' => __('global.projects.sex-ed.name'),
         'content' => __('global.projects.sex-ed.description')
     ],
     'tab-content' => [
         'about' => [
-            'title' => 'About SEX-ED'
+            'title' => __('projects.tab-content.about.title').__('global.projects.sex-ed.name')
         ],
         'work' => [
-            'title' => 'What I Did'
+            'title' => __('projects.tab-content.work.title')
         ]
     ],
     'main-content' => [
-        'id' => 'preview',
-        'main-title' => 'Preview',
+        'id' => __('projects.main-content.id'),
+        'main-title' => __('projects.main-content.main-title'),
         'option-list' => [
             'musicbook' => __('global.projects.musicbook'),
             'smart-fridge' => __('global.projects.smart-fridge'),
             'truckladders' => __('global.projects.truckladders')
         ],
-        'option-list-title' => 'Other Projects'
+        'option-list-title' => __('projects.main-content.option-list-title')
     ]
 ];

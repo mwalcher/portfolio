@@ -23,10 +23,10 @@ return [
             'icon' => 'fa-desktop'
         ],
         'contact' => [
-            'text' => 'Contact',
-            'title' => 'Contact Matthew Walcher',
-            'link' => '#contact',
-            'icon' => 'fa-envelope'
+            'text' => __('footer.navigation.text'),
+            'title' => __('footer.navigation.title'),
+            'link' => __('footer.navigation.link'),
+            'icon' => __('footer.navigation.icon')
         ]
     ],
     'hero' => [
