@@ -51,11 +51,16 @@ return [
     'main-content' => [
         'id' => __('projects.main-content.id'),
         'main-title' => __('projects.main-content.main-title'),
-        'option-list' => [
-            'musicbook' => __('global.projects.musicbook'),
-            'sex-ed' => __('global.projects.sex-ed'),
-            'smart-fridge' => __('global.projects.smart-fridge')
-        ],
-        'option-list-title' => __('projects.main-content.option-list-title')
+        'components' => [
+            'option-list' => [
+                'title' => __('projects.main-content.option-list-title'),
+                'list' => [
+                    'musicbook' => __('global.projects.musicbook'),
+                    'sex-ed' => __('global.projects.sex-ed'),
+                    'smart-fridge' => __('global.projects.smart-fridge')
+                ],
+                'toggle' => false
+            ]
+        ]
     ]
 ];

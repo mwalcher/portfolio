@@ -51,11 +51,16 @@ return [
     'main-content' => [
         'id' => __('projects.main-content.id'),
         'main-title' => __('projects.main-content.main-title'),
-        'option-list' => [
-            'musicbook' => __('global.projects.musicbook'),
-            'smart-fridge' => __('global.projects.smart-fridge'),
-            'truckladders' => __('global.projects.truckladders')
-        ],
-        'option-list-title' => __('projects.main-content.option-list-title')
+        'components' => [
+            'option-list' => [
+                'title' => __('projects.main-content.option-list-title'),
+                'list' => [
+                    'musicbook' => __('global.projects.musicbook'),
+                    'smart-fridge' => __('global.projects.smart-fridge'),
+                    'truckladders' => __('global.projects.truckladders')
+                ],
+                'toggle' => false
+            ]
+        ]
     ]
 ];

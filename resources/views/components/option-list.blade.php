@@ -1,17 +1,17 @@
-@if($title)
-<h2>{{$title}}</h2>
+@if($properties['title'])
+<h2>{{$properties['title']}}</h2>
 @endif
 
 <ul class="option-list">
-    @foreach ($list as $key => $listItem)
-    <li class="option {{ $key }} @if($toggle && $loop->index == 0)active @endif"
-        @if($toggle)
+    @foreach ($properties['list'] as $key => $listItem)
+    <li class="option {{ $key }} @if($properties['toggle'] && $loop->index == 0)active @endif"
+        @if($properties['toggle'])
         data-toggle="{{ $key }}"
-        data-parent="{{ $toggle }}"
+        data-parent="{{ $properties['toggle'] }}"
         data-scroll="true"
         @endif>
 
-        @if(!$toggle)
+        @if(!$properties['toggle'])
         <a href="{{route($key)}}" class="option-link no-hover" title="{!! $listItem['name'] !!}">
             <span class="invisible">{!! $listItem['name'] !!}</span>
         </a>

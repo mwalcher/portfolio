@@ -82,7 +82,11 @@ return [
     'main-content' => [
         'id' => 'work',
         'main-title' => 'Projects',
-        'featured-content' => __('global.projects'),
-        'featured-cta' => 'View Project'
+        'components' => [
+            'featured-content' => [
+                'list' => __('global.projects'),
+                'cta' => 'View Project'
+            ]
+        ]
     ]
 ];
