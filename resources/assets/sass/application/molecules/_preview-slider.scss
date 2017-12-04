@@ -45,7 +45,7 @@
 
             &:hover, &:focus{
                 outline: none;
-                border-color: transparent transparent $green-rgba transparent;
+                border-color: transparent transparent $green-rgba-dark transparent;
             }
 
             &.previous{
@@ -72,7 +72,7 @@ body{
                 .preview-slider{
                     .flickity-prev-next-button{
                         &:hover, &:focus{
-                            border-color: transparent transparent $colour transparent;
+                            border-color: transparent transparent rgba($colour, 0.75) transparent;
                         }
                     }
                 }
