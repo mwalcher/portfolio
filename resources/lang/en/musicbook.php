@@ -70,7 +70,12 @@ return [
                         'src' => asset('images').'/musicbook-device-4-desktop.png',
                         'alt' => 'An example of a user\'s profile page represented on an iMac'
                     ]
-                ]
+                ],
+                'cta' => [
+                    'text' => 'View Musicbook',
+                    'title' => 'View Musicbook',
+                    'link' => __('global.projects.musicbook.link')
+                ],
             ],
             'option-list' => [
                 'title' => __('projects.main-content.option-list-title'),

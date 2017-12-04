@@ -44,9 +44,10 @@ a:not(.button){
 
     @media screen and (min-width: $phone-breakpoint){
         max-width: 12.5rem;
+        max-width: max-content;
     }
 
-    &:before, &::after{
+    &::after{
         content: "";
         position: absolute;
         top: 0;
@@ -56,10 +57,6 @@ a:not(.button){
         z-index: -1;
     }
 
-    &:before{
-        height: 1px;
-    }
-
     &::after{
         left: 50%;
         height: 100%;
@@ -67,13 +64,13 @@ a:not(.button){
     }
 
     &:hover, &:focus{
-        &:before, &::after{
+        &::after{
             width: calc(100% - 2.625rem);
         }
     }
 
     &:active{
-        &:before, &::after{
+        &::after{
             width: calc(100% + 2.625rem);
         }
     }
@@ -87,6 +84,8 @@ a:not(.button){
     }
 
     &.full-width{
-        max-width: 100%;
+        @media screen and (min-width: $phone-breakpoint){
+            max-width: 100%;
+        }
     }
 }

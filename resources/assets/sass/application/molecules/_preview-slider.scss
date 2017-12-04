@@ -4,6 +4,7 @@
     .preview-slider{
         position: relative;
         @include spacing(padding, left right, 5.5rem);
+        @include spacing(margin, top, md);
 
         &:focus{
             outline: none;
