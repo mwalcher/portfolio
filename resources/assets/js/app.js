@@ -2,8 +2,9 @@
 
 NodeList.prototype.forEach = NodeList.prototype.forEach || Array.prototype.forEach;
 
-import headerInteractions from './components/header-interactions';
 import formInteractions from './components/form-interactions';
+import headerInteractions from './components/header-interactions';
+import previewSlider from './components/preview-slider';
 import toggleActive from './components/toggle-active';
 
 document.addEventListener('readystatechange', function(){
@@ -29,6 +30,11 @@ document.addEventListener('readystatechange', function(){
         toggleActive({
             triggers: document.querySelectorAll('[data-toggle]'),
             toggleContent: document.querySelectorAll('[data-toggle-content]')
+        });
+
+        // Preview Slider
+        previewSlider({
+            sliders: document.querySelectorAll('.preview-slider')
         });
     }
 });

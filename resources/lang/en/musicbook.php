@@ -52,6 +52,26 @@ return [
         'id' => __('projects.main-content.id'),
         'main-title' => __('projects.main-content.main-title'),
         'components' => [
+            'preview-slider' => [
+                'list' => [
+                    'phone' => [
+                        'src' => asset('images').'/musicbook-device-1-phone.png',
+                        'alt' => 'The Musicbook login page represented on an iPhone'
+                    ],
+                    'tablet' => [
+                        'src' => asset('images').'/musicbook-device-2-tablet.png',
+                        'alt' => 'An example of a user\'s playlist page represented on an iPad'
+                    ],
+                    'laptop' => [
+                        'src' => asset('images').'/musicbook-device-3-laptop.png',
+                        'alt' => 'The Musicbook music page represented on a Macbook Pro'
+                    ],
+                    'desktop' => [
+                        'src' => asset('images').'/musicbook-device-4-desktop.png',
+                        'alt' => 'An example of a user\'s profile page represented on an iMac'
+                    ]
+                ]
+            ],
             'option-list' => [
                 'title' => __('projects.main-content.option-list-title'),
                 'list' => [
