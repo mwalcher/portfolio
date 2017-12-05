@@ -18,6 +18,24 @@ header{
             &::before, &::after{
                 display: none;
             }
+
+            li{
+                &:first-child{
+                    &::before{
+                        display: none;
+                    }
+                }
+
+                &:last-child{
+                    &::after{
+                        display: none;
+                    }
+                }
+            }
         }
     }
+}
+
+.preview-slider{
+    display: none;
 }
