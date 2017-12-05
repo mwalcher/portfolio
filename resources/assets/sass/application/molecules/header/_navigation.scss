@@ -38,6 +38,7 @@
         top: 100%;
         left: 0;
         background-color: $black;
+        @include spacing(padding, all, $button-padding);
         border-top: 0;
         border-right: 0;
 
