@@ -50,7 +50,6 @@ return [
     ],
     'main-content' => [
         'id' => __('projects.main-content.id'),
-        'main-title' => __('projects.main-content.main-title'),
         'components' => [
             'option-list' => [
                 'title' => __('projects.main-content.option-list-title'),

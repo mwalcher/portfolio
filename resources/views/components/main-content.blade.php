@@ -1,5 +1,8 @@
 <section id="{!! __($page.'.main-content.id') !!}" class="main-content light-section section">
-    <h2>{!! __($page.'.main-content.main-title') !!}</h2>
+
+    @if (__($page.'.main-content.main-title') !== $page.'.main-content.main-title')
+        <h2>{!! __($page.'.main-content.main-title') !!}</h2>
+    @endif
 
     @if ($components)
         @foreach ($components as $name => $properties)
