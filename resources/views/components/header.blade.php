@@ -5,7 +5,7 @@
         </span>
     </a>
 
-    @if (__($page.'.navigation') !== $page.'.navigation')
+    @if (issetLang($page.'.navigation'))
     <button id="mobile-menu">
         <span class="invisible">Menu</span>
         <span class="icon">

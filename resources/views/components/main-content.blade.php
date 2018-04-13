@@ -1,6 +1,6 @@
 <section id="{!! __($page.'.main-content.id') !!}" class="main-content light-section section">
 
-    @if (__($page.'.main-content.main-title') !== $page.'.main-content.main-title')
+    @if (issetLang($page.'.main-content.main-title'))
         <h2>{!! __($page.'.main-content.main-title') !!}</h2>
     @endif
 

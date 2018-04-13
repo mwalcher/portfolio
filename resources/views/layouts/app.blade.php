@@ -31,7 +31,6 @@
     <meta property="og:site_name" content="{!! __($view.'.title') !!}" />
 
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:creator" content="@mrwalcher">
     <meta name="twitter:title" content="{!! __($view.'.title') !!}">
     <meta name="twitter:description" content="{!! __($view.'.description') !!}">
     <meta name="twitter:image" content="{{ __($view.'.meta-image.src') }}">
@@ -60,7 +59,7 @@
             'components/hero',
             [
                 'page' => $view,
-                'tabContentList' => __($view.'.tab-content') !== $view.'.tab-content' ? __($view.'.tab-content') : FALSE
+                'tabContentList' => issetLang($view.'.tab-content') ? __($view.'.tab-content') : FALSE
             ]
         )@endcomponent
 
@@ -68,7 +67,7 @@
             'components/main-content',
             [
                 'page' => $view,
-                'components' => __($view.'.main-content.components') !== $view.'.main-content.components' ? __($view.'.main-content.components') : FALSE
+                'components' => issetLang($view.'.main-content.components') ? __($view.'.main-content.components') : FALSE
             ]
         )@endcomponent
     </main>
