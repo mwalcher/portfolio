@@ -48,7 +48,7 @@
     <div class="fixed-background" style="background-image: url({{ __($view.'.background') }})"></div>
 
     @component(
-        'components/header',
+        'components/layout/header',
         [
             'page' => $view
         ]
@@ -56,7 +56,7 @@
 
     <main>
         @component(
-            'components/hero',
+            'components/layout/hero',
             [
                 'page' => $view,
                 'tabContentList' => issetLang($view.'.tab-content') ? __($view.'.tab-content') : FALSE
@@ -64,7 +64,7 @@
         )@endcomponent
 
         @component(
-            'components/main-content',
+            'components/layout/main-content',
             [
                 'page' => $view,
                 'components' => issetLang($view.'.main-content.components') ? __($view.'.main-content.components') : FALSE
@@ -73,7 +73,7 @@
     </main>
 
     @component(
-        'components/footer',
+        'components/layout/footer',
         [
             'page' => $view
         ]

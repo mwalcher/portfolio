@@ -48,7 +48,7 @@
     <div class="fixed-background" style="background-image: url({{ __('404.background') }})"></div>
 
     @component(
-        'components/header',
+        'components/layout/header',
         [
             'page' => '404'
         ]
@@ -56,7 +56,7 @@
 
     <main>
         @component(
-            'components/hero',
+            'components/layout/hero',
             [
                 'page' => '404',
                 'tabContentList' => FALSE
