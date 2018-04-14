@@ -1,4 +1,3 @@
-@php $view = substr($view, strlen('errors::')); @endphp
 <!DOCTYPE html>
 <html lang="{{ app()->getLocale() }}">
 <head>
@@ -17,26 +16,12 @@
 
     @component('components/head/styles')@endcomponent
 </head>
-<body class="error error-{!! $view !!}">
+<body class="simple {!! $view !!}">
     <div class="fixed-background" style="background-image: url({{ __($view.'.background') }})"></div>
 
-    @component(
-        'components/layout/header',
-        [
-            'page' => $view
-        ]
-    )@endcomponent
-
     <main>
-        @component(
-            'components/layout/hero',
-            [
-                'page' => $view,
-                'tabContentList' => FALSE
-            ]
-        )@endcomponent
+        @yield('content')
     </main>
 
-    <script src="{{ asset('js/app.js') }}"></script>
 </body>
 </html>

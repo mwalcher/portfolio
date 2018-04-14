@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'title' => __('meta.title').'home',
+    'title' => __('meta.title'),
     'description' => __('meta.description'),
     'meta-image' => [
         'src' => __('meta.image.src'),

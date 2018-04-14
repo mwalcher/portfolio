@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'title' => __('meta.title').'smart-fridge',
+    'title' => __('global.projects.smart-fridge.name').' / '.__('meta.title'),
     'description' => 'A fictional touchscreen interface for a fridge. Built by Matthew Walcher.',
     'meta-image' => [
         'src' => asset('images').'/smart-fridge-meta-image.png',

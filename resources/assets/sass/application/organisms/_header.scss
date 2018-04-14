@@ -27,7 +27,7 @@ header{
         display: block;
 
         &.dark{
-            .logoContainer{
+            .logo-container{
                 svg{
                     @media screen and (min-width: $header-breakpoint){
                         fill: $black;
@@ -36,7 +36,7 @@ header{
             }
         }
 
-        .logoContainer{
+        .logo-container{
             display: block;
             width: 6.125rem;
             height: 3.5rem;

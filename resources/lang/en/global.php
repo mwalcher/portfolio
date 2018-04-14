@@ -7,6 +7,11 @@ return [
         'title' => 'Homepage',
         'link' => route('home')
     ],
+    'email' => [
+        'text' => 'Email Me',
+        'title' => 'Email Matthew Walcher',
+        'link' => 'mailto:matt@mwalcher.com'
+    ],
     'contact-links' => [
         'linkedin' => [
             'text' => 'LinkedIn',

@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'title' => __('meta.title').'musicbook',
+    'title' => __('global.projects.musicbook.name').' / '.__('meta.title'),
     'description' => 'A fictional social media website for music. Built by Matthew Walcher.',
     'meta-image' => [
         'src' => asset('images').'/musicbook-meta-image.png',

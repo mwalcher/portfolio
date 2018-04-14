@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'title' => __('meta.title').'sex-ed',
+    'title' => __('global.projects.sex-ed.name').' / '.__('meta.title'),
     'description' => 'A fictional web service to educate teens about sex. Built by Matthew Walcher.',
     'meta-image' => [
         'src' => asset('images').'/sex-ed-meta-image.png',
