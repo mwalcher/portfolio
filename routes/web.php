@@ -11,15 +11,15 @@
 |
 */
 
-Route::get('/', 'PagesController@index')->name('home');
-Route::get('/coming-soon', 'PagesController@comingSoon')->name('coming-soon');
-
-Route::get('/musicbook', 'PagesController@musicbook')->name('musicbook');
-Route::get('/sex-ed', 'PagesController@sexEd')->name('sex-ed');
-Route::get('/smart-fridge', 'PagesController@smartFridge')->name('smart-fridge');
-Route::get('/truckladders', 'PagesController@truckladders')->name('truckladders');
+//Route::get('/', 'PagesController@index')->name('home');
+Route::get('/', 'PagesController@comingSoon')->name('home');
 
 // 404 Error if route doesn't match
 Route::get('{any?}', function(){
     abort(404);
 });
+
+Route::get('/musicbook', 'PagesController@musicbook')->name('musicbook');
+Route::get('/sex-ed', 'PagesController@sexEd')->name('sex-ed');
+Route::get('/smart-fridge', 'PagesController@smartFridge')->name('smart-fridge');
+Route::get('/truckladders', 'PagesController@truckladders')->name('truckladders');
