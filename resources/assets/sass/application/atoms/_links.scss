@@ -51,16 +51,12 @@ a:not(.button){
         content: "";
         position: absolute;
         top: 0;
-        left: 0;
-        width: 0;
-        @include transition(width);
-        z-index: -1;
-    }
-
-    &::after{
         left: 50%;
+        width: 0;
         height: 100%;
         transform: translateX(-50%) skewX(45deg);
+        @include transition(width);
+        z-index: -1;
     }
 
     &:hover, &:focus{
@@ -81,11 +77,5 @@ a:not(.button){
 
     &.center{
         @include spacing(margin, left right, auto);
-    }
-
-    &.full-width{
-        @media screen and (min-width: $phone-breakpoint){
-            max-width: 100%;
-        }
     }
 }
