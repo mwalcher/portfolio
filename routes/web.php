@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/', 'PagesController@comingSoon')->name('home');
+Route::get('/', 'PagesController@index')->name('home');
 
 Route::get('/coming-soon', 'PagesController@comingSoon')->name('coming-soon');
 
