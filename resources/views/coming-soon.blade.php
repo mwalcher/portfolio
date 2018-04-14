@@ -3,7 +3,7 @@
 @section('content')
     <section class="hero section">
         <div class="hero-content">
-            <div class="logoContainer">
+            <div class="logo-container">
                 <img src="{!! __('coming-soon.hero.logo.src') !!}" alt="{!! __('coming-soon.hero.logo.alt') !!}" />
             </div>
             <h1>{!! __('coming-soon.hero.main-title') !!}</h1>

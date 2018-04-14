@@ -1,6 +1,6 @@
 <header>
     <a href="{!! __('global.home.link') !!}" class="logo no-hover" title="{!! __('global.home.title') !!}">
-        <span class="logoContainer">
+        <span class="logo-container">
             @include('logos/mwalcher-logo')
         </span>
     </a>
