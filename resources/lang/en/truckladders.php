@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'title' => __('meta.title').'truckladders',
+    'title' => __('global.projects.truckladders.name').' / '.__('meta.title'),
     'description' => 'A marketing website for a new safety product. Built by Matthew Walcher.',
     'meta-image' => [
         'src' => asset('images').'/truckladders-meta-image.png',
