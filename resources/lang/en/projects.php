@@ -41,6 +41,7 @@ return [
     'main-content' => [
         'id' => 'preview',
         'main-title' => 'Preview',
+        'preview-slider-cta' => 'View ',
         'option-list-title' => 'Other Projects'
     ]
 ];

@@ -72,8 +72,8 @@ return [
                     ]
                 ],
                 'cta' => [
-                    'text' => 'View Musicbook',
-                    'title' => 'View Musicbook',
+                    'text' => __('projects.main-content.preview-slider-cta').__('global.projects.musicbook.name'),
+                    'title' => __('projects.main-content.preview-slider-cta').__('global.projects.musicbook.name'),
                     'link' => __('global.projects.musicbook.link')
                 ],
             ],
