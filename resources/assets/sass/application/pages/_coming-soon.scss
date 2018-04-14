@@ -1,0 +1,84 @@
+body.coming-soon{
+    main{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        @include spacing(padding, top, 0);
+
+        @media screen and (min-width: $tablet-breakpoint), screen and (max-height: 35rem){
+            position: static;
+            top: auto;
+            left: auto;
+            height: auto;
+        }
+
+        .hero{
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 100%;
+            transform: translateY(-50%);
+
+            @media screen and (min-width: $tablet-breakpoint), screen and (max-height: 35rem){
+                position: static;
+                top: auto;
+                left: auto;
+                transform: none;
+            }
+
+            .hero-content{
+                .logo-container{
+                    @include spacing(padding, bottom, 2rem);
+
+                    img{
+                        display: block;
+                        max-width: 12.5rem;
+                        @include spacing(margin, left right, auto);
+                    }
+                }
+
+                h1{
+                    font-size: 2rem;
+
+                    @media screen and (min-width: $phone-breakpoint){
+                        font-size: 3rem;
+                    }
+                }
+
+                .contact-links{
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    max-width: 12.5rem;
+                    @include spacing(padding, top, 1rem);
+                    @include spacing(margin, left right, auto);
+
+                    a{
+                        color: $white-off;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        justify-content: center;
+
+                        &:hover,
+                        &:focus{
+                            .icon{
+                                color: $green;
+                            }
+                        }
+
+                        .icon{
+                            display: block;
+                            color: $white-off;
+                            font-size: 2.5rem;
+                            @include spacing(padding, bottom, 0.5rem);
+                            @include transition(color);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

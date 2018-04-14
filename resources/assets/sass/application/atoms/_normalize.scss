@@ -51,25 +51,46 @@ body{
                     background-color: rgba($colour, 0.5);
                 }
             }
-        }
-    }
 
-    .light-section{
-        @include set-background-colour($white-off);
+            .light-section{
+                a:not(.button){
+                    color: $colour;
 
-        @each $project, $colour in $project-colours{
-            &.#{$project}, .#{$project}{
+                    &:hover, &:focus{
+                        &::after{
+                            border-color: $colour;
+                        }
+                    }
+                }
+
                 .button{
                     &::after{
                         background-color: rgba($colour, 0.75);
                     }
 
-                    &:hover, &:focus{
+                    &:hover, &:focus, &:active{
                         border-color: $colour;
                     }
                 }
             }
         }
+    }
+
+    &.error,
+    &.simple{
+        .section{
+            @media screen and (min-width: $header-breakpoint){
+                @include spacing(padding, left, 0.75rem);
+            }
+
+            @media screen and (min-width: $laptop-breakpoint){
+                @include spacing(padding, left right, 12rem);
+            }
+        }
+    }
+
+    .light-section{
+        @include set-background-colour($white-off);
     }
 }
 

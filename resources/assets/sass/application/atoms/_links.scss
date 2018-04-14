@@ -44,36 +44,29 @@ a:not(.button){
 
     @media screen and (min-width: $phone-breakpoint){
         max-width: 12.5rem;
+        max-width: max-content;
     }
 
-    &:before, &::after{
+    &::after{
         content: "";
         position: absolute;
         top: 0;
-        left: 0;
+        left: 50%;
         width: 0;
+        height: 100%;
+        transform: translateX(-50%) skewX(45deg);
         @include transition(width);
         z-index: -1;
     }
 
-    &:before{
-        height: 1px;
-    }
-
-    &::after{
-        left: 50%;
-        height: 100%;
-        transform: translateX(-50%) skewX(45deg);
-    }
-
     &:hover, &:focus{
-        &:before, &::after{
+        &::after{
             width: calc(100% - 2.625rem);
         }
     }
 
     &:active{
-        &:before, &::after{
+        &::after{
             width: calc(100% + 2.625rem);
         }
     }
@@ -84,9 +77,5 @@ a:not(.button){
 
     &.center{
         @include spacing(margin, left right, auto);
-    }
-
-    &.full-width{
-        max-width: 100%;
     }
 }

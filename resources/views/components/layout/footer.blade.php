@@ -4,15 +4,11 @@
             <h2>{!! __('footer.title') !!}</h2>
             <p>{!! __('footer.description') !!}</p>
             <div class="contact-links">
-                <a class="button" href="{!! __('global.linkedin.link') !!}" target="_blank" title="{!! __('global.linkedin.title') !!}">
-                    {!! __('global.linkedin.text') !!}
+                @foreach (__('global.contact-links') as $contactLink)
+                <a class="button" href="{!! $contactLink['link'] !!}" target="_blank" title="{!! $contactLink['title'] !!}">
+                    {!! $contactLink['text'] !!}
                 </a>
-                <a class="button" href="{!! __('global.github.link') !!}" target="_blank" title="{!! __('global.github.title') !!}">
-                    {!! __('global.github.text') !!}
-                </a>
-                <a class="button" href="{!! __('global.resume.link') !!}" target="_blank" title="{!! __('global.resume.title') !!}">
-                    {!! __('global.resume.text') !!}
-                </a>
+                @endforeach
             </div>
         </div>
         <form name="{!! __('footer.form') !!}" method="post" action="" novalidate>
@@ -20,13 +16,13 @@
                 <label for="{!! __('footer.form') !!}-{!! __('form.fields.name.name') !!}">
                     {!! __('form.fields.name.label') !!}
                 </label>
-                <input id="{!! __('footer.form') !!}-{!! __('form.fields.name.name') !!}" title="{!! __('form.fields.name.label') !!}" type="text" name="{!! __('form.fields.name.name') !!}" required />
+                <input id="{!! __('footer.form') !!}-{!! __('form.fields.name.name') !!}" title="{!! __('form.fields.name.label') !!}" type="text" name="{!! __('form.fields.name.name') !!}" required autocomplete="name" />
             </div>
             <div class="input-container">
                 <label for="{!! __('footer.form') !!}-{!! __('form.fields.email.name') !!}">
                     {!! __('form.fields.email.label') !!}
                 </label>
-                <input id="{!! __('footer.form') !!}-{!! __('form.fields.email.name') !!}" title="{!! __('form.fields.email.label') !!}" type="text" name="{!! __('form.fields.email.name') !!}" required />
+                <input id="{!! __('footer.form') !!}-{!! __('form.fields.email.name') !!}" title="{!! __('form.fields.email.label') !!}" type="text" name="{!! __('form.fields.email.name') !!}" required autocomplete="email" />
             </div>
             <div class="input-container">
                 <label for="{!! __('footer.form') !!}-{!! __('form.fields.message.name') !!}">

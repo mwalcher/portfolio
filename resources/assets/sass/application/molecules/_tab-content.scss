@@ -42,17 +42,20 @@
         .tab{
             display: block;
             width: 100%;
+            min-height: 3.25rem;
             @include title-font;
             font-size: $global-font-size;
-            line-height: 3.25rem;
+            line-height: 1.25;
             text-align: center;
             color: $white-off;
             background-color: $black;
             border: $global-border-width solid $white;
+            @include spacing(padding, top bottom, xs);
             border-bottom: 0;
+            border-radius: 0;
             outline: none;
             cursor: pointer;
-            @include transition(line-height color background-color);
+            @include transition(min-height color background-color);
 
             &:first-child{
                 border-right: 0;
@@ -63,7 +66,7 @@
             }
 
             &:hover, &:focus, &.active{
-                line-height: 4.5rem;
+                min-height: 4.5rem;
             }
 
             &:hover, &:focus{
