@@ -18,7 +18,7 @@
     <meta name="msapplication-config" content="/favicons/browserconfig.xml">
     <meta name="theme-color" content="#ffffff">
 
-    <title>{!! $title !!}</title>
+    <title>{!! __($view.'.title') !!}</title>
     <meta name="description" content="{!! __($view.'.description') !!}">
 
     <meta property="og:title" content="{!! __($view.'.title') !!}" />

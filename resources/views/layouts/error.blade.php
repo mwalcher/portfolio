@@ -31,7 +31,6 @@
     <meta property="og:site_name" content="{!! __('404.title') !!}" />
 
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:creator" content="@mrwalcher">
     <meta name="twitter:title" content="{!! __('404.title') !!}">
     <meta name="twitter:description" content="{!! __('404.description') !!}">
     <meta name="twitter:image" content="{{ __('404.meta-image.src') }}">

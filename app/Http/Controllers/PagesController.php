@@ -5,8 +5,7 @@ namespace App\Http\Controllers;
 class PagesController extends Controller
 {
     private function setPage(String $view){
-        $title = __($view.'.title');
-        return view($view, ['view' => $view, 'title' => $title]);
+        return view($view);
     }
 
     public function index(){
