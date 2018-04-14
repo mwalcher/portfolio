@@ -12,6 +12,10 @@ class PagesController extends Controller
         return $this->setPage('home');
     }
 
+    public function comingSoon(){
+        return $this->setPage('coming-soon');
+    }
+
     public function musicbook(){
         return $this->setPage('musicbook');
     }

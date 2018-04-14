@@ -9,8 +9,8 @@
             'page' => $view
         ]
     )@endcomponent
-    @component('components/head/styles')@endcomponent
     @component('components/head/scripts')@endcomponent
+    @component('components/head/styles')@endcomponent
 </head>
 <body class="{!! $view !!}">
     <div class="fixed-background" style="background-image: url({{ __($view.'.background') }})"></div>

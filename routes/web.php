@@ -12,6 +12,7 @@
 */
 
 Route::get('/', 'PagesController@index')->name('home');
+Route::get('/coming-soon', 'PagesController@comingSoon')->name('coming-soon');
 
 Route::get('/musicbook', 'PagesController@musicbook')->name('musicbook');
 Route::get('/sex-ed', 'PagesController@sexEd')->name('sex-ed');
