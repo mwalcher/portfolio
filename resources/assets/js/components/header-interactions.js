@@ -16,15 +16,17 @@ export default function({
     mobileMenu.addEventListener('click', toggleNavigation);
 
     navigationItems.forEach(function(navItem){
-        navItem.addEventListener('click', function(e){
-            e.preventDefault();
-            smoothScroll({
-                trigger: this
+        if(navItem.href.indexOf('#') !== -1){
+            navItem.addEventListener('click', function(e){
+                e.preventDefault();
+                smoothScroll({
+                    trigger: this
+                });
+                if(page.classList.contains('show-navigation')){
+                    toggleNavigation();
+                }
             });
-            if(page.classList.contains('show-navigation')){
-                toggleNavigation();
-            }
-        });
+        }
     });
 
     window.addEventListener('load', function(){

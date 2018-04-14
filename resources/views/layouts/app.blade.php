@@ -18,12 +18,12 @@
     <meta name="msapplication-config" content="/favicons/browserconfig.xml">
     <meta name="theme-color" content="#ffffff">
 
-    <title>{!! $title !!}</title>
+    <title>{!! __($view.'.title') !!}</title>
     <meta name="description" content="{!! __($view.'.description') !!}">
 
     <meta property="og:title" content="{!! __($view.'.title') !!}" />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="http://www.mwalcher.com" />
+    <meta property="og:url" content="{!! __('meta.url') !!}" />
     <meta property="og:image" content="{{ __($view.'.meta-image.src') }}" />
     <meta property="og:image:width" content="{!! __($view.'.meta-image.width') !!}" />
     <meta property="og:image:height" content="{!! __($view.'.meta-image.height') !!}" />
@@ -31,7 +31,6 @@
     <meta property="og:site_name" content="{!! __($view.'.title') !!}" />
 
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:creator" content="@mrwalcher">
     <meta name="twitter:title" content="{!! __($view.'.title') !!}">
     <meta name="twitter:description" content="{!! __($view.'.description') !!}">
     <meta name="twitter:image" content="{{ __($view.'.meta-image.src') }}">
@@ -45,8 +44,8 @@
 
     <script src="https://use.fontawesome.com/9cc2906ee2.js"></script>
 </head>
-<body>
-    <div class="fixed-background" style="background-image: url({{ __('home.background') }})"></div>
+<body class="{!! $view !!}">
+    <div class="fixed-background" style="background-image: url({{ __($view.'.background') }})"></div>
 
     @component(
         'components/header',
@@ -59,14 +58,16 @@
         @component(
             'components/hero',
             [
-                'page' => $view
+                'page' => $view,
+                'tabContentList' => issetLang($view.'.tab-content') ? __($view.'.tab-content') : FALSE
             ]
         )@endcomponent
 
         @component(
             'components/main-content',
             [
-                'page' => $view
+                'page' => $view,
+                'components' => issetLang($view.'.main-content.components') ? __($view.'.main-content.components') : FALSE
             ]
         )@endcomponent
     </main>

@@ -8,6 +8,6 @@
     }
 
     h2{
-        @include spacing(padding, bottom, md);
+        @include spacing(margin, bottom, md);
     }
 }

@@ -1,0 +1,145 @@
+.preview-slider-container{
+    padding-bottom: 4.5rem;
+
+    .preview-slider{
+        position: relative;
+        @include spacing(padding, top bottom, 5.5rem);
+        @include spacing(margin, top, md);
+        opacity: 0;
+        @include transition(opacity);
+
+        @media screen and (min-width: $phone-breakpoint){
+            @include spacing(padding, left right, 5.5rem);
+            @include spacing(padding, top bottom, 0);
+        }
+
+        &:focus{
+            outline: none;
+        }
+
+        &.flickity-enabled{
+            opacity: 1;
+        }
+
+        .flickity-viewport{
+            height: 100%;
+            overflow: hidden;
+            @include transition(height);
+
+            .flickity-slider{
+                height: 100%;
+
+                .slide{
+                    width: 100%;
+
+                    img{
+                        display: block;
+                        max-height: 50vh;
+                        @include spacing(margin, left right, auto);
+
+                        @media screen and (min-width: $phone-breakpoint){
+                            max-height: 75vh;
+                        }
+                    }
+                }
+            }
+        }
+
+        .flickity-prev-next-button{
+            position: absolute;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-width: 0 2.75rem 4.625rem 2.75rem;
+            border-style: solid;
+            border-color: transparent transparent $black-rgba transparent;
+            border-radius: $global-border-radius;
+            background-color: transparent;
+            cursor: pointer;
+            @include transition(border-color);
+
+            @media screen and (min-width: $phone-breakpoint){
+                left: auto;
+                top: 50%;
+            }
+
+            &:hover, &:focus{
+                outline: none;
+                border-color: transparent transparent $green-rgba-dark transparent;
+            }
+
+            &::before{
+                @include set-font(body);
+                color: $white-off;
+                font-size: 0.85rem;
+                letter-spacing: 0;
+                text-align: center;
+                word-spacing: 5.5rem;
+
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                transform: translate(-50%, 4rem);
+            }
+
+            &.previous{
+                top: 0;
+                transform: translateX(-50%) rotateZ(0);
+
+                @media screen and (min-width: $phone-breakpoint){
+                    left: -0.375rem;
+                    top: 50%;
+                    transform: translateY(-50%) rotateZ(-90deg);
+                }
+
+                &::before{
+                    content: "Back";
+
+                    @media screen and (min-width: $phone-breakpoint){
+                        transform: translate(-50%, 3.5rem) rotateZ(90deg);
+                    }
+                }
+            }
+
+            &.next{
+                bottom: 0;
+                transform: translateX(-50%) rotateZ(180deg);
+
+                @media screen and (min-width: $phone-breakpoint){
+                    right: -0.375rem;
+                    bottom: auto;
+                    transform: translateY(-50%) rotateZ(90deg);
+                }
+
+                &::before{
+                    content: "Next";
+                    transform: translate(-50%, 4rem) rotateZ(180deg);
+
+                    @media screen and (min-width: $phone-breakpoint){
+                        transform: translate(-50%, 3.5rem) rotateZ(-90deg);
+                    }
+                }
+            }
+
+            svg{
+                display: none;
+            }
+        }
+    }
+}
+
+body{
+    @each $project, $colour in $project-colours{
+        &.#{$project}{
+            .preview-slider-container{
+                .preview-slider{
+                    .flickity-prev-next-button{
+                        &:hover, &:focus{
+                            border-color: transparent transparent rgba($colour, 0.75) transparent;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

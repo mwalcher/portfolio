@@ -23,7 +23,7 @@
 
     <meta property="og:title" content="{!! __('404.title') !!}" />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="http://www.mwalcher.com" />
+    <meta property="og:url" content="{!! __('meta.url') !!}" />
     <meta property="og:image" content="{{ __('404.meta-image.src') }}" />
     <meta property="og:image:width" content="{!! __('404.meta-image.width') !!}" />
     <meta property="og:image:height" content="{!! __('404.meta-image.height') !!}" />
@@ -31,7 +31,6 @@
     <meta property="og:site_name" content="{!! __('404.title') !!}" />
 
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:creator" content="@mrwalcher">
     <meta name="twitter:title" content="{!! __('404.title') !!}">
     <meta name="twitter:description" content="{!! __('404.description') !!}">
     <meta name="twitter:image" content="{{ __('404.meta-image.src') }}">
@@ -46,7 +45,7 @@
     <script src="https://use.fontawesome.com/9cc2906ee2.js"></script>
 </head>
 <body class="error">
-    <div class="fixed-background" style="background-image: url({{ __('home.background') }})"></div>
+    <div class="fixed-background" style="background-image: url({{ __('404.background') }})"></div>
 
     @component(
         'components/header',
@@ -59,7 +58,8 @@
         @component(
             'components/hero',
             [
-                'page' => '404'
+                'page' => '404',
+                'tabContentList' => FALSE
             ]
         )@endcomponent
     </main>

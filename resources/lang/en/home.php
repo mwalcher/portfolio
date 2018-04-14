@@ -1,34 +1,34 @@
 <?php
 
 return [
-    'title' => __('meta.title'),
+    'title' => __('meta.title').'home',
     'description' => __('meta.description'),
     'meta-image' => [
         'src' => __('meta.image.src'),
         'width' => __('meta.image.width'),
         'height' => __('meta.image.height')
     ],
+    'background' => __('meta.background'),
     'navigation' => [
-        [
+        'about' => [
             'text' => 'About',
             'title' => 'About Matthew Walcher',
             'link' => '#about',
             'icon' => 'fa-user'
         ],
-        [
+        'work' => [
             'text' => 'Work',
             'title' => 'Matthew Walcher\'s Work',
             'link' => '#work',
             'icon' => 'fa-desktop'
         ],
-        [
-            'text' => 'Contact',
-            'title' => 'Contact Matthew Walcher',
-            'link' => '#contact',
-            'icon' => 'fa-envelope'
+        'contact' => [
+            'text' => __('footer.navigation.text'),
+            'title' => __('footer.navigation.title'),
+            'link' => __('footer.navigation.link'),
+            'icon' => __('footer.navigation.icon')
         ]
     ],
-    'background' => asset('images').'/home-hero.jpg',
     'hero' => [
         'id' => 'about',
         'main-title' => 'Matthew Walcher',
@@ -82,7 +82,11 @@ return [
     'main-content' => [
         'id' => 'work',
         'main-title' => 'Projects',
-        'featured-content' => __('global.projects'),
-        'featured-cta' => 'View Project'
+        'components' => [
+            'featured-content' => [
+                'list' => __('global.projects'),
+                'cta' => 'View Project'
+            ]
+        ]
     ]
 ];
