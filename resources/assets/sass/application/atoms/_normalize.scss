@@ -1,12 +1,30 @@
 /*  ---------------------
-    NORMALIZE
-    --------------------- */
+NORMALIZE
+--------------------- */
 
 *, *::before, *::after{
     margin: 0;
     padding: 0;
     border: 0;
     box-sizing: border-box;
+}
+
+html{
+    &.fa-events-icons-ready{
+        .fa,
+        header .main-navigation ul.page-navigation::before,
+        header .main-navigation ul.page-navigation::after{
+            opacity: 1;
+        }
+    }
+
+    .fa,
+    header .main-navigation ul.page-navigation::before,
+    header .main-navigation ul.page-navigation::after{
+        @include font-awesome;
+        opacity: 0;
+        @include transition(opacity);
+    }
 }
 
 body{

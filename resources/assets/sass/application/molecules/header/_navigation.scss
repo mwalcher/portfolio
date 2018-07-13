@@ -82,14 +82,13 @@
 
             &::before, &::after{
                 @media screen and (min-width: $header-breakpoint){
-                    @include font-awesome;
                     color: $white-off;
                     font-size: 1.5rem;
                     line-height: 0.5;
                     position: absolute;
                     left: -$extra-small-size;
                     width: $small-size;
-                    @include transition(color);
+                    @include transition(color opacity);
                 }
             }
 
@@ -285,6 +284,7 @@
                         top: 50%;
                         left: 50%;
                         transform: translate(-50%, -50%);
+                        @include transition(color);
                     }
 
                     &.fa-github, &.fa-mobile{
