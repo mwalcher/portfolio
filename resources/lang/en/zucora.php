@@ -1,14 +1,14 @@
 <?php
 
 return [
-    'title' => __('global.projects.musicbook.name').' / '.__('meta.title'),
-    'description' => 'A fictional social media website for music. Built by Matthew Walcher.',
+    'title' => __('global.projects.zucora.name').' / '.__('meta.title'),
+    'description' => __('global.projects.zucora.name'),
     'meta-image' => [
-        'src' => asset('images').'/musicbook-meta-image.png',
+        'src' => asset('images').'/zucora-meta-image.png',
         'width' => __('meta.image.width'),
         'height' => __('meta.image.height')
     ],
-    'background' => __('global.projects.musicbook.image'),
+    'background' => __('global.projects.zucora.image'),
     'navigation' => [
         'home' => [
             'text' => __('projects.navigation.home.text'),
@@ -18,13 +18,13 @@ return [
         ],
         'overview' => [
             'text' => __('projects.navigation.overview.text'),
-            'title' => __('projects.navigation.overview.title').__('global.projects.musicbook.name'),
+            'title' => __('projects.navigation.overview.title').__('global.projects.zucora.name'),
             'link' => __('projects.navigation.overview.link'),
             'icon' => __('projects.navigation.overview.icon')
         ],
         'preview' => [
             'text' => __('projects.navigation.preview.text'),
-            'title' => __('projects.navigation.preview.title').__('global.projects.musicbook.name'),
+            'title' => __('projects.navigation.preview.title').__('global.projects.zucora.name'),
             'link' => __('projects.navigation.preview.link'),
             'icon' => __('projects.navigation.preview.icon')
         ],
@@ -37,12 +37,12 @@ return [
     ],
     'hero' => [
         'id' => __('projects.hero.id'),
-        'main-title' => __('global.projects.musicbook.name'),
-        'content' => __('global.projects.musicbook.description')
+        'main-title' => __('global.projects.zucora.name'),
+        'content' => __('global.projects.zucora.description')
     ],
     'tab-content' => [
         'about' => [
-            'title' => __('projects.tab-content.about.title').__('global.projects.musicbook.name')
+            'title' => __('projects.tab-content.about.title').__('global.projects.zucora.name')
         ],
         'work' => [
             'title' => __('projects.tab-content.work.title')
@@ -55,35 +55,31 @@ return [
             'preview-slider' => [
                 'list' => [
                     'phone' => [
-                        'src' => asset('images').'/musicbook-device-1-phone.png',
-                        'alt' => 'The Musicbook login page represented on an iPhone'
+                        'src' => asset('images').'/zucora-device-1-phone.png',
+                        'alt' => 'The zucora login page represented on an iPhone'
                     ],
                     'tablet' => [
-                        'src' => asset('images').'/musicbook-device-2-tablet.png',
+                        'src' => asset('images').'/zucora-device-2-tablet.png',
                         'alt' => 'An example of a user\'s playlist page represented on an iPad'
                     ],
                     'laptop' => [
-                        'src' => asset('images').'/musicbook-device-3-laptop.png',
-                        'alt' => 'The Musicbook music page represented on a Macbook Pro'
+                        'src' => asset('images').'/zucora-device-3-laptop.png',
+                        'alt' => 'The zucora music page represented on a Macbook Pro'
                     ],
                     'desktop' => [
-                        'src' => asset('images').'/musicbook-device-4-desktop.png',
+                        'src' => asset('images').'/zucora-device-4-desktop.png',
                         'alt' => 'An example of a user\'s profile page represented on an iMac'
                     ]
                 ],
                 'cta' => [
-                    'text' => __('projects.main-content.preview-slider-cta').__('global.projects.musicbook.name'),
-                    'title' => __('projects.main-content.preview-slider-cta').__('global.projects.musicbook.name'),
-                    'link' => __('global.projects.musicbook.link')
+                    'text' => __('projects.main-content.preview-slider-cta').__('global.projects.zucora.name'),
+                    'title' => __('projects.main-content.preview-slider-cta').__('global.projects.zucora.name'),
+                    'link' => __('global.projects.zucora.website')
                 ],
             ],
             'option-list' => [
                 'title' => __('projects.main-content.option-list-title'),
-                'list' => [
-                    'sex-ed' => __('global.projects.sex-ed'),
-                    'smart-fridge' => __('global.projects.smart-fridge'),
-                    'truckladders' => __('global.projects.truckladders')
-                ],
+                'list' => [],
                 'toggle' => false
             ]
         ]

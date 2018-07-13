@@ -15,10 +15,7 @@ Route::get('/', 'PagesController@index')->name('home');
 
 Route::get('/coming-soon', 'PagesController@comingSoon')->name('coming-soon');
 
-Route::get('/musicbook', 'PagesController@musicbook')->name('musicbook');
-Route::get('/sex-ed', 'PagesController@sexEd')->name('sex-ed');
-Route::get('/smart-fridge', 'PagesController@smartFridge')->name('smart-fridge');
-Route::get('/truckladders', 'PagesController@truckladders')->name('truckladders');
+Route::get('/zucora', 'PagesController@zucora')->name('zucora');
 
 // 404 Error if route doesn't match
 Route::get('{any?}', function(){
