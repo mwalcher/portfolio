@@ -64,7 +64,9 @@ $input-light: (
 
     hover-font-colour          : $white-off,
     hover-background-colour    : $green-rgba,
-    hover-border-colour        : $white-off
+    hover-border-colour        : $white-off,
+
+    active-background-colour   : darken($green, 10%)
 );
 
 $submit-light: (
