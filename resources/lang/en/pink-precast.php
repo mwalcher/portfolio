@@ -1,14 +1,14 @@
 <?php
 
 return [
-    'title' => __('global.projects.zucora.name').' / '.__('meta.title'),
-    'description' => __('global.projects.zucora.description'),
+    'title' => __('global.projects.pink-precast.name').' / '.__('meta.title'),
+    'description' => __('global.projects.pink-precast.description'),
     'meta-image' => [
-        'src' => asset('images').'/zucora-meta-image.png',
+        'src' => asset('images').'/pink-precast-meta-image.png',
         'width' => __('meta.image.width'),
         'height' => __('meta.image.height')
     ],
-    'background' => __('global.projects.zucora.image'),
+    'background' => __('global.projects.pink-precast.image'),
     'navigation' => [
         'home' => [
             'text' => __('projects.navigation.home.text'),
@@ -18,13 +18,13 @@ return [
         ],
         'overview' => [
             'text' => __('projects.navigation.overview.text'),
-            'title' => __('projects.navigation.overview.title').__('global.projects.zucora.name'),
+            'title' => __('projects.navigation.overview.title').__('global.projects.pink-precast.name'),
             'link' => __('projects.navigation.overview.link'),
             'icon' => __('projects.navigation.overview.icon')
         ],
         'preview' => [
             'text' => __('projects.navigation.preview.text'),
-            'title' => __('projects.navigation.preview.title').__('global.projects.zucora.name'),
+            'title' => __('projects.navigation.preview.title').__('global.projects.pink-precast.name'),
             'link' => __('projects.navigation.preview.link'),
             'icon' => __('projects.navigation.preview.icon')
         ],
@@ -37,12 +37,12 @@ return [
     ],
     'hero' => [
         'id' => __('projects.hero.id'),
-        'main-title' => __('global.projects.zucora.name'),
-        'content' => __('global.projects.zucora.description')
+        'main-title' => __('global.projects.pink-precast.name'),
+        'content' => __('global.projects.pink-precast.description')
     ],
     'tab-content' => [
         'about' => [
-            'title' => __('projects.tab-content.about.title').__('global.projects.zucora.name')
+            'title' => __('projects.tab-content.about.title').__('global.projects.pink-precast.name')
         ],
         'work' => [
             'title' => __('projects.tab-content.work.title')
@@ -72,15 +72,15 @@ return [
                     ]
                 ],
                 'cta' => [
-                    'text' => __('projects.main-content.preview-slider-cta').__('global.projects.zucora.name'),
-                    'title' => __('projects.main-content.preview-slider-cta').__('global.projects.zucora.name'),
-                    'link' => __('global.projects.zucora.website')
+                    'text' => __('projects.main-content.preview-slider-cta').__('global.projects.pink-precast.name'),
+                    'title' => __('projects.main-content.preview-slider-cta').__('global.projects.pink-precast.name'),
+                    'link' => __('global.projects.pink-precast.website')
                 ],
             ],
             'option-list' => [
                 'title' => __('projects.main-content.option-list-title'),
                 'list' => [
-                    'pink-precast' => __('global.projects.pink-precast')
+                    'zucora' => __('global.projects.zucora')
                 ],
                 'toggle' => false
             ]

@@ -20,9 +20,11 @@ $red-rgba          : rgba($red, 0.5);
     --------------------- */
 
 $zucora            : #434C9F;
+$pink-precast      : #D52375;
 
 $project-colours: (
-    zucora         : $zucora
+    zucora         : $zucora,
+    pink-precast   : $pink-precast
 );
 
 /*  BUTTON COLOURS

@@ -13,9 +13,11 @@
 
 Route::get('/', 'PagesController@index')->name('home');
 
-Route::get('/coming-soon', 'PagesController@comingSoon')->name('coming-soon');
-
+/* Projects */
+Route::get('/pink-precast', 'PagesController@pinkPrecast')->name('pink-precast');
 Route::get('/zucora', 'PagesController@zucora')->name('zucora');
+
+Route::get('/coming-soon', 'PagesController@comingSoon')->name('coming-soon');
 
 // 404 Error if route doesn't match
 Route::get('{any?}', function(){
