@@ -80,7 +80,9 @@ return [
             'option-list' => [
                 'title' => __('projects.main-content.option-list-title'),
                 'list' => [
-                    'pink-precast' => __('global.projects.pink-precast')
+                    'libro' => __('global.projects.libro'),
+                    'pink-precast' => __('global.projects.pink-precast'),
+                    'mortgage-teacher' => __('global.projects.mortgage-teacher')
                 ],
                 'toggle' => false
             ]

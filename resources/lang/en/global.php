@@ -33,6 +33,13 @@ return [
         ]
     ],
     'projects' => [
+        'libro' => [
+            'name' => 'Libro Mortgage Calculator',
+            'link' => route('libro'),
+            'website' => 'https://libro.ca/calculators/mortgage',
+            'image' => asset('images').'/pink-precast-hero.jpg',
+            'description' => 'A step by step mortgage calculator'
+        ],
         'zucora' => [
             'name' => 'Zucora',
             'link' => route('zucora'),
@@ -46,6 +53,13 @@ return [
             'website' => 'https://www.pinkprecast.com/',
             'image' => asset('images').'/pink-precast-hero.jpg',
             'description' => 'An informational website for a concrete manufacturer'
+        ],
+        'mortgage-teacher' => [
+            'name' => 'Mortgage Teacher',
+            'link' => route('mortgage-teacher'),
+            'website' => 'https://mortgageteacher.com/',
+            'image' => asset('images').'/pink-precast-hero.jpg',
+            'description' => 'An informational website for a mortgage broker'
         ]
     ]
 ];

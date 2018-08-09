@@ -1,14 +1,14 @@
 <?php
 
 return [
-    'title' => __('global.projects.pink-precast.name').' / '.__('meta.title'),
-    'description' => __('global.projects.pink-precast.description'),
+    'title' => __('global.projects.mortgage-teacher.name').' / '.__('meta.title'),
+    'description' => __('global.projects.mortgage-teacher.description'),
     'meta-image' => [
         'src' => asset('images').'/pink-precast-meta-image.png',
         'width' => __('meta.image.width'),
         'height' => __('meta.image.height')
     ],
-    'background' => __('global.projects.pink-precast.image'),
+    'background' => __('global.projects.mortgage-teacher.image'),
     'navigation' => [
         'home' => [
             'text' => __('projects.navigation.home.text'),
@@ -18,13 +18,13 @@ return [
         ],
         'overview' => [
             'text' => __('projects.navigation.overview.text'),
-            'title' => __('projects.navigation.overview.title').__('global.projects.pink-precast.name'),
+            'title' => __('projects.navigation.overview.title').__('global.projects.mortgage-teacher.name'),
             'link' => __('projects.navigation.overview.link'),
             'icon' => __('projects.navigation.overview.icon')
         ],
         'preview' => [
             'text' => __('projects.navigation.preview.text'),
-            'title' => __('projects.navigation.preview.title').__('global.projects.pink-precast.name'),
+            'title' => __('projects.navigation.preview.title').__('global.projects.mortgage-teacher.name'),
             'link' => __('projects.navigation.preview.link'),
             'icon' => __('projects.navigation.preview.icon')
         ],
@@ -37,12 +37,12 @@ return [
     ],
     'hero' => [
         'id' => __('projects.hero.id'),
-        'main-title' => __('global.projects.pink-precast.name'),
-        'content' => __('global.projects.pink-precast.description')
+        'main-title' => __('global.projects.mortgage-teacher.name'),
+        'content' => __('global.projects.mortgage-teacher.description')
     ],
     'tab-content' => [
         'about' => [
-            'title' => __('projects.tab-content.about.title').__('global.projects.pink-precast.name')
+            'title' => __('projects.tab-content.about.title').__('global.projects.mortgage-teacher.name')
         ],
         'work' => [
             'title' => __('projects.tab-content.work.title')
@@ -72,9 +72,9 @@ return [
                     ]
                 ],
                 'cta' => [
-                    'text' => __('projects.main-content.preview-slider-cta').__('global.projects.pink-precast.name'),
-                    'title' => __('projects.main-content.preview-slider-cta').__('global.projects.pink-precast.name'),
-                    'link' => __('global.projects.pink-precast.website')
+                    'text' => __('projects.main-content.preview-slider-cta').__('global.projects.mortgage-teacher.name'),
+                    'title' => __('projects.main-content.preview-slider-cta').__('global.projects.mortgage-teacher.name'),
+                    'link' => __('global.projects.mortgage-teacher.website')
                 ],
             ],
             'option-list' => [
@@ -82,7 +82,7 @@ return [
                 'list' => [
                     'libro' => __('global.projects.libro'),
                     'zucora' => __('global.projects.zucora'),
-                    'mortgage-teacher' => __('global.projects.mortgage-teacher')
+                    'pink-precast' => __('global.projects.pink-precast')
                 ],
                 'toggle' => false
             ]
