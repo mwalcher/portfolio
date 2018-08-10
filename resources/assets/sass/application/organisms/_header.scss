@@ -50,6 +50,10 @@ html{
                 svg{
                     fill: $white-off;
                     @include transition(fill);
+
+                    &:hover{
+                        fill: $green-rgba-dark;
+                    }
                 }
             }
         }
@@ -62,6 +66,15 @@ html{
         @each $project, $colour in $project-colours{
             &.#{$project}{
                 header{
+                    .logo{
+                        .logo-container{
+                            svg{
+                                &:hover{
+                                    fill: rgba($colour, 0.75);
+                                }
+                            }
+                        }
+                    }
                     .main-navigation{
                         ul{
                             &.page-navigation{
