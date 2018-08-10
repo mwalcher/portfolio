@@ -37,7 +37,7 @@ return [
             'name' => 'Libro Mortgage Calculator',
             'link' => route('libro'),
             'website' => 'https://libro.ca/calculators/mortgage',
-            'image' => asset('images').'/pink-precast-hero.jpg',
+            'image' => asset('images').'/libro-hero.jpg',
             'description' => 'A step by step mortgage calculator'
         ],
         'zucora' => [
@@ -58,7 +58,7 @@ return [
             'name' => 'Mortgage Teacher',
             'link' => route('mortgage-teacher'),
             'website' => 'https://mortgageteacher.com/',
-            'image' => asset('images').'/pink-precast-hero.jpg',
+            'image' => asset('images').'/mortgage-teacher-hero.jpg',
             'description' => 'An informational website for a mortgage broker'
         ]
     ]

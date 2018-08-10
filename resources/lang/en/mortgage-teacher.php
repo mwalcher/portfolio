@@ -4,7 +4,7 @@ return [
     'title' => __('global.projects.mortgage-teacher.name').' / '.__('meta.title'),
     'description' => __('global.projects.mortgage-teacher.description'),
     'meta-image' => [
-        'src' => asset('images').'/pink-precast-meta-image.png',
+        'src' => asset('images').'/mortgage-teacher-meta-image.png',
         'width' => __('meta.image.width'),
         'height' => __('meta.image.height')
     ],
