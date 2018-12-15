@@ -1,41 +1,43 @@
 /*  ---------------------
-    NOSCRIPT
-    --------------------- */
+NOSCRIPT
+--------------------- */
 @import "application/atoms/variables/breakpoints";
 @import "application/atoms/variables/colours";
 
-.fa{
-    display: none !important;
-}
-
-header{
-    @media screen and (min-width: $header-breakpoint){
-        background-color: $black;
+html{
+    .fa{
+        display: none !important;
     }
 
-    .main-navigation{
-        ul.page-navigation{
-            &::before, &::after{
-                display: none;
-            }
+    header{
+        @media screen and (min-width: $header-breakpoint){
+            background-color: $black;
+        }
 
-            li{
-                &:first-child{
-                    &::before{
-                        display: none;
-                    }
+        .main-navigation{
+            ul.page-navigation{
+                &::before, &::after{
+                    display: none;
                 }
 
-                &:last-child{
-                    &::after{
-                        display: none;
+                li{
+                    &:first-child{
+                        &::before{
+                            display: none;
+                        }
+                    }
+
+                    &:last-child{
+                        &::after{
+                            display: none;
+                        }
                     }
                 }
             }
         }
     }
-}
 
-.preview-slider{
-    display: none;
+    .preview-slider{
+        display: none;
+    }
 }

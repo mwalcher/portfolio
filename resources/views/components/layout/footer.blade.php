@@ -5,7 +5,7 @@
             <p>{!! __('footer.description') !!}</p>
             <div class="contact-links">
                 @foreach (__('global.contact-links') as $contactLink)
-                <a class="button" href="{!! $contactLink['link'] !!}" target="_blank" title="{!! $contactLink['title'] !!}">
+                <a class="button" href="{!! $contactLink['link'] !!}" target="_blank" rel="noopener" title="{!! $contactLink['title'] !!}">
                     {!! $contactLink['text'] !!}
                 </a>
                 @endforeach

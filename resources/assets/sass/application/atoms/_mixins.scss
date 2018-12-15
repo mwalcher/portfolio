@@ -109,8 +109,8 @@
     &:-webkit-autofill:hover,
     &:-webkit-autofill:focus,
     &:-webkit-autofill:active{
-        -webkit-text-fill-color: map-get($theme, default-font-colour) !important;
-        transition: background-color 5000s ease-in-out 0s;
+        -webkit-text-fill-color: map-get($theme, hover-font-colour);
+        -webkit-box-shadow: 0 0 0 62.5rem map-get($theme, active-background-colour) inset;
     }
 }
 

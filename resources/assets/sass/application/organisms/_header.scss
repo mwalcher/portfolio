@@ -1,98 +1,113 @@
 @import "../molecules/header/show-navigation";
 
-header{
-    display: flex;
-    justify-content: space-between;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: $header-height;
-    @include spacing(padding, all, 0.75rem);
-    background-color: $black;
-    border-bottom: $global-border-width solid $white-off;
-    box-shadow: $global-shadow;
-    z-index: 10;
+html{
+    header{
+        display: flex;
+        justify-content: space-between;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: $header-height;
+        @include spacing(padding, all, 0.75rem);
+        background-color: $black;
+        border-bottom: $global-border-width solid $white-off;
+        box-shadow: $global-shadow;
+        z-index: 10;
 
-    @media screen and (min-width: $header-breakpoint){
-        display: block;
-        width: 8.5rem;
-        height: 100%;
-        background-color: transparent;
-        border-bottom: 0;
-        box-shadow: none;
-    }
+        @media screen and (min-width: $header-breakpoint){
+            display: block;
+            width: 8.5rem;
+            height: 100%;
+            background-color: transparent;
+            border-bottom: 0;
+            box-shadow: none;
+        }
 
-    .logo{
-        display: block;
+        .logo{
+            display: block;
 
-        &.dark{
+            &.dark{
+                .logo-container{
+                    svg{
+                        @media screen and (min-width: $header-breakpoint){
+                            fill: $black;
+                        }
+                    }
+                }
+            }
+
             .logo-container{
+                display: block;
+                width: 6.125rem;
+                height: 3.5rem;
+
+                @media screen and (min-width: $header-breakpoint){
+                    width: 7rem;
+                    height: auto;
+                }
+
                 svg{
-                    @media screen and (min-width: $header-breakpoint){
-                        fill: $black;
+                    fill: $white-off;
+                    @include transition(fill);
+
+                    &:hover{
+                        fill: $green-rgba-dark;
                     }
                 }
             }
         }
 
-        .logo-container{
-            display: block;
-            width: 6.125rem;
-            height: 3.5rem;
-
-            @media screen and (min-width: $header-breakpoint){
-                width: 7rem;
-                height: auto;
-            }
-
-            svg{
-                fill: $white-off;
-                @include transition(fill);
-            }
-        }
+        @import "../molecules/header/mobile-menu";
+        @import "../molecules/header/navigation";
     }
 
-    @import "../molecules/header/mobile-menu";
-    @import "../molecules/header/navigation";
-}
-
-body{
-    @each $project, $colour in $project-colours{
-        &.#{$project}{
-            header{
-                .main-navigation{
-                    ul{
-                        &.page-navigation{
-                            li{
-                                &.dark{
-                                    a{
-                                        @media screen and (min-width: $header-breakpoint){
-                                            color: $black;
+    body{
+        @each $project, $colour in $project-colours{
+            &.#{$project}{
+                header{
+                    .logo{
+                        .logo-container{
+                            svg{
+                                &:hover{
+                                    fill: rgba($colour, 0.75);
+                                }
+                            }
+                        }
+                    }
+                    .main-navigation{
+                        ul{
+                            &.page-navigation{
+                                li{
+                                    &.dark{
+                                        a{
+                                            @media screen and (min-width: $header-breakpoint){
+                                                color: $black;
+                                            }
                                         }
                                     }
-                                }
 
-                                a{
-                                    &.active, &:hover.active, &:focus.active{
-                                        &::before{
-                                            @media screen and (min-width: $header-breakpoint){
-                                                background-color: $colour;
+                                    a{
+                                        &.active, &:hover.active, &:focus.active{
+                                            &::before{
+                                                @media screen and (min-width: $header-breakpoint){
+                                                    background-color: $colour;
+                                                }
                                             }
                                         }
                                     }
                                 }
                             }
-                        }
 
-                        li{
-                            a{
-                                color: $white-off;
+                            li{
+                                a{
+                                    color: $white-off;
 
-                                &.active{
-                                    .icon{
-                                        &::before{
-                                            color: $colour;
+                                    &.active{
+                                        .icon{
+                                            &::before{
+                                                color: $colour;
+                                            }
                                         }
                                     }
                                 }

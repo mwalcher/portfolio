@@ -33,29 +33,33 @@ return [
         ]
     ],
     'projects' => [
-        'musicbook' => [
-            'name' => 'Musicbook',
-            'link' => route('musicbook'),
-            'image' => asset('images').'/musicbook-hero.jpg',
-            'description' => 'A fictional social media website for music'
+        'libro' => [
+            'name' => 'Libro Mortgage Calculator',
+            'link' => route('libro'),
+            'website' => 'https://libro.ca/calculators/mortgage',
+            'image' => asset('images').'/libro-hero.jpg',
+            'description' => 'A step by step mortgage calculator'
         ],
-        'sex-ed' => [
-            'name' => 'SEX-ED',
-            'link' => route('sex-ed'),
-            'image' => asset('images').'/sex-ed-hero.jpg',
-            'description' => 'A fictional web service to educate teens about sex'
+        'zucora' => [
+            'name' => 'Zucora',
+            'link' => route('zucora'),
+            'website' => 'https://zucorahome.com/',
+            'image' => asset('images').'/zucora-hero.jpg',
+            'description' => 'An E-Commerce store for a local retailer'
         ],
-        'smart-fridge' => [
-            'name' => 'Smart Fridge',
-            'link' => route('smart-fridge'),
-            'image' => asset('images').'/smart-fridge-hero.jpg',
-            'description' => 'A fictional touchscreen interface for a fridge'
+        'pink-precast' => [
+            'name' => 'Pink Precast',
+            'link' => route('pink-precast'),
+            'website' => 'https://www.pinkprecast.com/',
+            'image' => asset('images').'/pink-precast-hero.jpg',
+            'description' => 'An informational website for a concrete manufacturer'
         ],
-        'truckladders' => [
-            'name' => 'Truckladders',
-            'link' => route('truckladders'),
-            'image' => asset('images').'/truckladders-hero.jpg',
-            'description' => 'A marketing website for a new safety product'
+        'mortgage-teacher' => [
+            'name' => 'Mortgage Teacher',
+            'link' => route('mortgage-teacher'),
+            'website' => 'https://mortgageteacher.com/',
+            'image' => asset('images').'/mortgage-teacher-hero.jpg',
+            'description' => 'An informational website for a mortgage broker'
         ]
     ]
 ];
