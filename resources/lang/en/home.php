@@ -36,29 +36,11 @@ return [
         'content' => 'I am a detail oriented problem solver who is determined to find a solution even if it does not come easily.'
     ],
     'tab-content' => [
-        'skills' => [
-            'title' => 'Skills',
-            'list' => [
-                'html-css-js' => [
-                    'label' => 'HTML CSS JavaScript',
-                    'icon' => 'html-css-js'
-                ],
-                'sass' => [
-                    'label' => 'Sass',
-                    'icon' => 'sass'
-                ],
-                'ajax-json' => [
-                    'label' => 'AJAX JSON',
-                    'icon' => 'ajax-json'
-                ],
-                'php-mysql' => [
-                    'label' => 'PHP MySQL',
-                    'icon' => 'php-mysql'
-                ]
-            ]
+        'about' => [
+            'title' => 'About Me'
         ],
         'tools' => [
-            'title' => 'Tools',
+            'title' => 'What I Use',
             'list' => [
                 'git' => [
                     'label' => 'Git',

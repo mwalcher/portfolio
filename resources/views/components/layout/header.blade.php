@@ -30,7 +30,7 @@
         <ul class="links-navigation">
             @foreach (__('global.contact-links') as $contactLink)
             <li>
-                <a href="{!! $contactLink['link'] !!}" target="_blank" class="no-hover" title="{!! $contactLink['title'] !!}">
+                <a href="{!! $contactLink['link'] !!}" target="_blank" rel="noopener" class="no-hover" title="{!! $contactLink['title'] !!}">
                     <span class="icon fa {!! $contactLink['icon'] !!}" aria-hidden="true"></span>
                     {!! $contactLink['text'] !!}
                 </a>
