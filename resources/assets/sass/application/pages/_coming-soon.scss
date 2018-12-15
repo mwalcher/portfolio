@@ -30,7 +30,7 @@ body.coming-soon{
 
             .hero-content{
                 .logo-container{
-                    @include spacing(padding, bottom, 2rem);
+                    @include spacing(padding, bottom, md);
 
                     img{
                         display: block;

@@ -59,8 +59,9 @@
         &.page-navigation{
             @media screen and (min-width: $header-breakpoint){
                 position: relative;
-                @include spacing(margin, top, 1.25rem);
-                @include spacing(margin, left, xs);
+                margin-top: $medium-size;
+                margin-bottom: 0.625rem;
+                margin-left: $extra-small-size;
                 @include spacing(padding, top bottom, 1.5rem);
             }
 
