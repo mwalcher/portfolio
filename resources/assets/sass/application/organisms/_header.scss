@@ -79,14 +79,6 @@ html{
                         ul{
                             &.page-navigation{
                                 li{
-                                    &.dark{
-                                        a{
-                                            @media screen and (min-width: $header-breakpoint){
-                                                color: $black;
-                                            }
-                                        }
-                                    }
-
                                     a{
                                         &.active, &:hover.active, &:focus.active{
                                             &::before{
