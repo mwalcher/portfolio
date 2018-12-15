@@ -1,5 +1,5 @@
 <div class="preview-slider-container">
-    <a class="button center" href="{!! $properties['cta']['link'] !!}" target="_blank" title="{!! $properties['cta']['title'] !!}">
+    <a class="button center" href="{!! $properties['cta']['link'] !!}" target="_blank" rel="noopener" title="{!! $properties['cta']['title'] !!}">
         {!! $properties['cta']['text'] !!}
     </a>
     <ul class="preview-slider">
