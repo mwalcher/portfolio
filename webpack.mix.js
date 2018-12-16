@@ -27,7 +27,6 @@ mix.webpackConfig({
             to: 'images'
         }]),
         new ImageminPlugin([{
-            disable: process.env.NODE_ENV !== 'production',
             test: /\.(jpe?g|png|gif|svg)$/i,
             gifsicle: {
                 interlaced: true
