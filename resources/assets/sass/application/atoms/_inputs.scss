@@ -17,7 +17,7 @@ select{
     border-width: ($global-border-width * 2);
     border-style: solid;
     border-radius: $global-border-radius;
-    @include transition(background-color border-color);
+    @include transition(background-color);
     overflow: hidden;
     z-index: 1;
     outline: none;

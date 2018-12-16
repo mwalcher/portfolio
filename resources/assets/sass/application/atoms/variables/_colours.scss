@@ -14,7 +14,6 @@ $green-rgba      : rgba($green, 0.5);
 $green-rgba-dark : rgba($green, 0.75);
 
 $red             : #993434;
-$red-rgba        : rgba($red, 0.5);
 
 /*  PROJECT COLOURS
     --------------------- */
@@ -62,11 +61,11 @@ $input-light: (
     default-background-colour : $white-rgba,
     default-border-colour     : $white-off,
 
-    hover-font-colour         : $white-off,
     hover-background-colour   : $green-rgba,
-    hover-border-colour       : $white-off,
 
-    active-background-colour  : darken($green, 10%)
+    active-background-colour  : darken($green, 10%),
+
+    error-background-colour   : $red
 );
 
 $submit-light: (
