@@ -34,7 +34,7 @@ return [
     ],
     'projects' => [
         'libro' => [
-            'name' => 'Libro Mortgage Calculator',
+            'name' => 'Libro Calculators',
             'link' => route('libro'),
             'website' => 'https://libro.ca/calculators/mortgage',
             'image' => asset('images').'/libro-hero.jpg',

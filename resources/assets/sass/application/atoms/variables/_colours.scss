@@ -10,6 +10,7 @@ $black           : #212121;
 $black-rgba      : rgba($black, 0.5);
 
 $green           : #339933;
+$green-dark      : darken($green, 10%);
 $green-rgba      : rgba($green, 0.5);
 $green-rgba-dark : rgba($green, 0.75);
 
@@ -63,7 +64,7 @@ $input-light: (
 
     hover-background-colour   : $green-rgba,
 
-    active-background-colour  : darken($green, 10%),
+    active-background-colour  : $green-dark,
 
     error-background-colour   : $red
 );
@@ -75,7 +76,7 @@ $submit-light: (
 
     hover-font-colour         : $white-off,
     hover-background-colour   : $green,
-    hover-background-shadow   : darken($green, 10%),
+    hover-background-shadow   : $green-dark,
 
     active-background-colour  : $green-rgba
 );

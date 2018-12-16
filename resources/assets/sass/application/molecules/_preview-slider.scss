@@ -50,9 +50,9 @@
             left: 50%;
             width: 0;
             height: 0;
-            border-width: 0 2.75rem 4.625rem 2.75rem;
-            border-style: solid;
-            border-color: transparent transparent $black-rgba transparent;
+            border: 2.75rem solid transparent;
+            border-top: 0;
+            border-bottom: 4.625rem solid $black-rgba;
             border-radius: $global-border-radius;
             background-color: transparent;
             cursor: pointer;
@@ -65,7 +65,7 @@
 
             &:hover, &:focus{
                 outline: none;
-                border-color: transparent transparent $green-rgba-dark transparent;
+                border-bottom-color: $green-rgba-dark;
             }
 
             &::before{
@@ -134,7 +134,7 @@ body{
                 .preview-slider{
                     .flickity-prev-next-button{
                         &:hover, &:focus{
-                            border-color: transparent transparent rgba($colour, 0.75) transparent;
+                            border-bottom-color: rgba($colour, 0.75);
                         }
                     }
                 }
