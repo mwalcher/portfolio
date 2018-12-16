@@ -1,0 +1,91 @@
+body{
+    @each $project, $colour in $project-colours{
+        &.#{$project}{
+            $primary           : $colour;
+            $primary-dark      : darken($primary, 10%);
+            $primary-rgba      : rgba($primary, 0.5);
+            $primary-rgba-dark : rgba($primary, 0.75);
+
+            a:not(.button){
+                color: $primary;
+
+                &:hover, &:focus{
+                    &::after{
+                        border-color: $primary;
+                    }
+                }
+            }
+
+            .button{
+                &::after{
+                    background-color: $primary-rgba;
+                }
+            }
+
+            input,
+            textarea,
+            select{
+                &:hover, &:focus, &:active{
+                    background-color: $primary-rgba;
+                }
+
+                &:-webkit-autofill,
+                &:-webkit-autofill:hover,
+                &:-webkit-autofill:focus,
+                &:-webkit-autofill:active{
+                    -webkit-box-shadow: 0 0 0 62.5rem $primary-dark inset;
+                }
+            }
+
+            form {
+                .input-container{
+                    &.active{
+                        &:not(.error){
+                            input,
+                            textarea,
+                            select{
+                                background-color: $primary-dark;
+                            }
+                        }
+                    }
+                }
+            }
+
+            button[type="submit"]{
+                &:hover, &:focus, &:active{
+                    background-color: $primary;
+
+                    &::after{
+                        background-color: $primary-dark;
+                    }
+                }
+
+                &:active{
+                    background-color: $primary-rgba;
+                }
+            }
+
+            .light-section{
+                a:not(.button){
+                    color: $primary;
+
+                    &:hover, &:focus{
+                        &::after{
+                            border-color: $primary;
+                        }
+                    }
+                }
+
+                .button{
+                    &::after{
+                        background-color: $primary-rgba-dark;
+                    }
+
+                    &:hover, &:focus, &:active{
+                        border-color: $primary;
+                    }
+                }
+            }
+        }
+    }
+}

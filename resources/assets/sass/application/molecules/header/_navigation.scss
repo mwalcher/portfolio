@@ -221,7 +221,7 @@
                     &.active, &:hover.active, &:focus.active{
                         &::before{
                             @media screen and (min-width: $header-breakpoint){
-                                background-color: $green;
+                                background-color: $primary;
                             }
                         }
                     }
@@ -264,7 +264,7 @@
                 &.active{
                     .icon{
                         &::before{
-                            color: $green;
+                            color: $primary;
                         }
                     }
                 }

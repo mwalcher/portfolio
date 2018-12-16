@@ -5,7 +5,7 @@
 a:not(.button){
     position: relative;
     @include set-font(body, bold);
-    color: $green;
+    color: $primary;
     text-decoration: none;
     cursor: pointer;
 
@@ -22,7 +22,7 @@ a:not(.button){
 
     &:hover, &:focus{
         &::after{
-            border-color: $green;
+            border-color: $primary;
             transform: translateY(0);
         }
     }

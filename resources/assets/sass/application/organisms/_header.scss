@@ -52,7 +52,7 @@ html{
                     @include transition(fill);
 
                     &:hover{
-                        fill: $green-rgba-dark;
+                        fill: $primary-rgba-dark;
                     }
                 }
             }

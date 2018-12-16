@@ -42,7 +42,8 @@ return [
     ],
     'tab-content' => [
         'about' => [
-            'title' => __('projects.tab-content.about.title').__('global.projects.zucora.name')
+            'title' => __('projects.tab-content.about.title').__('global.projects.zucora.name'),
+            'content' => 'This is test content with a <a href="#">link</a>.'
         ],
         'work' => [
             'title' => __('projects.tab-content.work.title')

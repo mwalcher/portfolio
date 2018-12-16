@@ -37,7 +37,8 @@ return [
     ],
     'tab-content' => [
         'about' => [
-            'title' => 'About Me'
+            'title' => 'About Me',
+            'content' => 'This is test content with a <a href="#">link</a>.'
         ],
         'tools' => [
             'title' => 'What I Use',
