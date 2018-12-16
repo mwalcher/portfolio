@@ -5,7 +5,7 @@ ValidationConfig.classInputGroup = 'input-container';
 ValidationConfig.classInputGroupError = 'error';
 ValidationConfig.classError = 'error-message';
 ValidationLang.required = '{label} is required';
-ValidationLang.email = '{label} should be a valid e-mail address';
+ValidationLang.email = '{label} is not a valid email';
 
 export default function({
     forms = [],
