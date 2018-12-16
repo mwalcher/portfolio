@@ -59,12 +59,22 @@ body{
                 }
             }
 
-            .input-container{
-                &.active{
-                    input,
-                    textarea,
-                    select{
-                        background-color: darken($colour, 10%);
+            form {
+                .input-container{
+                    &.active{
+                        input,
+                        textarea,
+                        select{
+                            background-color: darken($colour, 10%);
+                        }
+                    }
+
+                    &.error{
+                        input,
+                        textarea,
+                        select{
+                            background-color: map-get($input-light, error-background-colour);
+                        }
                     }
                 }
             }

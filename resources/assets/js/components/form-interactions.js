@@ -1,8 +1,11 @@
 'use strict';
 
-import { Validation, ValidationConfig } from 'bunnyjs/src/Validation';
+import { Validation, ValidationConfig, ValidationLang } from 'bunnyjs/src/Validation';
 ValidationConfig.classInputGroup = 'input-container';
 ValidationConfig.classInputGroupError = 'error';
+ValidationConfig.classError = 'error-message';
+ValidationLang.required = '{label} is required';
+ValidationLang.email = '{label} should be a valid e-mail address';
 
 export default function({
     forms = [],

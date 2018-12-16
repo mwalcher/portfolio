@@ -19,6 +19,10 @@ form{
             cursor: pointer;
         }
 
+        .error-message {
+            @extend label;
+        }
+
         &.active{
             label{
                 font-size: 0.75rem;
@@ -34,6 +38,16 @@ form{
         }
 
         &.error{
+            @extend .active;
+
+            label {
+                opacity: 0;
+            }
+
+            .error-message {
+                opacity: 1;
+            }
+
             input,
             textarea,
             select{
