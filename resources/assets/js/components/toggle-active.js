@@ -2,50 +2,45 @@
 
 import smoothScroll from './smooth-scroll';
 
-const activeClass = 'active';
-
 export default function({
     triggers = [],
-    toggleContent = []
+    toggleContent = [],
+    activeClass = 'active'
 } = {}) {
 
-    triggers.forEach(function(trigger){
-        trigger.addEventListener('click', function(){
-            toggleActive(trigger, triggers, toggleContent);
-        });
+    triggers.forEach((trigger) => {
+        trigger.addEventListener('click', () => toggleActive(trigger, triggers, toggleContent, activeClass));
     });
 }
 
-function toggleActive(target, triggerList, toggleContentList){
+function toggleActive(target, triggerList, toggleContentList, className){
     let triggers = [];
     let toggleContent = [];
 
-    triggerList.forEach(function(trigger){
-        if(target.dataset.parent == trigger.dataset.parent){
+    triggerList.forEach((trigger) => {
+        if(target.dataset.parent === trigger.dataset.parent){
             triggers.push(trigger);
         }
     });
 
-    toggleContentList.forEach(function(content){
-        if(target.dataset.parent == content.dataset.parent){
+    toggleContentList.forEach((content) => {
+        if(target.dataset.parent === content.dataset.parent){
             toggleContent.push(content);
         }
     });
 
-    triggers.forEach(function(trigger){
-        trigger.classList.remove(activeClass);
-    });
-    target.classList.add(activeClass);
+    triggers.forEach((trigger) => trigger.classList.remove(className));
+    target.classList.add(className);
 
-    toggleContent.forEach(function(content){
-        if(content.dataset.toggleContent == target.dataset.toggle){
-            content.classList.add(activeClass);
+    toggleContent.forEach((content) => {
+        if(content.dataset.toggleContent === target.dataset.toggle){
+            content.classList.add(className);
         }else{
-            content.classList.remove(activeClass);
+            content.classList.remove(className);
         }
     });
 
-    if(target.dataset.scroll == 'true'){
+    if(target.dataset.scroll === 'true'){
         smoothScroll({
             trigger: target
         });

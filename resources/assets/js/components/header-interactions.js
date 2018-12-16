@@ -15,12 +15,12 @@ export default function({
 
     mobileMenu.addEventListener('click', toggleNavigation);
 
-    navigationItems.forEach(function(navItem){
+    navigationItems.forEach((navItem) => {
         if(navItem.href.indexOf('#') !== -1){
-            navItem.addEventListener('click', function(e){
+            navItem.addEventListener('click', (e) => {
                 e.preventDefault();
                 smoothScroll({
-                    trigger: this
+                    trigger: navItem
                 });
                 if(page.classList.contains('show-navigation')){
                     toggleNavigation();
@@ -29,13 +29,8 @@ export default function({
         }
     });
 
-    window.addEventListener('load', function(){
-        activeSection(sections, navigation);
-    });
-
-    window.addEventListener('scroll', throttle(() => {
-        activeSection(sections, navigation);
-    }, 250));
+    window.addEventListener('load', () => activeSection(sections, navigation));
+    window.addEventListener('scroll', throttle(() => activeSection(sections, navigation), 250));
 }
 
 function toggleNavigation(){
@@ -47,7 +42,7 @@ function activeSection(sections, navigation){
     const scrollPosition = window.pageYOffset;
     const windowHeight = window.innerHeight;
 
-    sections.forEach(function(section){
+    sections.forEach((section) => {
         let sectionPosition = section.getBoundingClientRect();
         let sectionOffset = section.offsetTop;
         let sectionHeight = section.offsetHeight;
@@ -61,8 +56,8 @@ function activeSection(sections, navigation){
 
         if(scrollPosition >= sectionStart
         && scrollPosition < sectionEnd){
-            navigationItems.forEach(function(navItem){
-                if(section.id == navItem.href.split('#')[1]){
+            navigationItems.forEach((navItem) => {
+                if(section.id === navItem.href.split('#')[1]){
                     navItem.classList.add('active');
                 }else{
                     navItem.classList.remove('active');
@@ -99,21 +94,21 @@ function navigationColour(navigation, position){
     }
 
     // Navigation
-    navigationItems.forEach(function(navItem, index) {
+    navigationItems.forEach((navItem, index) => {
         let offset = 198 + (64 * (index));
 
         if(top < offset && bottom > offset){
             navItem.parentNode.classList.add('dark');
-            if(index == 0){
+            if(index === 0){
                 navigation.classList.add('dark-top');
-            }else if(index == (navigationItems.length - 1)){
+            }else if(index === (navigationItems.length - 1)){
                 navigation.classList.add('dark-bottom');
             }
         }else{
             navItem.parentNode.classList.remove('dark');
-            if(index == 0){
+            if(index === 0){
                 navigation.classList.remove('dark-top');
-            }else if(index == (navigationItems.length - 1)){
+            }else if(index === (navigationItems.length - 1)){
                 navigation.classList.remove('dark-bottom');
             }
         }

@@ -13,17 +13,11 @@ export default function({
     activeClass = 'active'
 } = {}) {
 
-    forms.forEach((form) => {
-        Validation.init(form, true);
-    });
+    forms.forEach((form) => Validation.init(form, true));
 
     inputs.forEach((input) => {
-        input.addEventListener('focus', () => {
-            activeInput(input, activeClass);
-        });
-        input.addEventListener('focusout', () => {
-            checkInput(input, activeClass);
-        });
+        input.addEventListener('focus', () => activeInput(input, activeClass));
+        input.addEventListener('focusout', () => checkInput(input, activeClass));
     });
 }
 
