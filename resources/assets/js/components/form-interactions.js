@@ -9,7 +9,8 @@ ValidationLang.email = '{label} should be a valid e-mail address';
 
 export default function({
     forms = [],
-    inputs = []
+    inputs = [],
+    activeClass = 'active'
 } = {}) {
 
     forms.forEach((form) => {
@@ -17,19 +18,23 @@ export default function({
     });
 
     inputs.forEach((input) => {
-        input.addEventListener('focus', activeInput);
-        input.addEventListener('focusout', checkInput);
+        input.addEventListener('focus', () => {
+            activeInput(input, activeClass);
+        });
+        input.addEventListener('focusout', () => {
+            checkInput(input, activeClass);
+        });
     });
 }
 
-function activeInput(){
-    let container = this.parentElement;
-    container.classList.add('active');
+function activeInput(element, className){
+    const container = element.parentElement;
+    container.classList.add(className);
 }
 
-function checkInput(){
-    let container = this.parentElement;
-    if(this.value == ''){
-        container.classList.remove('active');
+function checkInput(element, className){
+    const container = element.parentElement;
+    if(element.value === ''){
+        container.classList.remove(className);
     }
 }
