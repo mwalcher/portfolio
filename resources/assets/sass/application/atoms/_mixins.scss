@@ -178,15 +178,17 @@
     }
 }
 
-@mixin transition($properties){
-    $transition: "";
-    @each $property in $properties {
-        $i: index($properties, $property);
-        @if($i == 1){
-            $transition: #{$property} #{$global-transition};
-        }
-        @else{
-            $transition: #{$transition}, #{$property} #{$global-transition};
+@mixin transition($properties: none){
+    $transition: none;
+    @if($properties != none){
+        @each $property in $properties {
+            $i: index($properties, $property);
+            @if($i == 1){
+                $transition: #{$property} #{$global-transition};
+            }
+            @else{
+                $transition: #{$transition}, #{$property} #{$global-transition};
+            }
         }
     }
     transition: $transition;

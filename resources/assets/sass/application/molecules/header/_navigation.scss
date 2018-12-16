@@ -14,7 +14,7 @@
         display: block;
         transform: none;
         box-shadow: none;
-        transition: none;
+        @include transition(none);
         @include spacing(padding, top, 1.5rem);
     }
 
