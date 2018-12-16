@@ -44,19 +44,19 @@ return [
             'list' => [
                 'git' => [
                     'label' => 'Git',
-                    'icon' => 'git'
+                    'link' => 'https://git-scm.com/'
                 ],
                 'laravel' => [
                     'label' => 'Laravel',
-                    'icon' => 'laravel'
+                    'link' => 'https://laravel.com/'
                 ],
-                'codeigniter' => [
-                    'label' => 'Codeigniter',
-                    'icon' => 'codeigniter'
+                'react' => [
+                    'label' => 'React',
+                    'link' => 'https://reactjs.org/'
                 ],
-                'concrete' => [
-                    'label' => 'concrete5',
-                    'icon' => 'concrete'
+                'vue-js' => [
+                    'label' => 'Vue.js',
+                    'link' => 'https://vuejs.org/'
                 ]
             ]
         ]

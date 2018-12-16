@@ -11,16 +11,21 @@
             <h2 class="invisible">{!! $listItem['title'] !!}</h2>
             @if (isset($listItem['list']))
             <div class="interactive-icon-block">
-                @foreach ($listItem['list'] as $listItem)
+                @foreach ($listItem['list'] as $key => $content)
                 <div class="icon-container">
                     <div class="shape">
                         <div class="icon">
-                            <div class="image" style="background-image:url('{!! asset('images') !!}/icon-{!! $listItem['icon'] !!}.svg');"></div>
+                            <div class="image" style="background-image:url('{!! asset('images') !!}/icon-{!! $key !!}.svg');"></div>
                         </div>
                         <div class="label">
-                            <h3>{!! $listItem['label'] !!}</h3>
+                            <h3>{!! $content['label'] !!}</h3>
                         </div>
                     </div>
+                    @if (isset($content['link']))
+                    <a class="icon-link no-hover" href="{!! $content['link'] !!}" target="_blank" rel="noopener" title="{!! $content['label'] !!}">
+                        <span class="invisible">{!! $content['label'] !!}</span>
+                    </a>
+                    @endif
                 </div>
                 @endforeach
             </div>
