@@ -19,7 +19,11 @@ Route::get('/mortgage-teacher', 'PagesController@mortgageTeacher')->name('mortga
 Route::get('/pink-precast', 'PagesController@pinkPrecast')->name('pink-precast');
 Route::get('/zucora', 'PagesController@zucora')->name('zucora');
 
+/* Single Pages */
 Route::get('/coming-soon', 'PagesController@comingSoon')->name('coming-soon');
+
+/* Form Submission */
+Route::post('/submit', 'FormController@submit')->name('submit-form');
 
 // 404 Error if route doesn't match
 Route::get('{any?}', function(){

@@ -1,10 +1,19 @@
 'use strict';
 
+import { Validation, ValidationConfig } from 'bunnyjs/src/Validation';
+ValidationConfig.classInputGroup = 'input-container';
+ValidationConfig.classInputGroupError = 'error';
+
 export default function({
+    forms = [],
     inputs = []
 } = {}) {
 
-    inputs.forEach(function(input){
+    forms.forEach((form) => {
+        Validation.init(form, true);
+    });
+
+    inputs.forEach((input) => {
         input.addEventListener('focus', activeInput);
         input.addEventListener('focusout', checkInput);
     });

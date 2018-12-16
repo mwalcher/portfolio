@@ -23,6 +23,7 @@ document.addEventListener('readystatechange', function(){
 
         // Forms
         formInteractions({
+            forms: document.querySelectorAll('form'),
             inputs: document.querySelectorAll('input, textarea')
         });
 

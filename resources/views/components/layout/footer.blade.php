@@ -11,7 +11,8 @@
                 @endforeach
             </div>
         </div>
-        <form name="{!! __('footer.form') !!}" method="post" action="" novalidate>
+        <form name="{!! __('footer.form') !!}" action="{{ route('submit-form') }}" method="post">
+            {{ csrf_field() }}
             <div class="input-container">
                 <label for="{!! __('footer.form') !!}-{!! __('form.fields.name.name') !!}">
                     {!! __('form.fields.name.label') !!}
@@ -22,7 +23,7 @@
                 <label for="{!! __('footer.form') !!}-{!! __('form.fields.email.name') !!}">
                     {!! __('form.fields.email.label') !!}
                 </label>
-                <input id="{!! __('footer.form') !!}-{!! __('form.fields.email.name') !!}" title="{!! __('form.fields.email.label') !!}" type="text" name="{!! __('form.fields.email.name') !!}" required autocomplete="email" />
+                <input id="{!! __('footer.form') !!}-{!! __('form.fields.email.name') !!}" title="{!! __('form.fields.email.label') !!}" type="email" name="{!! __('form.fields.email.name') !!}" required autocomplete="email" />
             </div>
             <div class="input-container">
                 <label for="{!! __('footer.form') !!}-{!! __('form.fields.message.name') !!}">
