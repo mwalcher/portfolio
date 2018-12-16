@@ -20,7 +20,7 @@ $triangle-height: 7.125rem;
         align-items: center;
         flex: 1 1 50%;
         background-color: $black;
-        border: 1px solid $white-off;
+        border: $global-border-width solid $white-off;
         @include spacing(padding, left right, xs);
 
         @media screen and (min-width: $phone-breakpoint){

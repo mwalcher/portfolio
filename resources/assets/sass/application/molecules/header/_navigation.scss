@@ -84,7 +84,7 @@
             &::before, &::after{
                 @media screen and (min-width: $header-breakpoint){
                     position: absolute;
-                    left: -1px;
+                    left: -0.0625rem;
                     width: 0;
                     height: 0;
                     border: 0.5rem solid transparent;
@@ -198,7 +198,7 @@
                             content: "";
                             position: absolute;
                             top: 50%;
-                            left: -1px;
+                            left: -0.0625rem;
                             transform: translate(-50%, -50%);
                             width: $small-size;
                             height: $small-size;

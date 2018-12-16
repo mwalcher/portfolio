@@ -15,7 +15,7 @@ a:not(.button){
         top: 100%;
         left: 0;
         width: 100%;
-        border-bottom: 1px solid transparent;
+        border-bottom: $global-border-width solid transparent;
         transform: translateY(-$extra-small-size);
         @include transition(border-color transform);
     }

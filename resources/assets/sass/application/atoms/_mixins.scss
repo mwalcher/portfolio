@@ -27,13 +27,14 @@
 @mixin title-font{
     @include set-font(title);
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: $global-letter-spacing;
 }
 
 @mixin h1{
     @include title-font;
     font-size: 3rem;
     line-height: 1.25;
+    letter-spacing: ($global-letter-spacing * 2);
     margin: 0;
 }
 
@@ -68,7 +69,7 @@
     text-align: center;
     text-transform: uppercase;
     text-decoration: none;
-    letter-spacing: 1px;
+    letter-spacing: $global-letter-spacing;
 
     &:hover, &:focus, &:active{
         outline: none;
