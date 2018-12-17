@@ -36,10 +36,6 @@ return [
         'content' => 'I am a detail oriented problem solver who is determined to find a solution even if it does not come easily.'
     ],
     'tab-content' => [
-        'about' => [
-            'title' => 'About Me',
-            'content' => 'This is test content with a <a href="#">link</a>.'
-        ],
         'tools' => [
             'title' => 'What I Use',
             'list' => [
@@ -60,6 +56,10 @@ return [
                     'link' => 'https://vuejs.org/'
                 ]
             ]
+        ],
+        'about' => [
+            'title' => 'About Me',
+            'content' => 'This is test content with a <a href="#">link</a>.'
         ]
     ],
     'main-content' => [
