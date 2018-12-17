@@ -11,35 +11,43 @@
                 @endforeach
             </div>
         </div>
-        <form name="{!! __('footer.form') !!}" action="{{ route('submit-form') }}" method="post">
+        <form name="{!! __('footer.form.name') !!}" action="{{ route('submit-form') }}" method="post">
             {{ csrf_field() }}
-            <div class="input-container @if (old(__('form.fields.name.name')))active @endif @if ($errors->has(__('form.fields.name.name')))error @endif">
-                <label for="{!! __('footer.form') !!}-{!! __('form.fields.name.name') !!}">
-                    {!! __('form.fields.name.label') !!}
-                </label>
-                <input id="{!! __('footer.form') !!}-{!! __('form.fields.name.name') !!}" type="text" name="{!! __('form.fields.name.name') !!}" value="{{ old(__('form.fields.name.name')) }}" required autocomplete="name" />
-                @if ($errors->has(__('form.fields.name.name')))
-                    <small class="error-message">{{ $errors->first(__('form.fields.name.name')) }}</small>
-                @endif
-            </div>
-            <div class="input-container @if (old(__('form.fields.email.name')))active @endif @if ($errors->has(__('form.fields.email.name')))error @endif">
-                <label for="{!! __('footer.form') !!}-{!! __('form.fields.email.name') !!}">
-                    {!! __('form.fields.email.label') !!}
-                </label>
-                <input id="{!! __('footer.form') !!}-{!! __('form.fields.email.name') !!}" type="email" name="{!! __('form.fields.email.name') !!}" value="{{ old(__('form.fields.email.name')) }}" required autocomplete="email" />
-                @if ($errors->has(__('form.fields.email.name')))
-                    <small class="error-message">{{ $errors->first(__('form.fields.email.name')) }}</small>
-                @endif
-            </div>
-            <div class="input-container @if (old(__('form.fields.message.name')))active @endif @if ($errors->has(__('form.fields.message.name')))error @endif">
-                <label for="{!! __('footer.form') !!}-{!! __('form.fields.message.name') !!}">
-                    {!! __('form.fields.message.label') !!}
-                </label>
-                <textarea id="{!! __('footer.form') !!}-{!! __('form.fields.message.name') !!}" name="{!! __('form.fields.message.name') !!}" required>{{ old(__('form.fields.message.name')) }}</textarea>
-                @if ($errors->has(__('form.fields.message.name')))
-                    <small class="error-message">{{ $errors->first(__('form.fields.message.name')) }}</small>
-                @endif
-            </div>
+            @foreach (__('footer.form.fields') as $field)
+                <div class="input-container @if (old($field['name']))active @endif @if ($errors->has($field['name']))error @endif">
+                    <label for="{!! __('footer.form.name') !!}-{!! $field['name'] !!}">
+                        {!! $field['label'] !!}
+                    </label>
+                    @if ($field['type'] === 'textarea')
+                        <textarea
+                            id="{!! __('footer.form.name') !!}-{!! $field['name'] !!}"
+                            name="{!! $field['name'] !!}"
+                            @if ($field['required'])
+                            required
+                            @endif
+                            @if ($field['autocomplete'])
+                            autocomplete="{!! $field['autocomplete'] !!}"
+                            @endif
+                        >{{ old($field['name']) }}</textarea>
+                    @else
+                    <input
+                        id="{!! __('footer.form.name') !!}-{!! $field['name'] !!}"
+                        type="{!! $field['type'] !!}"
+                        name="{!! $field['name'] !!}"
+                        value="{{ old($field['name']) }}"
+                        @if ($field['required'])
+                        required
+                        @endif
+                        @if ($field['autocomplete'])
+                        autocomplete="{!! $field['autocomplete'] !!}"
+                        @endif
+                    />
+                    @endif
+                    @if ($errors->has($field['name']))
+                        <small class="error-message">{{ $errors->first($field['name']) }}</small>
+                    @endif
+                </div>
+            @endforeach
             <button type="submit">{!! __('form.actions.submit') !!}</button>
         </form>
     </div>
