@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'title' => 'Coming Soon / '.__('meta.title'),
+    'title' => 'Thank You / '.__('meta.title'),
     'description' => __('meta.description'),
     'meta-image' => [
         'src' => __('meta.image.src'),
@@ -14,8 +14,8 @@ return [
             'src' => asset('images').'/mwalcher-logo-light.svg',
             'alt' => 'mwalcher Logo'
         ],
-        'main-title' => 'Rebrand in progress...',
-        'content' => 'In the meantime, let me know if you have any questions or if you\'re interested in working together.',
-        'button' => __('global.email')
+        'main-title' => 'Thank you!',
+        'content' => 'I appreciate you taking the time to reach out to me. I will be sure to respond to your message as soon as possible.',
+        'button' => __('global.home')
     ]
 ];

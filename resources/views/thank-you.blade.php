@@ -4,12 +4,14 @@
     <section class="hero section">
         <div class="hero-content">
             <div class="logo-container">
-                <img src="{!! __('coming-soon.hero.logo.src') !!}" alt="{!! __('coming-soon.hero.logo.alt') !!}" />
+                <a href="{!! __('global.home.link') !!}" class="logo no-hover" title="{!! __('global.home.title') !!}">
+                    <img src="{!! __('thank-you.hero.logo.src') !!}" alt="{!! __('thank-you.hero.logo.alt') !!}" />
+                </a>
             </div>
-            <h1>{!! __('coming-soon.hero.main-title') !!}</h1>
-            <p>{!! __('coming-soon.hero.content') !!}</p>
-            <a href="{!! __('coming-soon.hero.button.link') !!}" class="button center" title="{!! __('coming-soon.hero.button.title') !!}">
-                {!! __('coming-soon.hero.button.text') !!}
+            <h1>{!! __('thank-you.hero.main-title') !!}</h1>
+            <p>{!! __('thank-you.hero.content') !!}</p>
+            <a href="{!! __('thank-you.hero.button.link') !!}" class="button center" title="{!! __('thank-you.hero.button.title') !!}">
+                {!! __('thank-you.hero.button.text') !!}
             </a>
             <div class="contact-links">
                 <a href="{!! __('global.contact-links.linkedin.link') !!}" target="_blank" rel="noopener" class="no-hover" title="{!! __('global.contact-links.linkedin.title') !!}">

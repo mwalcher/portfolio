@@ -33,6 +33,6 @@ class FormController extends Controller
 
         unset($data['_token']);
 
-        return redirect()->route('home');
+        return redirect()->route('thank-you');
     }
 }

@@ -21,6 +21,7 @@ Route::get('/zucora', 'PagesController@zucora')->name('zucora');
 
 /* Single Pages */
 Route::get('/coming-soon', 'PagesController@comingSoon')->name('coming-soon');
+Route::get('/thank-you', 'PagesController@thankYou')->name('thank-you');
 
 /* Form Submission */
 Route::post('/submit', 'FormController@submit')->name('submit-form');

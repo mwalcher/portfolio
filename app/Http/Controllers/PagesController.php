@@ -28,6 +28,10 @@ class PagesController extends Controller
         return $this->setPage('pink-precast');
     }
 
+    public function thankYou(){
+        return $this->setPage('thank-you');
+    }
+
     public function zucora(){
         return $this->setPage('zucora');
     }
