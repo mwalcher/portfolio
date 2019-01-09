@@ -15,11 +15,13 @@ body{
             }
 
             a:not(.button){
-                color: $primary;
-
-                &:hover, &:focus{
+                &.animated-hover {
                     &::after{
-                        border-color: $primary;
+                        background-color: $primary;
+                    }
+
+                    &:hover, &:focus{
+                        color: set-colour($primary);
                     }
                 }
             }

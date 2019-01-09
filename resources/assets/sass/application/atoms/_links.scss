@@ -3,33 +3,37 @@
     --------------------- */
 
 a:not(.button){
-    position: relative;
+    display: inline-block;
+    color: inherit;
     @include set-font(body, bold);
-    color: $primary;
     text-decoration: none;
     cursor: pointer;
 
-    &::after{
-        content: "";
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        border-bottom: $global-border-width solid transparent;
-        transform: translateY(-$extra-small-size);
-        @include transition(border-color transform);
-    }
+    &.animated-hover {
+        position: relative;
+        @include spacing(padding, left right, 0.125rem);
+        @include transition(colour);
 
-    &:hover, &:focus{
         &::after{
-            border-color: $primary;
-            transform: translateY(0);
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: $primary;
+            transform: scaleY(0.1);
+            transform-origin: bottom;
+            @include transition(transform);
+            z-index: -1;
         }
-    }
 
-    &.no-hover{
-        &::after{
-            display: none;
+        &:hover, &:focus{
+            color: set-colour($primary);
+
+            &::after{
+                transform: scaleY(1);
+            }
         }
     }
 }

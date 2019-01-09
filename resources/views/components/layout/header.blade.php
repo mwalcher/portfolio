@@ -1,5 +1,5 @@
 <header>
-    <a href="{!! __('global.home.link') !!}" class="logo no-hover" title="{!! __('global.home.title') !!}">
+    <a href="{!! __('global.home.link') !!}" class="logo" title="{!! __('global.home.title') !!}">
         <span class="logo-container">
             @include('logos/mwalcher-logo')
         </span>
@@ -20,7 +20,7 @@
         <ul class="page-navigation">
             @foreach (__($page.'.navigation') as $navItem)
             <li @if ($navItem['icon'] === 'hidden')class="{!! $navItem['icon'] !!}" @endif>
-                <a href="{!! $navItem['link'] !!}" class="no-hover" title="{!! $navItem['title'] !!}">
+                <a href="{!! $navItem['link'] !!}" title="{!! $navItem['title'] !!}">
                     <span class="icon fa {!! $navItem['icon'] !!}" aria-hidden="true"></span>
                     {!! $navItem['text'] !!}
                 </a>
@@ -30,7 +30,7 @@
         <ul class="links-navigation">
             @foreach (__('global.contact-links') as $contactLink)
             <li>
-                <a href="{!! $contactLink['link'] !!}" target="_blank" rel="noopener" class="no-hover" title="{!! $contactLink['title'] !!}">
+                <a href="{!! $contactLink['link'] !!}" target="_blank" rel="noopener" title="{!! $contactLink['title'] !!}">
                     <span class="icon fa {!! $contactLink['icon'] !!}" aria-hidden="true"></span>
                     {!! $contactLink['text'] !!}
                 </a>

@@ -12,7 +12,7 @@
         @endif>
 
         @if(!$properties['toggle'])
-        <a href="{{route($key)}}" class="option-link no-hover" title="{!! $listItem['name'] !!}">
+        <a href="{{route($key)}}" class="option-link" title="{!! $listItem['name'] !!}">
             <span class="invisible">{!! $listItem['name'] !!}</span>
         </a>
         @endif

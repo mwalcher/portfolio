@@ -4,7 +4,7 @@
     <section class="hero section">
         <div class="hero-content">
             <div class="logo-container">
-                <a href="{!! __('global.home.link') !!}" class="logo no-hover" title="{!! __('global.home.title') !!}">
+                <a href="{!! __('global.home.link') !!}" class="logo" title="{!! __('global.home.title') !!}">
                     <img src="{!! __('thank-you.hero.logo.src') !!}" alt="{!! __('thank-you.hero.logo.alt') !!}" />
                 </a>
             </div>
@@ -14,11 +14,11 @@
                 {!! __('thank-you.hero.button.text') !!}
             </a>
             <div class="contact-links">
-                <a href="{!! __('global.contact-links.linkedin.link') !!}" target="_blank" rel="noopener" class="no-hover" title="{!! __('global.contact-links.linkedin.title') !!}">
+                <a href="{!! __('global.contact-links.linkedin.link') !!}" target="_blank" rel="noopener" title="{!! __('global.contact-links.linkedin.title') !!}">
                     <span class="icon fa {!! __('global.contact-links.linkedin.icon') !!}" aria-hidden="true"></span>
                     {!! __('global.contact-links.linkedin.text') !!}
                 </a>
-                <a href="{!! __('global.contact-links.github.link') !!}" target="_blank" rel="noopener" class="no-hover" title="{!! __('global.contact-links.github.title') !!}">
+                <a href="{!! __('global.contact-links.github.link') !!}" target="_blank" rel="noopener" title="{!! __('global.contact-links.github.title') !!}">
                     <span class="icon fa {!! __('global.contact-links.github.icon') !!}" aria-hidden="true"></span>
                     {!! __('global.contact-links.github.text') !!}
                 </a>

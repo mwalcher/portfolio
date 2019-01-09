@@ -26,7 +26,7 @@
                         </div>
                     </div>
                     @if (isset($content['link']))
-                    <a class="icon-link no-hover" href="{!! $content['link'] !!}" target="_blank" rel="noopener" title="{!! $content['label'] !!}">
+                    <a class="icon-link" href="{!! $content['link'] !!}" target="_blank" rel="noopener" title="{!! $content['label'] !!}">
                         <span class="invisible">{!! $content['label'] !!}</span>
                     </a>
                     @endif
