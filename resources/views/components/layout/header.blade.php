@@ -6,7 +6,7 @@
     </a>
 
     @if (issetLang($page.'.navigation'))
-    <button id="mobile-menu">
+    <button id="mobile-menu" type="button" title="Mobile Navigation Toggle">
         <span class="invisible">Menu</span>
         <span class="icon">
             <span></span>
