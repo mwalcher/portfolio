@@ -17,10 +17,10 @@ body{
             a:not(.button){
                 &.animated-hover {
                     &:hover, &:focus{
-                        color: set-colour($primary);
+                        color: set-colour($primary) !important;
 
                         &::after{
-                            background-color: $primary;
+                            background-color: $primary !important;
                         }
                     }
                 }
@@ -76,16 +76,6 @@ body{
             }
 
             .light-section{
-                a:not(.button){
-                    color: $primary;
-
-                    &:hover, &:focus{
-                        &::after{
-                            border-color: $primary;
-                        }
-                    }
-                }
-
                 .button{
                     &::after{
                         background-color: $primary-rgba-dark;
