@@ -32,6 +32,19 @@ $project-colours: (
     mortgage-teacher : $mortgage-teacher
 );
 
+/*  LINK COLOURS
+    --------------------- */
+
+$link-light: (
+    default-background-colour : $white-off,
+    hover-background-colour   : $primary
+);
+
+$link-dark: (
+    default-background-colour : $black,
+    hover-background-colour   : $primary
+);
+
 /*  BUTTON COLOURS
     --------------------- */
 
@@ -70,12 +83,36 @@ $input-light: (
     error-background-colour   : $red
 );
 
+$input-dark: (
+    default-font-colour       : $black,
+    default-background-colour : $black-rgba,
+    default-border-colour     : $black,
+
+    hover-background-colour   : $primary-rgba,
+
+    active-background-colour  : $primary-dark,
+
+    error-background-colour   : $red
+);
+
 $submit-light: (
     default-font-colour       : $black,
     default-background-colour : $white-off,
     default-background-shadow : darken($white-off, 25%),
 
     hover-font-colour         : $white-off,
+    hover-background-colour   : $primary,
+    hover-background-shadow   : $primary-dark,
+
+    active-background-colour  : $primary-rgba
+);
+
+$submit-dark: (
+    default-font-colour       : $white-off,
+    default-background-colour : $black,
+    default-background-shadow : lighten($black, 25%),
+
+    hover-font-colour         : $black,
     hover-background-colour   : $primary,
     hover-background-shadow   : $primary-dark,
 

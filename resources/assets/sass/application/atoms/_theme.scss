@@ -16,12 +16,12 @@ body{
 
             a:not(.button){
                 &.animated-hover {
-                    &::after{
-                        background-color: $primary;
-                    }
-
                     &:hover, &:focus{
                         color: set-colour($primary);
+
+                        &::after{
+                            background-color: $primary;
+                        }
                     }
                 }
             }

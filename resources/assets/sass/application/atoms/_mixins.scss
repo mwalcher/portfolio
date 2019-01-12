@@ -50,8 +50,22 @@
     line-height: 1.25;
 }
 
-/*  BUTTONS
+/*  BUTTONS & LINKS
     ------------------- */
+
+@mixin animated-link-colour($theme:$link-light){
+    &::after{
+        background-color: map-get($theme, default-background-colour);
+    }
+
+    &:hover, &:focus{
+        color: set-colour(map-get($theme, hover-background-colour));
+
+        &::after{
+            background-color: map-get($theme, hover-background-colour);
+        }
+    }
+}
 
 @mixin button-base{
     position: relative;
@@ -152,8 +166,24 @@
     background-color: $bg-colour;
     color: set-colour($bg-colour);
 
+    a:not(.button){
+        &.animated-hover{
+            @include animated-link-colour(set-colour($bg-colour, $link-light, $link-dark));
+        }
+    }
+
     .button{
         @include button-colour(set-colour($bg-colour, $button-light, $button-dark));
+    }
+
+    input,
+    textarea,
+    select{
+        @include input-colour(set-colour($bg-colour, $input-light, $input-dark));
+    }
+
+    button[type="submit"]{
+        @include submit-colour(set-colour($bg-colour, $submit-light, $submit-dark));
     }
 }
 

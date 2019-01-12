@@ -9,7 +9,7 @@ a:not(.button){
     text-decoration: none;
     cursor: pointer;
 
-    &.animated-hover {
+    &.animated-hover{
         position: relative;
         @include spacing(padding, left right, 0.125rem);
         @include transition(colour);
@@ -21,16 +21,13 @@ a:not(.button){
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: $primary;
             transform: scaleY(0.1);
             transform-origin: bottom;
-            @include transition(transform);
+            @include transition(background-color transform);
             z-index: -1;
         }
 
         &:hover, &:focus{
-            color: set-colour($primary);
-
             &::after{
                 transform: scaleY(1);
             }
