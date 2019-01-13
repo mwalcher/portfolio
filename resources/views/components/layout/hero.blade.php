@@ -8,11 +8,11 @@
         @endif
 
         @if (issetLang($page.'.hero.sub-title'))
-            <h2>{!! __($page.'.hero.sub-title') !!}</h2>
+            <p class="sub-title">{!! __($page.'.hero.sub-title') !!}</p>
         @endif
 
         @if (issetLang($page.'.hero.content'))
-            <p>{!! __($page.'.hero.content') !!}</p>
+            <p class="content">{!! __($page.'.hero.content') !!}</p>
         @endif
 
         @if (issetLang($page.'.hero.button'))

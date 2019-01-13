@@ -15,7 +15,15 @@
         text-align: center;
         @include spacing(padding, top bottom, md);
 
-        p{
+        .sub-title{
+            @include set-font(body, bold);
+            font-size: 2rem;
+            line-height: 1.25;
+            text-transform: uppercase;
+            @include spacing(padding, bottom, 0);
+        }
+
+        .content{
             max-width: 28rem;
             @include spacing(padding, top, md);
             @include spacing(margin, left right, auto);
