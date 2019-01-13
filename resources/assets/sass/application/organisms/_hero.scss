@@ -17,10 +17,14 @@
 
         .sub-title{
             @include set-font(body, bold);
-            font-size: 2rem;
+            font-size: 1.5rem;
             line-height: 1.25;
             text-transform: uppercase;
             @include spacing(padding, bottom, 0);
+
+            @media screen and (min-width: $phone-breakpoint){
+                font-size: 2rem;
+            }
         }
 
         .content{

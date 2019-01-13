@@ -32,22 +32,34 @@
 
 @mixin h1{
     @include title-font;
-    font-size: 3rem;
+    font-size: 2rem;
     line-height: 1.25;
     letter-spacing: ($global-letter-spacing * 2);
     margin: 0;
+
+    @media screen and (min-width: $phone-breakpoint){
+        font-size: 3rem;
+    }
 }
 
 @mixin h2{
     @include title-font;
-    font-size: 2rem;
+    font-size: 1.5rem;
     line-height: 1.25;
+
+    @media screen and (min-width: $phone-breakpoint){
+        font-size: 2rem;
+    }
 }
 
 @mixin h3{
     @include title-font;
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     line-height: 1.25;
+
+    @media screen and (min-width: $phone-breakpoint){
+        font-size: 1.5rem;
+    }
 }
 
 /*  BUTTONS & LINKS
