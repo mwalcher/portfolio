@@ -58,20 +58,20 @@ return [
             'preview-slider' => [
                 'list' => [
                     'phone' => [
-                        'src' => asset('images').'/zucora-device-1-phone.png',
-                        'alt' => 'The zucora login page represented on an iPhone'
+                        'src' => asset('images').'/whats-my-device-1-phone.png',
+                        'alt' => 'Home page "Use Cases" section represented on an iPhone'
                     ],
                     'tablet' => [
-                        'src' => asset('images').'/zucora-device-2-tablet.png',
-                        'alt' => 'An example of a user\'s playlist page represented on an iPad'
+                        'src' => asset('images').'/whats-my-device-2-tablet.png',
+                        'alt' => 'How it works page "What you must do" section represented on an iPad'
                     ],
                     'laptop' => [
-                        'src' => asset('images').'/zucora-device-3-laptop.png',
-                        'alt' => 'The zucora music page represented on a Macbook Pro'
+                        'src' => asset('images').'/whats-my-device-3-laptop.png',
+                        'alt' => 'Contact page represented on a Macbook Pro'
                     ],
                     'desktop' => [
-                        'src' => asset('images').'/zucora-device-4-desktop.png',
-                        'alt' => 'An example of a user\'s profile page represented on an iMac'
+                        'src' => asset('images').'/whats-my-device-4-desktop.png',
+                        'alt' => 'About us "The Leadership Team" section represented on an iMac'
                     ]
                 ],
                 'cta' => [

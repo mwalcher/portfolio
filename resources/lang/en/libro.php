@@ -67,7 +67,7 @@ return [
                     ],
                     'laptop' => [
                         'src' => asset('images').'/libro-device-3-laptop.png',
-                        'alt' => 'Libro Budget Planner assessment page represented on a Macbook Pro'
+                        'alt' => 'Libro Mortgage Calculator summary page represented on a Macbook Pro'
                     ],
                     'desktop' => [
                         'src' => asset('images').'/libro-device-4-desktop.png',
