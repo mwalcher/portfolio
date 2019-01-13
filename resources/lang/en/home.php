@@ -59,7 +59,9 @@ return [
         ],
         'about' => [
             'title' => 'About Me',
-            'content' => 'This is test content with a <a href="#" class="animated-hover" title="link">link</a>.'
+            'content' => [
+                'This is test content with a <a href="#" class="animated-hover" title="link">link</a>.'
+            ]
         ]
     ],
     'main-content' => [

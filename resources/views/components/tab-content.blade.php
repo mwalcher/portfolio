@@ -10,7 +10,9 @@
         <div class="content-container @if($loop->index == 0)active @endif" data-toggle-content="{!! $listItem['title'] !!}"  data-parent="tab-content">
             <h2 class="invisible">{!! $listItem['title'] !!}</h2>
             @if (isset($listItem['content']))
-                <p>{!! $listItem['content'] !!}</p>
+                @foreach ($listItem['content'] as $key => $content)
+                <p>{!! $content !!}</p>
+                @endforeach
             @endif
 
             @if (isset($listItem['list']))

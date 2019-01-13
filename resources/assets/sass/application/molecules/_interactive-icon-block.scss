@@ -31,7 +31,7 @@ $triangle-height: 7.125rem;
             perspective: 37.5rem;
             background-color: transparent;
             border: 0;
-            padding: 0;
+            @include spacing(padding, left right, 0);
         }
 
         &:hover, &:focus{
@@ -95,7 +95,7 @@ $triangle-height: 7.125rem;
                     top: 0;
                     left: (($triangle-width / 2) * -1);
                     display: block;
-                    padding: 0;
+                    @include spacing(padding, top bottom, 0);
                     border: ($triangle-width / 2) solid transparent;
                     border-top: 0;
                     border-bottom-width: $triangle-height;
