@@ -8,34 +8,36 @@
     <div class="tab-content-container">
         @foreach ($list as $listItem)
         <div class="content-container @if($loop->index == 0)active @endif" data-toggle-content="{!! $listItem['title'] !!}"  data-parent="tab-content">
-            <h2 class="invisible">{!! $listItem['title'] !!}</h2>
-            @if (isset($listItem['content']))
-                @foreach ($listItem['content'] as $key => $content)
-                <p>{!! $content !!}</p>
-                @endforeach
-            @endif
+            <div class="content">
+                <h2 class="invisible">{!! $listItem['title'] !!}</h2>
+                @if (isset($listItem['content']))
+                    @foreach ($listItem['content'] as $key => $content)
+                    <p>{!! $content !!}</p>
+                    @endforeach
+                @endif
 
-            @if (isset($listItem['list']))
-            <div class="interactive-icon-block">
-                @foreach ($listItem['list'] as $key => $content)
-                <div class="icon-container">
-                    <div class="shape">
-                        <div class="icon">
-                            <div class="image" style="background-image:url('{!! asset('images') !!}/icon-{!! $key !!}.svg');"></div>
+                @if (isset($listItem['list']))
+                <div class="interactive-icon-block">
+                    @foreach ($listItem['list'] as $key => $content)
+                    <div class="icon-container">
+                        <div class="shape">
+                            <div class="icon">
+                                <div class="image" style="background-image:url('{!! asset('images') !!}/icon-{!! $key !!}.svg');"></div>
+                            </div>
+                            <div class="label">
+                                <h3>{!! $content['label'] !!}</h3>
+                            </div>
                         </div>
-                        <div class="label">
-                            <h3>{!! $content['label'] !!}</h3>
-                        </div>
+                        @if (isset($content['link']))
+                        <a class="icon-link" href="{!! $content['link'] !!}" target="_blank" rel="noopener" title="{!! $content['label'] !!}">
+                            <span class="invisible">{!! $content['label'] !!}</span>
+                        </a>
+                        @endif
                     </div>
-                    @if (isset($content['link']))
-                    <a class="icon-link" href="{!! $content['link'] !!}" target="_blank" rel="noopener" title="{!! $content['label'] !!}">
-                        <span class="invisible">{!! $content['label'] !!}</span>
-                    </a>
-                    @endif
+                    @endforeach
                 </div>
-                @endforeach
+                @endif
             </div>
-            @endif
         </div>
         @endforeach
     </div>

@@ -28,7 +28,7 @@
         top: 0;
         left: 0;
         width: 100%;
-        transform: translateY(-99%);
+        transform: translateY(-100%);
         @include spacing(padding, left right, 0.75rem);
 
         @media screen and (min-width: $header-breakpoint){
@@ -99,7 +99,6 @@
             width: 100%;
             height: 100%;
             @include spacing(padding, all, 1.5rem);
-            overflow-y: scroll;
             @include transition(transform);
 
             @media screen and (min-width: $laptop-breakpoint){
@@ -116,6 +115,11 @@
 
             &.active{
                 transform: translateX(0);
+            }
+
+            .content {
+                height: 100%;
+                overflow: auto;
             }
         }
     }
