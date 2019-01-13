@@ -58,20 +58,20 @@ return [
             'preview-slider' => [
                 'list' => [
                     'phone' => [
-                        'src' => asset('images').'/zucora-device-1-phone.png',
-                        'alt' => 'The zucora login page represented on an iPhone'
+                        'src' => asset('images').'/libro-device-1-phone.png',
+                        'alt' => 'Libro Mortgage Calculator introduction page represented on an iPhone'
                     ],
                     'tablet' => [
-                        'src' => asset('images').'/zucora-device-2-tablet.png',
-                        'alt' => 'An example of a user\'s playlist page represented on an iPad'
+                        'src' => asset('images').'/libro-device-2-tablet.png',
+                        'alt' => 'Libro Mortgage Calculator step 1 page represented on an iPad'
                     ],
                     'laptop' => [
-                        'src' => asset('images').'/zucora-device-3-laptop.png',
-                        'alt' => 'The zucora music page represented on a Macbook Pro'
+                        'src' => asset('images').'/libro-device-3-laptop.png',
+                        'alt' => 'Libro Budget Planner assessment page represented on a Macbook Pro'
                     ],
                     'desktop' => [
-                        'src' => asset('images').'/zucora-device-4-desktop.png',
-                        'alt' => 'An example of a user\'s profile page represented on an iMac'
+                        'src' => asset('images').'/libro-device-4-desktop.png',
+                        'alt' => 'Libro Mortgage Calculator contact form represented on an iMac'
                     ]
                 ],
                 'cta' => [
