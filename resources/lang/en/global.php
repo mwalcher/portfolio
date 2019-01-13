@@ -50,7 +50,7 @@ return [
         'zucora' => [
             'name' => 'Zucora',
             'link' => route('zucora'),
-            'website' => 'https://zucorahome.com/',
+            'website' => 'http://prod-webstore-v00-1032646173.us-east-1.elb.amazonaws.com/',
             'image' => asset('images').'/zucora-hero.jpg',
             'description' => 'An e-commerce store for a local retailer'
         ],

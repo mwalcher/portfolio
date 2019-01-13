@@ -57,21 +57,21 @@ return [
         'components' => [
             'preview-slider' => [
                 'list' => [
+                    'desktop' => [
+                        'src' => asset('images').'/zucora-device-4-desktop.png',
+                        'alt' => 'The Zucora home page represented on an iMac'
+                    ],
                     'phone' => [
                         'src' => asset('images').'/zucora-device-1-phone.png',
-                        'alt' => 'The zucora login page represented on an iPhone'
-                    ],
-                    'tablet' => [
-                        'src' => asset('images').'/zucora-device-2-tablet.png',
-                        'alt' => 'An example of a user\'s playlist page represented on an iPad'
+                        'alt' => 'A list of Zucora products to buy represented on an iPhone'
                     ],
                     'laptop' => [
                         'src' => asset('images').'/zucora-device-3-laptop.png',
-                        'alt' => 'The zucora music page represented on a Macbook Pro'
+                        'alt' => 'A product details page adding the product to the cart represented on a Macbook Pro'
                     ],
-                    'desktop' => [
-                        'src' => asset('images').'/zucora-device-4-desktop.png',
-                        'alt' => 'An example of a user\'s profile page represented on an iMac'
+                    'tablet' => [
+                        'src' => asset('images').'/zucora-device-2-tablet.png',
+                        'alt' => 'The cart page represented on an iPad'
                     ]
                 ],
                 'cta' => [
