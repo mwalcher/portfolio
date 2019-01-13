@@ -1,14 +1,14 @@
 <?php
 
 return [
-    'title' => __('global.projects.mortgage-teacher.name').' / '.__('meta.title'),
-    'description' => __('global.projects.mortgage-teacher.description'),
+    'title' => __('global.projects.whats-my.name').' / '.__('meta.title'),
+    'description' => __('global.projects.whats-my.description'),
     'meta-image' => [
-        'src' => asset('images').'/mortgage-teacher-meta-image.png',
+        'src' => asset('images').'/whats-my-meta-image.png',
         'width' => __('meta.image.width'),
         'height' => __('meta.image.height')
     ],
-    'background' => __('global.projects.mortgage-teacher.image'),
+    'background' => __('global.projects.whats-my.image'),
     'navigation' => [
         'home' => [
             'text' => __('projects.navigation.home.text'),
@@ -18,13 +18,13 @@ return [
         ],
         'overview' => [
             'text' => __('projects.navigation.overview.text'),
-            'title' => __('projects.navigation.overview.title').__('global.projects.mortgage-teacher.name'),
+            'title' => __('projects.navigation.overview.title').__('global.projects.whats-my.name'),
             'link' => __('projects.navigation.overview.link'),
             'icon' => __('projects.navigation.overview.icon')
         ],
         'preview' => [
             'text' => __('projects.navigation.preview.text'),
-            'title' => __('projects.navigation.preview.title').__('global.projects.mortgage-teacher.name'),
+            'title' => __('projects.navigation.preview.title').__('global.projects.whats-my.name'),
             'link' => __('projects.navigation.preview.link'),
             'icon' => __('projects.navigation.preview.icon')
         ],
@@ -37,12 +37,12 @@ return [
     ],
     'hero' => [
         'id' => __('projects.hero.id'),
-        'main-title' => __('global.projects.mortgage-teacher.name'),
-        'content' => __('global.projects.mortgage-teacher.description')
+        'main-title' => __('global.projects.whats-my.name'),
+        'content' => __('global.projects.whats-my.description')
     ],
     'tab-content' => [
         'about' => [
-            'title' => __('projects.tab-content.about.title').__('global.projects.mortgage-teacher.name'),
+            'title' => __('projects.tab-content.about.title').__('global.projects.whats-my.name'),
             'content' => [
                 'This is test content with a <a href="#" class="animated-hover" title="link">link</a>.'
             ]
@@ -75,9 +75,9 @@ return [
                     ]
                 ],
                 'cta' => [
-                    'text' => __('projects.main-content.preview-slider-cta').__('global.projects.mortgage-teacher.name'),
-                    'title' => __('projects.main-content.preview-slider-cta').__('global.projects.mortgage-teacher.name'),
-                    'link' => __('global.projects.mortgage-teacher.website')
+                    'text' => __('projects.main-content.preview-slider-cta').__('global.projects.whats-my.name'),
+                    'title' => __('projects.main-content.preview-slider-cta').__('global.projects.whats-my.name'),
+                    'link' => __('global.projects.whats-my.website')
                 ],
             ],
             'option-list' => [

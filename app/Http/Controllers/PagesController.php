@@ -20,16 +20,16 @@ class PagesController extends Controller
         return $this->setPage('libro');
     }
 
-    public function mortgageTeacher(){
-        return $this->setPage('mortgage-teacher');
-    }
-
     public function pinkPrecast(){
         return $this->setPage('pink-precast');
     }
 
     public function thankYou(){
         return $this->setPage('thank-you');
+    }
+
+    public function whatsMy(){
+        return $this->setPage('whats-my');
     }
 
     public function zucora(){

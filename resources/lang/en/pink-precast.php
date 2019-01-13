@@ -84,8 +84,8 @@ return [
                 'title' => __('projects.main-content.option-list-title'),
                 'list' => [
                     'libro' => __('global.projects.libro'),
-                    'zucora' => __('global.projects.zucora'),
-                    'mortgage-teacher' => __('global.projects.mortgage-teacher')
+                    'whats-my' => __('global.projects.whats-my'),
+                    'zucora' => __('global.projects.zucora')
                 ],
                 'toggle' => false
             ]

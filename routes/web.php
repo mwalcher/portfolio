@@ -15,8 +15,8 @@ Route::get('/', 'PagesController@index')->name('home');
 
 /* Projects */
 Route::get('/libro', 'PagesController@libro')->name('libro');
-Route::get('/mortgage-teacher', 'PagesController@mortgageTeacher')->name('mortgage-teacher');
 Route::get('/pink-precast', 'PagesController@pinkPrecast')->name('pink-precast');
+Route::get('/whats-my', 'PagesController@whatsMy')->name('whats-my');
 Route::get('/zucora', 'PagesController@zucora')->name('zucora');
 
 /* Single Pages */

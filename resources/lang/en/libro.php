@@ -83,9 +83,9 @@ return [
             'option-list' => [
                 'title' => __('projects.main-content.option-list-title'),
                 'list' => [
+                    'whats-my' => __('global.projects.whats-my'),
                     'zucora' => __('global.projects.zucora'),
-                    'pink-precast' => __('global.projects.pink-precast'),
-                    'mortgage-teacher' => __('global.projects.mortgage-teacher')
+                    'pink-precast' => __('global.projects.pink-precast')
                 ],
                 'toggle' => false
             ]

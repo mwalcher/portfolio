@@ -20,16 +20,16 @@ $primary-rgba-dark : rgba($primary, 0.75) !default;
 /*  PROJECT COLOURS
     --------------------- */
 
-$zucora           : #434C9F;
-$pink-precast     : #D52375;
-$libro            : #007CC0;
-$mortgage-teacher : #00B5CB;
+$libro        : #007CC0;
+$whats-my     : #3500F5;
+$zucora       : #434C9F;
+$pink-precast : #D52375;
 
 $project-colours: (
-    zucora           : $zucora,
-    pink-precast     : $pink-precast,
-    libro            : $libro,
-    mortgage-teacher : $mortgage-teacher
+    libro        : $libro,
+    whats-my     : $whats-my,
+    zucora       : $zucora,
+    pink-precast : $pink-precast
 );
 
 /*  LINK COLOURS

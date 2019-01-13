@@ -84,8 +84,8 @@ return [
                 'title' => __('projects.main-content.option-list-title'),
                 'list' => [
                     'libro' => __('global.projects.libro'),
-                    'pink-precast' => __('global.projects.pink-precast'),
-                    'mortgage-teacher' => __('global.projects.mortgage-teacher')
+                    'whats-my' => __('global.projects.whats-my'),
+                    'pink-precast' => __('global.projects.pink-precast')
                 ],
                 'toggle' => false
             ]
