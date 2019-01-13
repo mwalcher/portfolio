@@ -47,8 +47,7 @@
             font-size: $global-font-size;
             line-height: 1.25;
             text-align: center;
-            color: $white-off;
-            background-color: $black;
+            @include set-background-colour($black);
             border: $global-border-width solid $white;
             @include spacing(padding, top bottom, xs);
             border-bottom: 0;
@@ -70,12 +69,11 @@
             }
 
             &:hover, &:focus{
-                background-color: $primary-rgba-dark;
+                @include set-background-colour($primary-rgba-dark);
             }
 
             &.active{
-                color: $black;
-                background-color: $white;
+                @include set-background-colour($white);
                 pointer-events: none;
             }
         }
@@ -131,12 +129,8 @@ body{
             .tab-content{
                 .tab-container{
                     .tab{
-                        &:hover, &:focus{
-                            background-color: rgba($colour,0.75);
-                        }
-
-                        &.active{
-                            background-color: $white;
+                        &:hover:not(.active), &:focus:not(.active){
+                            @include set-background-colour(rgba($colour,0.75));
                         }
                     }
                 }
