@@ -67,11 +67,11 @@ return [
                     ],
                     'laptop' => [
                         'src' => asset('images').'/zucora-device-3-laptop.png',
-                        'alt' => 'A product details page adding the product to the cart represented on a Macbook Pro'
+                        'alt' => 'A Zucora product details page adding the product to the cart represented on a Macbook Pro'
                     ],
                     'tablet' => [
                         'src' => asset('images').'/zucora-device-2-tablet.png',
-                        'alt' => 'The cart page represented on an iPad'
+                        'alt' => 'The Zucora cart page represented on an iPad'
                     ]
                 ],
                 'cta' => [
