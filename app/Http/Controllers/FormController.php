@@ -32,9 +32,10 @@ class FormController extends Controller
         }
 
         unset($data['_token']);
-
         $data['email'] = filter_var($data['email'], FILTER_SANITIZE_EMAIL);
 
+        $to = 'matt@mwalcher.com';
+        $subject = 'Website Contact Form';
         $message = '';
 
         foreach($data as $key => $content){
@@ -42,13 +43,13 @@ class FormController extends Controller
         }
 
         $headers = array(
-            'From' => 'no-reply@mwalcher.com',
+            'From' => 'Matthew Walcher <no-reply@mwalcher.com>',
             'Reply-To' => $data['email'],
             'MIME-Version' => '1.0',
             'Content-type' => 'text/html; charset=iso-8859-1'
         );
 
-        mail('matt@mwalcher.com', 'Website Contact Form', $message, $headers);
+        mail($to, $subject, $message, $headers);
 
         return redirect()->route('thank-you');
     }
