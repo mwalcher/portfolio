@@ -7,7 +7,7 @@
                 <img src="{!! __('coming-soon.hero.logo.src') !!}" alt="{!! __('coming-soon.hero.logo.alt') !!}" />
             </div>
             <h1>{!! __('coming-soon.hero.main-title') !!}</h1>
-            <p>{!! __('coming-soon.hero.content') !!}</p>
+            <p class="content">{!! __('coming-soon.hero.content') !!}</p>
             <a href="{!! __('coming-soon.hero.button.link') !!}" class="button center" title="{!! __('coming-soon.hero.button.title') !!}">
                 {!! __('coming-soon.hero.button.text') !!}
             </a>

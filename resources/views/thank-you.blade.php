@@ -9,7 +9,7 @@
                 </a>
             </div>
             <h1>{!! __('thank-you.hero.main-title') !!}</h1>
-            <p>{!! __('thank-you.hero.content') !!}</p>
+            <p class="content">{!! __('thank-you.hero.content') !!}</p>
             <a href="{!! __('thank-you.hero.button.link') !!}" class="button center" title="{!! __('thank-you.hero.button.title') !!}">
                 {!! __('thank-you.hero.button.text') !!}
             </a>

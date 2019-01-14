@@ -33,6 +33,23 @@ class FormController extends Controller
 
         unset($data['_token']);
 
+        $data['email'] = filter_var($data['email'], FILTER_SANITIZE_EMAIL);
+
+        $message = '';
+
+        foreach($data as $key => $content){
+            $message .= "<strong>" . ucfirst($key) . "</strong>: " . $content . "<br />";
+        }
+
+        $headers = array(
+            'From' => 'no-reply@mwalcher.com',
+            'Reply-To' => $data['email'],
+            'MIME-Version' => '1.0',
+            'Content-type' => 'text/html; charset=iso-8859-1'
+        );
+
+        mail('matt@mwalcher.com', 'Website Contact Form', $message, $headers);
+
         return redirect()->route('thank-you');
     }
 }
