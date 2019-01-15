@@ -39,6 +39,14 @@ $triangle-height: 7.125rem;
                 @media screen and (min-width: $phone-breakpoint){
                     transform: translate(-50%, -50%) rotateY(180deg);
                 }
+
+                .icon{
+                    .image{
+                        @media screen and (min-width: $phone-breakpoint){
+                            opacity: 0;
+                        }
+                    }
+                }
             }
         }
 
@@ -123,6 +131,8 @@ $triangle-height: 7.125rem;
                         height: 3.5rem;
                         transform: translate(-50%, 90%);
                         background-size: cover;
+                        opacity: 1;
+                        @include transition(opacity);
                     }
                 }
             }
