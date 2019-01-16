@@ -59,11 +59,11 @@ return [
                 'list' => [
                     'phone' => [
                         'src' => asset('images').'/whats-my-device-1-phone.png',
-                        'alt' => 'The WhatsMy home page "Use Cases" section represented on an iPhone'
+                        'alt' => 'The WhatsMy home page Use Cases section represented on an iPhone'
                     ],
                     'tablet' => [
                         'src' => asset('images').'/whats-my-device-2-tablet.png',
-                        'alt' => 'The WhatsMy how it works page "What you must do" section represented on an iPad'
+                        'alt' => 'The WhatsMy how it works page What you must do section represented on an iPad'
                     ],
                     'laptop' => [
                         'src' => asset('images').'/whats-my-device-3-laptop.png',
@@ -71,7 +71,7 @@ return [
                     ],
                     'desktop' => [
                         'src' => asset('images').'/whats-my-device-4-desktop.png',
-                        'alt' => 'The WhatsMy about us page "The Leadership Team" section represented on an iMac'
+                        'alt' => 'The WhatsMy about us page Leadership Team section represented on an iMac'
                     ]
                 ],
                 'cta' => [
