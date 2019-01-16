@@ -1,10 +1,10 @@
 .main-content{
     text-align: center;
-    @include spacing(padding, top, 13rem);
+    @include spacing(padding, top, $tab-content-bottom-space-mobile);
     @include spacing(padding, bottom, 4.5rem);
 
     @media screen and (min-width: $phone-breakpoint){
-        @include spacing(padding, top, 12rem);
+        @include spacing(padding, top, $tab-content-bottom-space);
     }
 
     h2{

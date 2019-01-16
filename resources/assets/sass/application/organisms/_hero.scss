@@ -4,10 +4,10 @@
     justify-content: center;
 
     &.hero-tab-content{
-        @include spacing(padding, bottom, 16rem);
+        @include spacing(padding, bottom, $tab-content-top-space-mobile);
 
         @media screen and (min-width: $phone-breakpoint){
-            @include spacing(padding, bottom, 14rem);
+            @include spacing(padding, bottom, $tab-content-top-space);
         }
     }
 

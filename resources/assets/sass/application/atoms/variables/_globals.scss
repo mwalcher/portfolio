@@ -8,6 +8,17 @@ $global-border-width   : 0.0625rem;
 $global-border-radius  : 0.125rem;
 $global-shadow         : 0 1rem 1rem 0 rgba($black,0.1);
 $global-transition     : 0.3s ease;
-$button-padding        : 0.75rem;
-$input-height          : 3.25rem;
-$header-height         : 5rem;
+
+/*  COMPONENTS
+    --------------------- */
+
+$button-padding                  : 0.75rem;
+$input-height                    : 3.25rem;
+$header-height                   : 5rem;
+$tab-content-height-mobile       : 55vh;
+$tab-content-height              : 45vh;
+$tab-content-tab-active-height   : 4.5rem;
+$tab-content-top-space-mobile    : calc((#{$tab-content-height-mobile} / 2) + #{$tab-content-tab-active-height});
+$tab-content-top-space           : calc((#{$tab-content-height} / 2) + #{$tab-content-tab-active-height});
+$tab-content-bottom-space-mobile : calc((#{$tab-content-height-mobile} / 2) + #{$medium-size});
+$tab-content-bottom-space        : calc((#{$tab-content-height} / 2) + #{$medium-size});
