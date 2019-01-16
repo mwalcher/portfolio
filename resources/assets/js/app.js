@@ -5,21 +5,32 @@ NodeList.prototype.forEach = NodeList.prototype.forEach || Array.prototype.forEa
 import formInteractions from './components/form-interactions';
 import headerInteractions from './components/header-interactions';
 import previewSlider from './components/preview-slider';
+import smoothScroll from './components/smooth-scroll';
 import toggleActive from './components/toggle-active';
 
 document.addEventListener('readystatechange', function(){
     if(document.readyState === 'complete'){
 
+        // Header Component
         const navigation = document.querySelector('header .main-navigation');
-
         if(navigation){
-            // Header Component
             headerInteractions({
                 mobileMenu: document.querySelector('#mobile-menu'),
                 navigation: document.querySelector('header .page-navigation'),
                 sections: document.querySelectorAll('.section')
             });
         }
+
+        // Smooth Scroll
+        const anchorLinks = document.querySelectorAll('a[href*="#"]');
+        anchorLinks.forEach((link) => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                smoothScroll({
+                    trigger: link
+                });
+            });
+        });
 
         // Forms
         formInteractions({
