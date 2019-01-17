@@ -1,5 +1,9 @@
 $triangle-width: 8.25rem;
 $triangle-height: 7.125rem;
+$triangle-width-desktop: (($tab-content-height / 2) * 1.15);
+$triangle-height-desktop: ($tab-content-height / 2);
+$image-height: (($triangle-width / 2) * 0.85);
+$image-height-desktop: (($triangle-width-desktop / 2) * 0.85);
 
 .interactive-icon-block{
     display: flex;
@@ -34,6 +38,11 @@ $triangle-height: 7.125rem;
             @include spacing(padding, left right, 0);
         }
 
+        @media screen and (min-width: $desktop-breakpoint){
+            width: $triangle-width-desktop;
+            height: $triangle-height-desktop;
+        }
+
         &:hover, &:focus{
             .shape{
                 @media screen and (min-width: $phone-breakpoint){
@@ -64,7 +73,7 @@ $triangle-height: 7.125rem;
 
                 .label h3{
                     @media screen and (min-width: $phone-breakpoint){
-                        transform: translate(-50%, 6.5rem) rotateZ(180deg);
+                        transform: translate(-50%, 50%) rotateZ(180deg);
                     }
                 }
             }
@@ -95,6 +104,11 @@ $triangle-height: 7.125rem;
                 @include transition(transform);
             }
 
+            @media screen and (min-width: $desktop-breakpoint){
+                border-width: ($triangle-width-desktop / 2);
+                border-bottom-width: $triangle-height-desktop;
+            }
+
             .icon, .label{
                 @include spacing(padding, top bottom, xs);
 
@@ -108,6 +122,12 @@ $triangle-height: 7.125rem;
                     border-top: 0;
                     border-bottom-width: $triangle-height;
                     backface-visibility: hidden;
+                }
+
+                @media screen and (min-width: $desktop-breakpoint){
+                    left: (($triangle-width-desktop / 2) * -1);
+                    border-width: ($triangle-width-desktop / 2);
+                    border-bottom-width: $triangle-height-desktop;
                 }
             }
 
@@ -128,11 +148,16 @@ $triangle-height: 7.125rem;
                         top: 0;
                         left: 0;
                         width: ($triangle-width / 2);
-                        height: 3.5rem;
+                        height: $image-height;
                         transform: translate(-50%, 90%);
                         background-size: cover;
                         opacity: 1;
                         @include transition(opacity);
+                    }
+
+                    @media screen and (min-width: $desktop-breakpoint){
+                        width: ($triangle-width-desktop / 2);
+                        height: $image-height-desktop;
                     }
                 }
             }
@@ -153,9 +178,15 @@ $triangle-height: 7.125rem;
 
                     @media screen and (min-width: $phone-breakpoint){
                         position: absolute;
-                        bottom: 0;
+                        top: ($triangle-height / 2);
                         left: 0;
-                        transform: translate(-50%, 6.5rem);
+                        transform: translate(-50%, 50%);
+                    }
+
+                    @media screen and (min-width: $desktop-breakpoint){
+                        font-size: ($triangle-height-desktop / 10);
+                        top: ($triangle-height-desktop / 2);
+                        word-spacing: $triangle-width-desktop;
                     }
                 }
             }
@@ -174,6 +205,11 @@ $triangle-height: 7.125rem;
             @media screen and (min-width: $phone-breakpoint){
                 width: $triangle-width;
                 height: $triangle-height;
+            }
+
+            @media screen and (min-width: $desktop-breakpoint){
+                width: $triangle-width-desktop;
+                height: $triangle-height-desktop;
             }
         }
     }
