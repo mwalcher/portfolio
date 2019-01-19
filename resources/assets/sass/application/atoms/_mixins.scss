@@ -116,6 +116,12 @@
         background-color: transparent;
         border-color: map-get($theme, hover-border-colour);
     }
+
+    &[disabled] {
+        color: map-get($theme, disabled-font-colour);
+        background-color: map-get($theme, disabled-background-colour);
+        border-color: map-get($theme, disabled-border-colour);
+    }
 }
 
 /*  INPUTS

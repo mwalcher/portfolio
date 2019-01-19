@@ -49,23 +49,31 @@ $link-dark: (
     --------------------- */
 
 $button-light: (
-    default-font-colour       : $white-off,
-    default-background-colour : $white-rgba,
-    default-border-colour     : $white-off,
+    default-font-colour        : $white-off,
+    default-background-colour  : $white-rgba,
+    default-border-colour      : $white-off,
 
-    hover-font-colour         : $white-off,
-    hover-background-colour   : $primary-rgba,
-    hover-border-colour       : $white-off
+    hover-font-colour          : $white-off,
+    hover-background-colour    : $primary-rgba,
+    hover-border-colour        : $white-off,
+
+    disabled-font-colour       : $white-off,
+    disabled-background-colour : darken($white-off, 25%),
+    disabled-border-colour     : darken($white-off, 25%)
 );
 
 $button-dark: (
-    default-font-colour       : $black,
-    default-background-colour : $black-rgba,
-    default-border-colour     : $black,
+    default-font-colour        : $black,
+    default-background-colour  : $black-rgba,
+    default-border-colour      : $black,
 
-    hover-font-colour         : $white-off,
-    hover-background-colour   : $primary-rgba-dark,
-    hover-border-colour       : $primary
+    hover-font-colour          : $white-off,
+    hover-background-colour    : $primary-rgba-dark,
+    hover-border-colour        : $primary,
+
+    disabled-font-colour       : $black,
+    disabled-background-colour : lighten($black, 25%),
+    disabled-border-colour     : lighten($black, 25%),
 );
 
 /*  INPUT COLOURS

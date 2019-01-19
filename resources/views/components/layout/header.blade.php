@@ -30,7 +30,15 @@
         <ul class="links-navigation">
             @foreach (__('global.contact-links') as $contactLink)
             <li>
-                <a href="{!! $contactLink['link'] !!}" target="_blank" rel="noopener" title="{!! $contactLink['title'] !!}">
+                <a
+                    href="{!! $contactLink['link'] !!}"
+                    target="_blank"
+                    rel="noopener"
+                    title="{!! $contactLink['title'] !!}"
+                    @if (isset($contactLink['disabled']) && $contactLink['disabled'] === true)
+                    disabled
+                    @endif
+                >
                     <span class="icon fa {!! $contactLink['icon'] !!}" aria-hidden="true"></span>
                     {!! $contactLink['text'] !!}
                 </a>

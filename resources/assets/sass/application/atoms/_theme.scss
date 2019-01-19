@@ -49,13 +49,11 @@ body{
 
             form {
                 .input-container{
-                    &.active{
-                        &:not(.error){
-                            input,
-                            textarea,
-                            select{
-                                background-color: $primary-dark;
-                            }
+                    &.active:not(.error){
+                        input,
+                        textarea,
+                        select{
+                            background-color: $primary-dark;
                         }
                     }
                 }
@@ -82,7 +80,9 @@ body{
                     }
 
                     &:hover, &:focus, &:active{
-                        border-color: $primary;
+                        &:not([disabled]){
+                            border-color: $primary;
+                        }
                     }
                 }
             }

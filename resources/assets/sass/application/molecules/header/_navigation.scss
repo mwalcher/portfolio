@@ -269,6 +269,18 @@
                     }
                 }
 
+                &[disabled] {
+                    color: darken($white-off, 25%);
+
+                    .icon{
+                        background-color: darken($white-off, 25%);
+
+                        &::before{
+                            color: lighten($black, 25%);
+                        }
+                    }
+                }
+
                 .icon{
                     position: relative;
                     display: block;

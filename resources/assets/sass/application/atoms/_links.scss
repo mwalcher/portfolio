@@ -72,6 +72,12 @@ a:not(.button){
         }
     }
 
+    &[disabled]{
+        &::after{
+            width: 0;
+        }
+    }
+
     & + .button{
         @include spacing(margin, top, sm);
     }
@@ -79,4 +85,9 @@ a:not(.button){
     &.center{
         @include spacing(margin, left right, auto);
     }
+}
+
+[disabled] {
+    pointer-events: none !important;
+    cursor: default !important;
 }
