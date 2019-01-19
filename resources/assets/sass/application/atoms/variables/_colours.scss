@@ -10,7 +10,7 @@ $black             : #212121;
 $black-rgba        : rgba($black, 0.5);
 
 $green             : #339933;
-$red               : #993434;
+$red               : #993333;
 
 $primary           : $green !default;
 $primary-dark      : darken($primary, 10%) !default;
@@ -57,9 +57,9 @@ $button-light: (
     hover-background-colour    : $primary-rgba,
     hover-border-colour        : $white-off,
 
-    disabled-font-colour       : $white-off,
-    disabled-background-colour : darken($white-off, 25%),
-    disabled-border-colour     : darken($white-off, 25%)
+    disabled-font-colour       : lighten($black, 25%),
+    disabled-background-colour : lighten($black, 50%),
+    disabled-border-colour     : lighten($black, 50%)
 );
 
 $button-dark: (
@@ -71,9 +71,9 @@ $button-dark: (
     hover-background-colour    : $primary-rgba-dark,
     hover-border-colour        : $primary,
 
-    disabled-font-colour       : $black,
-    disabled-background-colour : lighten($black, 25%),
-    disabled-border-colour     : lighten($black, 25%),
+    disabled-font-colour       : lighten($black, 25%),
+    disabled-background-colour : lighten($black, 50%),
+    disabled-border-colour     : lighten($black, 50%),
 );
 
 /*  INPUT COLOURS
