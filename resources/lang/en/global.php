@@ -5,7 +5,8 @@ return [
         'name' => 'Home',
         'text' => 'Back to Home',
         'title' => 'Homepage',
-        'link' => route('home')
+        'link' => route('home'),
+        'icon' => 'hidden'
     ],
     'email' => [
         'text' => 'Email Me',

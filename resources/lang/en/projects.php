@@ -6,7 +6,7 @@ return [
             'text' => __('global.home.name'),
             'title' => __('global.home.title'),
             'link' => __('global.home.link'),
-            'icon' => 'hidden'
+            'icon' => __('global.home.icon')
         ],
         'overview' => [
             'text' => 'Overview',
@@ -20,12 +20,7 @@ return [
             'link' => '#preview',
             'icon' => 'fa-mobile'
         ],
-        'contact' => [
-            'text' => __('footer.navigation.text'),
-            'title' => __('footer.navigation.title'),
-            'link' => __('footer.navigation.link'),
-            'icon' => __('footer.navigation.icon')
-        ]
+        'contact' => __('footer.navigation')
     ],
     'hero' => [
         'id' => 'overview'

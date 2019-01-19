@@ -3,11 +3,7 @@
 return [
     'title' => __('meta.title'),
     'description' => __('meta.description'),
-    'meta-image' => [
-        'src' => __('meta.image.src'),
-        'width' => __('meta.image.width'),
-        'height' => __('meta.image.height')
-    ],
+    'meta-image' => __('meta.image'),
     'background' => __('meta.background'),
     'navigation' => [
         'about' => [
@@ -22,12 +18,7 @@ return [
             'link' => '#work',
             'icon' => 'fa-desktop'
         ],
-        'contact' => [
-            'text' => __('footer.navigation.text'),
-            'title' => __('footer.navigation.title'),
-            'link' => __('footer.navigation.link'),
-            'icon' => __('footer.navigation.icon')
-        ]
+        'contact' => __('footer.navigation')
     ],
     'hero' => [
         'id' => 'about',

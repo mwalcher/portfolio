@@ -3,11 +3,7 @@
 return [
     'title' => 'Coming Soon / '.__('meta.title'),
     'description' => __('meta.description'),
-    'meta-image' => [
-        'src' => __('meta.image.src'),
-        'width' => __('meta.image.width'),
-        'height' => __('meta.image.height')
-    ],
+    'meta-image' => __('meta.image'),
     'background' => __('meta.background'),
     'hero' => [
         'logo' => [

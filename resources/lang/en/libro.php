@@ -10,12 +10,7 @@ return [
     ],
     'background' => __('global.projects.libro.image'),
     'navigation' => [
-        'home' => [
-            'text' => __('projects.navigation.home.text'),
-            'title' => __('projects.navigation.home.title'),
-            'link' => __('projects.navigation.home.link'),
-            'icon' => __('projects.navigation.home.icon')
-        ],
+        'home' => __('projects.navigation.home'),
         'overview' => [
             'text' => __('projects.navigation.overview.text'),
             'title' => __('projects.navigation.overview.title').__('global.projects.libro.name'),
@@ -28,12 +23,7 @@ return [
             'link' => __('projects.navigation.preview.link'),
             'icon' => __('projects.navigation.preview.icon')
         ],
-        'contact' => [
-            'text' => __('projects.navigation.contact.text'),
-            'title' => __('projects.navigation.contact.title'),
-            'link' => __('projects.navigation.contact.link'),
-            'icon' => __('projects.navigation.contact.icon')
-        ]
+        'contact' => __('projects.navigation.contact')
     ],
     'hero' => [
         'id' => __('projects.hero.id'),
