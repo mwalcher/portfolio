@@ -34,7 +34,8 @@ return [
         'about' => [
             'title' => __('projects.tab-content.about.title').__('global.projects.libro.name'),
             'content' => [
-                'This is test content with a <a href="#" class="animated-hover" title="link">link</a>.',
+                'The <a class="animated-hover" href="https://libro.ca/" target="_blank" rel="noopener" title="Libro Credit Union website">Libro Credit Union</a> wanted us to create a series of financial calculators to help potential customers better understand their finances while also giving them the opportunity to see what Libro has to offer. The goal for these calculators was to break down intimidating financial unknowns into manageable steps. The calculators are structured to ask the user one question at a time, while educating them about financial jargon and providing tips to help coach the user through financial decisions.',
+                'Right now there is a <a class="animated-hover" href="https://libro.ca/calculators/mortgage" target="_blank" rel="noopener" title="Libro\'s Mortgage Calculator">Mortgage Calculator</a> and a <a class="animated-hover" href="https://libro.ca/calculators/budget-planner" target="_blank" rel="noopener" title="Libro\'s Budget Planner">Budget Planner</a> with plans for more calculators to be introduced into the series later.',
                 __('projects.disclaimer.arcane')
             ]
         ],
