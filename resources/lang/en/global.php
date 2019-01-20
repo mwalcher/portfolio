@@ -29,7 +29,7 @@ return [
         'resume' => [
             'text' => 'Resume',
             'title' => 'Matthew Walcher\'s Resume',
-            'link' => asset('images').'/mwalcher-resume.pdf',
+            'link' => __('meta.image.src'),
             'icon' => 'fa-file-text',
             'disabled' => true
         ]
