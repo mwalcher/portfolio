@@ -22,6 +22,10 @@ return [
         ],
         'contact' => __('footer.navigation')
     ],
+    'disclaimer' => [
+        'arcane' => '<strong>Note:</strong> I worked on this project as a member of the <a class="animated-hover" href="https://thearcane.com/" target="_blank" rel="noopener" title="Arcane website">Arcane</a> Development team.',
+        'whatsmy' => '<strong>Note:</strong> I worked on this project with <a class="animated-hover" href="http://kristianavellucci.com/" target="_blank" rel="noopener" title="Kristiana\'s website">Kristiana</a> for her client <a class="animated-hover" href="http://mobials.com/" target="_blank" rel="noopener" title="Mobials website">Mobials</a>.'
+    ],
     'hero' => [
         'id' => 'overview'
     ],

@@ -34,7 +34,8 @@ return [
         'about' => [
             'title' => __('projects.tab-content.about.title').__('global.projects.whats-my.name'),
             'content' => [
-                'This is test content with a <a href="#" class="animated-hover" title="link">link</a>.'
+                'This is test content with a <a href="#" class="animated-hover" title="link">link</a>.',
+                __('projects.disclaimer.whatsmy')
             ]
         ],
         'work' => [
