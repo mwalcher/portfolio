@@ -5,7 +5,8 @@ return [
         'name' => 'Home',
         'text' => 'Back to Home',
         'title' => 'Homepage',
-        'link' => route('home')
+        'link' => route('home'),
+        'icon' => 'hidden'
     ],
     'email' => [
         'text' => 'Email Me',
@@ -28,24 +29,32 @@ return [
         'resume' => [
             'text' => 'Resume',
             'title' => 'Matthew Walcher\'s Resume',
-            'link' => asset('images').'/mwalcher-resume.pdf',
-            'icon' => 'fa-file-text'
+            'link' => __('meta.image.src'),
+            'icon' => 'fa-file-text',
+            'disabled' => true
         ]
     ],
     'projects' => [
         'libro' => [
-            'name' => 'Libro Mortgage Calculator',
+            'name' => 'Libro Calculators',
             'link' => route('libro'),
-            'website' => 'https://libro.ca/calculators/mortgage',
+            'website' => 'https://libro.ca/calculators/',
             'image' => asset('images').'/libro-hero.jpg',
-            'description' => 'A step by step mortgage calculator'
+            'description' => 'Step by step financial calculators'
+        ],
+        'whats-my' => [
+            'name' => 'WhatsMy',
+            'link' => route('whats-my'),
+            'website' => 'https://mwalcher.github.io/',
+            'image' => asset('images').'/whats-my-hero.jpg',
+            'description' => 'A fun website to introduce a new product'
         ],
         'zucora' => [
             'name' => 'Zucora',
             'link' => route('zucora'),
-            'website' => 'https://zucorahome.com/',
+            'website' => 'http://prod-webstore-v00-1032646173.us-east-1.elb.amazonaws.com/',
             'image' => asset('images').'/zucora-hero.jpg',
-            'description' => 'An E-Commerce store for a local retailer'
+            'description' => 'An e-commerce store for a local retailer'
         ],
         'pink-precast' => [
             'name' => 'Pink Precast',
@@ -53,13 +62,6 @@ return [
             'website' => 'https://www.pinkprecast.com/',
             'image' => asset('images').'/pink-precast-hero.jpg',
             'description' => 'An informational website for a concrete manufacturer'
-        ],
-        'mortgage-teacher' => [
-            'name' => 'Mortgage Teacher',
-            'link' => route('mortgage-teacher'),
-            'website' => 'https://mortgageteacher.com/',
-            'image' => asset('images').'/mortgage-teacher-hero.jpg',
-            'description' => 'An informational website for a mortgage broker'
         ]
     ]
 ];

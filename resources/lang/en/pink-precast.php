@@ -10,12 +10,7 @@ return [
     ],
     'background' => __('global.projects.pink-precast.image'),
     'navigation' => [
-        'home' => [
-            'text' => __('projects.navigation.home.text'),
-            'title' => __('projects.navigation.home.title'),
-            'link' => __('projects.navigation.home.link'),
-            'icon' => __('projects.navigation.home.icon')
-        ],
+        'home' => __('projects.navigation.home'),
         'overview' => [
             'text' => __('projects.navigation.overview.text'),
             'title' => __('projects.navigation.overview.title').__('global.projects.pink-precast.name'),
@@ -28,12 +23,7 @@ return [
             'link' => __('projects.navigation.preview.link'),
             'icon' => __('projects.navigation.preview.icon')
         ],
-        'contact' => [
-            'text' => __('projects.navigation.contact.text'),
-            'title' => __('projects.navigation.contact.title'),
-            'link' => __('projects.navigation.contact.link'),
-            'icon' => __('projects.navigation.contact.icon')
-        ]
+        'contact' => __('projects.navigation.contact')
     ],
     'hero' => [
         'id' => __('projects.hero.id'),
@@ -42,7 +32,11 @@ return [
     ],
     'tab-content' => [
         'about' => [
-            'title' => __('projects.tab-content.about.title').__('global.projects.pink-precast.name')
+            'title' => __('projects.tab-content.about.title').__('global.projects.pink-precast.name'),
+            'content' => [
+                'This is test content with a <a href="#" class="animated-hover" title="link">link</a>.',
+                __('projects.disclaimer.arcane')
+            ]
         ],
         'work' => [
             'title' => __('projects.tab-content.work.title')
@@ -55,20 +49,20 @@ return [
             'preview-slider' => [
                 'list' => [
                     'phone' => [
-                        'src' => asset('images').'/zucora-device-1-phone.png',
-                        'alt' => 'The zucora login page represented on an iPhone'
+                        'src' => asset('images').'/pink-precast-device-1-phone.png',
+                        'alt' => 'The Pink Precast home page represented on an iPhone'
                     ],
                     'tablet' => [
-                        'src' => asset('images').'/zucora-device-2-tablet.png',
-                        'alt' => 'An example of a user\'s playlist page represented on an iPad'
+                        'src' => asset('images').'/pink-precast-device-2-tablet.png',
+                        'alt' => 'The Pink Precast contact page represented on an iPad'
                     ],
                     'laptop' => [
-                        'src' => asset('images').'/zucora-device-3-laptop.png',
-                        'alt' => 'The zucora music page represented on a Macbook Pro'
+                        'src' => asset('images').'/pink-precast-device-3-laptop.png',
+                        'alt' => 'A Pink Precast product page features section represented on a Macbook Pro'
                     ],
                     'desktop' => [
-                        'src' => asset('images').'/zucora-device-4-desktop.png',
-                        'alt' => 'An example of a user\'s profile page represented on an iMac'
+                        'src' => asset('images').'/pink-precast-device-4-desktop.png',
+                        'alt' => 'A Pink Precast featured project page represented on an iMac'
                     ]
                 ],
                 'cta' => [
@@ -81,8 +75,8 @@ return [
                 'title' => __('projects.main-content.option-list-title'),
                 'list' => [
                     'libro' => __('global.projects.libro'),
-                    'zucora' => __('global.projects.zucora'),
-                    'mortgage-teacher' => __('global.projects.mortgage-teacher')
+                    'whats-my' => __('global.projects.whats-my'),
+                    'zucora' => __('global.projects.zucora')
                 ],
                 'toggle' => false
             ]

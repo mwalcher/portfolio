@@ -1,7 +1,6 @@
 /*  ---------------------
 NOSCRIPT
 --------------------- */
-@import "application/atoms/variables/breakpoints";
 @import "application/atoms/variables/colours";
 
 html{
@@ -10,31 +9,7 @@ html{
     }
 
     header{
-        @media screen and (min-width: $header-breakpoint){
-            background-color: $black;
-        }
-
-        .main-navigation{
-            ul.page-navigation{
-                &::before, &::after{
-                    display: none;
-                }
-
-                li{
-                    &:first-child{
-                        &::before{
-                            display: none;
-                        }
-                    }
-
-                    &:last-child{
-                        &::after{
-                            display: none;
-                        }
-                    }
-                }
-            }
-        }
+        background-color: $black;
     }
 
     .preview-slider{

@@ -23,7 +23,6 @@ h3{
 
 label{
     @include h3;
-    @include transition(font-size top);
 }
 
 p{
@@ -31,6 +30,10 @@ p{
     font-size: $global-font-size;
     line-height: 1.5;
     @include spacing(padding, bottom, sm);
+
+    &:last-child {
+        @include spacing(padding, bottom, 0);
+    }
 }
 
 ul{

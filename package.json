@@ -11,17 +11,15 @@
   },
   "devDependencies": {
     "axios": "^0.16.2",
-    "copy-webpack-plugin": "^4.5.1",
-    "cross-env": "^5.1.4",
+    "bunnyjs": "^0.14.41",
+    "copy-webpack-plugin": "^4.6.0",
+    "cross-env": "^5.2.0",
     "eslint": "^4.19.1",
+    "flickity": "^2.1.2",
     "imagemin-jpegoptim": "^5.2.0",
     "imagemin-webpack-plugin": "^1.6.1",
     "laravel-mix": "^1.7.2",
-    "lodash": "^4.17.5"
-  },
-  "dependencies": {
-    "approvejs": "^3.1.2",
-    "flickity": "^2.1.1",
+    "lodash": "^4.17.11",
     "normalize.css": "^7.0.0"
   }
 }

@@ -1,23 +1,34 @@
 'use strict';
 
+import { Validation, ValidationConfig, ValidationLang } from 'bunnyjs/src/Validation';
+ValidationConfig.classInputGroup = 'input-container';
+ValidationConfig.classInputGroupError = 'error';
+ValidationConfig.classError = 'error-message';
+ValidationLang.required = '{label} is required';
+ValidationLang.email = '{label} is not a valid email';
+
 export default function({
-    inputs = []
+    forms = [],
+    inputs = [],
+    activeClass = 'active'
 } = {}) {
 
-    inputs.forEach(function(input){
-        input.addEventListener('focus', activeInput);
-        input.addEventListener('focusout', checkInput);
+    forms.forEach((form) => Validation.init(form, true));
+
+    inputs.forEach((input) => {
+        input.addEventListener('focus', () => activeInput(input, activeClass));
+        input.addEventListener('focusout', () => checkInput(input, activeClass));
     });
 }
 
-function activeInput(){
-    let container = this.parentElement;
-    container.classList.add('active');
+function activeInput(element, className){
+    const container = element.parentElement;
+    container.classList.add(className);
 }
 
-function checkInput(){
-    let container = this.parentElement;
-    if(this.value == ''){
-        container.classList.remove('active');
+function checkInput(element, className){
+    const container = element.parentElement;
+    if(element.value === ''){
+        container.classList.remove(className);
     }
 }

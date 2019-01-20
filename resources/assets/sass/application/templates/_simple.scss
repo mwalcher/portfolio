@@ -1,4 +1,4 @@
-body.coming-soon{
+body.simple{
     main{
         position: fixed;
         top: 0;
@@ -30,9 +30,10 @@ body.coming-soon{
 
             .hero-content{
                 .logo-container{
-                    @include spacing(padding, bottom, 2rem);
+                    display: block;
+                    @include spacing(padding, bottom, md);
 
-                    img{
+                    img, .logo{
                         display: block;
                         max-width: 12.5rem;
                         @include spacing(margin, left right, auto);
@@ -65,7 +66,7 @@ body.coming-soon{
                         &:hover,
                         &:focus{
                             .icon{
-                                color: $green;
+                                color: $primary;
                             }
                         }
 

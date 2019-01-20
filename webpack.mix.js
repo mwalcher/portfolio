@@ -3,7 +3,6 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const ImageminPlugin    = require('imagemin-webpack-plugin').default;
 const ImageminJpegoptim = require('imagemin-jpegoptim');
 
-
 /*
  |--------------------------------------------------------------------------
  | Mix Asset Management
@@ -17,7 +16,8 @@ const ImageminJpegoptim = require('imagemin-jpegoptim');
 
 mix.js('resources/assets/js/app.js', 'public/js')
     .sass('resources/assets/sass/app.scss', 'public/css')
-    .sass('resources/assets/sass/noscript.scss', 'public/css');
+    .sass('resources/assets/sass/noscript.scss', 'public/css')
+    .version();
 
 mix.webpackConfig({
     plugins: [
@@ -27,7 +27,6 @@ mix.webpackConfig({
             to: 'images'
         }]),
         new ImageminPlugin([{
-            disable: process.env.NODE_ENV !== 'production',
             test: /\.(jpe?g|png|gif|svg)$/i,
             gifsicle: {
                 interlaced: true

@@ -4,10 +4,10 @@
     justify-content: center;
 
     &.hero-tab-content{
-        @include spacing(padding, bottom, 16rem);
+        @include spacing(padding, bottom, $tab-content-top-space-mobile);
 
         @media screen and (min-width: $phone-breakpoint){
-            @include spacing(padding, bottom, 14rem);
+            @include spacing(padding, bottom, $tab-content-top-space);
         }
     }
 
@@ -15,7 +15,14 @@
         text-align: center;
         @include spacing(padding, top bottom, md);
 
-        p{
+        .sub-title{
+            @include h2;
+            @include set-font(body, bold);
+            letter-spacing: 0;
+            @include spacing(padding, bottom, 0);
+        }
+
+        .content{
             max-width: 28rem;
             @include spacing(padding, top, md);
             @include spacing(margin, left right, auto);

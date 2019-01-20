@@ -10,12 +10,7 @@ return [
     ],
     'background' => __('global.projects.zucora.image'),
     'navigation' => [
-        'home' => [
-            'text' => __('projects.navigation.home.text'),
-            'title' => __('projects.navigation.home.title'),
-            'link' => __('projects.navigation.home.link'),
-            'icon' => __('projects.navigation.home.icon')
-        ],
+        'home' => __('projects.navigation.home'),
         'overview' => [
             'text' => __('projects.navigation.overview.text'),
             'title' => __('projects.navigation.overview.title').__('global.projects.zucora.name'),
@@ -28,12 +23,7 @@ return [
             'link' => __('projects.navigation.preview.link'),
             'icon' => __('projects.navigation.preview.icon')
         ],
-        'contact' => [
-            'text' => __('projects.navigation.contact.text'),
-            'title' => __('projects.navigation.contact.title'),
-            'link' => __('projects.navigation.contact.link'),
-            'icon' => __('projects.navigation.contact.icon')
-        ]
+        'contact' => __('projects.navigation.contact')
     ],
     'hero' => [
         'id' => __('projects.hero.id'),
@@ -42,7 +32,11 @@ return [
     ],
     'tab-content' => [
         'about' => [
-            'title' => __('projects.tab-content.about.title').__('global.projects.zucora.name')
+            'title' => __('projects.tab-content.about.title').__('global.projects.zucora.name'),
+            'content' => [
+                'This is test content with a <a href="#" class="animated-hover" title="link">link</a>.',
+                __('projects.disclaimer.arcane')
+            ]
         ],
         'work' => [
             'title' => __('projects.tab-content.work.title')
@@ -54,21 +48,21 @@ return [
         'components' => [
             'preview-slider' => [
                 'list' => [
+                    'desktop' => [
+                        'src' => asset('images').'/zucora-device-4-desktop.png',
+                        'alt' => 'The Zucora home page represented on an iMac'
+                    ],
                     'phone' => [
                         'src' => asset('images').'/zucora-device-1-phone.png',
-                        'alt' => 'The zucora login page represented on an iPhone'
-                    ],
-                    'tablet' => [
-                        'src' => asset('images').'/zucora-device-2-tablet.png',
-                        'alt' => 'An example of a user\'s playlist page represented on an iPad'
+                        'alt' => 'A list of Zucora products to buy represented on an iPhone'
                     ],
                     'laptop' => [
                         'src' => asset('images').'/zucora-device-3-laptop.png',
-                        'alt' => 'The zucora music page represented on a Macbook Pro'
+                        'alt' => 'A Zucora product details page adding the product to the cart represented on a Macbook Pro'
                     ],
-                    'desktop' => [
-                        'src' => asset('images').'/zucora-device-4-desktop.png',
-                        'alt' => 'An example of a user\'s profile page represented on an iMac'
+                    'tablet' => [
+                        'src' => asset('images').'/zucora-device-2-tablet.png',
+                        'alt' => 'The Zucora cart page represented on an iPad'
                     ]
                 ],
                 'cta' => [
@@ -81,8 +75,8 @@ return [
                 'title' => __('projects.main-content.option-list-title'),
                 'list' => [
                     'libro' => __('global.projects.libro'),
-                    'pink-precast' => __('global.projects.pink-precast'),
-                    'mortgage-teacher' => __('global.projects.mortgage-teacher')
+                    'whats-my' => __('global.projects.whats-my'),
+                    'pink-precast' => __('global.projects.pink-precast')
                 ],
                 'toggle' => false
             ]

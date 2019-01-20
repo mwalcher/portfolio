@@ -6,11 +6,10 @@ import debounce from 'lodash/debounce';
 export default function({
     sliders = requiredField('Preview Slider')
 } = {}) {
+
     sliders.forEach(initFlickity);
 
-    window.addEventListener('resize', debounce(() => {
-        sliders.forEach(initFlickity);
-    }, 250));
+    window.addEventListener('resize', debounce(() => sliders.forEach(initFlickity), 250));
 }
 
 function initFlickity(target){

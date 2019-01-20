@@ -10,12 +10,7 @@ return [
     ],
     'background' => __('global.projects.libro.image'),
     'navigation' => [
-        'home' => [
-            'text' => __('projects.navigation.home.text'),
-            'title' => __('projects.navigation.home.title'),
-            'link' => __('projects.navigation.home.link'),
-            'icon' => __('projects.navigation.home.icon')
-        ],
+        'home' => __('projects.navigation.home'),
         'overview' => [
             'text' => __('projects.navigation.overview.text'),
             'title' => __('projects.navigation.overview.title').__('global.projects.libro.name'),
@@ -28,12 +23,7 @@ return [
             'link' => __('projects.navigation.preview.link'),
             'icon' => __('projects.navigation.preview.icon')
         ],
-        'contact' => [
-            'text' => __('projects.navigation.contact.text'),
-            'title' => __('projects.navigation.contact.title'),
-            'link' => __('projects.navigation.contact.link'),
-            'icon' => __('projects.navigation.contact.icon')
-        ]
+        'contact' => __('projects.navigation.contact')
     ],
     'hero' => [
         'id' => __('projects.hero.id'),
@@ -42,10 +32,19 @@ return [
     ],
     'tab-content' => [
         'about' => [
-            'title' => __('projects.tab-content.about.title').__('global.projects.libro.name')
+            'title' => __('projects.tab-content.about.title').__('global.projects.libro.name'),
+            'content' => [
+                'The <a class="animated-hover" href="https://libro.ca/" target="_blank" rel="noopener" title="Libro Credit Union website">Libro Credit Union</a> wanted us to create a series of financial calculators to help potential customers better understand their finances while also giving them the opportunity to see what Libro has to offer. The goal for these calculators was to break down intimidating financial unknowns into manageable steps. The calculators are structured to ask the user one question at a time, while educating them about financial jargon and providing tips to help coach the user through financial decisions.',
+                'Right now there is a <a class="animated-hover" href="https://libro.ca/calculators/mortgage" target="_blank" rel="noopener" title="Libro\'s Mortgage Calculator">Mortgage Calculator</a> and a <a class="animated-hover" href="https://libro.ca/calculators/budget-planner" target="_blank" rel="noopener" title="Libro\'s Budget Planner">Budget Planner</a> with plans for more calculators to be introduced into the series later.',
+                __('projects.disclaimer.arcane')
+            ]
         ],
         'work' => [
-            'title' => __('projects.tab-content.work.title')
+            'title' => __('projects.tab-content.work.title'),
+            'content' => [
+                'I was the only front-end developer on this project and I worked with a designer, an intermediate back-end developer and I had the support of one of the senior back-end developers. The intermediate back-end developer set up API routes for me to access and pass data to. The senior back-end developer helped me build the scaffold for the calculators. The calculators are built in <a class="animated-hover" href="https://reactjs.org/" target="_blank" rel="noopener" title="React">React</a> using the <a class="animated-hover" href="https://facebook.github.io/create-react-app/" target="_blank" rel="noopener" title="Create React App">Create React App</a> framework from Facebook.',
+                'While building the scaffold for the calculators our goal was for the components to be dynamic and scalable so that it would be easy to set up new calculators. We did this by setting up configuration files for each calculator that would set up each step of the calculator. The config is where we could define the core set up of each page: the route, the content container, and any adjustments from the default behaviour of the progress bar and pagination on the page. All of the components were built to be generic and customizable because they couldn\'t be too specific to one calculator, they needed to be able to work for any calculator.'
+            ]
         ]
     ],
     'main-content' => [
@@ -55,20 +54,20 @@ return [
             'preview-slider' => [
                 'list' => [
                     'phone' => [
-                        'src' => asset('images').'/zucora-device-1-phone.png',
-                        'alt' => 'The zucora login page represented on an iPhone'
+                        'src' => asset('images').'/libro-device-1-phone.png',
+                        'alt' => 'Libro Mortgage Calculator introduction page represented on an iPhone'
                     ],
                     'tablet' => [
-                        'src' => asset('images').'/zucora-device-2-tablet.png',
-                        'alt' => 'An example of a user\'s playlist page represented on an iPad'
+                        'src' => asset('images').'/libro-device-2-tablet.png',
+                        'alt' => 'Libro Mortgage Calculator step 1 page represented on an iPad'
                     ],
                     'laptop' => [
-                        'src' => asset('images').'/zucora-device-3-laptop.png',
-                        'alt' => 'The zucora music page represented on a Macbook Pro'
+                        'src' => asset('images').'/libro-device-3-laptop.png',
+                        'alt' => 'Libro Mortgage Calculator summary page represented on a Macbook Pro'
                     ],
                     'desktop' => [
-                        'src' => asset('images').'/zucora-device-4-desktop.png',
-                        'alt' => 'An example of a user\'s profile page represented on an iMac'
+                        'src' => asset('images').'/libro-device-4-desktop.png',
+                        'alt' => 'Libro Mortgage Calculator contact form represented on an iMac'
                     ]
                 ],
                 'cta' => [
@@ -80,9 +79,9 @@ return [
             'option-list' => [
                 'title' => __('projects.main-content.option-list-title'),
                 'list' => [
+                    'whats-my' => __('global.projects.whats-my'),
                     'zucora' => __('global.projects.zucora'),
-                    'pink-precast' => __('global.projects.pink-precast'),
-                    'mortgage-teacher' => __('global.projects.mortgage-teacher')
+                    'pink-precast' => __('global.projects.pink-precast')
                 ],
                 'toggle' => false
             ]

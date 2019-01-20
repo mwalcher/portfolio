@@ -1,10 +1,17 @@
+$triangle-width: 8.25rem;
+$triangle-height: 7.125rem;
+$triangle-width-desktop: (($tab-content-height / 2) * 1.15);
+$triangle-height-desktop: ($tab-content-height / 2);
+$image-height: (($triangle-width / 2) * 0.85);
+$image-height-desktop: (($triangle-width-desktop / 2) * 0.85);
+
 .interactive-icon-block{
     display: flex;
     flex-wrap: wrap;
     align-items: stretch;
     justify-content: center;
     width: 100%;
-    min-height: 100%;
+    height: 100%;
 
     @media screen and (min-width: $phone-breakpoint){
         flex-wrap: nowrap;
@@ -12,30 +19,42 @@
     }
 
     .icon-container{
+        position: relative;
         display: flex;
         align-items: center;
-        flex-basis: 50%;
+        flex: 1 1 50%;
         background-color: $black;
-        border: 1px solid $white-off;
+        border: ($global-border-width * 2) solid $white-off;
         @include spacing(padding, left right, xs);
 
         @media screen and (min-width: $phone-breakpoint){
             display: block;
-            position: relative;
-            flex-basis: 25%;
-            width: 8.25rem;
-            height: 7.125rem;
+            flex: 1 1 25%;
+            width: $triangle-width;
+            height: $triangle-height;
             perspective: 37.5rem;
             background-color: transparent;
             border: 0;
-            padding: 0;
-            cursor: pointer;
+            @include spacing(padding, left right, 0);
         }
 
-        &:hover, &:focus, &:active{
+        @media screen and (min-width: $desktop-breakpoint){
+            width: $triangle-width-desktop;
+            height: $triangle-height-desktop;
+        }
+
+        &:hover, &:focus{
             .shape{
                 @media screen and (min-width: $phone-breakpoint){
                     transform: translate(-50%, -50%) rotateY(180deg);
+                }
+
+                .icon{
+                    .image{
+                        @media screen and (min-width: $phone-breakpoint){
+                            opacity: 0;
+                        }
+                    }
                 }
             }
         }
@@ -54,12 +73,12 @@
 
                 .label h3{
                     @media screen and (min-width: $phone-breakpoint){
-                        transform: translate(-50%, 6.5rem) rotateZ(180deg);
+                        transform: translate(-50%, 50%) rotateZ(180deg);
                     }
                 }
             }
 
-            &:hover, &:focus, &:active{
+            &:hover, &:focus{
                 .shape{
                     @media screen and (min-width: $phone-breakpoint){
                         transform: translate(-50%, -50%) rotateY(180deg) rotateZ(180deg);
@@ -77,13 +96,17 @@
                 left: 50%;
                 width: 0;
                 height: 0;
-                border-width: 0 4.125rem 7.125rem 4.125rem;
-                border-style: solid;
-                border-color: transparent;
+                border: ($triangle-width / 2) solid transparent;
+                border-top: 0;
+                border-bottom-width: $triangle-height;
                 transform-style: preserve-3d;
-                transition: transform 1s;
                 transform: translate(-50%, -50%) rotateY(0deg);
                 @include transition(transform);
+            }
+
+            @media screen and (min-width: $desktop-breakpoint){
+                border-width: ($triangle-width-desktop / 2);
+                border-bottom-width: $triangle-height-desktop;
             }
 
             .icon, .label{
@@ -92,18 +115,25 @@
                 @media screen and (min-width: $phone-breakpoint){
                     position: absolute;
                     top: 0;
-                    left: -4.125rem;
+                    left: (($triangle-width / 2) * -1);
                     display: block;
-                    padding: 0;
-                    border-width: 0 4.125rem 7.125rem 4.125rem;
-                    border-style: solid;
+                    @include spacing(padding, top bottom, 0);
+                    border: ($triangle-width / 2) solid transparent;
+                    border-top: 0;
+                    border-bottom-width: $triangle-height;
                     backface-visibility: hidden;
+                }
+
+                @media screen and (min-width: $desktop-breakpoint){
+                    left: (($triangle-width-desktop / 2) * -1);
+                    border-width: ($triangle-width-desktop / 2);
+                    border-bottom-width: $triangle-height-desktop;
                 }
             }
 
             .icon{
                 @media screen and (min-width: $phone-breakpoint){
-                    border-color: transparent transparent $black transparent;
+                    border-bottom-color: $black;
                 }
 
                 .image{
@@ -117,16 +147,24 @@
                         position: absolute;
                         top: 0;
                         left: 0;
-                        width: 4.125rem;
-                        height: 3.5rem;
+                        width: ($triangle-width / 2);
+                        height: $image-height;
                         transform: translate(-50%, 90%);
+                        background-size: cover;
+                        opacity: 1;
+                        @include transition(opacity);
+                    }
+
+                    @media screen and (min-width: $desktop-breakpoint){
+                        width: ($triangle-width-desktop / 2);
+                        height: $image-height-desktop;
                     }
                 }
             }
 
             .label{
                 @media screen and (min-width: $phone-breakpoint){
-                    border-color: transparent transparent $green transparent;
+                    border-bottom-color: $primary;
                     transform: rotateY(180deg);
                 }
 
@@ -136,15 +174,42 @@
                     font-size: 0.85rem;
                     letter-spacing: 0;
                     text-align: center;
-                    word-spacing: 8.25rem;
+                    word-spacing: $triangle-width;
 
                     @media screen and (min-width: $phone-breakpoint){
                         position: absolute;
-                        bottom: 0;
+                        top: ($triangle-height / 2);
                         left: 0;
-                        transform: translate(-50%, 6.5rem);
+                        transform: translate(-50%, 50%);
+                    }
+
+                    @media screen and (min-width: $desktop-breakpoint){
+                        font-size: ($triangle-height-desktop / 10);
+                        top: ($triangle-height-desktop / 2);
+                        word-spacing: $triangle-width-desktop;
                     }
                 }
+            }
+        }
+
+        .icon-link {
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 100%;
+            height: 100%;
+            transform: translateX(-50%);
+            z-index: 1;
+
+            @media screen and (min-width: $phone-breakpoint){
+                width: $triangle-width;
+                height: $triangle-height;
+            }
+
+            @media screen and (min-width: $desktop-breakpoint){
+                width: $triangle-width-desktop;
+                height: $triangle-height-desktop;
             }
         }
     }
@@ -158,7 +223,7 @@ body{
                     .shape{
                         .label{
                             @media screen and (min-width: $phone-breakpoint){
-                                border-color: transparent transparent $colour transparent;
+                                border-bottom-color: $colour;
                             }
                         }
                     }

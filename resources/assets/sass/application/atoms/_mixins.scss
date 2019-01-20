@@ -27,30 +27,57 @@
 @mixin title-font{
     @include set-font(title);
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: $global-letter-spacing;
 }
 
 @mixin h1{
     @include title-font;
-    font-size: 3rem;
+    font-size: 2rem;
     line-height: 1.25;
+    letter-spacing: ($global-letter-spacing * 2);
     margin: 0;
+
+    @media screen and (min-width: $phone-breakpoint){
+        font-size: 3rem;
+    }
 }
 
 @mixin h2{
     @include title-font;
-    font-size: 2rem;
+    font-size: 1.5rem;
     line-height: 1.25;
+
+    @media screen and (min-width: $phone-breakpoint){
+        font-size: 2rem;
+    }
 }
 
 @mixin h3{
     @include title-font;
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     line-height: 1.25;
+
+    @media screen and (min-width: $phone-breakpoint){
+        font-size: 1.5rem;
+    }
 }
 
-/*  BUTTONS
+/*  BUTTONS & LINKS
     ------------------- */
+
+@mixin animated-link-colour($theme:$link-light){
+    &::after{
+        background-color: map-get($theme, default-background-colour);
+    }
+
+    &:hover, &:focus{
+        color: set-colour(map-get($theme, hover-background-colour));
+
+        &::after{
+            background-color: map-get($theme, hover-background-colour);
+        }
+    }
+}
 
 @mixin button-base{
     position: relative;
@@ -68,7 +95,7 @@
     text-align: center;
     text-transform: uppercase;
     text-decoration: none;
-    letter-spacing: 1px;
+    letter-spacing: $global-letter-spacing;
 
     &:hover, &:focus, &:active{
         outline: none;
@@ -89,6 +116,12 @@
         background-color: transparent;
         border-color: map-get($theme, hover-border-colour);
     }
+
+    &[disabled] {
+        color: map-get($theme, disabled-font-colour);
+        background-color: map-get($theme, disabled-background-colour);
+        border-color: map-get($theme, disabled-border-colour);
+    }
 }
 
 /*  INPUTS
@@ -100,16 +133,14 @@
     border-color: map-get($theme, default-border-colour);
 
     &:hover, &:focus, &:active{
-        color: map-get($theme, hover-font-colour);
         background-color: map-get($theme, hover-background-colour);
-        border-color: map-get($theme, hover-border-colour);
     }
 
     &:-webkit-autofill,
     &:-webkit-autofill:hover,
     &:-webkit-autofill:focus,
     &:-webkit-autofill:active{
-        -webkit-text-fill-color: map-get($theme, hover-font-colour);
+        -webkit-text-fill-color: map-get($theme, default-font-colour);
         -webkit-box-shadow: 0 0 0 62.5rem map-get($theme, active-background-colour) inset;
     }
 }
@@ -153,8 +184,24 @@
     background-color: $bg-colour;
     color: set-colour($bg-colour);
 
+    a:not(.button){
+        &.animated-hover{
+            @include animated-link-colour(set-colour($bg-colour, $link-light, $link-dark));
+        }
+    }
+
     .button{
         @include button-colour(set-colour($bg-colour, $button-light, $button-dark));
+    }
+
+    input,
+    textarea,
+    select{
+        @include input-colour(set-colour($bg-colour, $input-light, $input-dark));
+    }
+
+    button[type="submit"]{
+        @include submit-colour(set-colour($bg-colour, $submit-light, $submit-dark));
     }
 }
 
@@ -177,15 +224,17 @@
     }
 }
 
-@mixin transition($properties){
-    $transition: "";
-    @each $property in $properties {
-        $i: index($properties, $property);
-        @if($i == 1){
-            $transition: #{$property} #{$global-transition};
-        }
-        @else{
-            $transition: #{$transition}, #{$property} #{$global-transition};
+@mixin transition($properties: none){
+    $transition: none;
+    @if($properties != none){
+        @each $property in $properties {
+            $i: index($properties, $property);
+            @if($i == 1){
+                $transition: #{$property} #{$global-transition};
+            }
+            @else{
+                $transition: #{$transition}, #{$property} #{$global-transition};
+            }
         }
     }
     transition: $transition;

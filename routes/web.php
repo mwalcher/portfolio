@@ -15,11 +15,16 @@ Route::get('/', 'PagesController@index')->name('home');
 
 /* Projects */
 Route::get('/libro', 'PagesController@libro')->name('libro');
-Route::get('/mortgage-teacher', 'PagesController@mortgageTeacher')->name('mortgage-teacher');
 Route::get('/pink-precast', 'PagesController@pinkPrecast')->name('pink-precast');
+Route::get('/whats-my', 'PagesController@whatsMy')->name('whats-my');
 Route::get('/zucora', 'PagesController@zucora')->name('zucora');
 
+/* Single Pages */
 Route::get('/coming-soon', 'PagesController@comingSoon')->name('coming-soon');
+Route::get('/thank-you', 'PagesController@thankYou')->name('thank-you');
+
+/* Form Submission */
+Route::post('/submit', 'FormController@submit')->name('submit-form');
 
 // 404 Error if route doesn't match
 Route::get('{any?}', function(){
