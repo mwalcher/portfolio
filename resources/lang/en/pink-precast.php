@@ -34,12 +34,15 @@ return [
         'about' => [
             'title' => __('projects.tab-content.about.title').__('global.projects.pink-precast.name'),
             'content' => [
-                'This is test content with a <a href="#" class="animated-hover" title="link">link</a>.',
+                '<a class="animated-hover" href="'.__('global.projects.pink-precast.website').'" target="_blank" rel="noopener" title="Pink Precast website">Pink Precast</a> wanted us to update their old website with a fresh new look. They wanted a simple informational website with the ability to add new projects with a content management system (CMS).',
                 __('projects.disclaimer.arcane')
             ]
         ],
         'work' => [
-            'title' => __('projects.tab-content.work.title')
+            'title' => __('projects.tab-content.work.title'),
+            'content' => [
+                'I worked on this project with a designer and a back-end developer. The back-end developer setup the content management system (CMS) and I built all the front-end for the website. We used the <a class="animated-hover" href="https://laravel.com/" target="_blank" rel="noopener" title="Laravel website">Laravel</a> framework for this website. I had a lot of fun working on this project because I really liked the design of it.'
+            ]
         ]
     ],
     'main-content' => [
