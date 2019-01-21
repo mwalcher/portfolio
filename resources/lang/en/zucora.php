@@ -34,12 +34,17 @@ return [
         'about' => [
             'title' => __('projects.tab-content.about.title').__('global.projects.zucora.name'),
             'content' => [
-                'This is test content with a <a href="#" class="animated-hover" title="link">link</a>.',
-                __('projects.disclaimer.arcane')
+                'Zucora wanted us to create an e-commerce website to showcase their product lines.',
+                __('projects.disclaimer.arcane'),
+                '<strong>Note:</strong> Zucora has since updated their website, but the <a class="animated-hover" href="'.__('global.projects.zucora.website').'" target="_blank" rel="noopener" title="Zucora website">e-commerce website</a> we built is still accessible.'
             ]
         ],
         'work' => [
-            'title' => __('projects.tab-content.work.title')
+            'title' => __('projects.tab-content.work.title'),
+            'content' => [
+                'I worked on this project with another front-end developer, a designer and two back-end developers. The website was build using the <a class="animated-hover" href="https://laravel.com/" target="_blank" rel="noopener" title="Laravel website">Laravel</a> framework with the <a class="animated-hover" href="https://www.shopify.ca/" target="_blank" rel="noopener" title="Shopify website">Shopify</a> API for the product data. We used <a class="animated-hover" href="https://reactjs.org/" target="_blank" rel="noopener" title="React website">React</a> on the product details page to add the product to the user\'s cart, the header to show how many items are in the cart and the cart page to show changes to the user\'s cart in real time.',
+                'I worked on all the React components myself, while also working with the other front-end developer on the components for the website.'
+            ]
         ]
     ],
     'main-content' => [
