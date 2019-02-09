@@ -34,7 +34,8 @@ return [
         'about' => [
             'title' => __('projects.tab-content.about.title').__('global.projects.whats-my.name'),
             'content' => [
-                '<a class="animated-hover" href="http://mobials.com/" target="_blank" rel="noopener" title="Mobials website">Mobials</a> wanted a promotional website to introduce their new product, WhatsMy. The designer for the project, <a class="animated-hover" href="http://kristianavellucci.com/" target="_blank" rel="noopener" title="Kristiana\'s website">Kristiana</a>, brought me onto the project to do the front-end for the preliminary prototype of the website. She designed the website to be interactive and engaging to entice the user to want to get started with WhatsMy.'
+                '<a class="animated-hover" href="http://mobials.com/" target="_blank" rel="noopener" title="Mobials website">Mobials</a> wanted a promotional website to introduce their new product, WhatsMy. I was brought onto the project to do the front-end for the preliminary prototype of the website.',
+                'The idea behind WhatsMy is to inform users about the value of their vehicle(s) and real estate. The current problem that WhatsMy has identified is the lack of transparency in both the shopping process and ownership of a person’s two largest assets: their home and vehicle. It seeks to help users keep track of the value of these assets as they appreciate or depreciate over time.'
             ]
         ],
         'work' => [
