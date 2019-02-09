@@ -47,7 +47,7 @@ return [
             'link' => route('whats-my'),
             'website' => 'https://mwalcher.github.io/',
             'image' => asset('images').'/whats-my-hero.jpg',
-            'description' => 'A fun website to introduce a new product'
+            'description' => 'A promotional website to introduce a product'
         ],
         'zucora' => [
             'name' => 'Zucora',
