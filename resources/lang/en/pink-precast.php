@@ -41,7 +41,8 @@ return [
         'work' => [
             'title' => __('projects.tab-content.work.title'),
             'content' => [
-                'The website was built using the <a class="animated-hover" href="https://laravel.com/" target="_blank" rel="noopener" title="Laravel website">Laravel</a> framework. I worked on this project with a designer and a back-end developer. The back-end developer setup the content management system (CMS) and I built all of the front-end for the website.'
+                'The website was built using the <a class="animated-hover" href="https://laravel.com/" target="_blank" rel="noopener" title="Laravel website">Laravel</a> framework. I worked on this project with a designer and a back-end developer. The back-end developer setup the content management system (CMS) and I built all of the front-end for the website.',
+                'I had introduced myself to Laravel during my last year of school and then worked on a Laravel project with Arcane prior to building this website. I was able to set this project up by applying what I had learned from the other projects. Two of the things I became more comfortable using during this project was Laravel\'s Blade templates and the language files to store content. I built all my Blade files to be dynamic and reserved all content for the language files, so they can be reused on any page. Blade makes it easy to loop through content sections from the array provided by the language files to prevent me from duplicating markup. The language files helped me organize and centralize content so I didn\'t have to store duplicate content.'
             ]
         ]
     ],
