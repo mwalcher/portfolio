@@ -5,7 +5,20 @@
         <div class="content">
             <p class="title">{!! $listItem['name'] !!}</p>
             <p class="description">{!! $listItem['description'] !!}</p>
-            <a href="{!! $listItem['link'] !!}" class="button" title="View {!! $listItem['name'] !!}">{!! $properties['cta'] !!}</a>
+            <a
+                href="{!! $listItem['link'] !!}"
+                class="button"
+                title="View {!! $listItem['name'] !!}"
+                @if (isset($listItem['disabled']) && $listItem['disabled'] === true)
+                disabled
+                @endif
+            >
+                @if (isset($listItem['disabled']) && $listItem['disabled'] === true)
+                {!! $properties['cta-disabled'] !!}
+                @else
+                {!! $properties['cta'] !!}
+                @endif
+            </a>
         </div>
     </div>
     @endforeach
@@ -18,6 +31,7 @@
             'title' => false,
             'list' => $properties['list'],
             'toggle' => 'featured-content',
+            'disabled-text' => $properties['cta-disabled']
         ]
     ]
 )@endcomponent

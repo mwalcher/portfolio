@@ -84,7 +84,8 @@ return [
                     'zucora' => __('global.projects.zucora'),
                     'pink-precast' => __('global.projects.pink-precast')
                 ],
-                'toggle' => false
+                'toggle' => false,
+                'disabled-text' => __('projects.main-content.option-disabled')
             ]
         ]
     ]

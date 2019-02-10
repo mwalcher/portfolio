@@ -42,13 +42,6 @@ return [
             'image' => asset('images').'/libro-hero.jpg',
             'description' => 'Step by step financial calculators'
         ],
-        'whats-my' => [
-            'name' => 'WhatsMy',
-            'link' => route('whats-my'),
-            'website' => 'https://mwalcher.github.io/',
-            'image' => asset('images').'/whats-my-hero.jpg',
-            'description' => 'A promotional website to introduce a product'
-        ],
         'zucora' => [
             'name' => 'Zucora',
             'link' => route('zucora'),
@@ -62,6 +55,15 @@ return [
             'website' => 'https://www.pinkprecast.com/',
             'image' => asset('images').'/pink-precast-hero.jpg',
             'description' => 'An informational website for a concrete manufacturer'
+        ],
+        'whats-my' => [
+            'name' => 'WhatsMy',
+            'link' => route('whats-my'),
+            'website' => 'https://mwalcher.github.io/',
+            'image' => asset('images').'/whats-my-hero.jpg',
+            'description' => 'A promotional website to introduce a product',
+            'disabled' => true
         ]
-    ]
+    ],
+    'disabled-title' => 'Coming Soon'
 ];

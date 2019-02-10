@@ -79,10 +79,11 @@ return [
                 'title' => __('projects.main-content.option-list-title'),
                 'list' => [
                     'libro' => __('global.projects.libro'),
-                    'whats-my' => __('global.projects.whats-my'),
-                    'zucora' => __('global.projects.zucora')
+                    'zucora' => __('global.projects.zucora'),
+                    'whats-my' => __('global.projects.whats-my')
                 ],
-                'toggle' => false
+                'toggle' => false,
+                'disabled-text' => __('projects.main-content.option-disabled')
             ]
         ]
     ]

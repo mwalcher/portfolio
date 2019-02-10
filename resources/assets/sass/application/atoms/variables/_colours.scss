@@ -17,6 +17,9 @@ $primary-dark      : darken($primary, 10%) !default;
 $primary-rgba      : rgba($primary, 0.5) !default;
 $primary-rgba-dark : rgba($primary, 0.75) !default;
 
+$disabled-font-colour       : lighten($black, 25%);
+$disabled-background-colour : lighten($black, 50%);
+
 /*  PROJECT COLOURS
     --------------------- */
 
@@ -57,9 +60,9 @@ $button-light: (
     hover-background-colour    : $primary-rgba,
     hover-border-colour        : $white-off,
 
-    disabled-font-colour       : lighten($black, 25%),
-    disabled-background-colour : lighten($black, 50%),
-    disabled-border-colour     : lighten($black, 50%)
+    disabled-font-colour       : $disabled-font-colour,
+    disabled-background-colour : $disabled-background-colour,
+    disabled-border-colour     : $disabled-background-colour
 );
 
 $button-dark: (
@@ -71,9 +74,9 @@ $button-dark: (
     hover-background-colour    : $primary-rgba-dark,
     hover-border-colour        : $primary,
 
-    disabled-font-colour       : lighten($black, 25%),
-    disabled-background-colour : lighten($black, 50%),
-    disabled-border-colour     : lighten($black, 50%),
+    disabled-font-colour       : $disabled-font-colour,
+    disabled-background-colour : $disabled-background-colour,
+    disabled-border-colour     : $disabled-background-colour,
 );
 
 /*  INPUT COLOURS

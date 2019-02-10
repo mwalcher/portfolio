@@ -80,11 +80,12 @@ return [
             'option-list' => [
                 'title' => __('projects.main-content.option-list-title'),
                 'list' => [
-                    'whats-my' => __('global.projects.whats-my'),
                     'zucora' => __('global.projects.zucora'),
-                    'pink-precast' => __('global.projects.pink-precast')
+                    'pink-precast' => __('global.projects.pink-precast'),
+                    'whats-my' => __('global.projects.whats-my')
                 ],
-                'toggle' => false
+                'toggle' => false,
+                'disabled-text' => __('projects.main-content.option-disabled')
             ]
         ]
     ]

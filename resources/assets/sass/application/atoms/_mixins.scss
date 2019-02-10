@@ -180,9 +180,9 @@
     height: 0 !important;
 }
 
-@mixin set-background-colour($bg-colour:$black){
+@mixin set-background-colour($bg-colour:$black, $light-colour:$white-off, $dark-colour:$black){
     background-color: $bg-colour;
-    color: set-colour($bg-colour);
+    color: set-colour($bg-colour, $light-colour, $dark-colour);
 
     a:not(.button){
         &.animated-hover{

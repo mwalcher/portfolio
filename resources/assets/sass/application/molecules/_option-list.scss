@@ -35,6 +35,15 @@
             }
         }
 
+        &[disabled]{
+            @include set-background-colour($black, $disabled-background-colour);
+
+            .absolute-background{
+                filter: grayscale(100%);
+                opacity: 0.2;
+            }
+        }
+
         &.active{
             @each $project, $colour in $project-colours{
                 &.#{$project}{

@@ -40,6 +40,7 @@ return [
         'id' => 'preview',
         'main-title' => 'Preview',
         'preview-slider-cta' => 'View ',
-        'option-list-title' => 'Other Projects'
+        'option-list-title' => 'Other Projects',
+        'option-disabled' => __('global.disabled-title')
     ]
 ];

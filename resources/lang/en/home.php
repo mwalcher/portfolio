@@ -64,7 +64,8 @@ return [
         'components' => [
             'featured-content' => [
                 'list' => __('global.projects'),
-                'cta' => 'View Project'
+                'cta' => 'View Project',
+                'cta-disabled' => __('global.disabled-title')
             ]
         ]
     ]
