@@ -34,16 +34,17 @@ return [
         'about' => [
             'title' => __('projects.tab-content.about.title').__('global.projects.zucora.name'),
             'content' => [
-                'Zucora wanted us to create an e-commerce website to showcase their product lines.',
-                __('projects.disclaimer.arcane'),
-                '<strong>Note:</strong> Zucora has since updated their website, but the <a class="animated-hover" href="'.__('global.projects.zucora.website').'" target="_blank" rel="noopener" title="Zucora website">e-commerce website</a> we built is still accessible.'
+                'Zucora wanted us to create a fresh new look for their website. The purpose of the website was to inform the user about their brand as well as offer an e-commerce platform to showcase their product lines.',
+                '<strong>Note:</strong> Zucora has since updated their website, but the <a class="animated-hover" href="'.__('global.projects.zucora.website').'" target="_blank" rel="noopener" title="Zucora website">e-commerce website</a> we built is still accessible.',
+                __('projects.disclaimer.arcane')
             ]
         ],
         'work' => [
             'title' => __('projects.tab-content.work.title'),
             'content' => [
-                'I worked on this project with another front-end developer, a designer and two back-end developers. The website was build using the <a class="animated-hover" href="https://laravel.com/" target="_blank" rel="noopener" title="Laravel website">Laravel</a> framework with the <a class="animated-hover" href="https://www.shopify.ca/" target="_blank" rel="noopener" title="Shopify website">Shopify</a> API for the product data. We used <a class="animated-hover" href="https://reactjs.org/" target="_blank" rel="noopener" title="React website">React</a> on the product details page to add the product to the user\'s cart, the header to show how many items are in the cart and the cart page to show changes to the user\'s cart in real time.',
-                'I worked on all the React components myself, while also working with the other front-end developer on the components for the website.'
+                'I worked on this project with another front-end developer, a designer and two back-end developers. The website was built using the <a class="animated-hover" href="https://laravel.com/" target="_blank" rel="noopener" title="Laravel website">Laravel</a> framework with the <a class="animated-hover" href="https://www.shopify.ca/" target="_blank" rel="noopener" title="Shopify website">Shopify</a> API to manage the product data. We used <a class="animated-hover" href="https://reactjs.org/" target="_blank" rel="noopener" title="React website">React</a> on the product details page to add the product to the user\'s cart, the header to show how many items are in the cart and the cart page to show changes to the user\'s cart in real time. I worked on all the React components myself, while also working with the other front-end developer on the components for rest of the website.',
+                'On the product details page I collected the product data from the API and passed it to the React app on the page. Some products have one or two options the user can specify (such as size and length on mattress protectors). I created logic to check if the option selected is in stock and in the case of multiple options I had to check if the specific variant existed with the combined options selected. The quantity selector checked the remaining stock of the selected product and set a max quantity to make sure the user did not try to buy more than was available in stock. When the user added the product to the cart I created a loading state, as well as success and error messages based on the response from the API that animated in below the button to confirm the product was added to the cart or to inform the user there was a problem adding the product to the cart.',
+                'On the cart page I loop through all the products stored in the user\'s cart. The user can adjust quantities for each product and when they do their total will be adjusted to account for the change in quantity. The user has the option to remove a product from their cart and if they remove an item the totals as well as the number of products in the cart shown in the header will be adjusted.'
             ]
         ]
     ],
