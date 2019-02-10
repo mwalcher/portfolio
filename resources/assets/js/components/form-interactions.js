@@ -16,18 +16,17 @@ export default function({
     forms.forEach((form) => Validation.init(form, true));
 
     inputs.forEach((input) => {
-        input.addEventListener('focus', () => activeInput(input, activeClass));
-        input.addEventListener('focusout', () => checkInput(input, activeClass));
+        const parent = input.parentElement;
+        input.addEventListener('focus', () => activeInput(parent, activeClass));
+        input.addEventListener('focusout', () => checkInput(input, parent, activeClass));
     });
 }
 
-function activeInput(element, className){
-    const container = element.parentElement;
+function activeInput(container, className){
     container.classList.add(className);
 }
 
-function checkInput(element, className){
-    const container = element.parentElement;
+function checkInput(element, container, className){
     if(element.value === ''){
         container.classList.remove(className);
     }
