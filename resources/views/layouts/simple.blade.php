@@ -3,6 +3,8 @@
 <head>
     @component('components/head/meta-tags')@endcomponent
 
+    @component('components/head/gtm-head')@endcomponent
+
     @component('components/head/favicons')@endcomponent
 
     @component(
@@ -17,6 +19,8 @@
     @component('components/head/styles')@endcomponent
 </head>
 <body class="simple {!! $view !!}">
+    @component('components/head/gtm-body')@endcomponent
+
     <div class="fixed-background" style="background-image: url({{ __($view.'.background') }})"></div>
 
     <main>
