@@ -20,5 +20,5 @@ $tab-content-height              : 45vh;
 $tab-content-tab-active-height   : 4.5rem;
 $tab-content-top-space-mobile    : calc((#{$tab-content-height-mobile} / 2) + #{$tab-content-tab-active-height});
 $tab-content-top-space           : calc((#{$tab-content-height} / 2) + #{$tab-content-tab-active-height});
-$tab-content-bottom-space-mobile : calc((#{$tab-content-height-mobile} / 2) + #{$medium-size});
-$tab-content-bottom-space        : calc((#{$tab-content-height} / 2) + #{$medium-size});
+$tab-content-bottom-space-mobile : calc((#{$tab-content-height-mobile} / 2) + #{$large-size});
+$tab-content-bottom-space        : calc((#{$tab-content-height} / 2) + #{$large-size});
