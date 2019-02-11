@@ -1,0 +1,38 @@
+/*  ---------------------
+NORMALIZE
+--------------------- */
+
+html{
+    overflow: hidden;
+    pointer-events: none;
+
+    &.page-loaded{
+        overflow: initial;
+        pointer-events: initial;
+
+        header > *:not(.logo),
+        main,
+        footer{
+            opacity: 1;
+        }
+    }
+
+    &.fa-events-icons-ready{
+        .fa{
+            opacity: 1;
+        }
+    }
+
+    .fa{
+        @include font-awesome;
+        opacity: 0;
+        @include transition(opacity);
+    }
+
+    header > *:not(.logo),
+    main,
+    footer{
+        opacity: 0;
+        @include transition(opacity);
+    }
+}

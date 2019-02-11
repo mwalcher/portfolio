@@ -9,20 +9,6 @@ NORMALIZE
     box-sizing: border-box;
 }
 
-html{
-    &.fa-events-icons-ready{
-        .fa{
-            opacity: 1;
-        }
-    }
-
-    .fa{
-        @include font-awesome;
-        opacity: 0;
-        @include transition(opacity);
-    }
-}
-
 body{
     @include set-background-colour($black);
 

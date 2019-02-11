@@ -4,6 +4,15 @@ NOSCRIPT
 @import "application/atoms/variables/colours";
 
 html{
+    overflow: initial;
+    pointer-events: initial;
+
+    header > *:not(.logo),
+    main,
+    footer{
+        opacity: 1;
+    }
+
     .fa{
         display: none !important;
     }

@@ -10,6 +10,8 @@ import toggleActive from './components/toggle-active';
 
 document.addEventListener('readystatechange', function(){
     if(document.readyState === 'complete'){
+        const page = document.querySelector('html');
+        page.classList.add('page-loaded');
 
         // Header Component
         const navigation = document.querySelector('header .main-navigation');
