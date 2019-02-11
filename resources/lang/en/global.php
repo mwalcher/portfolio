@@ -58,7 +58,7 @@ return [
         ],
         'whats-my' => [
             'name' => 'WhatsMy',
-            'link' => route('whats-my'),
+            'link' => route('home'),
             'website' => 'https://mwalcher.github.io/',
             'image' => asset('images').'/whats-my-hero.jpg',
             'description' => 'A promotional website to introduce a product',

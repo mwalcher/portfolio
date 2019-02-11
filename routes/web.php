@@ -19,7 +19,6 @@ Route::get('/pink-precast', 'PagesController@pinkPrecast')->name('pink-precast')
 Route::get('/zucora', 'PagesController@zucora')->name('zucora');
 
 /* Single Pages */
-Route::get('/coming-soon', 'PagesController@comingSoon')->name('coming-soon');
 Route::get('/thank-you', 'PagesController@thankYou')->name('thank-you');
 
 /* Form Submission */
@@ -31,4 +30,5 @@ Route::get('{any?}', function(){
 });
 
 /* Disabled Routes */
+Route::get('/coming-soon', 'PagesController@comingSoon')->name('coming-soon');
 Route::get('/whats-my', 'PagesController@whatsMy')->name('whats-my');
