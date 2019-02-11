@@ -17,7 +17,7 @@
     >
 
         @if(!$properties['toggle'])
-        <a href="{{route($key)}}" class="option-link" title="{!! $listItem['name'] !!}">
+        <a href="{{__('global.projects.'.$key.'.link')}}" class="option-link" title="{!! $listItem['name'] !!}">
             <span class="invisible">{!! $listItem['name'] !!}</span>
         </a>
         @endif
