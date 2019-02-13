@@ -5,13 +5,14 @@ const headerBreakpoint = 740;
 
 export default function({
     trigger = requiredField('Trigger'),
+    offset = 0,
     speed = 10,
 } = {}) {
 
-    smoothScroll(trigger, speed);
+    smoothScroll(trigger, offset, speed);
 }
 
-function smoothScroll(trigger, speed){
+function smoothScroll(trigger, offset, speed){
     let windowPosition = window.pageYOffset;
 
     let targetID;
@@ -27,7 +28,7 @@ function smoothScroll(trigger, speed){
         return;
     }
 
-    let targetOffset = target.offsetTop;
+    let targetOffset = target.offsetTop - offset;
 
     if(!window.matchMedia(`(min-width: ${headerBreakpoint}px)`).matches){
         targetOffset = targetOffset - headerOffset;
@@ -35,7 +36,7 @@ function smoothScroll(trigger, speed){
 
     if(target.parentNode.classList.contains('section')){
         let parent = target.parentNode;
-        targetOffset = parent.offsetTop + targetOffset;
+        targetOffset = targetOffset + parent.offsetTop;
     }
 
     if(target.classList.contains('main-content')){
@@ -44,7 +45,7 @@ function smoothScroll(trigger, speed){
         targetOffset = targetOffset + tabContentOffset;
     }
 
-    let counter = setInterval(function() {
+    let counter = setInterval(() => {
         windowPosition;
 
         if (windowPosition > targetOffset) {

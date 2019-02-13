@@ -42,7 +42,8 @@ function toggleActive(target, triggerList, toggleContentList, className){
 
     if(target.dataset.scroll === 'true'){
         smoothScroll({
-            trigger: target
+            trigger: target,
+            offset: 24
         });
     }
 }
