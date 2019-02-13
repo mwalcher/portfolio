@@ -20,7 +20,7 @@
                 @endforeach
             </div>
         </div>
-        <form name="{!! __('footer.form.name') !!}" action="{{ route('submit-form') }}" method="post">
+        <form class="recaptcha" name="{!! __('footer.form.name') !!}" action="{{ route('submit-form') }}" method="post">
             {{ csrf_field() }}
             @foreach (__('footer.form.fields') as $field)
                 <div class="input-container @if (old($field['name']))active @endif @if ($errors->has($field['name']))error @endif">
@@ -58,6 +58,7 @@
                 </div>
             @endforeach
             <button type="submit">{!! __('form.actions.submit') !!}</button>
+            @component('components/recaptcha')@endcomponent
         </form>
     </div>
 </footer>

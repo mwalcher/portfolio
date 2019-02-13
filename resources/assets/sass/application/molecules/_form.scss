@@ -58,3 +58,7 @@ form{
         }
     }
 }
+
+.grecaptcha-badge {
+    @include invisible;
+}

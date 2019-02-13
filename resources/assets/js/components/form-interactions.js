@@ -13,7 +13,16 @@ export default function({
     activeClass = 'active'
 } = {}) {
 
-    forms.forEach((form) => Validation.init(form, true));
+    forms.forEach((form) => {
+        Validation.init(form, true);
+
+        if(form.classList.contains('recaptcha')){
+            form.querySelector('[type="submit"]').addEventListener('click', e => {
+                e.preventDefault();
+                executeRecaptcha(form);
+            });
+        }
+    });
 
     inputs.forEach((input) => {
         const parent = input.parentElement;
@@ -30,4 +39,14 @@ function checkInput(element, container, className){
     if(element.value === ''){
         container.classList.remove(className);
     }
+}
+
+function executeRecaptcha(form){
+    Validation.validateSection(form).then(result => {
+        if (result === true) {
+            grecaptcha.execute();
+        } else {
+            Validation.focusInput(result[0]);
+        }
+    });
 }

@@ -14,6 +14,12 @@ return [
     |
     */
 
+    'google-recaptcha' => [
+        'url' => env('RECAPTCHA_URL'),
+        'sitekey' => env('RECAPTCHA_SITEKEY'),
+        'secret' => env('RECAPTCHA_SECRET'),
+    ],
+
     'mailgun' => [
         'domain' => env('MAILGUN_DOMAIN'),
         'secret' => env('MAILGUN_SECRET'),
