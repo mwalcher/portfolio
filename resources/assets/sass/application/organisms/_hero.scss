@@ -19,17 +19,17 @@
             @include h2;
             @include set-font(body, bold);
             letter-spacing: 0;
-            @include spacing(padding, bottom, 0);
+            @include spacing(padding, bottom, 0.5rem);
         }
 
         .content{
             max-width: 28rem;
-            @include spacing(padding, top, md);
+            @include spacing(padding, bottom, 0);
             @include spacing(margin, left right, auto);
         }
 
         .button{
-            @include spacing(margin, top, sm);
+            @include spacing(margin, top, 1.5rem);
         }
     }
 }
