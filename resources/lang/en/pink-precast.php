@@ -31,7 +31,7 @@ return [
         'content' => __('global.projects.pink-precast.description'),
         'button' => [
             'text' => __('projects.hero.button.text'),
-            'title' => __('global.projects.pink-precast.name').__('projects.hero.button.title'),
+            'title' => __('projects.hero.button.title').__('global.projects.pink-precast.name'),
             'link' => __('projects.hero.button.link')
         ]
     ],

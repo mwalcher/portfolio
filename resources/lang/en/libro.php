@@ -31,7 +31,7 @@ return [
         'content' => __('global.projects.libro.description'),
         'button' => [
             'text' => __('projects.hero.button.text'),
-            'title' => __('global.projects.libro.name').__('projects.hero.button.title'),
+            'title' => __('projects.hero.button.title').__('global.projects.libro.name'),
             'link' => __('projects.hero.button.link')
         ]
     ],

@@ -16,8 +16,8 @@ return [
         ],
         'showcase' => [
             'text' => 'Showcase',
-            'title' => 'Showcase of ',
-            'link' => 'showcase',
+            'title' => 'Showcase for ',
+            'link' => '#showcase',
             'icon' => 'fa-mobile'
         ],
         'contact' => __('footer.navigation')
@@ -29,8 +29,8 @@ return [
         'id' => 'overview',
         'button' => [
             'text' => 'Explore Project',
-            'title' => ' Showcase',
-            'link' => 'showcase'
+            'title' => 'Showcase for ',
+            'link' => '#showcase'
         ]
     ],
     'tab-content' => [

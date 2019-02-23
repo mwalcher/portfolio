@@ -31,7 +31,7 @@ return [
         'content' => __('global.projects.zucora.description'),
         'button' => [
             'text' => __('projects.hero.button.text'),
-            'title' => __('global.projects.zucora.name').__('projects.hero.button.title'),
+            'title' => __('projects.hero.button.title').__('global.projects.zucora.name'),
             'link' => __('projects.hero.button.link')
         ]
     ],

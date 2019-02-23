@@ -31,7 +31,7 @@ return [
         'content' => __('global.projects.whats-my.description'),
         'button' => [
             'text' => __('projects.hero.button.text'),
-            'title' => __('global.projects.whats-my.name').__('projects.hero.button.title'),
+            'title' => __('projects.hero.button.title').__('global.projects.whats-my.name'),
             'link' => __('projects.hero.button.link')
         ]
     ],
