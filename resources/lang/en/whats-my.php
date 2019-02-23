@@ -28,7 +28,12 @@ return [
     'hero' => [
         'id' => __('projects.hero.id'),
         'main-title' => __('global.projects.whats-my.name'),
-        'content' => __('global.projects.whats-my.description')
+        'content' => __('global.projects.whats-my.description'),
+        'button' => [
+            'text' => __('projects.hero.button.text'),
+            'title' => __('global.projects.whats-my.name').__('projects.hero.button.title'),
+            'link' => __('projects.hero.button.link')
+        ]
     ],
     'tab-content' => [
         'about' => [

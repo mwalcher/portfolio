@@ -26,7 +26,12 @@ return [
         'arcane' => '<strong>Note:</strong> I worked on this project as a member of the <a class="animated-hover" href="https://thearcane.com/" target="_blank" rel="noopener" title="Arcane website">Arcane</a> development team.'
     ],
     'hero' => [
-        'id' => 'overview'
+        'id' => 'overview',
+        'button' => [
+            'text' => 'Explore Project',
+            'title' => ' Showcase',
+            'link' => '#preview'
+        ]
     ],
     'tab-content' => [
         'about' => [

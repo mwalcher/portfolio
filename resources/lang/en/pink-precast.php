@@ -28,7 +28,12 @@ return [
     'hero' => [
         'id' => __('projects.hero.id'),
         'main-title' => __('global.projects.pink-precast.name'),
-        'content' => __('global.projects.pink-precast.description')
+        'content' => __('global.projects.pink-precast.description'),
+        'button' => [
+            'text' => __('projects.hero.button.text'),
+            'title' => __('global.projects.pink-precast.name').__('projects.hero.button.title'),
+            'link' => __('projects.hero.button.link')
+        ]
     ],
     'tab-content' => [
         'about' => [
