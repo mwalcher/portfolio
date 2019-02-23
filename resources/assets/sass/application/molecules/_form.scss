@@ -12,11 +12,11 @@ form{
         }
 
         label{
+            display: flex;
             position: absolute;
-            top: 0.6875rem;
+            top: 0.875rem;
             left: 0.875rem;
             @include transition(font-size top);
-            cursor: pointer;
         }
 
         .error-message {
@@ -26,7 +26,7 @@ form{
         &.active{
             label{
                 font-size: 0.75rem;
-                top: 0.25rem;
+                top: 0.5rem;
                 pointer-events: none;
             }
 

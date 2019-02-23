@@ -20,12 +20,27 @@
                 @endforeach
             </div>
         </div>
+
         <form class="recaptcha" name="{!! __('footer.form.name') !!}" action="{{ route('submit-form') }}" method="post">
             {{ csrf_field() }}
             @foreach (__('footer.form.fields') as $field)
-                <div class="input-container @if (old($field['name']))active @endif @if ($errors->has($field['name']))error @endif">
+                @php
+                    $containerClasses = ['input-container'];
+
+                    if(old($field['name'])){
+                        array_push($containerClasses, 'active');
+                    }
+
+                    if($errors->has($field['name'])){
+                        array_push($containerClasses, 'error');
+                    }
+                @endphp
+                <div class="{{ implode(' ', $containerClasses) }}">
                     <label for="{!! __('footer.form.name') !!}-{!! $field['name'] !!}">
-                        {!! $field['label'] !!}
+                        <span>{!! $field['label'] !!}</span>
+                        @if ($field['required'])
+                        <span>*</span>
+                        @endif
                     </label>
                     @if ($field['type'] === 'textarea')
                         <textarea

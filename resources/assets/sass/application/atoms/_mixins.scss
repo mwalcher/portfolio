@@ -30,6 +30,12 @@
     letter-spacing: $global-letter-spacing;
 }
 
+@mixin label-font{
+    @include set-font(body, bold);
+    text-transform: uppercase;
+    letter-spacing: $global-letter-spacing;
+}
+
 @mixin h1{
     @include title-font;
     font-size: 2rem;
@@ -89,13 +95,11 @@
     border-radius: $global-border-radius;
     cursor: pointer;
 
-    @include set-font(body, bold);
+    @include label-font;
     font-size: $global-font-size;
     line-height: 1.25rem;
     text-align: center;
-    text-transform: uppercase;
     text-decoration: none;
-    letter-spacing: $global-letter-spacing;
 
     &:hover, &:focus, &:active{
         outline: none;

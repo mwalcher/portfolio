@@ -25,6 +25,6 @@ return [
         ]
     ],
     'actions' => [
-        'submit' => 'Submit'
+        'submit' => 'Send Message'
     ]
 ];
