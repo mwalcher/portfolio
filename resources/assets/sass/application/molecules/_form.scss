@@ -11,6 +11,20 @@ form{
             @include spacing(margin, bottom, sm);
         }
 
+        &.required {
+            label {
+                &::after {
+                    content: '*';
+                }
+            }
+
+            .error-message {
+                &::after {
+                    content: none;
+                }
+            }
+        }
+
         label{
             display: flex;
             position: absolute;

@@ -27,6 +27,10 @@
                 @php
                     $containerClasses = ['input-container'];
 
+                    if($field['required']){
+                        array_push($containerClasses, 'required');
+                    }
+
                     if(old($field['name'])){
                         array_push($containerClasses, 'active');
                     }
@@ -37,10 +41,7 @@
                 @endphp
                 <div class="{{ implode(' ', $containerClasses) }}">
                     <label for="{!! __('footer.form.name') !!}-{!! $field['name'] !!}">
-                        <span>{!! $field['label'] !!}</span>
-                        @if ($field['required'])
-                        <span>*</span>
-                        @endif
+                        {!! $field['label'] !!}
                     </label>
                     @if ($field['type'] === 'textarea')
                         <textarea
