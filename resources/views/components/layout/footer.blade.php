@@ -14,9 +14,7 @@
                     @if (isset($contactLink['disabled']) && $contactLink['disabled'] === true)
                     disabled
                     @endif
-                >
-                    {!! $contactLink['text'] !!}
-                </a>
+                >{!! $contactLink['text'] !!}</a>
                 @endforeach
             </div>
         </div>
