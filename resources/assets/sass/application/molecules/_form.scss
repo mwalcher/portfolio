@@ -70,6 +70,12 @@ form{
         .error-message {
             @extend label;
         }
+
+        .disclaimer {
+            display: block;
+            line-height: $global-font-size;
+            margin-top: 0.5rem;
+        }
     }
 }
 

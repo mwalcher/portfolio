@@ -51,3 +51,7 @@ ol{
     list-style-type: decimal;
     list-style-position: inside;
 }
+
+small {
+    font-size: $global-font-size * 0.875;
+}

@@ -14,14 +14,14 @@ return [
             'label' => 'Email',
             'type' => 'email',
             'required' => true,
-            'autocomplete' => 'email'
+            'autocomplete' => 'email',
+            'disclaimer' => 'I will not use your email for anything other than to respond to your message.'
         ],
         'message' => [
             'name' => 'message',
             'label' => 'Message',
             'type' => 'textarea',
-            'required' => true,
-            'autocomplete' => false
+            'required' => true
         ]
     ],
     'actions' => [

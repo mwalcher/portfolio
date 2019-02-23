@@ -27,7 +27,7 @@
                 @php
                     $containerClasses = ['input-container'];
 
-                    if($field['required']){
+                    if(isset($field['required']) && $field['required'] === true){
                         array_push($containerClasses, 'required');
                     }
 
@@ -47,10 +47,10 @@
                         <textarea
                             id="{!! __('footer.form.name') !!}-{!! $field['name'] !!}"
                             name="{!! $field['name'] !!}"
-                            @if ($field['required'])
+                            @if (isset($field['required']) && $field['required'] === true)
                             required
                             @endif
-                            @if ($field['autocomplete'])
+                            @if (isset($field['autocomplete']) && $field['autocomplete'] !== false)
                             autocomplete="{!! $field['autocomplete'] !!}"
                             @endif
                         >{{ old($field['name']) }}</textarea>
@@ -60,13 +60,16 @@
                         type="{!! $field['type'] !!}"
                         name="{!! $field['name'] !!}"
                         value="{{ old($field['name']) }}"
-                        @if ($field['required'])
+                        @if (isset($field['required']) && $field['required'] === true)
                         required
                         @endif
-                        @if ($field['autocomplete'])
+                        @if (isset($field['autocomplete']) && $field['autocomplete'] !== false)
                         autocomplete="{!! $field['autocomplete'] !!}"
                         @endif
                     />
+                    @endif
+                    @if (isset($field['disclaimer']) && $field['disclaimer'] !== false)
+                        <small class="disclaimer">{!! $field['disclaimer'] !!}</small>
                     @endif
                     @if ($errors->has($field['name']))
                         <small class="error-message">{{ $errors->first($field['name']) }}</small>
