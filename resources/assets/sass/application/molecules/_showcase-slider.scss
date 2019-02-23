@@ -1,7 +1,7 @@
-.preview-slider-container{
+.showcase-slider-container{
     padding-bottom: 4.5rem;
 
-    .preview-slider{
+    .showcase-slider{
         position: relative;
         @include spacing(padding, top bottom, 5.5rem);
         @include spacing(margin, top, md);
@@ -130,8 +130,8 @@
 body{
     @each $project, $colour in $project-colours{
         &.#{$project}{
-            .preview-slider-container{
-                .preview-slider{
+            .showcase-slider-container{
+                .showcase-slider{
                     .flickity-prev-next-button{
                         &:hover, &:focus{
                             border-bottom-color: rgba($colour, 0.75);

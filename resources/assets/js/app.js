@@ -4,7 +4,7 @@ NodeList.prototype.forEach = NodeList.prototype.forEach || Array.prototype.forEa
 
 import formInteractions from './components/form-interactions';
 import headerInteractions from './components/header-interactions';
-import previewSlider from './components/preview-slider';
+import showcaseSlider from './components/showcase-slider';
 import smoothScroll from './components/smooth-scroll';
 import toggleActive from './components/toggle-active';
 
@@ -46,9 +46,9 @@ document.addEventListener('readystatechange', function(){
             toggleContent: document.querySelectorAll('[data-toggle-content]')
         });
 
-        // Preview Slider
-        previewSlider({
-            sliders: document.querySelectorAll('.preview-slider')
+        // Showcase Slider
+        showcaseSlider({
+            sliders: document.querySelectorAll('.showcase-slider')
         });
     }
 });

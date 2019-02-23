@@ -17,11 +17,11 @@ return [
             'link' => __('projects.navigation.overview.link'),
             'icon' => __('projects.navigation.overview.icon')
         ],
-        'preview' => [
-            'text' => __('projects.navigation.preview.text'),
-            'title' => __('projects.navigation.preview.title').__('global.projects.zucora.name'),
-            'link' => __('projects.navigation.preview.link'),
-            'icon' => __('projects.navigation.preview.icon')
+        'showcase' => [
+            'text' => __('projects.navigation.showcase.text'),
+            'title' => __('projects.navigation.showcase.title').__('global.projects.zucora.name'),
+            'link' => __('projects.navigation.showcase.link'),
+            'icon' => __('projects.navigation.showcase.icon')
         ],
         'contact' => __('projects.navigation.contact')
     ],
@@ -57,7 +57,7 @@ return [
         'id' => __('projects.main-content.id'),
         'main-title' => __('projects.main-content.main-title'),
         'components' => [
-            'preview-slider' => [
+            'showcase-slider' => [
                 'list' => [
                     'desktop' => [
                         'src' => asset('images').'/zucora-device-4-desktop.png',
@@ -77,8 +77,8 @@ return [
                     ]
                 ],
                 'cta' => [
-                    'text' => __('projects.main-content.preview-slider-cta').__('global.projects.zucora.name'),
-                    'title' => __('projects.main-content.preview-slider-cta').__('global.projects.zucora.name'),
+                    'text' => __('projects.main-content.showcase-slider-cta').__('global.projects.zucora.name'),
+                    'title' => __('projects.main-content.showcase-slider-cta').__('global.projects.zucora.name'),
                     'link' => __('global.projects.zucora.website')
                 ],
             ],

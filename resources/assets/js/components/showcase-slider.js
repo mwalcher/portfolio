@@ -4,7 +4,7 @@ import Flickity from 'flickity';
 import debounce from 'lodash/debounce';
 
 export default function({
-    sliders = requiredField('Preview Slider')
+    sliders = requiredField('Showcase Slider')
 } = {}) {
 
     sliders.forEach(initFlickity);

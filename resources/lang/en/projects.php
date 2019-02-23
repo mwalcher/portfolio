@@ -14,10 +14,10 @@ return [
             'link' => '#overview',
             'icon' => 'fa-folder-open'
         ],
-        'preview' => [
-            'text' => 'Preview',
-            'title' => 'Preview of ',
-            'link' => '#preview',
+        'showcase' => [
+            'text' => 'Showcase',
+            'title' => 'Showcase of ',
+            'link' => 'showcase',
             'icon' => 'fa-mobile'
         ],
         'contact' => __('footer.navigation')
@@ -30,7 +30,7 @@ return [
         'button' => [
             'text' => 'Explore Project',
             'title' => ' Showcase',
-            'link' => '#preview'
+            'link' => 'showcase'
         ]
     ],
     'tab-content' => [
@@ -42,9 +42,9 @@ return [
         ]
     ],
     'main-content' => [
-        'id' => 'preview',
-        'main-title' => 'Preview',
-        'preview-slider-cta' => 'View ',
+        'id' => 'showcase',
+        'main-title' => 'Showcase',
+        'showcase-slider-cta' => 'View ',
         'option-list-title' => 'Other Projects',
         'option-disabled' => __('global.disabled-title')
     ]
