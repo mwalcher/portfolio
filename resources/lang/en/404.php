@@ -7,7 +7,8 @@ return [
     'meta-image' => __('meta.image'),
     'background' => __('meta.background'),
     'hero' => [
-        'main-title' => 'Page Not Found',
+        'main-title' => 'No worries!',
+        'content' => 'Not all those who wander are lost.',
         'button' => __('global.home')
     ]
 ];
