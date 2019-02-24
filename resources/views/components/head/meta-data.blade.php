@@ -3,7 +3,7 @@
 
 <meta property="og:title" content="{!! __($page.'.title') !!}" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="{!! __('meta.url') !!}" />
+<meta property="og:url" content="{!! $page !== '404' ? route($page) : route('home') !!}" />
 <meta property="og:image" content="{{ __($page.'.meta-image.src') }}" />
 <meta property="og:image:width" content="{!! __($page.'.meta-image.width') !!}" />
 <meta property="og:image:height" content="{!! __($page.'.meta-image.height') !!}" />

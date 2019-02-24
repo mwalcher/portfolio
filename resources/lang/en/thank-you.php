@@ -1,6 +1,7 @@
 <?php
 
 return [
+    'no-index' => 'true',
     'title' => 'Thank You / '.__('meta.title'),
     'description' => __('meta.description'),
     'meta-image' => __('meta.image'),

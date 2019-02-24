@@ -2,7 +2,12 @@
 <!DOCTYPE html>
 <html lang="{{ app()->getLocale() }}">
 <head>
-    @component('components/head/meta-tags')@endcomponent
+    @component(
+        'components/head/meta-tags',
+        [
+            'page' => $view
+        ]
+    )@endcomponent
 
     @component('components/head/gtm-head')@endcomponent
 
