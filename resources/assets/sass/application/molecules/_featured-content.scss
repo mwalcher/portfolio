@@ -33,6 +33,7 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
+            height: 45vh;
             min-height: 50vh;
             @include spacing(padding, all, md);
 
