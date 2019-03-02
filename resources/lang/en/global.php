@@ -14,17 +14,17 @@ return [
         'link' => 'mailto:matt@mwalcher.com'
     ],
     'contact-links' => [
-        'linkedin' => [
-            'text' => 'LinkedIn',
-            'title' => 'Matthew Walcher on LinkedIn',
-            'link' => 'https://www.linkedin.com/in/mwalcher/',
-            'icon' => 'fa-linkedin'
-        ],
         'github' => [
             'text' => 'Github',
             'title' => 'Matthew Walcher on Github',
             'link' => 'https://github.com/mwalcher',
             'icon' => 'fa-github'
+        ],
+        'linkedin' => [
+            'text' => 'LinkedIn',
+            'title' => 'Matthew Walcher on LinkedIn',
+            'link' => 'https://www.linkedin.com/in/mwalcher/',
+            'icon' => 'fa-linkedin'
         ],
         'resume' => [
             'text' => 'Resume',
