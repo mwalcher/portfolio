@@ -8,11 +8,11 @@
             title="{!! $properties['cta']['title'] !!}"
         >{!! $properties['cta']['text'] !!}</a>
     @endif
-    <ul class="showcase-slider">
+    <div class="showcase-slider">
         @foreach ($properties['list'] as $key => $listItem)
-        <li class="slide">
+        <div class="slide">
             <img src="{!! $listItem['src'] !!}" alt="{!! $listItem['alt'] !!}" />
-        </li>
+        </div>
         @endforeach
-    </ul>
+    </div>
 </div>
