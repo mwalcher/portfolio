@@ -1,6 +1,6 @@
 /*  ---------------------
-    LINKS
-    --------------------- */
+LINKS
+--------------------- */
 
 a:not(.button){
     display: inline-block;
@@ -44,8 +44,8 @@ a:not(.button){
     @include transition(color background-color border-color);
 
     @media screen and (min-width: $phone-breakpoint){
-        max-width: 12.5rem;
-        max-width: max-content;
+        display: inline-block;
+        width: auto;
     }
 
     &::after{
