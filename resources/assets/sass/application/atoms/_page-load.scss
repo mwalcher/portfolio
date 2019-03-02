@@ -7,8 +7,8 @@ html{
     pointer-events: none;
 
     &.page-loaded{
-        overflow: initial;
-        pointer-events: initial;
+        overflow: visible;
+        pointer-events: auto;
 
         header > *:not(.logo),
         main,

@@ -2,7 +2,7 @@ html.show-navigation{
     overflow: hidden;
 
     @media screen and (min-width: $header-breakpoint){
-        overflow: initial;
+        overflow: visible;
     }
 
     header{

@@ -4,8 +4,8 @@ NOSCRIPT
 @import "application/atoms/variables/colours";
 
 html{
-    overflow: initial;
-    pointer-events: initial;
+    overflow: visible;
+    pointer-events: auto;
 
     header > *:not(.logo),
     main,
