@@ -29,14 +29,36 @@ body.simple{
             }
 
             .hero-content{
-                .logo-container{
-                    display: block;
-                    @include spacing(padding, bottom, md);
+                .logo{
+                    max-width: 12.5rem;
+                    @include spacing(margin, left right, auto);
+                    @include spacing(margin, bottom, md);
 
-                    img, .logo{
+                    &-link {
                         display: block;
-                        max-width: 12.5rem;
-                        @include spacing(margin, left right, auto);
+
+                        &:hover{
+                            .logo-container{
+                                svg{
+                                    fill: $primary-rgba-dark;
+                                }
+                            }
+                        }
+
+                        .logo-container{
+                            svg{
+                                @include transition(fill);
+                            }
+                        }
+                    }
+
+                    .logo-container{
+                        display: block;
+
+                        svg{
+                            display: inherit;
+                            fill: $white-off;
+                        }
                     }
                 }
 

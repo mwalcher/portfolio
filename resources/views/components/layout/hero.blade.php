@@ -11,22 +11,23 @@
 
     <div class="hero-content">
         @if (issetLang($page.'.hero.logo'))
-            <div class="logo-container">
-                @if (issetLang($page.'.hero.logo.link'))
-                <a
-                    href="{!! __($page.'.home.link') !!}"
-                    class="logo"
-                    title="{!! __($page.'.home.title') !!}"
-                >
-                @endif
-                <img
-                    src="{!! __($page.'.hero.logo.src') !!}"
-                    alt="{!! __($page.'.hero.logo.alt') !!}"
-                />
-                @if (issetLang($page.'.hero.logo.link'))
-                </a>
-                @endif
+            @if (issetLang($page.'.hero.logo.link'))
+            <a
+                class="logo logo-link"
+                href="{!! __($page.'.hero.logo.link.link') !!}"
+                title="{!! __($page.'.hero.logo.link.title') !!}"
+            >
+            @else
+            <div class="logo">
+            @endif
+                <span class="logo-container">
+                    @include('logos/mwalcher-logo')
+                </span>
+            @if (issetLang($page.'.hero.logo.link'))
+            </a>
+            @else
             </div>
+            @endif
         @endif
 
         @if (issetLang($page.'.hero.main-title'))
@@ -43,8 +44,8 @@
 
         @if (issetLang($page.'.hero.button'))
             <a
-                href="{!! __($page.'.hero.button.link') !!}"
                 class="button center"
+                href="{!! __($page.'.hero.button.link') !!}"
                 title="{!! __($page.'.hero.button.title') !!}"
             >{!! __($page.'.hero.button.text') !!}</a>
         @endif
@@ -60,7 +61,7 @@
                         title="{!! $contactLink['title'] !!}"
                     >
                         <span class="icon fa {!! $contactLink['icon'] !!}" aria-hidden="true"></span>
-                        {!! $contactLink['text'] !!}
+                        <span>{!! $contactLink['text'] !!}</span>
                     </a>
                     @endif
                 @endforeach
