@@ -44,10 +44,11 @@ html{
 
                 @media screen and (min-width: $header-breakpoint){
                     width: 7rem;
-                    height: auto;
+                    height: 4rem;
                 }
 
                 svg{
+                    display: block;
                     fill: $white-off;
                     @include transition(fill);
 
