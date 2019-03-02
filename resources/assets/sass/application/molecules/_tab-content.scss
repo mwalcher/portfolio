@@ -118,6 +118,10 @@
             .content {
                 height: 100%;
                 overflow: auto;
+
+                &.no-scroll{
+                    overflow: hidden;
+                }
             }
         }
     }
