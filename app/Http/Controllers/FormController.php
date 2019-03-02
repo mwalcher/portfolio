@@ -17,9 +17,9 @@ class FormController extends Controller
 
         if($data['g-recaptcha-response'] && $googleHelper->verifyCaptcha($data['g-recaptcha-response'])->success === true){
             unset($data['g-recaptcha-response']);
-            validateAndSendEmail($data);
+            $this->validateAndSendEmail($data);
         } else if(!$data['g-recaptcha-response']) {
-            validateAndSendEmail($data);
+            $this->validateAndSendEmail($data);
         }
 
         return redirect()->route('thank-you');
