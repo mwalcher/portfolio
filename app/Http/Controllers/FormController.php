@@ -47,6 +47,7 @@ class FormController extends Controller
 
         unset($fields['_token']);
         $fields['email'] = filter_var($fields['email'], FILTER_SANITIZE_EMAIL);
+        $fields['page'] = URL::previous();
 
         $to = 'matt@mwalcher.com';
         $subject = 'Website Contact Form';
