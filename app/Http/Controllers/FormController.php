@@ -15,10 +15,10 @@ class FormController extends Controller
 
         $googleHelper = new GoogleHelpers();
 
-        if($data['g-recaptcha-response'] && $googleHelper->verifyCaptcha($data['g-recaptcha-response'])->success === true){
+        if(isset($data['g-recaptcha-response']) && $googleHelper->verifyCaptcha($data['g-recaptcha-response'])->success === true){
             unset($data['g-recaptcha-response']);
             $this->validateAndSendEmail($data);
-        } else if(!$data['g-recaptcha-response']) {
+        } else if(!isset($data['g-recaptcha-response'])) {
             $this->validateAndSendEmail($data);
         }
 
