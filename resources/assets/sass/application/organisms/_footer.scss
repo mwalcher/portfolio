@@ -3,6 +3,12 @@ footer#contact{
     align-items: center;
     justify-content: center;
 
+    &::after{
+        content: '';
+        display: block;
+        min-height: inherit;
+    }
+
     .footer-content{
         display: flex;
         flex-direction: column;
