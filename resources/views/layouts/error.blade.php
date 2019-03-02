@@ -24,17 +24,10 @@
 
     @component('components/head/styles')@endcomponent
 </head>
-<body class="error error-{!! $view !!}">
+<body class="simple error-{!! $view !!}">
     @component('components/head/gtm-body')@endcomponent
 
     <div class="fixed-background" style="background-image: url({{ __($view.'.background') }})"></div>
-
-    @component(
-        'components/layout/header',
-        [
-            'page' => $view
-        ]
-    )@endcomponent
 
     <main>
         @component(

@@ -12,7 +12,6 @@ NORMALIZE
 body{
     @include set-background-colour($black);
 
-    &.error,
     &.simple{
         .section{
             @media screen and (min-width: $header-breakpoint){
