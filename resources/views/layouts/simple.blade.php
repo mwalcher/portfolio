@@ -29,7 +29,13 @@
     <div class="fixed-background" style="background-image: url({{ __($view.'.background') }})"></div>
 
     <main>
-        @yield('content')
+        @component(
+            'components/layout/hero',
+            [
+                'page' => $view,
+                'tabContentList' => FALSE
+            ]
+        )@endcomponent
     </main>
 
     <script src="{{ asset('js/app.js') }}"></script>

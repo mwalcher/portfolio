@@ -12,6 +12,7 @@ return [
         ],
         'main-title' => 'Rebrand in progress...',
         'content' => 'In the meantime, let me know if you have any questions or if you\'re interested in working together.',
-        'button' => __('global.email')
+        'button' => __('global.email'),
+        'contact-links' => __('global.contact-links')
     ]
 ];
