@@ -26,10 +26,12 @@ class FormController extends Controller
     }
 
     private function validateAndSendEmail(Array $fields){
+        $honeypot = env('HONEYPOT', 'honeypot');
+
         $rules = [
             'name' => 'required',
             'email' => 'required|email',
-            'message' => 'required',
+            'message' => 'required'
         ];
 
         $messages = [
@@ -45,26 +47,30 @@ class FormController extends Controller
                 ->withInput();
         }
 
-        unset($fields['_token']);
-        $fields['email'] = filter_var($fields['email'], FILTER_SANITIZE_EMAIL);
-        $fields['page'] = URL::previous();
+        if($fields[$honeypot] === null){
+            unset($fields['_token']);
+            unset($fields[$honeypot]);
 
-        $to = 'matt@mwalcher.com';
-        $subject = 'Website Contact Form';
-        $message = '';
+            $fields['email'] = filter_var($fields['email'], FILTER_SANITIZE_EMAIL);
+            $fields['page'] = URL::previous();
 
-        foreach($fields as $key => $content){
-            $message .= "<strong>" . ucfirst($key) . "</strong>: " . $content . "<br />";
+            $to = 'matt@mwalcher.com';
+            $subject = 'Website Contact Form';
+            $message = '';
+
+            foreach($fields as $key => $content){
+                $message .= "<strong>" . ucfirst($key) . "</strong>: " . $content . "<br />";
+            }
+
+            $headers = array(
+                "MIME-Version: 1.0",
+                "Content-type: text/html; charset=iso-8859-1",
+                "From: Matthew Walcher <no-reply@mwalcher.com>",
+                "Reply-To: <{$fields['email']}>",
+                "X-Mailer: PHP/".phpversion().""
+            );
+
+            mail($to, $subject, $message, implode("\r\n", $headers));
         }
-
-        $headers = array(
-            "MIME-Version: 1.0",
-            "Content-type: text/html; charset=iso-8859-1",
-            "From: Matthew Walcher <no-reply@mwalcher.com>",
-            "Reply-To: <{$fields['email']}>",
-            "X-Mailer: PHP/".phpversion().""
-        );
-
-        mail($to, $subject, $message, implode("\r\n", $headers));
     }
 }

@@ -22,6 +22,12 @@ return [
             'label' => 'Message',
             'type' => 'textarea',
             'required' => true
+        ],
+        'honeypot' => [
+            'name' => env('HONEYPOT', 'honeypot'),
+            'label' => 'Phone Number',
+            'type' => 'text',
+            'required' => false
         ]
     ],
     'actions' => [

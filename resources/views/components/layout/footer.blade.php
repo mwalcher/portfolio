@@ -23,7 +23,7 @@
             {{ csrf_field() }}
             @foreach (__('footer.form.fields') as $field)
                 @php
-                    $containerClasses = ['input-container'];
+                    $containerClasses = ['input-container', $field['name']];
 
                     if(isset($field['required']) && $field['required'] === true){
                         array_push($containerClasses, 'required');

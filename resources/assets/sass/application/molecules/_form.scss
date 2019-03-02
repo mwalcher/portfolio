@@ -59,6 +59,10 @@ form{
             }
         }
 
+        &.phone {
+            @include invisible;
+        }
+
         label{
             display: flex;
             position: absolute;

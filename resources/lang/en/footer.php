@@ -9,6 +9,7 @@ return [
         'fields' => [
             __('form.fields.name'),
             __('form.fields.email'),
+            __('form.fields.honeypot'),
             __('form.fields.message')
         ]
     ],
