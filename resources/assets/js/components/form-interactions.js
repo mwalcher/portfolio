@@ -25,9 +25,12 @@ export default function({
     });
 
     inputs.forEach((input) => {
-        const parent = input.parentElement;
-        input.addEventListener('focus', () => activeInput(parent, activeClass));
-        input.addEventListener('focusout', () => checkInput(input, parent, activeClass));
+        if(input.type !== 'hidden' && input.id !== 'g-recaptcha-response'){
+            const parent = input.parentElement;
+            window.addEventListener('load', () => checkInput(input, parent, activeClass));
+            input.addEventListener('focus', () => activeInput(parent, activeClass));
+            input.addEventListener('focusout', () => checkInput(input, parent, activeClass));
+        }
     });
 }
 
@@ -36,7 +39,9 @@ function activeInput(container, className){
 }
 
 function checkInput(element, container, className){
-    if(element.value === ''){
+    if(!container.classList.contains(className) && element.value !== '') {
+        activeInput(container, className);
+    } else if(container.classList.contains(className) && element.value === '') {
         container.classList.remove(className);
     }
 }

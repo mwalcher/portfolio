@@ -57,7 +57,9 @@
                         id="{!! __('footer.form.name') !!}-{!! $field['name'] !!}"
                         type="{!! $field['type'] !!}"
                         name="{!! $field['name'] !!}"
+                        @if (old($field['name']))
                         value="{{ old($field['name']) }}"
+                        @endif
                         @if (isset($field['required']) && $field['required'] === true)
                         required
                         @endif
