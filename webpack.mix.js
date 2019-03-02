@@ -20,6 +20,17 @@ mix.js('resources/assets/js/app.js', 'public/js')
     .version();
 
 mix.webpackConfig({
+    module: {
+        rules: [{
+            include: [
+                path.resolve(__dirname, "node_modules/bunnyjs")
+            ],
+            use: [{
+                loader: 'babel-loader',
+                options: Config.babel()
+            }]
+        }]
+    },
     plugins: [
         new CopyWebpackPlugin([{
             context: 'resources/assets/images',
@@ -27,6 +38,7 @@ mix.webpackConfig({
             to: 'images'
         }]),
         new ImageminPlugin([{
+            disable: process.env.NODE_ENV !== 'production',
             test: /\.(jpe?g|png|gif|svg)$/i,
             gifsicle: {
                 interlaced: true
