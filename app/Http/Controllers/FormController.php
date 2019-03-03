@@ -56,17 +56,19 @@ class FormController extends Controller
 
             $to = 'matt@mwalcher.com';
             $subject = 'Website Contact Form';
-            $message = '';
+            $message = "<!DOCTYPE html><html lang='en'><body>";
 
             foreach($fields as $key => $content){
                 $message .= "<strong>" . ucfirst($key) . "</strong>: " . $content . "<br />";
             }
 
+            $message .= "</body></html>";
+
             $headers = array(
                 "MIME-Version: 1.0",
                 "Content-type: text/html; charset=iso-8859-1",
                 "From: Matthew Walcher <no-reply@mwalcher.com>",
-                "Reply-To: <{$fields['email']}>",
+                "Reply-To: {$fields['name']} <{$fields['email']}>",
                 "X-Mailer: PHP/".phpversion().""
             );
 
