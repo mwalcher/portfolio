@@ -73,8 +73,7 @@ body.simple{
                 .contact-links{
                     display: flex;
                     align-items: center;
-                    justify-content: space-between;
-                    max-width: 12.5rem;
+                    justify-content: center;
                     @include spacing(padding, top, 1rem);
                     @include spacing(margin, left right, auto);
 
@@ -90,6 +89,10 @@ body.simple{
                             .icon{
                                 color: $primary;
                             }
+                        }
+
+                        & ~ a {
+                            @include spacing(margin, left, md);
                         }
 
                         .icon{

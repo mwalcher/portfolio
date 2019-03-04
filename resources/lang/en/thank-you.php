@@ -15,6 +15,9 @@ return [
         'main-title' => 'Thank you!',
         'content' => 'I appreciate you taking the time to reach out to me. I will be sure to respond to your message as soon as possible.',
         'button' => __('global.home'),
-        'contact-links' => __('global.contact-links')
+        'contact-links' => [
+            __('global.contact-links.github'),
+            __('global.contact-links.linkedin')
+        ]
     ]
 ];

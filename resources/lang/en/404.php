@@ -15,6 +15,9 @@ return [
         'main-title' => 'No worries!',
         'content' => 'Not all those who wander are lost.',
         'button' => __('global.home'),
-        'contact-links' => __('global.contact-links')
+        'contact-links' => [
+            __('global.contact-links.github'),
+            __('global.contact-links.linkedin')
+        ]
     ]
 ];
