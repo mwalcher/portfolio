@@ -64,6 +64,7 @@
                             target="_blank"
                             rel="noopener"
                             title="{!! $content['label'] !!}"
+                            aria-label="{!! $content['label'] !!}"
                         >
                             <span class="invisible">{!! $content['label'] !!}</span>
                         </a>
