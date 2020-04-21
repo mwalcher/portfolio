@@ -3,16 +3,16 @@
 import Flickity from 'flickity';
 import debounce from 'lodash/debounce';
 
-export default function({
-    sliders = requiredField('Showcase Slider')
-} = {}) {
-
+export default function({ sliders = requiredField('Showcase Slider') } = {}) {
     sliders.forEach(initFlickity);
 
-    window.addEventListener('resize', debounce(() => sliders.forEach(initFlickity), 250));
+    window.addEventListener(
+        'resize',
+        debounce(() => sliders.forEach(initFlickity), 250)
+    );
 }
 
-function initFlickity(target){
+function initFlickity(target) {
     let options = {
         prevNextButtons: true,
         pageDots: false,
@@ -26,6 +26,6 @@ function initFlickity(target){
     slider.resize();
 }
 
-function requiredField(field){
+function requiredField(field) {
     throw new Error(`[${field}] is required`);
 }
