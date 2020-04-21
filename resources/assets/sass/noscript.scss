@@ -3,25 +3,25 @@ NOSCRIPT
 --------------------- */
 @import "application/atoms/variables/colours";
 
-html{
+html {
     overflow: visible;
     pointer-events: auto;
 
+    footer#contact,
     header > *:not(.logo),
-    main,
-    footer#contact{
+    main {
         opacity: 1;
     }
 
-    .fa{
+    .fa {
         display: none !important;
     }
 
-    header{
+    header {
         background-color: $black;
     }
 
-    .showcase-slider{
+    .showcase-slider {
         display: none;
     }
 }
