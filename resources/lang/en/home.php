@@ -24,7 +24,7 @@ return [
         'id' => 'about',
         'main-title' => 'Matthew Walcher',
         'sub-title' => 'Front-end Web Developer',
-        'content' => 'I am a detail oriented problem solver who is determined to find a solution even if it does not come easily.',
+        'content' => 'Experienced and passionate about front-end web development. I am a detail-oriented problem solver with&nbsp;an&nbsp;eye&nbsp;for&nbsp;design.',
         'button' => [
             'text' => 'Get in touch',
             'title' => __('footer.navigation.title'),
