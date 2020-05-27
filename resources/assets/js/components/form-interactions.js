@@ -11,7 +11,7 @@ ValidationConfig.classError = 'error-message';
 ValidationLang.required = '{label} is required';
 ValidationLang.email = '{label} is not a valid email';
 
-export default function({
+export default function ({
     forms = [],
     inputs = [],
     activeClass = 'active'
@@ -55,7 +55,7 @@ function checkInput(element, container, className) {
         activeInput(container, className);
     } else if (
         container.classList.contains(className) &&
-		element.value === ''
+        element.value === ''
     ) {
         container.classList.remove(className);
     }

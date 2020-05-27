@@ -3,7 +3,7 @@
 const headerOffset = 80;
 const headerBreakpoint = 740;
 
-export default function({
+export default function ({
     trigger = requiredField('Trigger'),
     offset = 0,
     speed = 10

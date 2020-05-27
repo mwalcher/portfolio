@@ -3,7 +3,7 @@
 import Flickity from 'flickity';
 import debounce from 'lodash/debounce';
 
-export default function({ sliders = requiredField('Showcase Slider') } = {}) {
+export default function ({ sliders = requiredField('Showcase Slider') } = {}) {
     sliders.forEach(initFlickity);
 
     window.addEventListener(
