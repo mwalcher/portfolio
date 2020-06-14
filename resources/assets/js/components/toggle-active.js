@@ -2,7 +2,7 @@
 
 import smoothScroll from './smooth-scroll';
 
-export default function({
+export default function ({
     triggers = [],
     toggleContent = [],
     activeClass = 'active'

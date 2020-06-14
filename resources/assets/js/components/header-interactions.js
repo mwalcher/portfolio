@@ -4,7 +4,7 @@ import throttle from 'lodash/throttle';
 
 const page = document.querySelector('html');
 
-export default function({
+export default function ({
     mobileMenu = requiredField('Mobile Menu'),
     navigation = requiredField('Main Navigation'),
     sections = [],
