@@ -64,5 +64,17 @@ return [
             'disabled' => true
         ]
     ],
+    'roles' => [
+        'arcane' => [
+            'text' => 'Arcane',
+            'title' => 'Arcane Website',
+            'link' => 'https://thearcane.com/'
+        ],
+        'tophat' => [
+            'text' => 'Top Hat',
+            'title' => 'Top Hat Website',
+            'link' => 'https://tophat.com/'
+        ]
+    ],
     'disabled-title' => 'Coming Soon'
 ];
