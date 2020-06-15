@@ -8,14 +8,14 @@ import showcaseSlider from './components/showcase-slider';
 import smoothScroll from './components/smooth-scroll';
 import toggleActive from './components/toggle-active';
 
-document.addEventListener('readystatechange', function(){
-    if(document.readyState === 'complete'){
+document.addEventListener('readystatechange', function () {
+    if (document.readyState === 'complete') {
         const page = document.querySelector('html');
         page.classList.add('page-loaded');
 
         // Header Component
         const navigation = document.querySelector('header .main-navigation');
-        if(navigation){
+        if (navigation) {
             headerInteractions({
                 mobileMenu: document.querySelector('#mobile-menu'),
                 navigation: document.querySelector('header .page-navigation'),
@@ -25,8 +25,8 @@ document.addEventListener('readystatechange', function(){
 
         // Smooth Scroll
         const anchorLinks = document.querySelectorAll('a[href*="#"]');
-        anchorLinks.forEach((link) => {
-            link.addEventListener('click', (e) => {
+        anchorLinks.forEach(link => {
+            link.addEventListener('click', e => {
                 e.preventDefault();
                 smoothScroll({
                     trigger: link
