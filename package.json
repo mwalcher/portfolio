@@ -19,7 +19,7 @@
     "imagemin-jpegoptim": "^5.2.0",
     "imagemin-webpack-plugin": "^1.6.1",
     "laravel-mix": "^1.7.2",
-    "lodash": "^4.17.13",
+    "lodash": "^4.17.19",
     "normalize.css": "^7.0.0"
   }
 }
