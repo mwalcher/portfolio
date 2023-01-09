@@ -1,0 +1,95 @@
+/*  ---------------------
+LINKS
+--------------------- */
+
+a:not(.button) {
+  display: inline-block;
+  color: inherit;
+  @include set-font(body, bold);
+  text-decoration: none;
+  cursor: pointer;
+
+  &.animated-hover {
+    position: relative;
+    @include spacing(padding, left right, 0.125rem);
+    @include transition(colour);
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      transform: scaleY(0.1);
+      transform-origin: bottom;
+      @include transition(background-color transform);
+      z-index: -1;
+    }
+
+    &:hover,
+    &:focus {
+      &::after {
+        transform: scaleY(1);
+      }
+    }
+  }
+}
+
+.button {
+  @include button-base;
+  border-width: $global-border-width;
+  border-style: solid;
+  overflow: hidden;
+  z-index: 1;
+  @include transition(color background-color border-color);
+
+  @media screen and (min-width: $phone-breakpoint) {
+    display: inline-block;
+    width: auto;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 0;
+    height: 100%;
+    transform: translateX(-50%) skewX(45deg);
+    @include transition(width);
+    z-index: -1;
+  }
+
+  &:hover,
+  &:focus {
+    &::after {
+      width: calc(100% - 2.625rem);
+    }
+  }
+
+  &:active {
+    &::after {
+      width: calc(100% + 2.625rem);
+    }
+  }
+
+  &[disabled] {
+    &::after {
+      width: 0;
+    }
+  }
+
+  &+.button {
+    @include spacing(margin, top, sm);
+  }
+
+  &.center {
+    @include spacing(margin, left right, auto);
+  }
+}
+
+[disabled] {
+  pointer-events: none !important;
+  cursor: default !important;
+}
