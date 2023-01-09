@@ -1,0 +1,198 @@
+/*  BREAKPOINTS
+    --------------------- */
+$phone-breakpoint : 30rem; // 480px
+$tablet-breakpoint : 46.25rem; // 740px
+$laptop-breakpoint : 60rem; // 960px
+$desktop-breakpoint : 85.375rem; // 1366px
+
+$header-breakpoint : $tablet-breakpoint;
+$footer-breakpoint : 37.5rem; // 600px
+
+/*  COLOURS
+    --------------------- */
+
+$white : #FFFFFF;
+$white-off : #F8F8F8;
+$white-rgba : rgba($white-off, 0.5);
+
+$black : #212121;
+$black-rgba : rgba($black, 0.5);
+
+$green : #339933;
+$red : #993333;
+
+$primary : $green !default;
+$primary-dark : darken($primary, 10%) !default;
+$primary-rgba : rgba($primary, 0.5) !default;
+$primary-rgba-dark : rgba($primary, 0.75) !default;
+
+$disabled-font-colour : lighten($black, 25%);
+$disabled-background-colour : lighten($black, 50%);
+
+/*  PROJECT COLOURS
+    --------------------- */
+
+$libro : #007CC0;
+$whats-my : #3500F5;
+$zucora : #434C9F;
+$pink-precast : #D52375;
+
+$project-colours: (
+  libro : $libro,
+  whats-my : $whats-my,
+  zucora : $zucora,
+  pink-precast : $pink-precast
+);
+
+/*  LINK COLOURS
+    --------------------- */
+
+$link-light: (
+  default-background-colour : $white-off,
+  hover-background-colour : $primary
+);
+
+$link-dark: (
+  default-background-colour : $black,
+  hover-background-colour : $primary
+);
+
+/*  BUTTON COLOURS
+    --------------------- */
+
+$button-light: (
+  default-font-colour : $white-off,
+  default-background-colour : $white-rgba,
+  default-border-colour : $white-off,
+
+  hover-font-colour : $white-off,
+  hover-background-colour : $primary-rgba,
+  hover-border-colour : $white-off,
+
+  disabled-font-colour : $disabled-font-colour,
+  disabled-background-colour : $disabled-background-colour,
+  disabled-border-colour : $disabled-background-colour
+);
+
+$button-dark: (
+  default-font-colour : $black,
+  default-background-colour : $black-rgba,
+  default-border-colour : $black,
+
+  hover-font-colour : $white-off,
+  hover-background-colour : $primary-rgba-dark,
+  hover-border-colour : $primary,
+
+  disabled-font-colour : $disabled-font-colour,
+  disabled-background-colour : $disabled-background-colour,
+  disabled-border-colour : $disabled-background-colour,
+);
+
+/*  INPUT COLOURS
+    --------------------- */
+
+$input-light: (
+  default-font-colour : $white-off,
+  default-background-colour : $white-rgba,
+  default-border-colour : $white-off,
+
+  hover-background-colour : $primary-rgba,
+
+  active-background-colour : $primary-dark,
+
+  error-background-colour : $red
+);
+
+$input-dark: (
+  default-font-colour : $black,
+  default-background-colour : $black-rgba,
+  default-border-colour : $black,
+
+  hover-background-colour : $primary-rgba,
+
+  active-background-colour : $primary-dark,
+
+  error-background-colour : $red
+);
+
+$submit-light: (
+  default-font-colour : $black,
+  default-background-colour : $white-off,
+  default-background-shadow : darken($white-off, 25%),
+
+  hover-font-colour : $white-off,
+  hover-background-colour : $primary,
+  hover-background-shadow : $primary-dark,
+
+  active-background-colour : $primary-rgba
+);
+
+$submit-dark: (
+  default-font-colour : $white-off,
+  default-background-colour : $black,
+  default-background-shadow : lighten($black, 25%),
+
+  hover-font-colour : $black,
+  hover-background-colour : $primary,
+  hover-background-shadow : $primary-dark,
+
+  active-background-colour : $primary-rgba
+);
+
+/*  SIZES
+    --------------------- */
+
+$extra-small-size : 0.5rem;
+$small-size : 1rem;
+$medium-size : 2rem;
+$large-size : 4rem;
+
+$sizes: (
+  none : 0,
+  xs : $extra-small-size,
+  sm : $small-size,
+  md : $medium-size,
+  lg : $large-size
+);
+
+/*  TYPOGRAPHY
+    --------------------- */
+
+$body-font : 'Poppins', sans-serif;
+$title-font : 'Montserrat', sans-serif;
+
+$font-weight-light : 300;
+$font-weight-medium : 500;
+$font-weight-black : 900;
+
+$fonts : (body : (regular : (font-family : $body-font,
+      font-weight : $font-weight-light ),
+    bold : (font-family : $body-font,
+      font-weight : $font-weight-medium )),
+  title : (regular : (font-family : $title-font,
+      font-weight : $font-weight-black )));
+
+
+/*  GLOBALS
+    --------------------- */
+
+$global-font-size : 1rem;
+$global-letter-spacing : 0.0625rem;
+$global-border-width : 0.0625rem;
+$global-border-radius : 0.125rem;
+$global-shadow : 0 1rem 1rem 0 rgba($black, 0.1);
+$global-transition : 0.3s ease;
+
+/*  COMPONENTS
+    --------------------- */
+
+$button-padding : 0.75rem;
+$input-height : 3.25rem;
+$header-height : 5rem;
+$tab-content-height-mobile : 55vh;
+$tab-content-height : 45vh;
+$tab-content-tab-active-height : 4.5rem;
+$tab-content-top-space-mobile : calc((#{$tab-content-height-mobile} / 2) + #{$tab-content-tab-active-height});
+$tab-content-top-space : calc((#{$tab-content-height} / 2) + #{$tab-content-tab-active-height});
+$tab-content-bottom-space-mobile : calc((#{$tab-content-height-mobile} / 2) + #{$large-size});
+$tab-content-bottom-space : calc((#{$tab-content-height} / 2) + #{$large-size});

@@ -1,0 +1,264 @@
+/*  ---------------------
+    MIXINS
+    --------------------- */
+
+/*  TYPOGRAPHY
+    ------------------- */
+
+@mixin set-font($font-family, $font-weight: regular) {
+    $font : map-get(map-get($fonts, $font-family), $font-weight);
+    font-family: map-get($font, font-family);
+    font-weight: map-get($font, font-weight);
+}
+
+@mixin font-awesome {
+    font-family: 'FontAwesome';
+    font-size: inherit;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+@mixin title-font {
+    @include set-font(title);
+    text-transform: uppercase;
+    letter-spacing: $global-letter-spacing;
+}
+
+@mixin label-font {
+    @include set-font(body, bold);
+    text-transform: uppercase;
+    letter-spacing: $global-letter-spacing;
+}
+
+@mixin h1 {
+    @include title-font;
+    font-size: 2rem;
+    line-height: 1.25;
+    letter-spacing: ($global-letter-spacing * 2);
+    margin: 0;
+
+    @media screen and (min-width: $phone-breakpoint) {
+        font-size: 3rem;
+    }
+}
+
+@mixin h2 {
+    @include title-font;
+    font-size: 1.5rem;
+    line-height: 1.25;
+
+    @media screen and (min-width: $phone-breakpoint) {
+        font-size: 2rem;
+    }
+}
+
+@mixin h3 {
+    @include title-font;
+    font-size: 1.25rem;
+    line-height: 1.25;
+
+    @media screen and (min-width: $phone-breakpoint) {
+        font-size: 1.5rem;
+    }
+}
+
+/*  BUTTONS & LINKS
+    ------------------- */
+
+@mixin animated-link-colour($theme: $link-light) {
+    &::after {
+        background-color: map-get($theme, default-background-colour);
+    }
+
+    &:hover,
+    &:focus {
+        color: set-colour(map-get($theme, hover-background-colour));
+
+        &::after {
+            background-color: map-get($theme, hover-background-colour);
+        }
+    }
+}
+
+@mixin button-base {
+    position: relative;
+    display: block;
+    width: 100%;
+    min-width: 12.5rem;
+    max-width: 100%;
+    padding: $button-padding (
+        $button-padding * 3
+    );
+border-radius: $global-border-radius;
+cursor: pointer;
+
+@include label-font;
+font-size: $global-font-size;
+line-height: 1.25rem;
+text-align: center;
+text-decoration: none;
+
+&:hover,
+&:focus,
+&:active {
+    outline: none;
+}
+}
+
+@mixin button-colour($theme: $button-light) {
+    color: map-get($theme, default-font-colour);
+    background-color: map-get($theme, default-background-colour);
+    border-color: map-get($theme, default-border-colour);
+
+    &::after {
+        background-color: map-get($theme, hover-background-colour);
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+        color: map-get($theme, hover-font-colour);
+        background-color: transparent;
+        border-color: map-get($theme, hover-border-colour);
+    }
+
+    &[disabled] {
+        color: map-get($theme, disabled-font-colour);
+        background-color: map-get($theme, disabled-background-colour);
+        border-color: map-get($theme, disabled-border-colour);
+    }
+}
+
+/*  INPUTS
+    ------------------- */
+
+@mixin input-colour($theme: $input-light) {
+    color: map-get($theme, default-font-colour);
+    background-color: map-get($theme, default-background-colour);
+    border-color: map-get($theme, default-border-colour);
+
+    &:hover,
+    &:focus,
+    &:active {
+        background-color: map-get($theme, hover-background-colour);
+    }
+
+    &:-webkit-autofill,
+    &:-webkit-autofill:hover,
+    &:-webkit-autofill:focus,
+    &:-webkit-autofill:active {
+        -webkit-text-fill-color: map-get($theme, default-font-colour);
+        -webkit-box-shadow: 0 0 0 62.5rem map-get($theme, active-background-colour) inset;
+        transition: background-color 5000s ease-in-out 0s;
+    }
+}
+
+@mixin submit-colour($theme: $submit-light) {
+    color: map-get($theme, default-font-colour);
+    background-color: map-get($theme, default-background-colour);
+
+    &::after {
+        background-color: map-get($theme, default-background-shadow);
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+        color: map-get($theme, hover-font-colour);
+        background-color: map-get($theme, hover-background-colour);
+
+        &::after {
+            background-color: map-get($theme, hover-background-shadow);
+        }
+    }
+
+    &:active {
+        background-color: map-get($theme, active-background-colour);
+    }
+}
+
+/*  LAYOUT
+    ------------------- */
+
+@mixin invisible {
+    position: absolute;
+    top: -625rem;
+    left: -625rem;
+    font-size: 0;
+    visibility: hidden;
+    width: 0 !important;
+    height: 0 !important;
+}
+
+@mixin set-background-colour($bg-colour: $black, $light-colour: $white-off, $dark-colour: $black) {
+    background-color: $bg-colour;
+    color: set-colour($bg-colour, $light-colour, $dark-colour);
+
+    a:not(.button) {
+        &.animated-hover {
+            @include animated-link-colour(set-colour($bg-colour, $link-light, $link-dark));
+        }
+    }
+
+    .button {
+        @include button-colour(set-colour($bg-colour, $button-light, $button-dark));
+    }
+
+    input,
+    textarea,
+    select {
+        @include input-colour(set-colour($bg-colour, $input-light, $input-dark));
+    }
+
+    button[type="submit"] {
+        @include submit-colour(set-colour($bg-colour, $submit-light, $submit-dark));
+    }
+}
+
+@mixin spacing($property-name, $position, $value) {
+    $spacing-value: map-get($sizes, $value);
+
+    @if($spacing-value ==null) {
+        $spacing-value: $value;
+    }
+
+    @if($position ==all) {
+        #{$property-name}: $spacing-value;
+    }
+
+    @else {
+        $positions: $position;
+
+        @each $multiplePosition in $positions {
+            $property: #{$property-name}-#{$multiplePosition};
+            #{$property}: $spacing-value;
+        }
+    }
+}
+
+@mixin transition($properties: none) {
+    $transition: none;
+
+    @if($properties !=none) {
+        @each $property in $properties {
+            $i: index($properties, $property);
+
+            @if($i ==1) {
+                $transition: #{$property} #{$global-transition};
+            }
+
+            @else {
+                $transition: #{$transition},
+                #{$property} #{$global-transition};
+            }
+        }
+    }
+
+    transition: $transition;
+}

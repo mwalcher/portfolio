@@ -1,0 +1,57 @@
+/*  ---------------------
+    TYPOGRAPHY
+    --------------------- */
+
+body {
+  @include set-font(body);
+  font-size: $global-font-size;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 {
+  @include h1;
+}
+
+h2 {
+  @include h2;
+}
+
+h3 {
+  @include h3;
+}
+
+label {
+  display: block;
+  @include label-font;
+  font-size: 1.25rem;
+  cursor: pointer;
+
+  @media screen and (min-width: $phone-breakpoint) {
+    font-size: 1.5rem;
+  }
+}
+
+p {
+  @include set-font(body);
+  font-size: $global-font-size;
+  line-height: 1.5;
+  @include spacing(padding, bottom, sm);
+
+  &:last-child {
+    @include spacing(padding, bottom, 0);
+  }
+}
+
+ul {
+  list-style-type: none;
+}
+
+ol {
+  list-style-type: decimal;
+  list-style-position: inside;
+}
+
+small {
+  font-size: $global-font-size * 0.875;
+}
