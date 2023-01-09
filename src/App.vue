@@ -1,11 +1,15 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+  import Hero from './components/Hero.vue'
+</script>
 
 <template>
   <div
     class="fixed-background"
     style="background-image: url('src/assets/images/home-hero.jpg')"
   ></div>
-  <h1>Matthew Walcher</h1>
+  <main>
+    <Hero />
+  </main>
 </template>
 
 <style lang="scss" module>
