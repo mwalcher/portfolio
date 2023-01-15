@@ -1,26 +1,28 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+  defineProps<{
+    buttonLabel?: string
+    buttonLink?: string
+    buttonText?: string
+    content?: string
+    pageTitle?: string
+    subTitle?: string
+  }>()
+</script>
 
 <template>
-  <section
-    id="about"
-    class="section"
-    :class="[$style.hero, $style['hero-tab-content']]"
-  >
-    <div :class="$style['hero-content']">
-      <h1>Matthew Walcher</h1>
-      <p :class="$style['sub-title']">Front-end Web Developer</p>
-      <p :class="$style.content">
-        Experienced and passionate about front-end web development. I am a
-        detail-oriented problem solver
-        with&nbsp;an&nbsp;eye&nbsp;for&nbsp;design.
-      </p>
+  <section class="section" :class="[$style.hero, $style.heroTabContent]">
+    <div :class="$style.heroContent">
+      <h1 v-if="pageTitle">{{ pageTitle }}</h1>
+      <p v-if="subTitle" :class="$style.subTitle">{{ subTitle }}</p>
+      <p v-if="content" :class="$style.content">{{ content }}</p>
       <a
-        href="#contact"
+        v-if="buttonLink && buttonText"
+        :href="buttonLink"
         class="button center"
-        :class="$style.button"
-        aria-label="Contact Matthew Walcher"
+        :class="$style.cta"
+        :aria-label="buttonLabel"
       >
-        Get in touch
+        {{ buttonText }}
       </a>
     </div>
   </section>
@@ -40,7 +42,7 @@
       min-height: inherit;
     }
 
-    &.hero-tab-content {
+    &.heroTabContent {
       @include spacing(padding, bottom, $tab-content-top-space-mobile);
 
       @media screen and (min-width: $phone-breakpoint) {
@@ -57,11 +59,11 @@
       }
     }
 
-    .hero-content {
+    .heroContent {
       text-align: center;
       @include spacing(padding, top bottom, md);
 
-      .sub-title {
+      .subTitle {
         @include h2;
         @include set-font(body, bold);
         letter-spacing: 0;
@@ -74,7 +76,7 @@
         @include spacing(margin, left right, auto);
       }
 
-      .button {
+      .cta {
         @include spacing(margin, top, 1.5rem);
       }
     }
