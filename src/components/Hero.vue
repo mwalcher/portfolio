@@ -1,4 +1,6 @@
 <script setup lang="ts">
+  import { TabContentProp } from '../@types/components'
+  import TabContent from './TabContent.vue'
   defineProps<{
     buttonLabel?: string
     buttonLink?: string
@@ -6,11 +8,15 @@
     content?: string
     pageTitle?: string
     subTitle?: string
+    tabContentList?: TabContentProp
   }>()
 </script>
 
 <template>
-  <section class="section" :class="[$style.hero, $style.heroTabContent]">
+  <section
+    class="section"
+    :class="[$style.hero, tabContentList && $style.heroTabContent]"
+  >
     <div :class="$style.heroContent">
       <h1 v-if="pageTitle">{{ pageTitle }}</h1>
       <p v-if="subTitle" :class="$style.subTitle">{{ subTitle }}</p>
@@ -25,6 +31,8 @@
         {{ buttonText }}
       </a>
     </div>
+
+    <TabContent v-if="tabContentList" :tabContentList="tabContentList" />
   </section>
 </template>
 

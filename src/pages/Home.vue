@@ -1,5 +1,21 @@
 <script setup lang="ts">
   import Hero from '../components/Hero.vue'
+
+  const tabContentList = [
+    {
+      title: 'What I Use',
+      list: [
+        { key: 'git', label: 'Git', link: 'https://git-scm.com/' },
+        { key: 'laravel', label: 'Laravel', link: 'https://laravel.com/' },
+        { key: 'react', label: 'React', link: 'https://reactjs.org/' },
+        { key: 'vue-js', label: 'Vue.js', link: 'https://vuejs.org/' },
+      ],
+    },
+    {
+      title: 'About Me',
+      content: ['Test Content'],
+    },
+  ]
 </script>
 
 <template>
@@ -18,6 +34,7 @@
       buttonText="Get in touch"
       buttonLabel="Contact Matthew Walcher"
       buttonLink="#contact"
+      :tabContentList="tabContentList"
     />
   </main>
 </template>
