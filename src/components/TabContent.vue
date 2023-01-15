@@ -10,6 +10,5 @@
 </template>
 
 <style lang="scss" module>
-  @import '../assets/styles/base/variables';
-  @import '../assets/styles/base/mixins';
+  @import '../assets/styles/base/helpers';
 </style>
