@@ -37,7 +37,6 @@
 </template>
 
 <style lang="scss" module>
-  @import '../assets/styles/base/helpers';
   .hero {
     display: flex;
     align-items: center;

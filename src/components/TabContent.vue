@@ -64,7 +64,6 @@
 </template>
 
 <style lang="scss" module>
-  @import '../assets/styles/base/helpers';
   .tabContent {
     display: block;
     position: absolute;
