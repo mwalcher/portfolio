@@ -3,13 +3,12 @@ body {
     @include set-background-colour($primary);
   }
 
-  @each $project,
-  $colour in $project-colours {
+  @each $project, $colour in $project-colours {
     &.#{$project} {
-      $primary : $colour;
-      $primary-dark : darken($primary, 10%);
-      $primary-rgba : rgba($primary, 0.5);
-      $primary-rgba-dark : rgba($primary, 0.75);
+      $primary: $colour;
+      $primary-dark: darken($primary, 10%);
+      $primary-rgba: rgba($primary, 0.5);
+      $primary-rgba-dark: rgba($primary, 0.75);
 
       ::selection {
         @include set-background-colour($primary);
@@ -17,7 +16,6 @@ body {
 
       a:not(.button) {
         &.animated-hover {
-
           &:hover,
           &:focus {
             color: set-colour($primary) !important;
@@ -38,7 +36,6 @@ body {
       input,
       textarea,
       select {
-
         &:hover,
         &:focus,
         &:active {
@@ -56,7 +53,6 @@ body {
       form {
         .input-container {
           &.active:not(.error) {
-
             input,
             textarea,
             select {
@@ -66,8 +62,7 @@ body {
         }
       }
 
-      button[type="submit"] {
-
+      button[type='submit'] {
         &:hover,
         &:focus,
         &:active {

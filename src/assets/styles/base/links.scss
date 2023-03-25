@@ -15,7 +15,7 @@ a:not(.button) {
     @include transition(colour);
 
     &::after {
-      content: "";
+      content: '';
       position: absolute;
       top: 0;
       left: 0;
@@ -50,7 +50,7 @@ a:not(.button) {
   }
 
   &::after {
-    content: "";
+    content: '';
     position: absolute;
     top: 0;
     left: 50%;
@@ -80,7 +80,7 @@ a:not(.button) {
     }
   }
 
-  &+.button {
+  & + .button {
     @include spacing(margin, top, sm);
   }
 

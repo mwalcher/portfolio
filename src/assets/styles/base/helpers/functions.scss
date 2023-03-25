@@ -5,9 +5,7 @@
 @function set-colour($bg-colour: $black, $light-colour: $white-off, $dark-colour: $black) {
   @if (lightness($bg-colour) > 60) {
     @return $dark-colour;
-  }
-
-  @else {
+  } @else {
     @return $light-colour;
   }
 }

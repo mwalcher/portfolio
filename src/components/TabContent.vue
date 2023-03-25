@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { TabContentProp } from '../@types/components';
+import type { TabContentProp } from '@/@types/components';
 defineProps<{
   tabContentList: TabContentProp;
 }>();
