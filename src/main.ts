@@ -1,27 +1,15 @@
-import { createApp } from 'vue'
-import { createRouter, createWebHistory } from 'vue-router'
-import 'normalize.css'
-import './assets/styles/main.scss'
-import App from './App.vue'
-import Home from './pages/Home.vue'
+import { createApp } from 'vue';
+import { createPinia } from 'pinia';
 
-const router = createRouter({
-  history: createWebHistory(),
-  scrollBehavior(to, from, savedPosition) {
-    return savedPosition || { left: 0, top: 0 }
-  },
-  routes: [
-    {
-      path: '/',
-      name: 'home',
-      component: Home,
-    },
-    {
-      path: '/:catchAll(.*)',
-      name: 'not-found',
-      component: Home,
-    },
-  ],
-})
+import App from '@/App.vue';
+import router from '@/router';
 
-createApp(App).use(router).mount('#app')
+import 'normalize.css';
+import '@/assets/styles/main.scss';
+
+const app = createApp(App);
+
+app.use(createPinia());
+app.use(router);
+
+app.mount('#app');
