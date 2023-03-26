@@ -72,10 +72,6 @@
     ------------------- */
 
 @mixin animated-link-colour($theme: $link-light) {
-  &::after {
-    background-color: map-get($theme, default-background-colour);
-  }
-
   &:hover,
   &:focus {
     color: set-colour(map-get($theme, hover-background-colour));

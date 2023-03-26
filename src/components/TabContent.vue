@@ -35,7 +35,7 @@ const toggleActiveSection = (index: number) => {
       >
         <div :class="[$style.content, !!section.list && $style.noScroll]">
           <h2 class="invisible">{{ section.title }}</h2>
-          <p v-for="(text, index) in section.content" :key="index">{{ text }}</p>
+          <p v-for="(text, index) in section.content" :key="index" v-html="text" />
           <InteractiveIcons v-if="section.list" :icon-list="section.list" />
         </div>
       </div>

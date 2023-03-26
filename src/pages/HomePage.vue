@@ -18,7 +18,9 @@ const tabContentList = [
   },
   {
     title: 'About Me',
-    content: ['Test Content'],
+    content: [
+      'Welcome! I appreciate your interest, so allow me to introduce myself, I am Matthew Walcher and I am working as the web developer on the Marketing team at <a class="animated-hover" href="https://tophat.com/" target="_blank" rel="noopener" title="Top Hat Website">Top Hat</a>. Please enjoy this website that I designed to showcase my experience in front-end web development.',
+    ],
   },
 ];
 </script>
