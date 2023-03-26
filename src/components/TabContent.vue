@@ -1,39 +1,42 @@
 <script setup lang="ts">
+import { ref } from 'vue';
 import type { TabContentProp } from '@/@types/components';
 import InteractiveIcons from '@/components/InteractiveIcons.vue';
 defineProps<{
   tabContentList: TabContentProp;
 }>();
-const toggleParent = 'tab-content';
+
+let activeSectionIndex = ref(0);
+
+const isActiveSection = (index: number) => index === activeSectionIndex.value;
+const toggleActiveSection = (index: number) => {
+  activeSectionIndex.value = index;
+};
 </script>
 
 <template>
   <div :class="$style.tabContent">
     <div :class="$style.tabContainer">
       <button
-        v-for="(item, index) in tabContentList"
-        :key="item.title"
+        v-for="(section, index) in tabContentList"
+        :key="section.title"
         type="button"
-        :class="[$style.tab, index === 0 && $style.active]"
-        :data-parent="toggleParent"
-        :data-toggle="item.title"
-        :aria-label="item.title"
+        :class="[$style.tab, { [$style.active]: isActiveSection(index) }]"
+        @click="() => toggleActiveSection(index)"
       >
-        {{ item.title }}
+        {{ section.title }}
       </button>
     </div>
     <div :class="$style.tabContentContainer">
       <div
-        v-for="(item, index) in tabContentList"
-        :key="item.title"
-        :class="[$style.contentContainer, index === 0 && $style.active]"
-        :data-parent="toggleParent"
-        :data-toggle-content="item.title"
+        v-for="(section, index) in tabContentList"
+        :key="section.title"
+        :class="[$style.contentContainer, { [$style.active]: isActiveSection(index) }]"
       >
-        <div :class="[$style.content, !!item.list && $style.noScroll]">
-          <h2 class="invisible">{{ item.title }}</h2>
-          <p v-for="text in item.content" :key="text">{{ text }}</p>
-          <InteractiveIcons v-if="item.list" :icon-list="item.list" />
+        <div :class="[$style.content, !!section.list && $style.noScroll]">
+          <h2 class="invisible">{{ section.title }}</h2>
+          <p v-for="(text, index) in section.content" :key="index">{{ text }}</p>
+          <InteractiveIcons v-if="section.list" :icon-list="section.list" />
         </div>
       </div>
     </div>
