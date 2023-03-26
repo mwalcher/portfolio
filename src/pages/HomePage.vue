@@ -1,15 +1,19 @@
 <script setup lang="ts">
 import Hero from '@/components/HeroSection.vue';
 import HomeHeroBg from '@/assets/images/home-hero.jpg';
+import GitIcon from '@/assets/images/icon-git.svg';
+import LaravelIcon from '@/assets/images/icon-laravel.svg';
+import ReactIcon from '@/assets/images/icon-react.svg';
+import VueIcon from '@/assets/images/icon-vue-js.svg';
 
 const tabContentList = [
   {
     title: 'What I Use',
     list: [
-      { key: 'git', label: 'Git', link: 'https://git-scm.com/' },
-      { key: 'laravel', label: 'Laravel', link: 'https://laravel.com/' },
-      { key: 'react', label: 'React', link: 'https://reactjs.org/' },
-      { key: 'vue-js', label: 'Vue.js', link: 'https://vuejs.org/' },
+      { icon: GitIcon, label: 'Git', link: 'https://git-scm.com/' },
+      { icon: LaravelIcon, label: 'Laravel', link: 'https://laravel.com/' },
+      { icon: ReactIcon, label: 'React', link: 'https://reactjs.org/' },
+      { icon: VueIcon, label: 'Vue.js', link: 'https://vuejs.org/' },
     ],
   },
   {

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { TabContentProp } from '@/@types/components';
-import HomeHeroBg from '@/assets/images/home-hero.jpg';
+import InteractiveIcons from '@/components/InteractiveIcons.vue';
 defineProps<{
   tabContentList: TabContentProp;
 }>();
@@ -33,29 +33,7 @@ const toggleParent = 'tab-content';
         <div :class="[$style.content, !!item.list && $style.noScroll]">
           <h2 class="invisible">{{ item.title }}</h2>
           <p v-for="text in item.content" :key="text">{{ text }}</p>
-          <!-- Move this component to a new component and then copy the styles from Github -->
-          <div v-if="item.list" class="interactive-icon-block">
-            <div v-for="listItem in item.list" :key="listItem.label" class="icon-container">
-              <div class="shape">
-                <div class="icon">
-                  <div class="image" :style="{ backgroundImage: `url(${HomeHeroBg})` }" />
-                </div>
-                <div class="label">
-                  <h3>{{ listItem.label }}</h3>
-                </div>
-              </div>
-              <a
-                v-if="listItem.link"
-                class="icon-link"
-                :href="listItem.link"
-                target="_blank"
-                rel="noopener"
-                :aria-label="listItem.label"
-              >
-                <span class="invisible">{{ listItem.label }}</span>
-              </a>
-            </div>
-          </div>
+          <InteractiveIcons v-if="item.list" :icon-list="item.list" />
         </div>
       </div>
     </div>

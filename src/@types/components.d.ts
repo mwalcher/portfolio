@@ -1,6 +1,11 @@
+export interface TabContentListItem {
+  icon: string;
+  label: string;
+  link: string;
+}
 export interface TabContentItem {
   content?: string[];
-  list?: { key: string; label: string; link: string }[];
+  list?: TabContentListItem[];
   title: string;
 }
 
