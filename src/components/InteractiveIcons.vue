@@ -41,7 +41,6 @@ $image-height-desktop: calc(($triangle-width-desktop / 2) * 0.85);
 .interactiveIcons {
   display: flex;
   flex-wrap: wrap;
-  align-items: stretch;
   justify-content: center;
   width: 100%;
   height: 100%;
@@ -99,15 +98,19 @@ $image-height-desktop: calc(($triangle-width-desktop / 2) * 0.85);
           transform: translate(-50%, -50%) rotateY(0deg) rotateZ(180deg);
         }
 
-        .icon .image {
-          @media screen and (min-width: $phone-breakpoint) {
-            transform: translate(-50%, 90%) rotateZ(180deg);
+        .icon {
+          .image {
+            @media screen and (min-width: $phone-breakpoint) {
+              transform: translate(-50%, 90%) rotateZ(180deg);
+            }
           }
         }
 
-        .label h3 {
-          @media screen and (min-width: $phone-breakpoint) {
-            transform: translate(-50%, 50%) rotateZ(180deg);
+        .label {
+          h3 {
+            @media screen and (min-width: $phone-breakpoint) {
+              transform: translate(-50%, 50%) rotateZ(180deg);
+            }
           }
         }
       }
