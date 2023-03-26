@@ -194,8 +194,8 @@
   background-color: $bg-colour;
   color: set-colour($bg-colour, $light-colour, $dark-colour);
 
-  a:not(.button) {
-    &.animated-hover {
+  p {
+    a:not(.button) {
       @include animated-link-colour(set-colour($bg-colour, $link-light, $link-dark));
     }
   }

@@ -8,8 +8,10 @@ a:not(.button) {
   @include set-font(body, bold);
   text-decoration: none;
   cursor: pointer;
+}
 
-  &.animated-hover {
+p {
+  a:not(.button) {
     position: relative;
     @include spacing(padding, left right, 0.125rem);
     @include transition(colour);

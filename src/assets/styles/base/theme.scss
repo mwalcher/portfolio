@@ -14,8 +14,8 @@ body {
         @include set-background-colour($primary);
       }
 
-      a:not(.button) {
-        &.animated-hover {
+      p {
+        a:not(.button) {
           &:hover,
           &:focus {
             color: set-colour($primary) !important;
