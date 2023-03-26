@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import Hero from '@/components/HeroSection.vue';
+import HomeHeroBg from '@/assets/images/home-hero.jpg';
 
 const tabContentList = [
   {
@@ -19,10 +20,7 @@ const tabContentList = [
 </script>
 
 <template>
-  <div
-    class="fixed-background"
-    style="background-image: url('src/assets/images/home-hero.jpg')"
-  ></div>
+  <div class="fixed-background" :style="{ backgroundImage: `url(${HomeHeroBg})` }"></div>
   <main>
     <Hero
       id="about"

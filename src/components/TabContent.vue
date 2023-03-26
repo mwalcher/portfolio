@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import type { TabContentProp } from '@/@types/components';
+import HomeHeroBg from '@/assets/images/home-hero.jpg';
 defineProps<{
   tabContentList: TabContentProp;
 }>();
@@ -37,11 +38,7 @@ const toggleParent = 'tab-content';
             <div v-for="listItem in item.list" :key="listItem.label" class="icon-container">
               <div class="shape">
                 <div class="icon">
-                  <!-- Fix background url -->
-                  <!-- <div
-                    class="image"
-                    :style="{ backgroundImage: url('src/assets/images/home-hero.jpg') }"
-                  /> -->
+                  <div class="image" :style="{ backgroundImage: `url(${HomeHeroBg})` }" />
                 </div>
                 <div class="label">
                   <h3>{{ listItem.label }}</h3>
