@@ -23,9 +23,7 @@ defineProps<{
         target="_blank"
         rel="noopener"
         :aria-label="item.label"
-      >
-        <span class="invisible">{{ item.label }}</span>
-      </a>
+      />
     </div>
   </div>
 </template>
