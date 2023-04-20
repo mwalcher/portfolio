@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import HeaderNavigation from '@/components/HeaderNavigation.vue';
+import HeaderBar from '@/components/HeaderBar.vue';
 import Hero from '@/components/HeroSection.vue';
 import HomeHeroBg from '@/assets/images/home-hero.jpg';
 import GitIcon from '@/assets/images/icon-git.svg?url';
@@ -31,7 +31,7 @@ const tabContentList = [
 
 <template>
   <div class="fixed-background" :style="{ backgroundImage: `url(${HomeHeroBg})` }"></div>
-  <HeaderNavigation />
+  <HeaderBar />
   <main>
     <Hero
       id="about"
