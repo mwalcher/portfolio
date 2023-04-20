@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue';
-import type { TabContentProp } from '@/@types/components';
+import type { TabContentProp } from '@/types/components';
 import InteractiveIcons from '@/components/InteractiveIcons.vue';
 defineProps<{
   tabContentList: TabContentProp;
