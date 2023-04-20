@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import Hero from '@/components/HeroSection.vue';
 import HomeHeroBg from '@/assets/images/home-hero.jpg';
-import GitIcon from '@/assets/images/icon-git.svg';
-import LaravelIcon from '@/assets/images/icon-laravel.svg';
-import ReactIcon from '@/assets/images/icon-react.svg';
-import VueIcon from '@/assets/images/icon-vue-js.svg';
+import GitIcon from '@/assets/images/icon-git.svg?url';
+import LaravelIcon from '@/assets/images/icon-laravel.svg?url';
+import ReactIcon from '@/assets/images/icon-react.svg?url';
+import VueIcon from '@/assets/images/icon-vue-js.svg?url';
 
 const tabContentList = [
   {
