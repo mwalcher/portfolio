@@ -387,5 +387,13 @@ const contactMenu = [
       }
     }
   }
+
+  :global(.show-navigation) & {
+    transform: translateX(0);
+
+    @media screen and (min-width: $header-breakpoint) {
+      transform: none;
+    }
+  }
 }
 </style>

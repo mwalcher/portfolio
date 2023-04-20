@@ -60,5 +60,25 @@
       }
     }
   }
+
+  :global(.show-navigation) & {
+    .icon {
+      width: 1.22rem;
+
+      span {
+        &:nth-child(1) {
+          transform: rotate(45deg) scaleX(1.3);
+        }
+
+        &:nth-child(2) {
+          opacity: 0;
+        }
+
+        &:nth-child(3) {
+          transform: rotate(-45deg) scaleX(1.3);
+        }
+      }
+    }
+  }
 }
 </style>
