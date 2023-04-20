@@ -1,5 +1,3 @@
-<script setup lang="ts"></script>
-
 <template>
   <button type="button" :class="$style.mobileMenuToggle" aria-label="Mobile Navigation Toggle">
     <span :class="$style.icon">

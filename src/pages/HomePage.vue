@@ -7,6 +7,27 @@ import LaravelIcon from '@/assets/images/icon-laravel.svg?url';
 import ReactIcon from '@/assets/images/icon-react.svg?url';
 import VueIcon from '@/assets/images/icon-vue-js.svg?url';
 
+const menu = [
+  {
+    fullLabel: 'About Matthew Walcher',
+    icon: 'fa-user',
+    label: 'About',
+    link: '#about',
+  },
+  {
+    fullLabel: "Matthew Walcher's Work",
+    icon: 'fa-desktop',
+    label: 'Work',
+    link: '#work',
+  },
+  {
+    fullLabel: 'Contact Matthew Walcher',
+    icon: 'fa-envelope',
+    label: 'Contact',
+    link: '#contact',
+  },
+];
+
 const tabContentList = [
   {
     title: 'What I Use',
@@ -31,7 +52,7 @@ const tabContentList = [
 
 <template>
   <div class="fixed-background" :style="{ backgroundImage: `url(${HomeHeroBg})` }"></div>
-  <HeaderBar />
+  <HeaderBar :menu="menu" />
   <main>
     <Hero
       id="about"

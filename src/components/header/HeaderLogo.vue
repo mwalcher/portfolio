@@ -11,10 +11,10 @@ import Logo from '@/assets/images/mwalcher-logo.svg?component';
 </template>
 
 <style lang="scss" module>
-.logo {
+a.logo {
   display: block;
 
-  &:global(.dark) {
+  &.dark {
     .logoContainer {
       svg {
         @media screen and (min-width: $header-breakpoint) {
