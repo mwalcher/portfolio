@@ -1,8 +1,8 @@
 <script setup lang="ts">
+import type { Menu } from '@/types/navigation';
 import HeaderLogo from './header/HeaderLogo.vue';
 import HeaderNavigation from './header/HeaderNavigation.vue';
 import MobileMenuToggle from './header/MobileMenuToggle.vue';
-import type { Menu } from '@/types/navigation';
 
 defineProps<{
   menu: Menu;

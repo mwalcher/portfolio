@@ -1,12 +1,14 @@
 <script setup lang="ts">
-import Header from '@/components/HeaderBar.vue';
-import Hero from '@/components/HeroSection.vue';
-import MainContent from '@/components/MainContent.vue';
 import HomeHeroBg from '@/assets/images/home-hero.jpg';
 import GitIcon from '@/assets/images/icon-git.svg?url';
 import LaravelIcon from '@/assets/images/icon-laravel.svg?url';
 import ReactIcon from '@/assets/images/icon-react.svg?url';
 import VueIcon from '@/assets/images/icon-vue-js.svg?url';
+import FeaturedProject from '@/components/FeaturedProject.vue';
+import Header from '@/components/HeaderBar.vue';
+import Hero from '@/components/HeroSection.vue';
+import MainContent from '@/components/MainContent.vue';
+import { projects } from '@/constants/projects';
 
 const heroId = 'about';
 const contentId = 'work';
@@ -70,6 +72,8 @@ const tabContentList = [
       buttonLink="#contact"
       :tabContentList="tabContentList"
     />
-    <MainContent :id="contentId" sectionTitle="Projects" />
+    <MainContent :id="contentId" sectionTitle="Projects">
+      <FeaturedProject :projects="projects" />
+    </MainContent>
   </main>
 </template>

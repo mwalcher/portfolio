@@ -1,5 +1,12 @@
-import { createRouter, createWebHistory } from 'vue-router';
+import { projects } from '@/constants/projects';
 import Home from '@/pages/HomePage.vue';
+import { createRouter, createWebHistory } from 'vue-router';
+
+const projectRoutes = projects.map((project) => ({
+  path: `/${project.key}`,
+  name: project.key,
+  component: Home, // TODO: add project pages to constant
+}));
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -12,6 +19,7 @@ const router = createRouter({
       name: 'home',
       component: Home,
     },
+    ...projectRoutes,
     {
       path: '/:catchAll(.*)',
       name: 'not-found',

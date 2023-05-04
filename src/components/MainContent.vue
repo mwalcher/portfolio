@@ -7,6 +7,7 @@ defineProps<{
 <template>
   <section class="section light-section" :class="[$style.mainContent]">
     <h2 v-if="sectionTitle">{{ sectionTitle }}</h2>
+    <slot></slot>
   </section>
 </template>
 

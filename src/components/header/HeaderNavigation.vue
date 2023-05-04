@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import type { Menu } from '@/types/navigation';
 import Resume from '@/assets/images/mwalcher-resume.pdf';
+import type { Menu } from '@/types/navigation';
 import { useRoute } from 'vue-router';
 
 defineProps<{
