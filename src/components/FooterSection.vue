@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import ContactForm from '@/components/ContactForm.vue';
 import { contactMenu, footerId } from '@/constants/navigation';
 </script>
 
@@ -22,6 +23,8 @@ import { contactMenu, footerId } from '@/constants/navigation';
           </a>
         </div>
       </div>
+
+      <ContactForm />
     </div>
   </footer>
 </template>
