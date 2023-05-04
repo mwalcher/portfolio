@@ -1,24 +1,28 @@
 <script setup lang="ts">
-import HeaderBar from '@/components/HeaderBar.vue';
+import Header from '@/components/HeaderBar.vue';
 import Hero from '@/components/HeroSection.vue';
+import MainContent from '@/components/MainContent.vue';
 import HomeHeroBg from '@/assets/images/home-hero.jpg';
 import GitIcon from '@/assets/images/icon-git.svg?url';
 import LaravelIcon from '@/assets/images/icon-laravel.svg?url';
 import ReactIcon from '@/assets/images/icon-react.svg?url';
 import VueIcon from '@/assets/images/icon-vue-js.svg?url';
 
+const heroId = 'about';
+const contentId = 'work';
+
 const menu = [
   {
     fullLabel: 'About Matthew Walcher',
     icon: 'fa-user',
     label: 'About',
-    link: '#about',
+    link: `#${heroId}`,
   },
   {
     fullLabel: "Matthew Walcher's Work",
     icon: 'fa-desktop',
     label: 'Work',
-    link: '#work',
+    link: `#${contentId}`,
   },
   {
     fullLabel: 'Contact Matthew Walcher',
@@ -52,10 +56,10 @@ const tabContentList = [
 
 <template>
   <div class="fixed-background" :style="{ backgroundImage: `url(${HomeHeroBg})` }"></div>
-  <HeaderBar :menu="menu" />
+  <Header :menu="menu" />
   <main>
     <Hero
-      id="about"
+      :id="heroId"
       pageTitle="Matthew Walcher"
       subTitle="Front-end Web Developer"
       content="Experienced and passionate about front-end web development. I am a
@@ -66,5 +70,6 @@ const tabContentList = [
       buttonLink="#contact"
       :tabContentList="tabContentList"
     />
+    <MainContent :id="contentId" sectionTitle="Projects" />
   </main>
 </template>
