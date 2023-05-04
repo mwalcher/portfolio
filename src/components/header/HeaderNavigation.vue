@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import Resume from '@/assets/images/mwalcher-resume.pdf';
+import { contactMenu, homeNav } from '@/constants/navigation';
 import type { Menu } from '@/types/navigation';
 import { useRoute } from 'vue-router';
 
@@ -8,27 +8,6 @@ defineProps<{
 }>();
 
 const currentRoute = useRoute();
-
-const contactMenu = [
-  {
-    fullLabel: 'Matthew Walcher on Github',
-    icon: 'fa-github',
-    label: 'Github',
-    link: 'https://github.com/mwalcher',
-  },
-  {
-    fullLabel: 'Matthew Walcher on LinkedIn',
-    icon: 'fa-linkedin',
-    label: 'LinkedIn',
-    link: 'https://www.linkedin.com/in/mwalcher/',
-  },
-  {
-    fullLabel: "Matthew Walcher's Resume",
-    icon: 'fa-file-text',
-    label: 'Resume',
-    link: Resume,
-  },
-];
 </script>
 
 <template>
@@ -63,13 +42,13 @@ const contactMenu = [
     </ul>
 
     <RouterLink
-      v-if="currentRoute.name !== 'home'"
-      :to="{ name: 'home' }"
+      v-if="currentRoute.name !== homeNav.link"
+      :to="{ name: homeNav.link }"
       class="button"
       :class="$style.homeButton"
-      aria-label="Homepage"
+      :aria-label="homeNav.fullLabel"
     >
-      Back to Home
+      {{ homeNav.label }}
     </RouterLink>
   </nav>
 </template>

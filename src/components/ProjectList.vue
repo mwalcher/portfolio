@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { disabledProjectLabel } from '@/constants/projects';
 import type { Project, ProjectsList } from '@/types/projects';
 
 const props = defineProps<{
@@ -38,7 +39,7 @@ const isActive = (key: Project['key']) => !!props.activeKey && key === props.act
       <div class="absolute-background" :style="{ backgroundImage: `url(${project.image})` }"></div>
       <div :class="$style.content">
         <h3 v-if="project.disabled">
-          <span class="invisible">{{ project.name }} </span>(Coming Soon)
+          <span class="invisible">{{ project.name }} </span>({{ disabledProjectLabel }})
         </h3>
         <h3 v-else>{{ project.name }}</h3>
       </div>

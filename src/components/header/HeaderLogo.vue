@@ -1,9 +1,10 @@
 <script setup lang="ts">
 import Logo from '@/assets/images/mwalcher-logo.svg?component';
+import { homeNav } from '@/constants/navigation';
 </script>
 
 <template>
-  <RouterLink :to="{ name: 'home' }" :class="$style.logo" aria-label="Homepage">
+  <RouterLink :to="{ name: homeNav.link }" :class="$style.logo" :aria-label="homeNav.fullLabel">
     <span :class="$style.logoContainer">
       <Logo />
     </span>

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import ProjectList from '@/components/ProjectList.vue';
-import { projects } from '@/constants/projects';
+import { disabledProjectLabel, projects } from '@/constants/projects';
 import type { Project, ProjectsList } from '@/types/projects';
 import { ref, type Ref } from 'vue';
 
@@ -33,7 +33,7 @@ function toggleProject(key: Project['key']) {
         :title="`View ${featuredProject.name}`"
         :disabled="!!featuredProject.disabled || undefined"
       >
-        {{ !!featuredProject.disabled ? 'Coming Soon' : 'View Project' }}
+        {{ !!featuredProject.disabled ? disabledProjectLabel : 'View Project' }}
       </RouterLink>
     </div>
   </div>

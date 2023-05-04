@@ -1,3 +1,4 @@
+import { homeNav } from '@/constants/navigation';
 import { projects } from '@/constants/projects';
 import Home from '@/pages/HomePage.vue';
 import { createRouter, createWebHistory } from 'vue-router';
@@ -16,7 +17,7 @@ const router = createRouter({
   routes: [
     {
       path: '/',
-      name: 'home',
+      name: homeNav.link,
       component: Home,
     },
     ...projectRoutes,

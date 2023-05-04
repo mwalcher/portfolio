@@ -37,3 +37,5 @@ export const whatsMy: Project = {
 };
 
 export const projects: ProjectsList = [libro, zucora, pinkPrecast, whatsMy];
+
+export const disabledProjectLabel = 'Coming Soon';
