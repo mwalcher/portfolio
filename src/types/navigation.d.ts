@@ -1,8 +1,11 @@
-export interface MenuItem {
+export interface Link {
   fullLabel: string;
-  icon: string;
   label: string;
   link: string;
+}
+
+export interface MenuItem extends Link {
+  icon: string;
 }
 
 export type Menu = MenuItem[];
