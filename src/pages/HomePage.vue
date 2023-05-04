@@ -5,6 +5,7 @@ import LaravelIcon from '@/assets/images/icon-laravel.svg?url';
 import ReactIcon from '@/assets/images/icon-react.svg?url';
 import VueIcon from '@/assets/images/icon-vue-js.svg?url';
 import FeaturedProject from '@/components/FeaturedProject.vue';
+import Footer from '@/components/FooterSection.vue';
 import Header from '@/components/HeaderBar.vue';
 import Hero from '@/components/HeroSection.vue';
 import MainContent from '@/components/MainContent.vue';
@@ -84,4 +85,5 @@ const tabContentList: TabContentProp = [
       <FeaturedProject :projects="projects" />
     </MainContent>
   </main>
+  <Footer />
 </template>

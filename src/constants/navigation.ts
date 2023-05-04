@@ -1,6 +1,8 @@
 import Resume from '@/assets/images/mwalcher-resume.pdf';
 import type { Menu, MenuItem } from '@/types/navigation';
 
+export const footerId = 'contact';
+
 export const homeNav: MenuItem = {
   fullLabel: 'Homepage',
   icon: 'hidden',
@@ -12,7 +14,7 @@ export const contactNav: MenuItem = {
   fullLabel: 'Contact Matthew Walcher',
   icon: 'fa-envelope',
   label: 'Contact',
-  link: '#contact',
+  link: `#${footerId}`,
 };
 
 export const githubContact: MenuItem = {
