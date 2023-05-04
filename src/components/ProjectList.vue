@@ -1,15 +1,14 @@
 <script setup lang="ts">
-import type { ProjectsList } from '@/types/projects';
-withDefaults(
-  defineProps<{
-    projects: ProjectsList;
-    title?: string;
-    toggle?: boolean;
-  }>(),
-  {
-    toggle: false,
-  },
-);
+import type { Project, ProjectsList } from '@/types/projects';
+
+const props = defineProps<{
+  activeKey?: Project['key'];
+  projects: ProjectsList;
+  title?: string;
+  toggleProject?: (key: string) => void;
+}>();
+
+const isActive = (key: Project['key']) => !!props.activeKey && key === props.activeKey;
 </script>
 
 <template>
@@ -17,13 +16,20 @@ withDefaults(
 
   <ul :class="$style.projectList">
     <li
-      v-for="(project, index) in projects"
+      v-for="project in projects"
       :key="project.key"
-      :class="[$style.project, project.key, { [$style.active]: toggle && index === 0 }]"
+      :class="[$style.project, project.key, { [$style.active]: isActive(project.key) }]"
       :disabled="!!project.disabled || undefined"
     >
+      <button
+        v-if="typeof toggleProject === 'function' && !project.disabled"
+        :class="$style.projectLink"
+        :aria-label="project.name"
+        @click="() => typeof toggleProject === 'function' && toggleProject(project.key)"
+        :disabled="isActive(project.key) || undefined"
+      />
       <RouterLink
-        v-if="!toggle"
+        v-else-if="!project.disabled"
         :to="{ name: project.key }"
         :class="$style.projectLink"
         :aria-label="project.name"
@@ -55,7 +61,6 @@ withDefaults(
     @include transition(background-color);
     overflow: hidden;
     z-index: 0;
-    cursor: pointer;
 
     @media screen and (min-width: $laptop-breakpoint) {
       width: 25%;
@@ -109,6 +114,8 @@ withDefaults(
       left: 0;
       width: 100%;
       height: 100%;
+      background: none;
+      cursor: pointer;
       z-index: 1;
     }
 
