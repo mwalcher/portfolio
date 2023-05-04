@@ -2,6 +2,7 @@
 import InteractiveIcons from '@/components/InteractiveIcons.vue';
 import type { TabContentProp } from '@/types/components';
 import { ref } from 'vue';
+
 defineProps<{
   tabContentList: TabContentProp;
 }>();

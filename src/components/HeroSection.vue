@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import TabContent from '@/components/TabContent.vue';
 import type { TabContentProp } from '@/types/components';
+
 defineProps<{
   buttonLabel?: string;
   buttonLink?: string;

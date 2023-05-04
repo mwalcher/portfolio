@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import type { TabContentListItem } from '@/types/components';
+
 defineProps<{
   iconList: TabContentListItem[];
 }>();

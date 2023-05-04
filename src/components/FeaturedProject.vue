@@ -1,7 +1,9 @@
 <script setup lang="ts">
+import ProjectList from '@/components/ProjectList.vue';
 import { projects } from '@/constants/projects';
 import type { ProjectsList } from '@/types/projects';
 import { ref } from 'vue';
+
 defineProps<{
   projects: ProjectsList;
 }>();
@@ -28,6 +30,8 @@ const selectedProject = ref(projects[0]);
       </RouterLink>
     </div>
   </div>
+
+  <ProjectList :projects="projects" :toggle="true" />
 </template>
 
 <style lang="scss" module>
