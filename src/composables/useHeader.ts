@@ -9,13 +9,13 @@ export default function useHeader() {
 
   function activeSection() {
     const navigation: HTMLUListElement | null = document.querySelector('#pageNavigation');
-    const sections: NodeListOf<HTMLElement> = document.querySelectorAll('.section');
-    const scrollPosition = window.pageYOffset;
-    const windowHeight = window.innerHeight;
 
     if (!navigation) return;
 
+    const sections: NodeListOf<HTMLElement> = document.querySelectorAll('.section');
     const navigationItems = navigation.querySelectorAll('a');
+    const scrollPosition = window.pageYOffset;
+    const windowHeight = window.innerHeight;
 
     sections.forEach((section) => {
       const sectionPosition = section.getBoundingClientRect();
@@ -50,43 +50,59 @@ export default function useHeader() {
     position: DOMRect,
     navigationItems: NodeListOf<HTMLAnchorElement>,
   ) {
-    const logo = document.querySelector('#headerLogo');
-    const navigationTitle = document.querySelector('#navigationTitle');
+    const logo: HTMLAnchorElement | null = document.querySelector('#headerLogo');
+    const navigationTitle: HTMLHeadingElement | null = document.querySelector('#navigationTitle');
 
-    const top = position.top;
-    const bottom = position.bottom;
+    const { top, bottom } = position;
 
     // Logo
-    if (top < 56 && bottom > 56) {
-      logo?.classList.add(darkClass);
-    } else {
-      logo?.classList.remove(darkClass);
+    if (logo) {
+      const logoOffset = logo.offsetTop;
+      const logoHeight = logo.offsetHeight;
+      const logoTransitionPoint = logoHeight / 2 + logoOffset;
+
+      if (top < logoTransitionPoint && bottom > logoTransitionPoint) {
+        logo.classList.add(darkClass);
+      } else {
+        logo.classList.remove(darkClass);
+      }
     }
 
     // Title
-    if (top < 114 && bottom > 114) {
-      navigationTitle?.classList.add(darkClass);
-    } else {
-      navigationTitle?.classList.remove(darkClass);
+    if (navigationTitle) {
+      const titleOffset = navigationTitle.offsetTop;
+      const titleHeight = navigationTitle.offsetHeight;
+      const titleTransitionPoint = titleHeight / 2 + titleOffset;
+
+      if (top < titleTransitionPoint && bottom > titleTransitionPoint) {
+        navigationTitle?.classList.add(darkClass);
+      } else {
+        navigationTitle?.classList.remove(darkClass);
+      }
     }
 
     // Navigation
     navigationItems.forEach((navItem, index) => {
-      const offset = 198 + 64 * index;
       const navParent = navItem.parentNode as HTMLElement;
+      const navParentHeight = navParent.offsetHeight;
+      const navOffset = navigation.offsetTop;
+      const navItemOffset = navItem.offsetTop;
+      const navItemTransitionPoint = navOffset + navItemOffset * 2 + navParentHeight * index;
+      const isFirstNavItem = index === 0;
+      const isLastNavItem = index === navigationItems.length - 1;
 
-      if (top < offset && bottom > offset) {
+      if (top < navItemTransitionPoint && bottom > navItemTransitionPoint) {
         navParent.classList.add(darkClass);
-        if (index === 0) {
+        if (isFirstNavItem) {
           navigation?.classList.add(darkTopClass);
-        } else if (index === navigationItems.length - 1) {
+        } else if (isLastNavItem) {
           navigation?.classList.add(darkBottomClass);
         }
       } else {
         navParent.classList.remove(darkClass);
-        if (index === 0) {
+        if (isFirstNavItem) {
           navigation?.classList.remove(darkTopClass);
-        } else if (index === navigationItems.length - 1) {
+        } else if (isLastNavItem) {
           navigation?.classList.remove(darkBottomClass);
         }
       }
