@@ -13,9 +13,9 @@ const currentRoute = useRoute();
 
 <template>
   <nav :class="$style.headerNavigation">
-    <h2>Navigation</h2>
+    <h2 id="navigationTitle">Navigation</h2>
 
-    <ul :class="$style.pageNavigation">
+    <ul id="pageNavigation" :class="$style.pageNavigation">
       <li
         v-for="menuItem in menu"
         :key="menuItem.label"
@@ -85,7 +85,7 @@ const currentRoute = useRoute();
       display: block;
     }
 
-    &.dark {
+    &:global(.dark) {
       color: $black;
     }
   }
@@ -122,7 +122,7 @@ const currentRoute = useRoute();
         @include spacing(padding, top bottom, 1.5rem);
       }
 
-      &.dark-top {
+      &:global(.darkTop) {
         &::before {
           @media screen and (min-width: $header-breakpoint) {
             border-bottom-color: $black;
@@ -130,7 +130,7 @@ const currentRoute = useRoute();
         }
       }
 
-      &.dark-bottom {
+      &:global(.darkBottom) {
         &::after {
           @media screen and (min-width: $header-breakpoint) {
             border-top-color: $black;
@@ -176,7 +176,7 @@ const currentRoute = useRoute();
           @include spacing(padding, top bottom, 1.5rem);
         }
 
-        &.dark {
+        &:global(.dark) {
           &::before,
           &::after {
             @media screen and (min-width: $header-breakpoint) {
@@ -280,9 +280,9 @@ const currentRoute = useRoute();
             }
           }
 
-          &.active,
-          &:hover.active,
-          &:focus.active {
+          &:global(.active),
+          &:hover:global(.active),
+          &:focus:global(.active) {
             &::before {
               @media screen and (min-width: $header-breakpoint) {
                 background-color: $primary;
@@ -325,7 +325,7 @@ const currentRoute = useRoute();
         color: $white-off;
         text-transform: uppercase;
 
-        &.active {
+        &:global(.active) {
           .icon {
             &::before {
               color: $primary;

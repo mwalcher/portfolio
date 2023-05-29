@@ -17,7 +17,6 @@ import type { TabContentProp } from '@/types/components';
 import type { Menu } from '@/types/navigation';
 
 /* TODO Next:
-- add the header logic & smooth scroll / other scripts
 - build project page template and set up routes
 */
 
