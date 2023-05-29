@@ -51,7 +51,7 @@ body {
       }
 
       form {
-        .input-container {
+        .inputContainer {
           &.active:not(.error) {
             input,
             textarea,
@@ -78,7 +78,7 @@ body {
         }
       }
 
-      .light-section {
+      .lightSection {
         .button {
           &::after {
             background-color: $primary-rgba-dark;

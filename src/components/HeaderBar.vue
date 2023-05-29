@@ -8,7 +8,7 @@ defineProps<{
   menu: Menu;
 }>();
 
-const openNavigationClass = 'show-navigation';
+const openNavigationClass = 'showNavigation';
 
 function toggleNavigation() {
   const page = window.document.documentElement;

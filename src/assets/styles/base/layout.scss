@@ -6,8 +6,8 @@
   @include invisible;
 }
 
-.fixed-background,
-.absolute-background {
+.fixedBackground,
+.absoluteBackground {
   top: 0;
   left: 0;
   width: 100%;
@@ -19,11 +19,11 @@
   z-index: -10;
 }
 
-.fixed-background {
+.fixedBackground {
   position: fixed;
 }
 
-.absolute-background {
+.absoluteBackground {
   position: absolute;
 }
 
@@ -46,7 +46,7 @@
   }
 }
 
-html.show-navigation {
+html.showNavigation {
   overflow: hidden;
 
   @media screen and (min-width: $header-breakpoint) {

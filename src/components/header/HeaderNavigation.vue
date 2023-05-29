@@ -368,7 +368,7 @@ const currentRoute = useRoute();
     }
   }
 
-  :global(.show-navigation) & {
+  :global(.showNavigation) & {
     transform: translateX(0);
 
     @media screen and (min-width: $header-breakpoint) {

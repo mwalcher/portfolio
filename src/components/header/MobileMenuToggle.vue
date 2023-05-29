@@ -72,7 +72,7 @@ defineProps<{
     }
   }
 
-  :global(.show-navigation) & {
+  :global(.showNavigation) & {
     .icon {
       width: 1.22rem;
 

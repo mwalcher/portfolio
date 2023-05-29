@@ -30,7 +30,7 @@ body {
     }
   }
 
-  .light-section {
+  .lightSection {
     @include set-background-colour($white-off);
   }
 }

@@ -36,7 +36,7 @@ const isActive = (key: Project['key']) => !!props.activeKey && key === props.act
         :aria-label="project.name"
       />
 
-      <div class="absolute-background" :style="{ backgroundImage: `url(${project.image})` }"></div>
+      <div class="absoluteBackground" :style="{ backgroundImage: `url(${project.image})` }"></div>
       <div :class="$style.content">
         <h3 v-if="project.disabled">
           <span class="invisible">{{ project.name }} </span>({{ disabledProjectLabel }})
@@ -88,7 +88,7 @@ const isActive = (key: Project['key']) => !!props.activeKey && key === props.act
     &[disabled] {
       @include set-background-colour($black, $disabled-background-colour);
 
-      :global(.absolute-background) {
+      :global(.absoluteBackground) {
         filter: grayscale(100%);
         opacity: 0.2;
       }

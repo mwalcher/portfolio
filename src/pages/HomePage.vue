@@ -16,6 +16,11 @@ import { inlineLink } from '@/helpers';
 import type { TabContentProp } from '@/types/components';
 import type { Menu } from '@/types/navigation';
 
+/* TODO Next:
+- add the header logic & smooth scroll / other scripts
+- build project page template and set up routes
+*/
+
 const heroId = 'about';
 const contentId = 'work';
 
@@ -66,7 +71,7 @@ const tabContentList: TabContentProp = [
 </script>
 
 <template>
-  <div class="fixed-background" :style="{ backgroundImage: `url(${HomeHeroBg})` }"></div>
+  <div class="fixedBackground" :style="{ backgroundImage: `url(${HomeHeroBg})` }"></div>
   <Header :menu="menu" />
   <main>
     <Hero

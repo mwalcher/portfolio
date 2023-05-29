@@ -21,7 +21,7 @@ function toggleProject(key: Project['key']) {
 <template>
   <div :class="[$style.featuredProject, featuredProject.key]">
     <div
-      class="absolute-background"
+      class="absoluteBackground"
       :style="{ backgroundImage: `url(${featuredProject.image})` }"
     ></div>
     <div :class="$style.content">
