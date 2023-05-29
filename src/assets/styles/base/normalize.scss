@@ -11,6 +11,10 @@ NORMALIZE
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   @include set-background-colour($black);
 
