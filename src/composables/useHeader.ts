@@ -1,12 +1,17 @@
 import { useThrottleFn } from '@vueuse/core';
 
 export default function useHeader() {
+  const activeClass = 'active';
+  const darkClass = 'dark';
+  const darkTopClass = 'darkTop';
+  const darkBottomClass = 'darkBottom';
+  const lightSectionClass = 'lightSection';
+
   function activeSection() {
     const navigation: HTMLUListElement | null = document.querySelector('#pageNavigation');
     const sections: NodeListOf<HTMLElement> = document.querySelectorAll('.section');
     const scrollPosition = window.pageYOffset;
     const windowHeight = window.innerHeight;
-    const activeClass = 'active';
 
     if (!navigation) return;
 
@@ -34,7 +39,7 @@ export default function useHeader() {
         });
       }
 
-      if (section.classList.contains('lightSection')) {
+      if (section.classList.contains(lightSectionClass)) {
         navigationColour(navigation, sectionPosition, navigationItems);
       }
     });
@@ -47,9 +52,6 @@ export default function useHeader() {
   ) {
     const logo = document.querySelector('#headerLogo');
     const navigationTitle = document.querySelector('#navigationTitle');
-    const darkClass = 'dark';
-    const darkTopClass = 'darkTop';
-    const darkBottomClass = 'darkBottom';
 
     const top = position.top;
     const bottom = position.bottom;
