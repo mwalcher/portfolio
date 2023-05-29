@@ -94,6 +94,6 @@ export default function useHeader() {
   window.addEventListener('load', () => activeSection());
   window.addEventListener(
     'scroll',
-    useThrottleFn(() => activeSection(), 250),
+    useThrottleFn(() => activeSection(), 100),
   );
 }
