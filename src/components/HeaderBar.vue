@@ -7,13 +7,20 @@ import type { Menu } from '@/types/navigation';
 defineProps<{
   menu: Menu;
 }>();
+
+const openNavigationClass = 'show-navigation';
+
+function toggleNavigation() {
+  const page = window.document.documentElement;
+  page.classList.toggle(openNavigationClass);
+}
 </script>
 
 <template>
   <header :class="$style.header">
     <HeaderLogo />
-    <MobileMenuToggle />
-    <HeaderNavigation :menu="menu" />
+    <MobileMenuToggle :toggleNavigation="toggleNavigation" />
+    <HeaderNavigation :menu="menu" :toggleNavigation="toggleNavigation" />
   </header>
 </template>
 

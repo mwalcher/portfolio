@@ -5,6 +5,7 @@ import { useRoute } from 'vue-router';
 
 defineProps<{
   menu: Menu;
+  toggleNavigation: () => void;
 }>();
 
 const currentRoute = useRoute();
@@ -20,7 +21,7 @@ const currentRoute = useRoute();
         :key="menuItem.label"
         :class="{ [$style.hidden]: menuItem.icon === 'hidden' }"
       >
-        <a :href="menuItem.link" :aria-label="menuItem.fullLabel">
+        <a :href="menuItem.link" :aria-label="menuItem.fullLabel" @click="toggleNavigation">
           <span class="fa" :class="[menuItem.icon, $style.icon]" :aria-hidden="true" />
           <span>{{ menuItem.label }}</span>
         </a>

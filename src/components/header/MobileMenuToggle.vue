@@ -1,5 +1,16 @@
+<script setup lang="ts">
+defineProps<{
+  toggleNavigation: () => void;
+}>();
+</script>
+
 <template>
-  <button type="button" :class="$style.mobileMenuToggle" aria-label="Mobile Navigation Toggle">
+  <button
+    type="button"
+    :class="$style.mobileMenuToggle"
+    aria-label="Mobile Navigation Toggle"
+    @click="toggleNavigation"
+  >
     <span :class="$style.icon">
       <span></span>
       <span></span>
