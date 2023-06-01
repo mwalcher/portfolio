@@ -5,6 +5,7 @@ export interface IsProject {
   image: string;
   website?: string;
   disabled?: boolean;
+  component: object;
 }
 
 export type ProjectsList = IsProject[];

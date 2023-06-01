@@ -6,7 +6,7 @@ import { createRouter, createWebHistory } from 'vue-router';
 const projectRoutes = projects.map((project) => ({
   path: `/${project.key}`,
   name: project.key,
-  component: Home, // TODO: add project pages to constant
+  component: project.component,
 }));
 
 const router = createRouter({

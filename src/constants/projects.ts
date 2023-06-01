@@ -2,6 +2,10 @@ import LibroImage from '@/assets/images/libro-hero.jpg';
 import PinkPrecastImage from '@/assets/images/pink-precast-hero.jpg';
 import WhatsMyImage from '@/assets/images/whats-my-hero.jpg';
 import ZucoraImage from '@/assets/images/zucora-hero.jpg';
+import LibroPage from '@/pages/LibroProject.vue';
+import PinkPrecastPage from '@/pages/PinkPrecastProject.vue';
+import WhatsMyPage from '@/pages/WhatsMyProject.vue';
+import ZucoraPage from '@/pages/ZucoraProject.vue';
 import type { IsProject, ProjectsList } from '@/types/projects';
 
 export const libro: IsProject = {
@@ -10,6 +14,7 @@ export const libro: IsProject = {
   description: 'Step by step financial calculators',
   image: LibroImage,
   website: 'https://libro.ca/calculators/',
+  component: LibroPage,
 };
 
 export const zucora: IsProject = {
@@ -17,6 +22,7 @@ export const zucora: IsProject = {
   name: 'Zucora',
   description: 'An e-commerce store for a local retailer',
   image: ZucoraImage,
+  component: ZucoraPage,
 };
 
 export const pinkPrecast: IsProject = {
@@ -25,6 +31,7 @@ export const pinkPrecast: IsProject = {
   description: 'An informational website for a concrete manufacturer',
   image: PinkPrecastImage,
   website: 'https://www.pinkprecast.com/',
+  component: PinkPrecastPage,
 };
 
 export const whatsMy: IsProject = {
@@ -34,6 +41,7 @@ export const whatsMy: IsProject = {
   image: WhatsMyImage,
   website: 'https://mwalcher.github.io/',
   disabled: true,
+  component: WhatsMyPage,
 };
 
 export const projects: ProjectsList = [libro, zucora, pinkPrecast, whatsMy];
