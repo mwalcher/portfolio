@@ -23,7 +23,7 @@ defineProps<{
         :href="item.link"
         target="_blank"
         rel="noopener"
-        :aria-label="item.label"
+        :aria-label="item.fullLabel"
       />
     </div>
   </div>

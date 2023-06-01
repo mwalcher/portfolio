@@ -1,3 +1,4 @@
+import { laravel, react, vue } from '@/constants/frameworks';
 import { arcane, arcaneDisclaimer } from '@/constants/roles';
 import { inlineLink } from '@/helpers';
 
@@ -30,14 +31,7 @@ export default {
       arcaneDisclaimer,
     ],
     technical: [
-      `The calculators are built in ${inlineLink(
-        {
-          fullLabel: 'React Website',
-          label: 'React',
-          link: 'https://reactjs.org/',
-        },
-        true,
-      )} using the ${inlineLink(
+      `The calculators are built in ${inlineLink(react, true)} using the ${inlineLink(
         {
           fullLabel: 'Create React App Website',
           label: 'Create React App',
@@ -71,11 +65,7 @@ export default {
     ],
     technical: [
       `I worked on this project with another front-end developer, a designer and two back-end developers. The website was built using the ${inlineLink(
-        {
-          fullLabel: 'Laravel Website',
-          label: 'Laravel',
-          link: 'https://laravel.com/',
-        },
+        laravel,
         true,
       )} framework with the ${inlineLink(
         {
@@ -85,11 +75,7 @@ export default {
         },
         true,
       )} API to manage the product data. We used ${inlineLink(
-        {
-          fullLabel: 'React Website',
-          label: 'React',
-          link: 'https://reactjs.org/',
-        },
+        react,
         true,
       )} on the product details page to add the product to the user's cart, the header to show how many items are in the cart and the cart page to show changes to the user's cart in real time. I worked on all the React components myself, while also working with the other front-end developer on the components for rest of the website.`,
       'On the product details page I collected the product data from the API and passed it to the React app on the page. Some products have one or two options the user can specify (such as size and length on mattress protectors). I created logic to check if the option selected is in stock and in the case of multiple options I had to check if the specific variant existed with the combined options selected. The quantity selector checked the remaining stock of the selected product and set a max quantity to make sure the user did not try to buy more than was available in stock. When the user added the product to the cart I created a loading state, as well as success and error messages based on the response from the API that animated in below the button to confirm the product was added to the cart or to inform the user there was a problem adding the product to the cart.',
@@ -110,11 +96,7 @@ export default {
     ],
     technical: [
       `The website was built using the ${inlineLink(
-        {
-          fullLabel: 'Laravel Website',
-          label: 'Laravel',
-          link: 'https://laravel.com/',
-        },
+        laravel,
         true,
       )} framework. I worked on this project with a designer and a back-end developer. The back-end developer setup the content management system (CMS) and I built all of the front-end for the website.`,
       `I had introduced myself to Laravel during my last year of school and then worked on a Laravel project with ${inlineLink(
@@ -144,11 +126,7 @@ export default {
         },
         true,
       )} development team wanted me to use ${inlineLink(
-        {
-          fullLabel: 'Vue.js Website',
-          label: 'Vue.js',
-          link: 'https://vuejs.org/',
-        },
+        vue,
         true,
       )} for the project, which was new to me. I did some research on Vue, reviewed the documentation and followed a few ${inlineLink(
         {

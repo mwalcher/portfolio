@@ -1,7 +1,6 @@
-export interface IsTabContentListItem {
+import type { IsLink } from '@/types/navigation';
+export interface IsTabContentListItem extends IsLink {
   icon: string;
-  label: string;
-  link: string;
 }
 export interface IsTabContentItem {
   content?: string[];

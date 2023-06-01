@@ -1,14 +1,11 @@
 <script setup lang="ts">
 import HomeHeroBg from '@/assets/images/home-hero.jpg';
-import GitIcon from '@/assets/images/icon-git.svg?url';
-import LaravelIcon from '@/assets/images/icon-laravel.svg?url';
-import ReactIcon from '@/assets/images/icon-react.svg?url';
-import VueIcon from '@/assets/images/icon-vue-js.svg?url';
 import FeaturedProject from '@/components/FeaturedProject.vue';
 import Footer from '@/components/FooterSection.vue';
 import Header from '@/components/HeaderBar.vue';
 import Hero from '@/components/HeroSection.vue';
 import MainContent from '@/components/MainContent.vue';
+import { git, laravel, react, vue } from '@/constants/frameworks';
 import { contactNav } from '@/constants/navigation';
 import { projects } from '@/constants/projects';
 import { arcane, tophat } from '@/constants/roles';
@@ -38,12 +35,7 @@ const menu: Menu = [
 const tabContentList: TabContentProp = [
   {
     title: 'What I Use',
-    list: [
-      { icon: GitIcon, label: 'Git', link: 'https://git-scm.com/' },
-      { icon: LaravelIcon, label: 'Laravel', link: 'https://laravel.com/' },
-      { icon: ReactIcon, label: 'React', link: 'https://reactjs.org/' },
-      { icon: VueIcon, label: 'Vue.js', link: 'https://vuejs.org/' },
-    ],
+    list: [git, laravel, react, vue],
   },
   {
     title: 'About Me',
