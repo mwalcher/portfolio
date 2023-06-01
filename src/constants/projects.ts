@@ -2,9 +2,9 @@ import LibroImage from '@/assets/images/libro-hero.jpg';
 import PinkPrecastImage from '@/assets/images/pink-precast-hero.jpg';
 import WhatsMyImage from '@/assets/images/whats-my-hero.jpg';
 import ZucoraImage from '@/assets/images/zucora-hero.jpg';
-import type { Project, ProjectsList } from '@/types/projects';
+import type { IsProject, ProjectsList } from '@/types/projects';
 
-export const libro: Project = {
+export const libro: IsProject = {
   key: 'libro',
   name: 'Libro Calculators',
   description: 'Step by step financial calculators',
@@ -12,14 +12,14 @@ export const libro: Project = {
   website: 'https://libro.ca/calculators/',
 };
 
-export const zucora: Project = {
+export const zucora: IsProject = {
   key: 'zucora',
   name: 'Zucora',
   description: 'An e-commerce store for a local retailer',
   image: ZucoraImage,
 };
 
-export const pinkPrecast: Project = {
+export const pinkPrecast: IsProject = {
   key: 'pink-precast',
   name: 'Pink Precast',
   description: 'An informational website for a concrete manufacturer',
@@ -27,7 +27,7 @@ export const pinkPrecast: Project = {
   website: 'https://www.pinkprecast.com/',
 };
 
-export const whatsMy: Project = {
+export const whatsMy: IsProject = {
   key: 'whats-my',
   name: 'WhatsMy',
   description: 'A promotional website to introduce a product',

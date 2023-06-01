@@ -1,17 +1,17 @@
 <script setup lang="ts">
 import ProjectList from '@/components/ProjectList.vue';
 import { disabledProjectLabel, projects } from '@/constants/projects';
-import type { Project, ProjectsList } from '@/types/projects';
+import type { IsProject, ProjectsList } from '@/types/projects';
 import { ref, type Ref } from 'vue';
 
 defineProps<{
   projects: ProjectsList;
 }>();
 
-const featuredProject: Ref<Project> = ref(projects[0]);
+const featuredProject: Ref<IsProject> = ref(projects[0]);
 const projectSpotlight: Ref<HTMLElement | null> = ref(null);
 
-function toggleProject(key: Project['key']) {
+function toggleProject(key: IsProject['key']) {
   const selectedProject = projects.find((project) => project.key === key);
   if (selectedProject) {
     featuredProject.value = selectedProject;

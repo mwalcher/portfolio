@@ -1,4 +1,4 @@
-export interface Project {
+export interface IsProject {
   key: string;
   name: string;
   description: string;
@@ -7,4 +7,4 @@ export interface Project {
   disabled?: boolean;
 }
 
-export type ProjectsList = Project[];
+export type ProjectsList = IsProject[];

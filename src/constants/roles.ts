@@ -1,13 +1,13 @@
 import { inlineLink } from '@/helpers';
-import type { Link } from '@/types/navigation';
+import type { IsLink } from '@/types/navigation';
 
-export const tophat: Link = {
+export const tophat: IsLink = {
   fullLabel: 'Top Hat Website',
   label: 'Top Hat',
   link: 'https://tophat.com/',
 };
 
-export const arcane: Link = {
+export const arcane: IsLink = {
   fullLabel: 'Arcane Website',
   label: 'Arcane',
   link: 'https://thearcane.com/',

@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import type { TabContentListItem } from '@/types/components';
+import type { IsTabContentListItem } from '@/types/components';
 
 defineProps<{
-  iconList: TabContentListItem[];
+  iconList: IsTabContentListItem[];
 }>();
 </script>
 

@@ -1,11 +1,11 @@
-export interface Link {
+export interface IsLink {
   fullLabel: string;
   label: string;
   link: string;
 }
 
-export interface MenuItem extends Link {
+export interface IsMenuItem extends IsLink {
   icon: string;
 }
 
-export type Menu = MenuItem[];
+export type Menu = IsMenuItem[];

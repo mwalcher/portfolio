@@ -1,15 +1,15 @@
 <script setup lang="ts">
 import { disabledProjectLabel } from '@/constants/projects';
-import type { Project, ProjectsList } from '@/types/projects';
+import type { IsProject, ProjectsList } from '@/types/projects';
 
 const props = defineProps<{
-  activeKey?: Project['key'];
+  activeKey?: IsProject['key'];
   projects: ProjectsList;
   title?: string;
   toggleProject?: (key: string) => void;
 }>();
 
-const isActive = (key: Project['key']) => !!props.activeKey && key === props.activeKey;
+const isActive = (key: IsProject['key']) => !!props.activeKey && key === props.activeKey;
 </script>
 
 <template>

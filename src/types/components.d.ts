@@ -1,12 +1,12 @@
-export interface TabContentListItem {
+export interface IsTabContentListItem {
   icon: string;
   label: string;
   link: string;
 }
-export interface TabContentItem {
+export interface IsTabContentItem {
   content?: string[];
-  list?: TabContentListItem[];
+  list?: IsTabContentListItem[];
   title: string;
 }
 
-export type TabContentProp = TabContentItem[];
+export type TabContentProp = IsTabContentItem[];
