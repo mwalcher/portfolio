@@ -1,6 +1,6 @@
 export type FormFieldType = 'email' | 'text' | 'textarea';
 
-export interface FormField {
+export interface IsFormField {
   autocomplete?: string;
   disclaimer?: string;
   label: string;
