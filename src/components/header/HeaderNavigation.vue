@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { contactMenu, homeNav } from '@/constants/navigation';
-import type { Menu } from '@/types/navigation';
+import type { IsMenuItem, Menu } from '@/types/navigation';
 import { useRoute } from 'vue-router';
 
 defineProps<{
@@ -9,6 +9,8 @@ defineProps<{
 }>();
 
 const currentRoute = useRoute();
+
+const isAnchorLink = (menuLink: IsMenuItem['link']): boolean => menuLink.charAt(0) === '#';
 </script>
 
 <template>
@@ -21,10 +23,19 @@ const currentRoute = useRoute();
         :key="menuItem.label"
         :class="{ [$style.hidden]: menuItem.icon === 'hidden' }"
       >
-        <a :href="menuItem.link" :aria-label="menuItem.fullLabel" @click="toggleNavigation">
+        <a
+          v-if="isAnchorLink(menuItem.link)"
+          :href="menuItem.link"
+          :aria-label="menuItem.fullLabel"
+          @click="toggleNavigation"
+        >
           <span class="fa" :class="[menuItem.icon, $style.icon]" :aria-hidden="true" />
           <span>{{ menuItem.label }}</span>
         </a>
+        <RouterLink v-else :to="{ name: menuItem.link }" :aria-label="menuItem.fullLabel">
+          <span class="fa" :class="[menuItem.icon, $style.icon]" :aria-hidden="true" />
+          <span>{{ menuItem.label }}</span>
+        </RouterLink>
       </li>
     </ul>
 

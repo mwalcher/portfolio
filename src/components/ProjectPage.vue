@@ -9,36 +9,38 @@ import Header from '@/components/HeaderBar.vue';
 import Hero from '@/components/HeroSection.vue';
 import MainContent from '@/components/MainContent.vue';
 import { contactNav, homeNav } from '@/constants/navigation';
+import { projects } from '@/constants/projects';
 import { arcane, tophat } from '@/constants/roles';
 import { inlineLink } from '@/helpers';
 import type { TabContentProp } from '@/types/components';
-import type { Menu } from '@/types/navigation';
+import type { IsMenuItem, Menu } from '@/types/navigation';
 import type { IsProject } from '@/types/projects';
-import { onMounted, onUnmounted } from 'vue';
+import { computed, onMounted, onUnmounted } from 'vue';
 
 const props = defineProps<{
   projectKey: IsProject['key'];
 }>();
 
-console.log('props', props.projectKey);
-
 const heroId = 'overview';
 const contentId = 'showcase';
+const currentProject = computed(() => projects.find((project) => project.key === props.projectKey));
+
+const contentNav: IsMenuItem = {
+  fullLabel: `Showcase for ${currentProject.value?.name}`,
+  icon: 'fa-mobile',
+  label: 'Showcase',
+  link: `#${contentId}`,
+};
 
 const menu: Menu = [
   { ...homeNav, label: 'Home' },
   {
-    fullLabel: 'About Matthew Walcher',
-    icon: 'fa-user',
-    label: 'About',
+    fullLabel: `Overview of ${currentProject.value?.name}`,
+    icon: 'fa-folder-open',
+    label: 'Overview',
     link: `#${heroId}`,
   },
-  {
-    fullLabel: "Matthew Walcher's Work",
-    icon: 'fa-desktop',
-    label: 'Work',
-    link: `#${contentId}`,
-  },
+  contentNav,
   contactNav,
 ];
 
@@ -97,14 +99,11 @@ onUnmounted(() => {
   <main>
     <Hero
       :id="heroId"
-      pageTitle="Matthew Walcher"
-      subTitle="Front-end Web Developer"
-      content="Experienced and passionate about front-end web development. I am a
-        detail-oriented problem solver
-        with&nbsp;an&nbsp;eye&nbsp;for&nbsp;design."
-      buttonText="Get in touch"
-      :buttonLabel="contactNav.fullLabel"
-      :buttonLink="contactNav.link"
+      :pageTitle="currentProject?.name"
+      :content="currentProject?.description"
+      buttonText="Explore Project"
+      :buttonLabel="contentNav.fullLabel"
+      :buttonLink="contentNav.link"
       :tabContentList="tabContentList"
     />
     <MainContent :id="contentId" sectionTitle="Showcase">Showcase Content</MainContent>
