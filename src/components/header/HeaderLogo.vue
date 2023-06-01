@@ -56,4 +56,21 @@ a.logo {
     }
   }
 }
+
+@each $project, $colour in $project-colours {
+  body:global(.#{$project}) {
+    $primary: $colour;
+    $primary-rgba-dark: rgba($primary, 0.75);
+    a.logo {
+      &:hover,
+      &:focus {
+        .logoContainer {
+          svg {
+            fill: $primary-rgba-dark;
+          }
+        }
+      }
+    }
+  }
+}
 </style>

@@ -253,16 +253,14 @@ $image-height-desktop: calc(($triangle-width-desktop / 2) * 0.85);
   }
 }
 
-body {
-  @each $project, $colour in $project-colours {
-    &.#{$project} {
-      .interactiveIcons {
-        .iconContainer {
-          .shape {
-            .label {
-              @media screen and (min-width: $phone-breakpoint) {
-                border-bottom-color: $colour;
-              }
+@each $project, $colour in $project-colours {
+  body:global(.#{$project}) {
+    .interactiveIcons {
+      .iconContainer {
+        .shape {
+          .label {
+            @media screen and (min-width: $phone-breakpoint) {
+              border-bottom-color: $colour;
             }
           }
         }

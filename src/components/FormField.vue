@@ -146,4 +146,20 @@ const onBlur = (e: FocusEvent) => {
     margin-top: 0.5rem;
   }
 }
+
+@each $project, $colour in $project-colours {
+  body:global(.#{$project}) {
+    $primary: $colour;
+    $primary-dark: darken($primary, 10%);
+    .inputContainer {
+      &.active:not(.error) {
+        input,
+        textarea,
+        select {
+          background-color: $primary-dark;
+        }
+      }
+    }
+  }
+}
 </style>

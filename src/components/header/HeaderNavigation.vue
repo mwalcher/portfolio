@@ -376,4 +376,41 @@ const currentRoute = useRoute();
     }
   }
 }
+
+@each $project, $colour in $project-colours {
+  body:global(.#{$project}) {
+    $primary: $colour;
+    .headerNavigation {
+      ul {
+        &.pageNavigation {
+          li {
+            a {
+              &:global(.active),
+              &:hover:global(.active),
+              &:focus:global(.active) {
+                &::before {
+                  @media screen and (min-width: $header-breakpoint) {
+                    background-color: $primary;
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        li {
+          a {
+            &:global(.active) {
+              .icon {
+                &::before {
+                  color: $primary;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
 </style>

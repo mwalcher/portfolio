@@ -50,18 +50,6 @@ body {
         }
       }
 
-      form {
-        .inputContainer {
-          &.active:not(.error) {
-            input,
-            textarea,
-            select {
-              background-color: $primary-dark;
-            }
-          }
-        }
-      }
-
       button[type='submit'] {
         &:hover,
         &:focus,

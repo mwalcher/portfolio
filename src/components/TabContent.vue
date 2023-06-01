@@ -177,16 +177,14 @@ const toggleActiveSection = (index: number) => {
   }
 }
 
-body {
-  @each $project, $colour in $project-colours {
-    &.#{$project} {
-      .tabContent {
-        .tabContainer {
-          .tab {
-            &:hover:not(.active),
-            &:focus:not(.active) {
-              @include set-background-colour(rgba($colour, 0.75));
-            }
+@each $project, $colour in $project-colours {
+  body:global(.#{$project}) {
+    .tabContent {
+      .tabContainer {
+        .tab {
+          &:hover:not(.active),
+          &:focus:not(.active) {
+            @include set-background-colour(rgba($colour, 0.75));
           }
         }
       }
