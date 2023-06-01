@@ -3,6 +3,7 @@ import Footer from '@/components/FooterSection.vue';
 import Header from '@/components/HeaderBar.vue';
 import Hero from '@/components/HeroSection.vue';
 import MainContent from '@/components/MainContent.vue';
+import ProjectList from '@/components/ProjectList.vue';
 import { contactNav, homeNav } from '@/constants/navigation';
 import { projects } from '@/constants/projects';
 import type { TabContentProp } from '@/types/components';
@@ -17,6 +18,9 @@ const props = defineProps<{
 const heroId = 'overview';
 const contentId = 'showcase';
 const currentProject = computed(() => projects.find((project) => project.key === props.projectKey));
+const otherProjects = computed(() =>
+  projects.filter((project) => project.key !== props.projectKey),
+);
 
 const contentNav: IsMenuItem = {
   fullLabel: `Showcase for ${currentProject.value?.name}`,
@@ -81,7 +85,9 @@ onUnmounted(() => {
       :buttonLink="contentNav.link"
       :tabContentList="tabContentList"
     />
-    <MainContent :id="contentId" sectionTitle="Showcase">Showcase Content</MainContent>
+    <MainContent :id="contentId" sectionTitle="Showcase">
+      <ProjectList :projects="otherProjects" title="Other Projects" />
+    </MainContent>
   </main>
   <Footer />
 </template>
