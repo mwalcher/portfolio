@@ -9,17 +9,21 @@ defineProps<{
 }>();
 
 const featuredProject: Ref<Project> = ref(projects[0]);
+const projectSpotlight: Ref<HTMLElement | null> = ref(null);
 
 function toggleProject(key: Project['key']) {
   const selectedProject = projects.find((project) => project.key === key);
   if (selectedProject) {
     featuredProject.value = selectedProject;
+    if (projectSpotlight.value) {
+      projectSpotlight.value.scrollIntoView({ behavior: 'smooth' });
+    }
   }
 }
 </script>
 
 <template>
-  <div :class="[$style.featuredProject, featuredProject.key]">
+  <div ref="projectSpotlight" :class="[$style.featuredProject, featuredProject.key]">
     <div
       class="absoluteBackground"
       :style="{ backgroundImage: `url(${featuredProject.image})` }"

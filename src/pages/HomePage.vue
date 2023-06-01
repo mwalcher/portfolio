@@ -16,10 +16,6 @@ import { inlineLink } from '@/helpers';
 import type { TabContentProp } from '@/types/components';
 import type { Menu } from '@/types/navigation';
 
-/* TODO Next:
-- build project page template and set up routes
-*/
-
 const heroId = 'about';
 const contentId = 'work';
 

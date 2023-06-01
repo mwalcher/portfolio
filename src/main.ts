@@ -11,3 +11,8 @@ app.use(createPinia());
 app.use(router);
 
 app.mount('#app');
+
+/* TODO:
+  - Fix Smooth Scroll header offset on mobile
+  - Fix Header colour transition
+*/
