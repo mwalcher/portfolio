@@ -15,4 +15,5 @@ app.mount('#app');
 /* TODO:
   - Fix Smooth Scroll header offset on mobile
   - Fix Header colour transition
+  - Do I need pinia? Forms? Header state?
 */
