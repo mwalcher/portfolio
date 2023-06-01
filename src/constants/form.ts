@@ -1,6 +1,6 @@
-import type { FormField } from '@/types/form';
+import type { IsFormField } from '@/types/form';
 
-const nameField: FormField = {
+const nameField: IsFormField = {
   autocomplete: 'name',
   label: 'Name',
   name: 'name',
@@ -8,7 +8,7 @@ const nameField: FormField = {
   type: 'text',
 };
 
-const emailField: FormField = {
+const emailField: IsFormField = {
   autocomplete: 'email',
   disclaimer: 'I will not use your email for anything other than to respond to your message.',
   label: 'Email',
@@ -17,11 +17,11 @@ const emailField: FormField = {
   type: 'email',
 };
 
-const messageField: FormField = {
+const messageField: IsFormField = {
   label: 'Message',
   name: 'message',
   required: true,
   type: 'textarea',
 };
 
-export const contactForm: FormField[] = [nameField, emailField, messageField];
+export const contactForm: IsFormField[] = [nameField, emailField, messageField];
