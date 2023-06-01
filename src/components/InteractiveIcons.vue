@@ -255,12 +255,13 @@ $image-height-desktop: calc(($triangle-width-desktop / 2) * 0.85);
 
 @each $project, $colour in $project-colours {
   body:global(.#{$project}) {
+    $primary: $colour;
     .interactiveIcons {
       .iconContainer {
         .shape {
           .label {
             @media screen and (min-width: $phone-breakpoint) {
-              border-bottom-color: $colour;
+              border-bottom-color: $primary;
             }
           }
         }

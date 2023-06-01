@@ -58,10 +58,12 @@ function toggleProject(key: IsProject['key']) {
 
   @each $project, $colour in $project-colours {
     &:global(.#{$project}) {
+      $primary: $colour;
+      $primary-rgba: rgba($primary, 0.5);
       :global(.button) {
         @include button-colour(set-colour($black, $button-light, $button-dark));
         &::after {
-          background-color: rgba($colour, 0.5);
+          background-color: $primary-rgba;
         }
       }
     }

@@ -80,7 +80,9 @@ const isActive = (key: IsProject['key']) => !!props.activeKey && key === props.a
     &:focus {
       @each $project, $colour in $project-colours {
         &:global(.#{$project}) {
-          @include set-background-colour(darken($colour, 10%));
+          $primary: $colour;
+          $primary-dark: darken($primary, 10%);
+          @include set-background-colour($primary-dark);
         }
       }
     }
@@ -97,7 +99,8 @@ const isActive = (key: IsProject['key']) => !!props.activeKey && key === props.a
     &.active {
       @each $project, $colour in $project-colours {
         &:global(.#{$project}) {
-          @include set-background-colour($colour);
+          $primary: $colour;
+          @include set-background-colour($primary);
 
           .content {
             @media screen and (min-width: $laptop-breakpoint) {
