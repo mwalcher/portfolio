@@ -1,22 +1,30 @@
 <script setup lang="ts">
 import TabContent from '@/components/TabContent.vue';
+import HeaderLogo from '@/components/header/HeaderLogo.vue';
 import { isAnchorLink } from '@/helpers';
 import type { TabContentProp } from '@/types/components';
 
-defineProps<{
-  buttonLabel?: string;
-  buttonLink?: string;
-  buttonText?: string;
-  content?: string;
-  pageTitle?: string;
-  subTitle?: string;
-  tabContentList?: TabContentProp;
-}>();
+withDefaults(
+  defineProps<{
+    buttonLabel?: string;
+    buttonLink?: string;
+    buttonText?: string;
+    content?: string;
+    pageTitle?: string;
+    subTitle?: string;
+    simpleLayout: boolean;
+    tabContentList?: TabContentProp;
+  }>(),
+  {
+    simpleLayout: false,
+  },
+);
 </script>
 
 <template>
   <section class="section" :class="[$style.hero, tabContentList && $style.heroTabContent]">
     <div :class="$style.heroContent">
+      <HeaderLogo v-if="simpleLayout" :class="$style['logo']" />
       <h1 v-if="pageTitle">{{ pageTitle }}</h1>
       <p v-if="subTitle" :class="$style.subTitle">{{ subTitle }}</p>
       <p v-if="content" :class="$style.content">{{ content }}</p>
@@ -76,6 +84,12 @@ defineProps<{
   .heroContent {
     text-align: center;
     @include spacing(padding, top bottom, md);
+
+    .logo {
+      max-width: 12.5rem;
+      @include spacing(margin, left right, auto);
+      @include spacing(margin, bottom, md);
+    }
 
     .subTitle {
       @include h2;

@@ -13,6 +13,7 @@ import { homeNav } from '@/constants/navigation';
       :buttonText="homeNav.label"
       :buttonLabel="homeNav.fullLabel"
       :buttonLink="homeNav.link"
+      :simpleLayout="true"
     />
   </main>
 </template>

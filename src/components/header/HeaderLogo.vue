@@ -4,12 +4,7 @@ import { homeNav } from '@/constants/navigation';
 </script>
 
 <template>
-  <RouterLink
-    id="headerLogo"
-    :to="{ name: homeNav.link }"
-    :class="$style.logo"
-    :aria-label="homeNav.fullLabel"
-  >
+  <RouterLink :to="{ name: homeNav.link }" :class="$style.logo" :aria-label="homeNav.fullLabel">
     <span :class="$style.logoContainer">
       <Logo />
     </span>
@@ -41,13 +36,6 @@ a.logo {
 
   .logoContainer {
     display: block;
-    width: 6.125rem;
-    height: 3.5rem;
-
-    @media screen and (min-width: $header-breakpoint) {
-      width: 7rem;
-      height: 4rem;
-    }
 
     svg {
       display: block;

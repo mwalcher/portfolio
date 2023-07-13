@@ -21,7 +21,7 @@ function toggleNavigation() {
 
 <template>
   <header :class="$style.header">
-    <HeaderLogo />
+    <HeaderLogo id="headerLogo" :class="$style['logo']" />
     <MobileMenuToggle :toggleNavigation="toggleNavigation" />
     <HeaderNavigation :menu="menu" :toggleNavigation="toggleNavigation" />
   </header>
@@ -49,6 +49,16 @@ function toggleNavigation() {
     background-color: transparent;
     border-bottom: 0;
     box-shadow: none;
+  }
+
+  .logo {
+    width: 6.125rem;
+    height: 3.5rem;
+
+    @media screen and (min-width: $header-breakpoint) {
+      width: 7rem;
+      height: 4rem;
+    }
   }
 }
 </style>
