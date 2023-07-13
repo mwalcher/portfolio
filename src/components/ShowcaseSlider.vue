@@ -1,6 +1,7 @@
 <script setup lang="ts">
+import useShowcaseSlider from '@/composables/useShowcaseSlider';
 import type { IsProject } from '@/types/projects';
-import { computed } from 'vue';
+import { computed, useCssModule } from 'vue';
 
 const props = withDefaults(
   defineProps<{
@@ -13,6 +14,9 @@ const props = withDefaults(
   },
 );
 
+const $style = useCssModule();
+useShowcaseSlider(`.${$style.showcaseSlider}`);
+
 const buttonLabel = computed(() => `View ${props.projectName}`);
 const showSlider = computed(() => props.projectImages && props.projectImages.length);
 </script>
@@ -23,11 +27,7 @@ const showSlider = computed(() => props.projectImages && props.projectImages.len
       {{ buttonLabel }}
     </a>
     <div v-if="showSlider" :class="$style['showcaseSlider']">
-      <div
-        v-for="(images, index) in projectImages"
-        :key="`${projectName}-${index}`"
-        :class="$style['slide']"
-      >
+      <div v-for="(images, index) in projectImages" :key="`${projectName}-${index}`" class="slide">
         <img :src="images.src" :alt="images.alt" />
       </div>
     </div>
@@ -66,7 +66,7 @@ const showSlider = computed(() => props.projectImages && props.projectImages.len
       :global(.flickity-slider) {
         height: 100%;
 
-        .slide {
+        :global(.slide) {
           width: 100%;
 
           img {
