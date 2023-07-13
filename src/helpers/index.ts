@@ -1,4 +1,4 @@
-import type { IsLink } from '@/types/navigation';
+import type { IsLink, IsMenuItem } from '@/types/navigation';
 
 export const inlineLink = (linkContent: IsLink, externalLink?: boolean) => {
   const isExternal = typeof externalLink === 'boolean' ? externalLink : false;
@@ -6,3 +6,5 @@ export const inlineLink = (linkContent: IsLink, externalLink?: boolean) => {
     isExternal ? 'target="_blank" rel="noopener"' : ''
   }>${linkContent.label}</a>`;
 };
+
+export const isAnchorLink = (menuLink: IsMenuItem['link']): boolean => menuLink.charAt(0) === '#';

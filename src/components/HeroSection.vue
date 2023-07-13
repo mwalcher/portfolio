@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import TabContent from '@/components/TabContent.vue';
+import { isAnchorLink } from '@/helpers';
 import type { TabContentProp } from '@/types/components';
 
 defineProps<{
@@ -20,7 +21,7 @@ defineProps<{
       <p v-if="subTitle" :class="$style.subTitle">{{ subTitle }}</p>
       <p v-if="content" :class="$style.content">{{ content }}</p>
       <a
-        v-if="buttonLink && buttonText"
+        v-if="buttonLink && buttonText && isAnchorLink(buttonLink)"
         :href="buttonLink"
         class="button center"
         :class="$style.cta"
@@ -28,6 +29,15 @@ defineProps<{
       >
         {{ buttonText }}
       </a>
+      <RouterLink
+        v-else-if="buttonLink && buttonText"
+        :to="{ name: buttonLink }"
+        class="button center"
+        :class="$style.cta"
+        :aria-label="buttonLabel"
+      >
+        {{ buttonText }}
+      </RouterLink>
     </div>
 
     <TabContent v-if="tabContentList" :tabContentList="tabContentList" />

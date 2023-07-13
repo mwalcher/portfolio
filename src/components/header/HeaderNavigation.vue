@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { contactMenu, homeNav } from '@/constants/navigation';
-import type { IsMenuItem, Menu } from '@/types/navigation';
+import { isAnchorLink } from '@/helpers';
+import type { Menu } from '@/types/navigation';
 import { useRoute } from 'vue-router';
 
 defineProps<{
@@ -9,8 +10,6 @@ defineProps<{
 }>();
 
 const currentRoute = useRoute();
-
-const isAnchorLink = (menuLink: IsMenuItem['link']): boolean => menuLink.charAt(0) === '#';
 </script>
 
 <template>

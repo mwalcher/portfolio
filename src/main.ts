@@ -18,6 +18,7 @@ Migration:
   - Thank you Page
   - Form sends email
   - Form validation & recaptcha
+  - Meta Data
 
 Improvements:
   - Fix Smooth Scroll header offset on mobile
