@@ -2,8 +2,8 @@
 import HeaderLogo from '@/components/header/HeaderLogo.vue';
 import HeaderNavigation from '@/components/header/HeaderNavigation.vue';
 import MobileMenuToggle from '@/components/header/MobileMenuToggle.vue';
-import type { Menu } from '@/types/navigation';
 import useHeader from '@/composables/useHeader';
+import type { Menu } from '@/types/navigation';
 
 defineProps<{
   menu: Menu;
