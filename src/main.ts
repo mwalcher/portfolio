@@ -14,8 +14,6 @@ app.mount('#app');
 
 /* TODO:
 Migration:
-  - Error Page
-  - Thank you Page
   - Form sends email
   - Form validation & recaptcha
   - Meta Data

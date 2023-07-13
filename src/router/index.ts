@@ -22,6 +22,11 @@ const router = createRouter({
     },
     ...projectRoutes,
     {
+      path: '/thank-you',
+      name: 'thank-you',
+      component: () => import('@/pages/SuccessPage.vue'),
+    },
+    {
       path: '/:catchAll(.*)',
       name: 'not-found',
       component: () => import('@/pages/ErrorPage.vue'),
