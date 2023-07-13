@@ -78,7 +78,7 @@ export default {
       },
       {
         src: LibroLaptopImage,
-        alt: 'Libro Mortgage Calculator summary page represented on a Macbook Pro',
+        alt: 'Libro Mortgage Calculator summary page represented on a MacBook Pro',
       },
       {
         src: LibroDesktopImage,
@@ -130,7 +130,7 @@ export default {
       },
       {
         src: ZucoraLaptopImage,
-        alt: 'A Zucora product details page adding the product to the cart represented on a Macbook Pro',
+        alt: 'A Zucora product details page adding the product to the cart represented on a MacBook Pro',
       },
       {
         src: ZucoraTabletImage,
@@ -173,7 +173,7 @@ export default {
       },
       {
         src: PinkPrecastLaptopImage,
-        alt: 'A Pink Precast product page features section represented on a Macbook Pro',
+        alt: 'A Pink Precast product page features section represented on a MacBook Pro',
       },
       {
         src: PinkPrecastDesktopImage,
@@ -213,7 +213,7 @@ export default {
           },
           true,
         )} tutorials before setting up the base project.`,
-        'While setting up the base project I reviewed the styleguide and the designs to compile a list of common styles and components in the designs that I knew I would be reusing. I built out the common design elements first so I could just drop them in while I was building the page specific components. I organized all the page sections into separate components to keep components simple and reusable. The design pushed me to elevate the animations for user interactions, like button hover states and opening the navigation, to enhance the user experience.',
+        'While setting up the base project I reviewed the style guide and the designs to compile a list of common styles and components in the designs that I knew I would be reusing. I built out the common design elements first so I could just drop them in while I was building the page specific components. I organized all the page sections into separate components to keep components simple and reusable. The design pushed me to elevate the animations for user interactions, like button hover states and opening the navigation, to enhance the user experience.',
         'The main reason we decided to use a single-page application (Vue.js) for the project was because we wanted to create a transition when the user navigated to a new page. The page transitions were a welcome challenge. I quickly discovered that Vue has a built in transition component that would handle a lot of the logic I thought I was going to have to do to make the page transitions seamless. The transition component was a bit of a learning curve for me to get use to because I had not used anything like it before. At first I did not understand how to set it up with my pages, but after some troubleshooting I created my first page transition. Once I got a simple element to animate across the screen to introduce the next page I was able to make it a bit more complicated and incorporate the 3 coloured gradient lines from the logo to stagger across the screen.',
         `${inlineLink(
           {
@@ -236,7 +236,7 @@ export default {
       },
       {
         src: WhatsMyLaptopImage,
-        alt: 'The WhatsMy contact page represented on a Macbook Pro',
+        alt: 'The WhatsMy contact page represented on a MacBook Pro',
       },
       {
         src: WhatsMyDesktopImage,

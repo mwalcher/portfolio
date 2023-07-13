@@ -175,7 +175,7 @@ const showSlider = computed(() => props.projectImages && props.projectImages.len
     $primary-rgba-dark: rgba($primary, 0.75);
     .showcaseSliderContainer {
       .showcaseSlider {
-        :globlal(.flickity-prev-next-button) {
+        :global(.flickity-prev-next-button) {
           &:hover,
           &:focus {
             border-bottom-color: $primary-rgba-dark;
