@@ -2,6 +2,18 @@ import LibroPhoneImage from '@/assets/images/libro-device-1-phone.png';
 import LibroTabletImage from '@/assets/images/libro-device-2-tablet.png';
 import LibroLaptopImage from '@/assets/images/libro-device-3-laptop.png';
 import LibroDesktopImage from '@/assets/images/libro-device-4-desktop.png';
+import PinkPrecastPhoneImage from '@/assets/images/pink-precast-device-1-phone.png';
+import PinkPrecastTabletImage from '@/assets/images/pink-precast-device-2-tablet.png';
+import PinkPrecastLaptopImage from '@/assets/images/pink-precast-device-3-laptop.png';
+import PinkPrecastDesktopImage from '@/assets/images/pink-precast-device-4-desktop.png';
+import WhatsMyPhoneImage from '@/assets/images/whats-my-device-1-phone.png';
+import WhatsMyTabletImage from '@/assets/images/whats-my-device-2-tablet.png';
+import WhatsMyLaptopImage from '@/assets/images/whats-my-device-3-laptop.png';
+import WhatsMyDesktopImage from '@/assets/images/whats-my-device-4-desktop.png';
+import ZucoraPhoneImage from '@/assets/images/zucora-device-1-phone.png';
+import ZucoraTabletImage from '@/assets/images/zucora-device-2-tablet.png';
+import ZucoraLaptopImage from '@/assets/images/zucora-device-3-laptop.png';
+import ZucoraDesktopImage from '@/assets/images/zucora-device-4-desktop.png';
 import { laravel, react, vue } from '@/constants/frameworks';
 import { arcane, arcaneDisclaimer } from '@/constants/roles';
 import { inlineLink } from '@/helpers';
@@ -107,6 +119,24 @@ export default {
         "On the cart page I loop through all the products stored in the user's cart. The user can adjust quantities for each product and when they do their total will be adjusted to account for the change in quantity. The user has the option to remove a product from their cart and if they remove an item the totals as well as the number of products in the cart shown in the header will be adjusted.",
       ],
     },
+    sliderImages: [
+      {
+        src: ZucoraDesktopImage,
+        alt: 'The Zucora home page represented on an iMac',
+      },
+      {
+        src: ZucoraPhoneImage,
+        alt: 'A list of Zucora products to buy represented on an iPhone',
+      },
+      {
+        src: ZucoraLaptopImage,
+        alt: 'A Zucora product details page adding the product to the cart represented on a Macbook Pro',
+      },
+      {
+        src: ZucoraTabletImage,
+        alt: 'The Zucora cart page represented on an iPad',
+      },
+    ],
   },
   pinkPrecast: {
     tabContent: {
@@ -132,6 +162,24 @@ export default {
         )} prior to building this website. I was able to set this project up by applying what I had learned from the other projects. Two of the things I became more comfortable using during this project was Laravel's Blade templates and the language files to store content. I built all my Blade files to be dynamic and reserved all content for the language files, so they can be reused on any page. Blade makes it easy to loop through sections of content from the array provided by the language files to prevent me from duplicating markup. The language files helped me organize and centralize content so I didn't have to store duplicate content.`,
       ],
     },
+    sliderImages: [
+      {
+        src: PinkPrecastPhoneImage,
+        alt: 'The Pink Precast home page represented on an iPhone',
+      },
+      {
+        src: PinkPrecastTabletImage,
+        alt: 'The Pink Precast contact page represented on an iPad',
+      },
+      {
+        src: PinkPrecastLaptopImage,
+        alt: 'A Pink Precast product page features section represented on a Macbook Pro',
+      },
+      {
+        src: PinkPrecastDesktopImage,
+        alt: 'A Pink Precast featured project page represented on an iMac',
+      },
+    ],
   },
   whatsMy: {
     tabContent: {
@@ -177,5 +225,23 @@ export default {
         )} was my point of contact on the project as she took on the project management role as well as being the designer for the project. She continued the front-end after I completed the base prototype of the website.`,
       ],
     },
+    sliderImages: [
+      {
+        src: WhatsMyPhoneImage,
+        alt: 'The WhatsMy home page Use Cases section represented on an iPhone',
+      },
+      {
+        src: WhatsMyTabletImage,
+        alt: 'The WhatsMy how it works page What you must do section represented on an iPad',
+      },
+      {
+        src: WhatsMyLaptopImage,
+        alt: 'The WhatsMy contact page represented on a Macbook Pro',
+      },
+      {
+        src: WhatsMyDesktopImage,
+        alt: 'The WhatsMy about us page Leadership Team section represented on an iMac',
+      },
+    ],
   },
 };

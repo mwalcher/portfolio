@@ -27,7 +27,7 @@ export const zucora: IsProject = {
   image: ZucoraImage,
   component: ZucoraPage,
   tabContent: projectContent.zucora.tabContent,
-  sliderImages: [],
+  sliderImages: projectContent.zucora.sliderImages,
 };
 
 export const pinkPrecast: IsProject = {
@@ -38,7 +38,7 @@ export const pinkPrecast: IsProject = {
   website: 'https://www.pinkprecast.com/',
   component: PinkPrecastPage,
   tabContent: projectContent.pinkPrecast.tabContent,
-  sliderImages: [],
+  sliderImages: projectContent.pinkPrecast.sliderImages,
 };
 
 export const whatsMy: IsProject = {
@@ -50,7 +50,7 @@ export const whatsMy: IsProject = {
   disabled: true,
   component: WhatsMyPage,
   tabContent: projectContent.whatsMy.tabContent,
-  sliderImages: [],
+  sliderImages: projectContent.whatsMy.sliderImages,
 };
 
 export const projects: ProjectsList = [libro, zucora, pinkPrecast, whatsMy];
