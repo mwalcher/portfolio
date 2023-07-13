@@ -14,7 +14,6 @@ app.mount('#app');
 
 /* TODO:
 Migration:
-  - Showcase Slider
   - Error Page
   - Thank you Page
   - Form sends email

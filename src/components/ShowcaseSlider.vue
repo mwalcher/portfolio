@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import useShowcaseSlider from '@/composables/useShowcaseSlider';
+import Flickity from '@/components/FlickitySlider.vue';
 import type { IsProject } from '@/types/projects';
-import { computed, useCssModule } from 'vue';
+import { computed } from 'vue';
 
 const props = withDefaults(
   defineProps<{
@@ -14,9 +14,13 @@ const props = withDefaults(
   },
 );
 
-const $style = useCssModule();
-useShowcaseSlider(`.${$style.showcaseSlider}`);
-
+const flickityOptions = {
+  prevNextButtons: true,
+  pageDots: false,
+  draggable: true,
+  adaptiveHeight: true,
+  wrapAround: true,
+};
 const buttonLabel = computed(() => `View ${props.projectName}`);
 const showSlider = computed(() => props.projectImages && props.projectImages.length);
 </script>
@@ -26,11 +30,11 @@ const showSlider = computed(() => props.projectImages && props.projectImages.len
     <a v-if="projectLink" :href="projectLink" target="_blank" rel="noopener" class="button center">
       {{ buttonLabel }}
     </a>
-    <div v-if="showSlider" :class="$style['showcaseSlider']">
+    <Flickity v-if="showSlider" :class="$style['showcaseSlider']" :options="flickityOptions">
       <div v-for="(images, index) in projectImages" :key="`${projectName}-${index}`" class="slide">
         <img :src="images.src" :alt="images.alt" />
       </div>
-    </div>
+    </Flickity>
   </div>
 </template>
 
