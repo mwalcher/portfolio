@@ -4,6 +4,7 @@ import Header from '@/components/HeaderBar.vue';
 import Hero from '@/components/HeroSection.vue';
 import MainContent from '@/components/MainContent.vue';
 import ProjectList from '@/components/ProjectList.vue';
+import ShowcaseSlider from '@/components/ShowcaseSlider.vue';
 import { contactNav, homeNav } from '@/constants/navigation';
 import { projects } from '@/constants/projects';
 import type { TabContentProp } from '@/types/components';
@@ -86,6 +87,11 @@ onUnmounted(() => {
       :tabContentList="tabContentList"
     />
     <MainContent :id="contentId" sectionTitle="Showcase">
+      <ShowcaseSlider
+        :projectImages="currentProject?.sliderImages"
+        :projectLink="currentProject?.website"
+        :projectName="currentProject?.name"
+      />
       <ProjectList :projects="otherProjects" title="Other Projects" />
     </MainContent>
   </main>

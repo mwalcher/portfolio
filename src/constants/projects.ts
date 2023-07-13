@@ -2,7 +2,7 @@ import LibroImage from '@/assets/images/libro-hero.jpg';
 import PinkPrecastImage from '@/assets/images/pink-precast-hero.jpg';
 import WhatsMyImage from '@/assets/images/whats-my-hero.jpg';
 import ZucoraImage from '@/assets/images/zucora-hero.jpg';
-import projectTabContent from '@/constants/projectContent';
+import projectContent from '@/constants/projectContent';
 import LibroPage from '@/pages/LibroProject.vue';
 import PinkPrecastPage from '@/pages/PinkPrecastProject.vue';
 import WhatsMyPage from '@/pages/WhatsMyProject.vue';
@@ -16,7 +16,8 @@ export const libro: IsProject = {
   image: LibroImage,
   website: 'https://libro.ca/calculators/',
   component: LibroPage,
-  tabContent: projectTabContent.libro,
+  tabContent: projectContent.libro.tabContent,
+  sliderImages: projectContent.libro.sliderImages,
 };
 
 export const zucora: IsProject = {
@@ -25,7 +26,8 @@ export const zucora: IsProject = {
   description: 'An e-commerce store for a local retailer',
   image: ZucoraImage,
   component: ZucoraPage,
-  tabContent: projectTabContent.zucora,
+  tabContent: projectContent.zucora.tabContent,
+  sliderImages: [],
 };
 
 export const pinkPrecast: IsProject = {
@@ -35,7 +37,8 @@ export const pinkPrecast: IsProject = {
   image: PinkPrecastImage,
   website: 'https://www.pinkprecast.com/',
   component: PinkPrecastPage,
-  tabContent: projectTabContent.pinkPrecast,
+  tabContent: projectContent.pinkPrecast.tabContent,
+  sliderImages: [],
 };
 
 export const whatsMy: IsProject = {
@@ -46,7 +49,8 @@ export const whatsMy: IsProject = {
   website: 'https://mwalcher.github.io/',
   disabled: true,
   component: WhatsMyPage,
-  tabContent: projectTabContent.whatsMy,
+  tabContent: projectContent.whatsMy.tabContent,
+  sliderImages: [],
 };
 
 export const projects: ProjectsList = [libro, zucora, pinkPrecast, whatsMy];

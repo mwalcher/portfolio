@@ -10,6 +10,10 @@ export interface IsProject {
     about: IsTabContentItem.content;
     technical: IsTabContentItem.content;
   };
+  sliderImages: {
+    src: string;
+    alt: string;
+  }[];
 }
 
 export type ProjectsList = IsProject[];

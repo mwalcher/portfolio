@@ -13,6 +13,14 @@ app.use(router);
 app.mount('#app');
 
 /* TODO:
+Migration:
+  - Showcase Slider
+  - Error Page
+  - Thank you Page
+  - Form sends email
+  - Form validation & recaptcha
+
+Improvements:
   - Fix Smooth Scroll header offset on mobile
   - Fix Header colour transition
   - Do I need pinia? Forms? Header state?
