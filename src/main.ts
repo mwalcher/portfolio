@@ -14,9 +14,10 @@ app.mount('#app');
 
 /* TODO:
 Migration:
-  - Form sends email
   - Form validation & recaptcha
   - Meta Data
+  - Analytics
+  - Setup Auto Reply, Save Contacts, add connect recaptcha + analytics to EmailJS
 
 Improvements:
   - Fix Smooth Scroll header offset on mobile

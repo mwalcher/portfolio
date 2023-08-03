@@ -3,12 +3,18 @@ import FormField from '@/components/FormField.vue';
 import { contactForm, nameField } from '@/constants/form';
 import { successPage } from '@/constants/navigation';
 import emailjs from '@emailjs/browser';
+import { ref } from 'vue';
 import { useRouter } from 'vue-router';
 
 const formId = 'contact-form';
 const router = useRouter();
+const isProcessing = ref(false);
+const hasError = ref(false);
 
 const onSubmit = async (e: Event) => {
+  isProcessing.value = true;
+  hasError.value = false;
+
   const form = e.target as HTMLFormElement;
   const formData = new FormData(form);
 
@@ -25,7 +31,10 @@ const onSubmit = async (e: Event) => {
       router.push({ name: successPage.name, query: { name: nameValue ? nameValue : '' } });
     }
   } catch (error) {
-    console.log({ error }, error);
+    hasError.value = true;
+    console.error(error);
+  } finally {
+    isProcessing.value = false;
   }
 };
 </script>
@@ -38,6 +47,9 @@ const onSubmit = async (e: Event) => {
       :formField="formField"
       :formId="formId"
     />
-    <button type="submit">Send Message</button>
+    <button type="submit" :disabled="isProcessing">Send Message</button>
+    <div v-if="hasError">
+      <p>There is an error with the form.</p>
+    </div>
   </form>
 </template>

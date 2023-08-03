@@ -64,4 +64,9 @@ button[type='submit'] {
       height: 0;
     }
   }
+
+  &[disabled] {
+    color: $disabled-font-colour;
+    background-color: $disabled-background-colour;
+  }
 }
