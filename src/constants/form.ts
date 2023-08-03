@@ -1,6 +1,6 @@
 import type { IsFormField } from '@/types/form';
 
-const nameField: IsFormField = {
+export const nameField: IsFormField = {
   autocomplete: 'name',
   label: 'Name',
   name: 'name',

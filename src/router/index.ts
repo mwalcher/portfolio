@@ -1,4 +1,4 @@
-import { homeNav } from '@/constants/navigation';
+import { homeNav, successPage } from '@/constants/navigation';
 import { projects } from '@/constants/projects';
 import Home from '@/pages/HomePage.vue';
 import { createRouter, createWebHistory } from 'vue-router';
@@ -22,8 +22,7 @@ const router = createRouter({
     },
     ...projectRoutes,
     {
-      path: '/thank-you',
-      name: 'thank-you',
+      ...successPage,
       component: () => import('@/pages/SuccessPage.vue'),
     },
     {

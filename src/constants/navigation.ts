@@ -3,6 +3,11 @@ import type { IsMenuItem, Menu } from '@/types/navigation';
 
 export const footerId = 'contact';
 
+export const successPage = {
+  path: '/thank-you',
+  name: 'thank-you',
+};
+
 export const homeNav: IsMenuItem = {
   fullLabel: 'Homepage',
   icon: 'hidden',

@@ -1,12 +1,16 @@
 <script setup lang="ts">
 import FormField from '@/components/FormField.vue';
-import { contactForm } from '@/constants/form';
+import { contactForm, nameField } from '@/constants/form';
+import { successPage } from '@/constants/navigation';
 import emailjs from '@emailjs/browser';
+import { useRouter } from 'vue-router';
 
 const formId = 'contact-form';
+const router = useRouter();
 
 const onSubmit = async (e: Event) => {
   const form = e.target as HTMLFormElement;
+  const formData = new FormData(form);
 
   try {
     const response = await emailjs.sendForm(
@@ -17,7 +21,8 @@ const onSubmit = async (e: Event) => {
     );
 
     if (response.status === 200) {
-      console.log('on success');
+      const nameValue = formData.get(nameField.name) as string;
+      router.push({ name: successPage.name, query: { name: nameValue ? nameValue : '' } });
     }
   } catch (error) {
     console.log({ error }, error);
