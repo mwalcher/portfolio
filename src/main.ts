@@ -16,11 +16,11 @@ app.mount('#app');
 Migration:
   - Form validation & recaptcha
   - Meta Data
-  - Analytics
-  - Setup Auto Reply, Save Contacts, add connect recaptcha + analytics to EmailJS
 
 Improvements:
   - Fix Smooth Scroll header offset on mobile
   - Fix Header colour transition
   - Do I need pinia? Forms? Header state?
+  - Clean up GTM
+  - Setup Auto Reply, Save Contacts, add connect recaptcha + analytics to EmailJS
 */
