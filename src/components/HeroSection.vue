@@ -130,7 +130,7 @@ const contactLinks: Menu = [githubContact, linkedinContact];
       display: flex;
       align-items: center;
       justify-content: center;
-      @include spacing(padding, top, 1rem);
+      @include spacing(padding, top, sm);
       @include spacing(margin, left right, auto);
 
       a {

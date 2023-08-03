@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import AlertMessage from '@/components/AlertMessage.vue';
 import FormField from '@/components/FormField.vue';
 import { contactForm, nameField } from '@/constants/form';
 import { successPage } from '@/constants/navigation';
@@ -41,6 +42,10 @@ const onSubmit = async (e: Event) => {
 
 <template>
   <form :name="formId" @submit.prevent="onSubmit">
+    <AlertMessage
+      v-if="hasError"
+      message="There was an issue sending the message, try again later."
+    />
     <FormField
       v-for="formField in contactForm"
       :key="formField.name"
@@ -48,8 +53,5 @@ const onSubmit = async (e: Event) => {
       :formId="formId"
     />
     <button type="submit" :disabled="isProcessing">Send Message</button>
-    <div v-if="hasError">
-      <p>There is an error with the form.</p>
-    </div>
   </form>
 </template>

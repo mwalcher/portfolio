@@ -138,6 +138,7 @@ const onBlur = (e: FocusEvent) => {
 
   .errorMessage {
     @extend label;
+    color: $white;
   }
 
   .disclaimer {
