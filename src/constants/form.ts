@@ -10,7 +10,7 @@ const nameField: IsFormField = {
 
 const emailField: IsFormField = {
   autocomplete: 'email',
-  disclaimer: 'I will not use your email for anything other than to respond to your message.',
+  disclaimer: 'I will only use your email to respond to your message.',
   label: 'Email',
   name: 'email',
   required: true,
