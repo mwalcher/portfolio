@@ -1,12 +1,19 @@
 <script setup lang="ts">
 import HomeHeroBg from '@/assets/images/home-hero.jpg';
 import Hero from '@/components/HeroSection.vue';
+import { titleTemplate } from '@/constants/metaData';
 import { homeNav } from '@/constants/navigation';
+import { useSeoMeta } from '@unhead/vue';
 import { useRoute } from 'vue-router';
 
 const currentRoute = useRoute();
 const { name } = currentRoute.query;
 const pageTitle = name ? `Thank you, ${name}!` : 'Thank you!';
+
+useSeoMeta({
+  title: titleTemplate(pageTitle),
+  robots: 'noindex',
+});
 </script>
 
 <template>

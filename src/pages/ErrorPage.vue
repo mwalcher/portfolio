@@ -1,7 +1,14 @@
 <script setup lang="ts">
 import HomeHeroBg from '@/assets/images/home-hero.jpg';
 import Hero from '@/components/HeroSection.vue';
+import { titleTemplate } from '@/constants/metaData';
 import { homeNav } from '@/constants/navigation';
+import { useSeoMeta } from '@unhead/vue';
+
+useSeoMeta({
+  title: titleTemplate('Page Not Found'),
+  robots: 'noindex',
+});
 </script>
 
 <template>
