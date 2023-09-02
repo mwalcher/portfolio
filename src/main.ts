@@ -1,6 +1,6 @@
+import { InferSeoMetaPlugin } from '@unhead/addons';
 import { createHead } from '@unhead/vue';
 import { createPinia } from 'pinia';
-import { InferSeoMetaPlugin } from '@unhead/addons';
 import { createApp } from 'vue';
 
 import App from '@/App.vue';

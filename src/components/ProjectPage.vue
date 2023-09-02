@@ -5,12 +5,16 @@ import Hero from '@/components/HeroSection.vue';
 import MainContent from '@/components/MainContent.vue';
 import ProjectList from '@/components/ProjectList.vue';
 import ShowcaseSlider from '@/components/ShowcaseSlider.vue';
+import { titleTemplate } from '@/constants/metaData';
 import { contactNav, homeNav } from '@/constants/navigation';
 import { projects } from '@/constants/projects';
 import type { TabContentProp } from '@/types/components';
+import type { IsPageMeta } from '@/types/metaData';
 import type { IsMenuItem, Menu } from '@/types/navigation';
 import type { IsProject } from '@/types/projects';
+import { useSeoMeta } from '@unhead/vue';
 import { computed, onMounted, onUnmounted } from 'vue';
+import { useRoute } from 'vue-router';
 
 const props = defineProps<{
   projectKey: IsProject['key'];
@@ -19,9 +23,14 @@ const props = defineProps<{
 const heroId = 'overview';
 const contentId = 'showcase';
 const currentProject = computed(() => projects.find((project) => project.key === props.projectKey));
-const otherProjects = computed(() =>
-  projects.filter((project) => project.key !== props.projectKey),
-);
+const otherProjects = computed(() => projects.filter((project) => project.key !== props.projectKey));
+const currentRoute = useRoute();
+
+const projectMeta: IsPageMeta = {
+  title: currentProject.value?.name || '',
+  description: currentProject.value?.description || '',
+  image: currentProject.value?.metaImage || '',
+};
 
 const contentNav: IsMenuItem = {
   fullLabel: `Showcase for ${currentProject.value?.name}`,
@@ -63,6 +72,15 @@ const handleBodyClass = () => {
     body.classList.add(projectClass);
   }
 };
+
+useSeoMeta({
+  title: titleTemplate(projectMeta.title),
+  description: projectMeta.description,
+  ogImage: projectMeta.image,
+  ogUrl: currentRoute.path,
+  ogTitle: titleTemplate(projectMeta.title),
+  ogSiteName: titleTemplate(projectMeta.title),
+});
 
 onMounted(() => {
   handleBodyClass();

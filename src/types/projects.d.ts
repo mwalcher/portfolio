@@ -3,6 +3,7 @@ export interface IsProject {
   name: string;
   description: string;
   image: string;
+  metaImage: string;
   website?: string;
   disabled?: boolean;
   component: object;
