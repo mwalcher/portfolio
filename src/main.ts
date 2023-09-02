@@ -1,5 +1,6 @@
 import { createHead } from '@unhead/vue';
 import { createPinia } from 'pinia';
+import { InferSeoMetaPlugin } from '@unhead/addons';
 import { createApp } from 'vue';
 
 import App from '@/App.vue';
@@ -8,7 +9,11 @@ import router from '@/router';
 
 const app = createApp(App);
 
-app.use(createHead());
+app.use(
+  createHead({
+    plugins: [InferSeoMetaPlugin()],
+  }),
+);
 app.use(createPinia());
 app.use(router);
 
@@ -16,8 +21,8 @@ app.mount('#app');
 
 /* TODO:
 Migration:
-  - Form validation & recaptcha
   - Meta Data
+  - Form validation & recaptcha
 
 Improvements:
   - Fix Smooth Scroll header offset on mobile
