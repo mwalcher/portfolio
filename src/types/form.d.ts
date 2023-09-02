@@ -1,3 +1,5 @@
+import type { ValidationRuleCollection } from '@vuelidate/core';
+
 export type FormFieldType = 'email' | 'text' | 'textarea';
 
 export interface IsFormField {
@@ -7,4 +9,5 @@ export interface IsFormField {
   name: string;
   required: boolean;
   type: FormFieldType;
+  validation?: ValidationRuleCollection;
 }
