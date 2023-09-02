@@ -24,10 +24,7 @@ function toggleProject(key: IsProject['key']) {
 
 <template>
   <div ref="projectSpotlight" :class="[$style.featuredProject, featuredProject.key]">
-    <div
-      class="absoluteBackground"
-      :style="{ backgroundImage: `url(${featuredProject.image})` }"
-    ></div>
+    <div class="absoluteBackground" :style="{ backgroundImage: `url(${featuredProject.image})` }"></div>
     <div :class="$style.content">
       <p :class="$style.title">{{ featuredProject.name }}</p>
       <p :class="$style.description">{{ featuredProject.description }}</p>
@@ -42,11 +39,7 @@ function toggleProject(key: IsProject['key']) {
     </div>
   </div>
 
-  <ProjectList
-    :projects="projects"
-    :activeKey="featuredProject.key"
-    :toggleProject="toggleProject"
-  />
+  <ProjectList :projects="projects" :activeKey="featuredProject.key" :toggleProject="toggleProject" />
 </template>
 
 <style lang="scss" module>

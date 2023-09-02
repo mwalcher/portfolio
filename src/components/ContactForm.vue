@@ -42,16 +42,8 @@ const onSubmit = async (e: Event) => {
 
 <template>
   <form :name="formId" @submit.prevent="onSubmit">
-    <AlertMessage
-      v-if="hasError"
-      message="There was an issue sending the message, try again later."
-    />
-    <FormField
-      v-for="formField in contactForm"
-      :key="formField.name"
-      :formField="formField"
-      :formId="formId"
-    />
+    <AlertMessage v-if="hasError" message="There was an issue sending the message, try again later." />
+    <FormField v-for="formField in contactForm" :key="formField.name" :formField="formField" :formId="formId" />
     <button type="submit" :disabled="isProcessing">Send Message</button>
   </form>
 </template>

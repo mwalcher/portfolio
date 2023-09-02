@@ -21,7 +21,6 @@ app.mount('#app');
 
 /* TODO:
 Migration:
-  - Meta Data
   - Form validation & recaptcha
 
 Improvements:

@@ -17,11 +17,7 @@ const currentRoute = useRoute();
     <h2 id="navigationTitle">Navigation</h2>
 
     <ul id="pageNavigation" :class="$style.pageNavigation">
-      <li
-        v-for="menuItem in menu"
-        :key="menuItem.label"
-        :class="{ [$style.hidden]: menuItem.icon === 'hidden' }"
-      >
+      <li v-for="menuItem in menu" :key="menuItem.label" :class="{ [$style.hidden]: menuItem.icon === 'hidden' }">
         <a
           v-if="isAnchorLink(menuItem.link)"
           :href="menuItem.link"
@@ -40,12 +36,7 @@ const currentRoute = useRoute();
 
     <ul :class="$style.linksNavigation">
       <li v-for="contactItem in contactMenu" :key="contactItem.label">
-        <a
-          :href="contactItem.link"
-          target="_blank"
-          rel="noopener"
-          :aria-label="contactItem.fullLabel"
-        >
+        <a :href="contactItem.link" target="_blank" rel="noopener" :aria-label="contactItem.fullLabel">
           <span class="fa" :class="[contactItem.icon, $style.icon]" :aria-hidden="true" />
           <span>{{ contactItem.label }}</span>
         </a>
