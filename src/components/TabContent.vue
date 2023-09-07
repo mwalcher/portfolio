@@ -16,7 +16,7 @@ const toggleActiveSection = (index: number) => {
 </script>
 
 <template>
-  <div :class="$style.tabContent">
+  <div :class="$style.tabContent" data-tab-content>
     <div :class="$style.tabContainer">
       <button
         v-for="(section, index) in tabContentList"

@@ -16,7 +16,18 @@ const scrollToSection = (sectionId: IsMenuItem['link']) => {
   props.toggleNavigation();
 
   if (section) {
-    scrollToElement(section);
+    const isMainContent = section.classList.contains('lightSection');
+    let offset = 0;
+
+    if (isMainContent) {
+      const tabContentElement = document.querySelector('[data-tab-content]');
+
+      if (tabContentElement) {
+        offset = tabContentElement.getBoundingClientRect().height / -2;
+      }
+    }
+
+    scrollToElement(section, offset);
   }
 };
 </script>
@@ -29,13 +40,14 @@ const scrollToSection = (sectionId: IsMenuItem['link']) => {
       <li v-for="menuItem in menu" :key="menuItem.label" :class="{ [$style.hidden]: menuItem.icon === 'hidden' }">
         <button
           v-if="isAnchorLink(menuItem.link)"
+          :class="$style['menuLink']"
           :aria-label="menuItem.fullLabel"
           @click="() => scrollToSection(menuItem.link)"
         >
           <span class="fa" :class="[menuItem.icon, $style.icon]" :aria-hidden="true" />
           <span>{{ menuItem.label }}</span>
         </button>
-        <RouterLink v-else :to="{ name: menuItem.link }" :aria-label="menuItem.fullLabel">
+        <RouterLink v-else :to="{ name: menuItem.link }" :class="$style['menuLink']" :aria-label="menuItem.fullLabel">
           <span class="fa" :class="[menuItem.icon, $style.icon]" :aria-hidden="true" />
           <span>{{ menuItem.label }}</span>
         </RouterLink>
@@ -44,7 +56,13 @@ const scrollToSection = (sectionId: IsMenuItem['link']) => {
 
     <ul :class="$style.linksNavigation">
       <li v-for="contactItem in contactMenu" :key="contactItem.label">
-        <a :href="contactItem.link" target="_blank" rel="noopener" :aria-label="contactItem.fullLabel">
+        <a
+          :href="contactItem.link"
+          target="_blank"
+          rel="noopener"
+          :class="$style['menuLink']"
+          :aria-label="contactItem.fullLabel"
+        >
           <span class="fa" :class="[contactItem.icon, $style.icon]" :aria-hidden="true" />
           <span>{{ contactItem.label }}</span>
         </a>
@@ -193,7 +211,7 @@ const scrollToSection = (sectionId: IsMenuItem['link']) => {
             }
           }
 
-          a {
+          .menuLink {
             @media screen and (min-width: $header-breakpoint) {
               color: $black;
             }
@@ -256,7 +274,12 @@ const scrollToSection = (sectionId: IsMenuItem['link']) => {
           }
         }
 
-        a {
+        .menuLink {
+          display: inline-block;
+          line-height: 1;
+          background-color: transparent;
+          cursor: pointer;
+
           @media screen and (min-width: $header-breakpoint) {
             position: relative;
             @include spacing(padding, left, 1.5rem);
@@ -329,7 +352,7 @@ const scrollToSection = (sectionId: IsMenuItem['link']) => {
         }
       }
 
-      a {
+      .menuLink {
         display: block;
         color: $white-off;
         text-transform: uppercase;
@@ -393,7 +416,7 @@ const scrollToSection = (sectionId: IsMenuItem['link']) => {
       ul {
         &.pageNavigation {
           li {
-            a {
+            .menuLink {
               &:global(.active),
               &:hover:global(.active),
               &:focus:global(.active) {
@@ -408,7 +431,7 @@ const scrollToSection = (sectionId: IsMenuItem['link']) => {
         }
 
         li {
-          a {
+          .menuLink {
             &:global(.active) {
               .icon {
                 &::before {
