@@ -1,20 +1,20 @@
 <script setup lang="ts">
 import type { IsFormField } from '@/types/form';
+import type { ErrorObject } from '@vuelidate/core';
 import { computed, ref, useCssModule } from 'vue';
 
 const props = defineProps<{
   formField: IsFormField;
   formId: string;
+  errors: ErrorObject;
 }>();
 const emit = defineEmits(['onChange']);
 const $style = useCssModule();
 
 const fieldValue = ref('');
-const error = ref('');
 const isFocused = ref(false);
-
 const hasValue = computed(() => !!fieldValue.value);
-const hasError = computed(() => !!error.value);
+const hasError = computed(() => !!Object.keys(props.errors).length);
 const formFieldId = computed(() => `${props.formId}-${props.formField.name}`);
 const formFieldClasses = computed(() => ({
   [$style.inputContainer]: true,
@@ -43,7 +43,7 @@ const onChange = (e: Event) => {
 
 <template>
   <div :class="formFieldClasses">
-    <label :for="formFieldId">
+    <label :for="formFieldId" :class="$style.label">
       {{ formField.label }}
     </label>
 
@@ -60,7 +60,7 @@ const onChange = (e: Event) => {
       {{ formField.disclaimer }}
     </small>
 
-    <small v-if="hasError" :class="$style.errorMessage">{{ error }}</small>
+    <small v-for="error of errors" :key="error.$uid" :class="$style.errorMessage">{{ error.$message }}</small>
   </div>
 </template>
 
@@ -75,7 +75,7 @@ const onChange = (e: Event) => {
   }
 
   &.required {
-    label {
+    .label {
       &::after {
         content: '*';
       }
@@ -89,7 +89,7 @@ const onChange = (e: Event) => {
   }
 
   &.active {
-    label {
+    .label {
       font-size: 0.75rem;
       top: 0.5rem;
       pointer-events: none;
@@ -107,7 +107,7 @@ const onChange = (e: Event) => {
   &.error {
     @extend .active;
 
-    label {
+    .label {
       opacity: 0;
     }
 
@@ -126,7 +126,7 @@ const onChange = (e: Event) => {
     @include invisible;
   }
 
-  label {
+  .label {
     display: flex;
     position: absolute;
     top: 0.875rem;
@@ -135,7 +135,8 @@ const onChange = (e: Event) => {
   }
 
   .errorMessage {
-    @extend label;
+    @extend .label;
+    @include label-font;
     color: $white;
   }
 

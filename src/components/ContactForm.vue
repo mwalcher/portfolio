@@ -3,7 +3,7 @@ import AlertMessage from '@/components/AlertMessage.vue';
 import FormField from '@/components/FormField.vue';
 import { contactForm, nameField } from '@/constants/form';
 import { successPage } from '@/constants/navigation';
-import { getValidation, getFormModel } from '@/helpers';
+import { getFormModel, getValidation } from '@/helpers';
 import emailjs from '@emailjs/browser';
 import { useVuelidate } from '@vuelidate/core';
 import { ref } from 'vue';
@@ -66,6 +66,7 @@ const onSubmit = async (e: Event) => {
       :key="formField.name"
       :formField="formField"
       :formId="formId"
+      :errors="v$[formField.name].$errors"
       @onChange="(e: Event) => onChange(formField.name, e)"
     />
     <button type="submit" :disabled="isProcessing">Send Message</button>
