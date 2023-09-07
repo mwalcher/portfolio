@@ -16,7 +16,9 @@ function toggleProject(key: IsProject['key']) {
   if (selectedProject) {
     featuredProject.value = selectedProject;
     if (projectSpotlight.value) {
-      projectSpotlight.value.scrollIntoView({ behavior: 'smooth' });
+      const headerOffset = window.innerWidth < 740 ? 104 : 24;
+      const topPosition = window.scrollY + projectSpotlight.value.getBoundingClientRect().top - headerOffset;
+      window.scrollTo({ top: topPosition, behavior: 'smooth' });
     }
   }
 }
