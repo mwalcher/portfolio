@@ -20,9 +20,6 @@ app.use(router);
 app.mount('#app');
 
 /* TODO:
-Migration:
-  - Form validation & recaptcha
-
 Improvements:
   - Fix Smooth Scroll header offset on mobile
   - Fix Header colour transition
