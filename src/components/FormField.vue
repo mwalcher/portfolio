@@ -6,7 +6,7 @@ const props = defineProps<{
   formField: IsFormField;
   formId: string;
 }>();
-
+const emit = defineEmits(['onChange']);
 const $style = useCssModule();
 
 const fieldValue = ref('');
@@ -36,6 +36,9 @@ const onBlur = (e: FocusEvent) => {
   fieldValue.value = formElement?.value;
   isFocused.value = false;
 };
+const onChange = (e: Event) => {
+  emit('onChange', e);
+};
 </script>
 
 <template>
@@ -44,8 +47,14 @@ const onBlur = (e: FocusEvent) => {
       {{ formField.label }}
     </label>
 
-    <textarea v-if="formField.type === 'textarea'" v-bind="commonFieldProps" @focus="onFocus" @blur="onBlur" />
-    <input v-else :type="formField.type" v-bind="commonFieldProps" @focus="onFocus" @blur="onBlur" />
+    <textarea
+      v-if="formField.type === 'textarea'"
+      v-bind="commonFieldProps"
+      @focus="onFocus"
+      @blur="onBlur"
+      @change="onChange"
+    />
+    <input v-else :type="formField.type" v-bind="commonFieldProps" @focus="onFocus" @blur="onBlur" @change="onChange" />
 
     <small v-if="formField.disclaimer" :class="$style.disclaimer">
       {{ formField.disclaimer }}
