@@ -40,6 +40,7 @@ const scrollToSection = (sectionId: IsMenuItem['link']) => {
       <li v-for="menuItem in menu" :key="menuItem.label" :class="{ [$style.hidden]: menuItem.icon === 'hidden' }">
         <button
           v-if="isAnchorLink(menuItem.link)"
+          :data-page-nav-link="menuItem.link"
           :class="$style['menuLink']"
           :aria-label="menuItem.fullLabel"
           @click="() => scrollToSection(menuItem.link)"

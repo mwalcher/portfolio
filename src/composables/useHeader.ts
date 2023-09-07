@@ -13,7 +13,7 @@ export default function useHeader() {
     if (!navigation) return;
 
     const sections: NodeListOf<HTMLElement> = document.querySelectorAll('.section');
-    const navigationItems = navigation.querySelectorAll('a');
+    const navigationItems = navigation.querySelectorAll('[data-page-nav-link]') as NodeListOf<HTMLButtonElement>;
     const scrollPosition = window.scrollY;
     const windowHeight = window.innerHeight;
 
@@ -31,7 +31,8 @@ export default function useHeader() {
 
       if (scrollPosition >= sectionStart && scrollPosition < sectionEnd) {
         navigationItems.forEach((navItem) => {
-          if (section.id === navItem.href.split('#')[1]) {
+          const anchorId = navItem.dataset.pageNavLink;
+          if (anchorId && section.id === anchorId.split('#')[1]) {
             navItem.classList.add(activeClass);
           } else {
             navItem.classList.remove(activeClass);
@@ -48,7 +49,7 @@ export default function useHeader() {
   function navigationColour(
     navigation: HTMLUListElement,
     position: DOMRect,
-    navigationItems: NodeListOf<HTMLAnchorElement>,
+    navigationItems: NodeListOf<HTMLButtonElement>,
   ) {
     const logo: HTMLAnchorElement | null = document.querySelector('#headerLogo');
     const navigationTitle: HTMLHeadingElement | null = document.querySelector('#navigationTitle');
