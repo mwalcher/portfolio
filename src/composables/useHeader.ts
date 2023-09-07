@@ -14,7 +14,7 @@ export default function useHeader() {
 
     const sections: NodeListOf<HTMLElement> = document.querySelectorAll('.section');
     const navigationItems = navigation.querySelectorAll('a');
-    const scrollPosition = window.pageYOffset;
+    const scrollPosition = window.scrollY;
     const windowHeight = window.innerHeight;
 
     sections.forEach((section) => {

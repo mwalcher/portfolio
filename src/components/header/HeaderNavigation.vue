@@ -1,15 +1,24 @@
 <script setup lang="ts">
 import { contactMenu, homeNav } from '@/constants/navigation';
-import { isAnchorLink } from '@/helpers';
-import type { Menu } from '@/types/navigation';
+import { isAnchorLink, scrollToElement } from '@/helpers';
+import type { IsMenuItem, Menu } from '@/types/navigation';
 import { useRoute } from 'vue-router';
 
-defineProps<{
+const props = defineProps<{
   menu: Menu;
   toggleNavigation: () => void;
 }>();
 
 const currentRoute = useRoute();
+
+const scrollToSection = (sectionId: IsMenuItem['link']) => {
+  const section = document.querySelector(sectionId);
+  props.toggleNavigation();
+
+  if (section) {
+    scrollToElement(section);
+  }
+};
 </script>
 
 <template>
@@ -18,15 +27,14 @@ const currentRoute = useRoute();
 
     <ul id="pageNavigation" :class="$style.pageNavigation">
       <li v-for="menuItem in menu" :key="menuItem.label" :class="{ [$style.hidden]: menuItem.icon === 'hidden' }">
-        <a
+        <button
           v-if="isAnchorLink(menuItem.link)"
-          :href="menuItem.link"
           :aria-label="menuItem.fullLabel"
-          @click="toggleNavigation"
+          @click="() => scrollToSection(menuItem.link)"
         >
           <span class="fa" :class="[menuItem.icon, $style.icon]" :aria-hidden="true" />
           <span>{{ menuItem.label }}</span>
-        </a>
+        </button>
         <RouterLink v-else :to="{ name: menuItem.link }" :aria-label="menuItem.fullLabel">
           <span class="fa" :class="[menuItem.icon, $style.icon]" :aria-hidden="true" />
           <span>{{ menuItem.label }}</span>

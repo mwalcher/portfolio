@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import ProjectList from '@/components/ProjectList.vue';
 import { disabledProjectLabel, projects } from '@/constants/projects';
+import { scrollToElement } from '@/helpers';
 import type { IsProject, ProjectsList } from '@/types/projects';
 import { ref, type Ref } from 'vue';
 
@@ -9,16 +10,14 @@ defineProps<{
 }>();
 
 const featuredProject: Ref<IsProject> = ref(projects[0]);
-const projectSpotlight: Ref<HTMLElement | null> = ref(null);
+const projectSpotlight: Ref<Element | null> = ref(null);
 
 function toggleProject(key: IsProject['key']) {
   const selectedProject = projects.find((project) => project.key === key);
   if (selectedProject) {
     featuredProject.value = selectedProject;
     if (projectSpotlight.value) {
-      const headerOffset = window.innerWidth < 740 ? 104 : 24;
-      const topPosition = window.scrollY + projectSpotlight.value.getBoundingClientRect().top - headerOffset;
-      window.scrollTo({ top: topPosition, behavior: 'smooth' });
+      scrollToElement(projectSpotlight.value, 24);
     }
   }
 }
