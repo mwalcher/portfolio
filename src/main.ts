@@ -22,7 +22,7 @@ app.mount('#app');
 /* TODO:
 Improvements:
   - Fix Header colour transition
-  - Do I need pinia? Forms? Header state?
+    - Do I need pinia? Forms? Header state?
   - Clean up GTM
   - Setup Auto Reply, Save Contacts, add connect recaptcha + analytics to EmailJS
 */

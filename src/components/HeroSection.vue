@@ -2,9 +2,9 @@
 import TabContent from '@/components/TabContent.vue';
 import HeaderLogo from '@/components/header/HeaderLogo.vue';
 import { githubContact, linkedinContact } from '@/constants/navigation';
-import { isAnchorLink } from '@/helpers';
+import { isAnchorLink, scrollToElement } from '@/helpers';
 import type { TabContentProp } from '@/types/components';
-import type { Menu } from '@/types/navigation';
+import type { IsMenuItem, Menu } from '@/types/navigation';
 
 withDefaults(
   defineProps<{
@@ -23,6 +23,15 @@ withDefaults(
 );
 
 const contactLinks: Menu = [githubContact, linkedinContact];
+
+const scrollToSection = (sectionId?: IsMenuItem['link']) => {
+  if (!sectionId) return;
+  const section = document.querySelector(sectionId);
+
+  if (section) {
+    scrollToElement(section);
+  }
+};
 </script>
 
 <template>
@@ -32,15 +41,15 @@ const contactLinks: Menu = [githubContact, linkedinContact];
       <h1 v-if="pageTitle">{{ pageTitle }}</h1>
       <p v-if="subTitle" :class="$style.subTitle">{{ subTitle }}</p>
       <p v-if="content" :class="$style.content">{{ content }}</p>
-      <a
+      <button
         v-if="buttonLink && buttonText && isAnchorLink(buttonLink)"
-        :href="buttonLink"
         class="button center"
         :class="$style.cta"
         :aria-label="buttonLabel"
+        @click="() => scrollToSection(buttonLink)"
       >
         {{ buttonText }}
-      </a>
+      </button>
       <RouterLink
         v-else-if="buttonLink && buttonText"
         :to="{ name: buttonLink }"
