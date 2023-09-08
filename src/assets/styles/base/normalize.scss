@@ -1,0 +1,49 @@
+/*  ---------------------
+NORMALIZE
+--------------------- */
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @include set-background-colour($black);
+
+  &.simple {
+    .section {
+      @media screen and (min-width: $header-breakpoint) {
+        @include spacing(padding, left, 0.75rem);
+      }
+
+      @media screen and (min-width: $laptop-breakpoint) {
+        @include spacing(padding, left right, 12rem);
+      }
+    }
+  }
+
+  .lightSection {
+    @include set-background-colour($white-off);
+  }
+}
+
+main {
+  @include spacing(padding, top, $header-height);
+
+  @media screen and (min-width: $header-breakpoint) {
+    @include spacing(padding, top, 0);
+  }
+}
+
+img {
+  height: auto;
+  max-width: 100%;
+}

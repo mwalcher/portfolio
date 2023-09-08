@@ -1,2 +1,5 @@
+User-agent: Googlebot-Image
+Disallow: /assets/images/mwalcher-resume.pdf
+
 User-agent: *
-Disallow:
+Allow: /
