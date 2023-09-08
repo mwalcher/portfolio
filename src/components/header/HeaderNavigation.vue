@@ -48,7 +48,13 @@ const scrollToSection = (sectionId: IsMenuItem['link']) => {
           <span class="fa" :class="[menuItem.icon, $style.icon]" :aria-hidden="true" />
           <span>{{ menuItem.label }}</span>
         </button>
-        <RouterLink v-else :to="{ name: menuItem.link }" :class="$style['menuLink']" :aria-label="menuItem.fullLabel">
+        <RouterLink
+          v-else
+          :to="{ name: menuItem.link }"
+          :data-page-nav-link="menuItem.link"
+          :class="$style['menuLink']"
+          :aria-label="menuItem.fullLabel"
+        >
           <span class="fa" :class="[menuItem.icon, $style.icon]" :aria-hidden="true" />
           <span>{{ menuItem.label }}</span>
         </RouterLink>

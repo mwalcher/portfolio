@@ -1,5 +1,3 @@
-import { useThrottleFn } from '@vueuse/core';
-
 export default function useHeader() {
   const activeClass = 'active';
   const darkClass = 'dark';
@@ -111,8 +109,5 @@ export default function useHeader() {
   }
 
   window.addEventListener('load', () => activeSection());
-  window.addEventListener(
-    'scroll',
-    useThrottleFn(() => activeSection(), 100),
-  );
+  window.addEventListener('scroll', () => activeSection());
 }
