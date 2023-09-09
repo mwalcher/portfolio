@@ -30,6 +30,7 @@ const projectMeta: IsPageMeta = {
   title: currentProject.value?.name || '',
   description: currentProject.value?.description || '',
   image: currentProject.value?.metaImage || '',
+  themeColour: currentProject.value?.themeColour || '',
 };
 
 const contentNav: IsMenuItem = {
@@ -80,6 +81,7 @@ useSeoMeta({
   ogUrl: currentRoute.path,
   ogTitle: titleTemplate(projectMeta.title),
   ogSiteName: titleTemplate(projectMeta.title),
+  themeColor: projectMeta.themeColour,
 });
 
 onMounted(() => {

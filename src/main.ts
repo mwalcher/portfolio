@@ -24,7 +24,6 @@ Website Improvements:
   - Update content to be current
   - Fix Header colour transition
     - Do I need pinia? Forms? Header state?
-  - Fix low hanging fruit from Lighthouse audit
 
 DevOps Improvements:
   - Set up SSH on server & update deployment + filezilla to use SSH
