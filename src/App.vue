@@ -11,10 +11,10 @@ useSeoMeta({
   ogImage: defaultMeta.image,
   ogImageHeight: metaImageSize,
   ogImageWidth: metaImageSize,
+  themeColor: defaultMeta.themeColour,
   ogUrl: currentRoute.path,
   ogType: 'website',
   ogSiteName: titleTemplate(),
-  themeColor: '#339933',
 });
 </script>
 
