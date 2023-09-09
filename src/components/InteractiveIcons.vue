@@ -14,7 +14,7 @@ defineProps<{
           <div :class="$style.image" :style="{ backgroundImage: `url(${item.icon})` }" />
         </div>
         <div :class="$style.label">
-          <h3>{{ item.label }}</h3>
+          <p>{{ item.label }}</p>
         </div>
       </div>
       <a
@@ -106,7 +106,7 @@ $image-height-desktop: calc(($triangle-width-desktop / 2) * 0.85);
         }
 
         .label {
-          h3 {
+          p {
             @media screen and (min-width: $phone-breakpoint) {
               transform: translate(-50%, 50%) rotateZ(180deg);
             }
@@ -206,7 +206,8 @@ $image-height-desktop: calc(($triangle-width-desktop / 2) * 0.85);
           transform: rotateY(180deg);
         }
 
-        h3 {
+        p {
+          @include h3;
           @include set-font(body);
           color: $white-off;
           font-size: 0.85rem;

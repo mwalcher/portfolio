@@ -72,7 +72,7 @@ const tabContentList: TabContentProp = [
         detail-oriented problem solver
         with&nbsp;an&nbsp;eye&nbsp;for&nbsp;design."
       buttonText="Get in touch"
-      :buttonLabel="contactNav.fullLabel"
+      buttonLabel="Get in touch with Matthew Walcher"
       :buttonLink="contactNav.link"
       :tabContentList="tabContentList"
     />
