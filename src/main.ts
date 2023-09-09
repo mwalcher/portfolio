@@ -20,9 +20,13 @@ app.use(router);
 app.mount('#app');
 
 /* TODO:
-Improvements:
+Website Improvements:
+  - Update content to be current
   - Fix Header colour transition
     - Do I need pinia? Forms? Header state?
-  - Clean up GTM
-  - Setup Auto Reply, Save Contacts, add connect recaptcha + analytics to EmailJS
+
+DevOps Improvements:
+  - Set up SSH on server & update deployment + filezilla to use SSH
+  - Clean up GTM & Set up GA4
+  - Connect GA to EmailJS
 */

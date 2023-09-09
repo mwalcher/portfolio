@@ -14,6 +14,7 @@ useSeoMeta({
   ogUrl: currentRoute.path,
   ogType: 'website',
   ogSiteName: titleTemplate(),
+  themeColor: '#339933',
 });
 </script>
 

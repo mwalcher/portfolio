@@ -4,6 +4,7 @@ export interface IsProject {
   description: string;
   image: string;
   metaImage: string;
+  themeColour: string;
   website?: string;
   disabled?: boolean;
   component: object;
