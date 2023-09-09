@@ -21,7 +21,8 @@ app.mount('#app');
 
 /* TODO:
 Website Improvements:
-  - Update content to be current
+  - Update framework icons to be current (maybe redesign component)
+  - Update colours to use CSS variables and clean up theme colours to be a lot simpler
   - Fix Header colour transition
     - Do I need pinia? Forms? Header state?
 

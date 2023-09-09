@@ -6,6 +6,7 @@ export const defaultMeta: IsPageMeta = {
   description:
     'Matthew Walcher is a web developer from Toronto, Canada currently living in London, UK. He specializes in front-end web development.',
   image: HomeMetaImage,
+  themeColour: '#339933',
 };
 
 export const metaImageSize = 1200;
