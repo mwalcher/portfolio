@@ -24,12 +24,13 @@ Website Improvements:
   - Update colours to use CSS variables and clean up theme colours to be a lot simpler
   - Fix Header colour transition
     - Do I need pinia? Forms? Header state?
-  - Update framework icons to be current (maybe redesign component) - review items from resume to include here
+  - Update framework icons to be current (maybe redesign component)
+    - Review items from resume to include here
     - Rounded square containers for the icons that levitate with a shadow on hover
   - Update Resume
 
 DevOps Improvements:
-  - Set up SSH on server & update deployment + filezilla to use SSH
+  - Set up SSH on server & update deployment + FileZilla to use SSH
   - Clean up GTM & Set up GA4
   - Connect GA to EmailJS
 */
