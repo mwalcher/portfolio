@@ -21,8 +21,6 @@ app.mount('#app');
 
 /* TODO:
 Website Improvements:
-  - Fix No Indexed pages
-  - Replace scroll offset logic with scroll-padding-top
   - Update colours to use CSS variables and clean up theme colours to be a lot simpler
   - Fix Header colour transition
     - Do I need pinia? Forms? Header state?
