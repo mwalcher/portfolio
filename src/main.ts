@@ -21,10 +21,14 @@ app.mount('#app');
 
 /* TODO:
 Website Improvements:
-  - Update framework icons to be current (maybe redesign component)
+  - Fix No Indexed pages
+  - Replace scroll offset logic with scroll-padding-top
   - Update colours to use CSS variables and clean up theme colours to be a lot simpler
   - Fix Header colour transition
     - Do I need pinia? Forms? Header state?
+  - Update framework icons to be current (maybe redesign component) - review items from resume to include here
+    - Rounded square containers for the icons that levitate with a shadow on hover
+  - Update Resume
 
 DevOps Improvements:
   - Set up SSH on server & update deployment + filezilla to use SSH
