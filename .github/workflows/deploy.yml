@@ -1,0 +1,101 @@
+name: CI/CD
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Dry run (show what rsync would change, deploy nothing)"
+        type: boolean
+        default: false
+
+# Only one run per branch/PR at a time. Deploys are never cancelled halfway;
+# only superseded PR checks are.
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+permissions:
+  contents: read
+
+env:
+  DEPLOY_PATH: /var/www/mwalcher.com/html/dist
+
+jobs:
+  ci:
+    name: Lint, test and build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      # Cypress isn't used in CI, so skip downloading its large binary.
+      - name: Install dependencies
+        run: npm ci
+        env:
+          CYPRESS_INSTALL_BINARY: "0"
+
+      # Same as `npm run lint` but without --fix, so CI never rewrites files.
+      - name: Lint
+        run: npx eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --ignore-path .gitignore
+
+      - name: Unit tests
+        run: npx vitest run --passWithNoTests
+
+      # `npm run build` already includes the type-check.
+      - name: Build
+        run: npm run build
+        env:
+          VITE_EMAILJS_KEY: ${{ vars.VITE_EMAILJS_KEY }}
+          VITE_EMAILJS_SERVICE_ID: ${{ vars.VITE_EMAILJS_SERVICE_ID }}
+          VITE_EMAILJS_TEMPLATE_ID: ${{ vars.VITE_EMAILJS_TEMPLATE_ID }}
+          VITE_GTM_ID: ${{ vars.VITE_GTM_ID }}
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: dist
+          path: dist
+          if-no-files-found: error
+          retention-days: 1
+
+  deploy:
+    name: Deploy to droplet
+    needs: ci
+    # Never on pull requests, and only from main.
+    if: >-
+      github.ref == 'refs/heads/main' &&
+      (github.event_name == 'push' || github.event_name == 'workflow_dispatch')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: dist
+          path: dist
+
+      - name: Set up SSH
+        env:
+          SSH_KEY: ${{ secrets.DEPLOY_SSH_KEY }}
+          KNOWN_HOSTS: ${{ secrets.DEPLOY_KNOWN_HOSTS }}
+        run: |
+          install -m 700 -d ~/.ssh
+          printf '%s\n' "$SSH_KEY" > ~/.ssh/id_ed25519
+          chmod 600 ~/.ssh/id_ed25519
+          printf '%s\n' "$KNOWN_HOSTS" > ~/.ssh/known_hosts
+
+      - name: Deploy with rsync
+        env:
+          DEPLOY_HOST: ${{ vars.DEPLOY_HOST }}
+          DEPLOY_USER: ${{ vars.DEPLOY_USER }}
+          DRY_RUN: ${{ inputs.dry_run }}
+        run: |
+          FLAGS=""
+          if [ "$DRY_RUN" = "true" ]; then FLAGS="--dry-run"; fi
+          rsync -az --delete --itemize-changes --chmod=D755,F644 $FLAGS \
+            -e "ssh -o StrictHostKeyChecking=yes" \
+            dist/ "$DEPLOY_USER@$DEPLOY_HOST:$DEPLOY_PATH/"
