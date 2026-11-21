@@ -4,13 +4,6 @@ import ReactIcon from '@/assets/images/icon-react.svg?url';
 import VueIcon from '@/assets/images/icon-vue-js.svg?url';
 import type { IsTabContentListItem } from '@/types/components';
 
-/* TODO:
-    - Update framework icons to be current (maybe redesign component)
-    - Review items from resume to include here
-    - Rounded square containers for the icons that levitate with a shadow on hover
-    - Split into Languages & Libraries? Or Frameworks?
-*/
-
 export const git: IsTabContentListItem = {
   fullLabel: 'Git Website',
   icon: GitIcon,

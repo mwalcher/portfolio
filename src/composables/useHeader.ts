@@ -1,7 +1,4 @@
 export default function useHeader() {
-  /* TODO: Fix Header colour transition
-     - Do I need pinia? Forms? Header state?
-  */
   const activeClass = 'active';
   const darkClass = 'dark';
   const darkTopClass = 'darkTop';

@@ -36,7 +36,6 @@ export const linkedinContact: IsMenuItem = {
   link: 'https://www.linkedin.com/in/mwalcher/',
 };
 
-// TODO: Update Resume
 export const resumeContact: IsMenuItem = {
   fullLabel: "Matthew Walcher's Resume",
   icon: 'fa-file-text',
